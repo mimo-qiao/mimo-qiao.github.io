@@ -75,28 +75,38 @@
             <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
             <!-- Dropdown Menu -->
 			 
-            <li>
-                <a class="sb-toggle-submenu">Works<span class="sb-caret"></span></a>
-                <ul class="sb-submenu">
-                    
-                        <li><a href="/" target="_BLANK" class="animsition-link">AAA</a></li>
-                    
-                        <li><a href="/atom.xml" target="_BLANK" class="animsition-link">BBB</a></li>
-                    
-                </ul>
-            </li>
             
-            
+        	<li>
+        		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/categories/git/" class="animsition-link">git<small>(3)</small></a></li>
+				    
+				    <li><a href="/categories/linux/" class="animsition-link">linux<small>(7)</small></a></li>
+				    
+				    <li><a href="/categories/python/" class="animsition-link">python<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/sonar/" class="animsition-link">sonar<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/tess4j/" class="animsition-link">tess4j<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/基础/" class="animsition-link">基础<small>(1)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
             
             <li>
                 <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
                 <ul class="sb-submenu">
                     
-                    <li><a target="_blank" rel="noopener" href="http://go.kieran.top/" class="animsition-link">Kieran</a></li>
+                    <li><a target="_blank" rel="noopener" href="http://go.kieran.top/" class="animsition-link">source</a></li>
                     
-                    <li><a target="_blank" rel="noopener" href="http://domain.com/" class="animsition-link">Name</a></li>
+                    <li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/visugar/p/6821777.html" class="animsition-link">搭建blog-hexo参考</a></li>
                     
-                    <li><a target="_blank" rel="noopener" href="https://go.kieran.top/categories/Hexo/" class="animsition-link">source</a></li>
+                    <li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/f4dce0e76886" class="animsition-link">参考2</a></li>
+                    
+                    <li><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/configuration.html" class="animsition-link">官网</a></li>
                     
                 </ul>
             </li>
@@ -230,14 +240,14 @@
                     <p>
                       
                         源文档
-CentOS Docker 安装Docker 支持以下的 64 位 CentOS 版本：
+CentOS Docker 安装#Docker 支持以下的 64 位 CentOS 版本：
 
 CentOS 7
 CentOS 8
 更高版本…
 
 
-卸载旧版本12345678$ sudo yum remove docker \                  docker-client \                  docker-client-latest \                  docker-common 
+卸载旧版本#12345678$ sudo yum remove docker \                  docker-client \                  docker-client-latest \                  docker-commo
                       
                     </p>
                     
@@ -320,7 +330,7 @@ CentOS 8
                 <div class="col-md-8">
                     <p>
                       
-                        环境准备linux环境准备
+                        环境准备#linux环境准备#
 安装最低配置：不少于256M内存，不低于1G磁盘，JDK版本&gt;=8（openjdk也可以）。
 
 
@@ -328,8 +338,8 @@ CentOS 8
 
 
 本地PC正常访问外网，CentOS7桥接本机pc网卡上
-1.添加yum仓库源若无wget命令，则安装：
-123# yum install wget -y# wget -O &#x2F;etc&#x2F;yum.repos.d&#x2F;jenkins.rep
+1.添加yum仓库源#若无wget命令，则安装：
+123# yum install wget -y# wget -O &#x2F;etc&#x2F;yum.repos.d&#x2F;jenkins.
                       
                     </p>
                     
@@ -346,7 +356,7 @@ CentOS 8
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
                 <div class="col-md-4">
-                    <h3><a href="/2020/03/26/2020-02-26-正则表达式/">�����ܽ�</a></h3>
+                    <h3><a href="/2020/03/26/2020-02-26-正则表达式/">正则总结</a></h3>
                     <span>
                         <span class="post-meta">
       <time datetime="2020-03-25T16:00:00.000Z" itemprop="datePublished">
@@ -355,7 +365,7 @@ CentOS 8
     
     
     | 
-    <a href='/tags/����/'>����</a>
+    <a href='/tags/正则/'>正则</a>
     
     
 </span>
@@ -364,14 +374,15 @@ CentOS 8
                 <div class="col-md-8">
                     <p>
                       
-                        1.{0=��Դ���, 1=���, 2=��ͬ���, 3=��Ŀ����}0=��Դ���1=���2=��ͬ���3=��Ŀ����
+                        1.{0=房源序号, 1=序号, 2=合同编号, 3=项目名称}#0=房源序号1=序号2=合同编号3=项目名称
 12345(?&lt;&#x3D;&#123;*)(\d&#x3D;)([^(,|&#125;)]*)\d&#x3D;([^(,+)&#125;]*)\d&#x3D;[^,&#125;]*
 
 
-^��ƥ�䶺�ţ���ƥ�䵽\d ����ƥ��
+^不匹配逗号，等匹配到\d 继续匹配
 
 
-2.String urls[] = new Str
+2.String urls[] = new String[]#{
+?            
                       
                     </p>
                     
@@ -408,7 +419,7 @@ CentOS 8
                 <div class="col-md-8">
                     <p>
                       
-                        防火墙配置1.关闭防火墙
+                        防火墙配置#1.关闭防火墙
 1systemctl stop firewalld
 
 2.禁止开机启动
@@ -422,7 +433,7 @@ CentOS 8
 1getenforce
 
 
-安装
+安
                       
                     </p>
                     
@@ -459,7 +470,7 @@ CentOS 8
                 <div class="col-md-8">
                     <p>
                       
-                        安装前准备环境Centos7(Linux2.6/3.x/4/x  64-bit):
+                        安装前准备环境#Centos7(Linux2.6/3.x/4/x  64-bit):
 
 vm.max_map_count 大于或等于262144
 
@@ -471,7 +482,7 @@ fs.file-max 大于或等于65536
 
 
 用root用户新增两个配置文件即可满足上述要求：
-　　vim /etc/sysctl.d/99-sonarqube.co
+　　vim /etc/sysctl.d/99-sonarqube.c
                       
                     </p>
                     
@@ -508,11 +519,11 @@ fs.file-max 大于或等于65536
                 <div class="col-md-8">
                     <p>
                       
-                        修改IP123456# 通过修改配置文件vim &#x2F;etc&#x2F;sysconfig&#x2F;network-scripts&#x2F;ifcfg-eth0# 重启网络service network restart# 查看改动后的效果ip addr
+                        修改IP#123456# 通过修改配置文件vim &#x2F;etc&#x2F;sysconfig&#x2F;network-scripts&#x2F;ifcfg-eth0# 重启网络service network restart# 查看改动后的效果ip addr
 
 
 指定IP
-1IPADDR&#x3D;192.168.0.230 #静态IPGATEWAY&#x3D;192.168.0.1 #默认网关NETMASK&#x3D;255.25
+1IPADDR&#x3D;192.168.0.230 #静态IPGATEWAY&#x3D;192.168.0.1 #默认网关NETMASK&#x3D;255.2
                       
                     </p>
                     
@@ -549,20 +560,20 @@ fs.file-max 大于或等于65536
                 <div class="col-md-8">
                     <p>
                       
-                        一、安装准备操作系统RHEL8
+                        一、安装准备#操作系统RHEL8
 JDK：jdk-7u80-linux-x64.tar.gz  
 来源：下载
 CollabNetSubversionEdge-5.2.3_linux-x86_64.tar.gz 
 来源：下载
 
-二、安装JDK1.删除linux自带openjdk1yum -y remove java
+二、安装JDK#1.删除linux自带openjdk#1yum -y remove java
 
  
-2.清理残留文件1rpm -qa|grep java
+2.清理残留文件#1rpm -qa|grep java
 
  
 删除openjdk残留包
-1rpm  -e  --nodep
+1rpm  -e  --n
                       
                     </p>
                     
@@ -657,14 +668,14 @@ CollabNetSubversionEdge-5.2.3_linux-x86_64.tar.gz
                 <div class="col-md-8">
                     <p>
                       
-                        下载安装安装TortoiseGit-2.9.0.0-64bit下载链接：https://tortoisegit.org/download/
-1.双击安装包，点击运行：
-2.默认点击next进入下一步：
-3.默认点击next进入下一步：
-4.选择自己的安装路径，点击next进入下一步：
-4.点击Install进行安装：
-5.等待安装完成：
-6.可取消勾选运行首次启动导向Run first start wizard，若勾选一路默认next即
+                        下载安装#安装TortoiseGit-2.9.0.0-64bit#下载链接：https://tortoisegit.org/download/
+1.双击安装包，点击运行：#
+2.默认点击next进入下一步：#
+3.默认点击next进入下一步：#
+4.选择自己的安装路径，点击next进入下一步：#
+4.点击Install进行安装：#
+5.等待安装完成：#
+6.可取消勾选运行首次启动导向Run first start wizard，若勾选一
                       
                     </p>
                     
@@ -684,16 +695,23 @@ CollabNetSubversionEdge-5.2.3_linux-x86_64.tar.gz
         </nav>
     </div>
 </section>
+<!--
 <section id="statement">
     <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
         <div class="row">
             <p>虽然还没想好写点什么，但是总觉得这里放句话比较和谐。</p>
         </div>
     </div>
-</section>
+</section> -->
 <!-- ============================ END Content =========================== -->
 
-      
+      <section id="statement">
+    <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
+        <div class="row">
+            <p>虽然还没想好写点什么，但是总觉得这里放句话比较和谐。</p>
+        </div>
+    </div>
+</section>
 <!-- ============================ Footer =========================== -->
 
 <footer>

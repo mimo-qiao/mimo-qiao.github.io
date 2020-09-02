@@ -17,7 +17,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>�����ܽ� | mimo</title>
+  <title>正则总结 | mimo</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -75,28 +75,38 @@
             <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
             <!-- Dropdown Menu -->
 			 
-            <li>
-                <a class="sb-toggle-submenu">Works<span class="sb-caret"></span></a>
-                <ul class="sb-submenu">
-                    
-                        <li><a href="/" target="_BLANK" class="animsition-link">AAA</a></li>
-                    
-                        <li><a href="/atom.xml" target="_BLANK" class="animsition-link">BBB</a></li>
-                    
-                </ul>
-            </li>
             
-            
+        	<li>
+        		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/categories/git/" class="animsition-link">git<small>(3)</small></a></li>
+				    
+				    <li><a href="/categories/linux/" class="animsition-link">linux<small>(7)</small></a></li>
+				    
+				    <li><a href="/categories/python/" class="animsition-link">python<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/sonar/" class="animsition-link">sonar<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/tess4j/" class="animsition-link">tess4j<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/基础/" class="animsition-link">基础<small>(1)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
             
             <li>
                 <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
                 <ul class="sb-submenu">
                     
-                    <li><a target="_blank" rel="noopener" href="http://go.kieran.top/" class="animsition-link">Kieran</a></li>
+                    <li><a target="_blank" rel="noopener" href="http://go.kieran.top/" class="animsition-link">source</a></li>
                     
-                    <li><a target="_blank" rel="noopener" href="http://domain.com/" class="animsition-link">Name</a></li>
+                    <li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/visugar/p/6821777.html" class="animsition-link">搭建blog-hexo参考</a></li>
                     
-                    <li><a target="_blank" rel="noopener" href="https://go.kieran.top/categories/Hexo/" class="animsition-link">source</a></li>
+                    <li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/f4dce0e76886" class="animsition-link">参考2</a></li>
+                    
+                    <li><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/configuration.html" class="animsition-link">官网</a></li>
                     
                 </ul>
             </li>
@@ -183,22 +193,22 @@
     
     
     | 
-    <a href='/tags/����/'>����</a>
+    <a href='/tags/正则/'>正则</a>
     
     
 </span>
-                <h1>�����ܽ�</h1>
+                <h1>正则总结</h1>
             </div>
         </div>
         <div class="col-md-8 col-md-offset-2">
-      		<h5 id="1-0-��Դ���-1-���-2-��ͬ���-3-��L����"><a href="#1-0-��Դ���-1-���-2-��ͬ���-3-��L����" class="headerlink" title="1.{0=��Դ���, 1=���, 2=��ͬ���, 3=��Ŀ����}"></a>1.{0=��Դ���, 1=���, 2=��ͬ���, 3=��Ŀ����}</h5><p>0=��Դ���<br>1=���<br>2=��ͬ���<br>3=��Ŀ����</p>
+      		<h5><span id="1-0-fang-yuan-xu-hao-1-xu-hao-2-he-tong-bian-hao-3-xiang-mu-ming-cheng">1.{0=房源序号, 1=序号, 2=合同编号, 3=项目名称}</span><a href="#1-0-fang-yuan-xu-hao-1-xu-hao-2-he-tong-bian-hao-3-xiang-mu-ming-cheng" class="header-anchor">#</a></h5><p>0=房源序号<br>1=序号<br>2=合同编号<br>3=项目名称</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">(?&lt;&#x3D;&#123;*)(\d&#x3D;)([^(,|&#125;)]*)</span><br><span class="line"></span><br><span class="line">\d&#x3D;([^(,+)&#125;]*)</span><br><span class="line"></span><br><span class="line">\d&#x3D;[^,&#125;]*</span><br></pre></td></tr></table></figure>
 
 <blockquote>
-<p>^��ƥ�䶺�ţ���ƥ�䵽\d ����ƥ��</p>
+<p>^不匹配逗号，等匹配到\d 继续匹配</p>
 </blockquote>
 <hr>
-<h5 id="2-String-urls-new-String"><a href="#2-String-urls-new-String" class="headerlink" title="2.String urls[] = new String[]"></a>2.String urls[] = new String[]</h5><p>{</p>
+<h5><span id="2-string-urls-new-string">2.String urls[] = new String[]</span><a href="#2-string-urls-new-string" class="header-anchor">#</a></h5><p>{</p>
 <p>?                “<a target="_blank" rel="noopener" href="http://192.168.100.238/svn/acssvn/Control/dev/Code/trunk&quot;">http://192.168.100.238/svn/acssvn/Control/dev/Code/trunk&quot;</a>,<br>?                “<a target="_blank" rel="noopener" href="http://192.168.100.238/svn/acssvn/Control/dev/Code/branches&quot;">http://192.168.100.238/svn/acssvn/Control/dev/Code/branches&quot;</a>,<br>?                “<a target="_blank" rel="noopener" href="http://192.168.100.238/svn/acssvn/Control/dev/Code/branches/tags20190516/xycnqs&quot;">http://192.168.100.238/svn/acssvn/Control/dev/Code/branches/tags20190516/xycnqs&quot;</a>,</p>
 <p>?                “<a target="_blank" rel="noopener" href="http://192.168.100.238/svn/acssvn/Control/dev/Code/iteration/20191031/aaa.java&quot;">http://192.168.100.238/svn/acssvn/Control/dev/Code/iteration/20191031/aaa.java&quot;</a>,<br>?                “<a target="_blank" rel="noopener" href="http://192.168.100.238/svn/acssvn/Control/dev/Code/iteration/20191031/com.yss.acs.fundacc&quot;">http://192.168.100.238/svn/acssvn/Control/dev/Code/iteration/20191031/com.yss.acs.fundacc&quot;</a>,<br>?            “<a target="_blank" rel="noopener" href="http://192.168.100.238/svn/acssvn/Control/dev/Code/iteration/20191031/com.yss.acs.fundacc.rule&quot;">http://192.168.100.238/svn/acssvn/Control/dev/Code/iteration/20191031/com.yss.acs.fundacc.rule&quot;</a>,</p>
 <p>?        “<a target="_blank" rel="noopener" href="http://192.168.100.238/svn/acssvn/Control/cgb/Code/trunk&quot;">http://192.168.100.238/svn/acssvn/Control/cgb/Code/trunk&quot;</a>,<br>?        “<a target="_blank" rel="noopener" href="http://192.168.100.238/svn/acssvn/Control/cgb/Code/dev20190802003&quot;">http://192.168.100.238/svn/acssvn/Control/cgb/Code/dev20190802003&quot;</a>,</p>
@@ -209,7 +219,7 @@
 <p>?        “<a target="_blank" rel="noopener" href="http://192.168.100.238/svn/acssvn/Control/gfsc/Code/branches/tags201903/003&quot;">http://192.168.100.238/svn/acssvn/Control/gfsc/Code/branches/tags201903/003&quot;</a>,</p>
 <p>?        “<a target="_blank" rel="noopener" href="http://192.168.100.238/svn/acssvn/Control/cmbc/Code/branches/tags20190930&quot;">http://192.168.100.238/svn/acssvn/Control/cmbc/Code/branches/tags20190930&quot;</a>,</p>
 <p>?        “<a target="_blank" rel="noopener" href="http://219.141.235.67:20080/svn/acssvn/Trunk/SourceCode/21GZ3.5/project_gz3.5/fundacc3&quot;">http://219.141.235.67:20080/svn/acssvn/Trunk/SourceCode/21GZ3.5/project_gz3.5/fundacc3&quot;</a><br>};</p>
-<p>��Ŀ��ȥ������cmbc/Code/trunk/code��|gfsc/Code/branches/tags201903/003·��</p>
+<p>题目：去掉包含cmbc/Code/trunk/code和|gfsc/Code/branches/tags201903/003路径</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">(?!http:&#x2F;&#x2F;(\d*\.)&#123;3&#125;\d*.*gfsc&#x2F;Code&#x2F;branches&#x2F;tags201903&#x2F;003[^,&quot;]*)http:&#x2F;&#x2F;(\d*\.)&#123;3&#125;\d*(:\d+)*(\&#x2F;[^\&#x2F;&quot;,]+)*</span><br><span class="line"></span><br><span class="line">(?!http:&#x2F;&#x2F;(\d*\.\d*(:\d*)*)*.*gfsc&#x2F;Code&#x2F;branches&#x2F;tags201903&#x2F;003[^&quot;,]*)http:&#x2F;&#x2F;(\d*\.\d*(:\d*)*)*[^&quot;,]*</span><br><span class="line"></span><br><span class="line">(?&lt;&#x3D;.*\&quot;)((?&lt;!gfsc).)*(?&#x3D;\&quot;)</span><br><span class="line">(?&lt;&#x3D;\&quot;)((?&lt;!gfsc).)*(?&#x3D;\&quot;)</span><br></pre></td></tr></table></figure>
 
 
@@ -283,7 +293,13 @@
 </section>
 
 
-      
+      <section id="statement">
+    <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
+        <div class="row">
+            <p>虽然还没想好写点什么，但是总觉得这里放句话比较和谐。</p>
+        </div>
+    </div>
+</section>
 <!-- ============================ Footer =========================== -->
 
 <footer>

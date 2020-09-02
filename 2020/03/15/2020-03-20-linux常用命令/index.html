@@ -75,28 +75,38 @@
             <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
             <!-- Dropdown Menu -->
 			 
-            <li>
-                <a class="sb-toggle-submenu">Works<span class="sb-caret"></span></a>
-                <ul class="sb-submenu">
-                    
-                        <li><a href="/" target="_BLANK" class="animsition-link">AAA</a></li>
-                    
-                        <li><a href="/atom.xml" target="_BLANK" class="animsition-link">BBB</a></li>
-                    
-                </ul>
-            </li>
             
-            
+        	<li>
+        		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/categories/git/" class="animsition-link">git<small>(3)</small></a></li>
+				    
+				    <li><a href="/categories/linux/" class="animsition-link">linux<small>(7)</small></a></li>
+				    
+				    <li><a href="/categories/python/" class="animsition-link">python<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/sonar/" class="animsition-link">sonar<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/tess4j/" class="animsition-link">tess4j<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/基础/" class="animsition-link">基础<small>(1)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
             
             <li>
                 <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
                 <ul class="sb-submenu">
                     
-                    <li><a target="_blank" rel="noopener" href="http://go.kieran.top/" class="animsition-link">Kieran</a></li>
+                    <li><a target="_blank" rel="noopener" href="http://go.kieran.top/" class="animsition-link">source</a></li>
                     
-                    <li><a target="_blank" rel="noopener" href="http://domain.com/" class="animsition-link">Name</a></li>
+                    <li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/visugar/p/6821777.html" class="animsition-link">搭建blog-hexo参考</a></li>
                     
-                    <li><a target="_blank" rel="noopener" href="https://go.kieran.top/categories/Hexo/" class="animsition-link">source</a></li>
+                    <li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/f4dce0e76886" class="animsition-link">参考2</a></li>
+                    
+                    <li><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/configuration.html" class="animsition-link">官网</a></li>
                     
                 </ul>
             </li>
@@ -193,7 +203,7 @@
             </div>
         </div>
         <div class="col-md-8 col-md-offset-2">
-      		<h3 id="修改IP"><a href="#修改IP" class="headerlink" title="修改IP"></a>修改IP</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 通过修改配置文件</span><br><span class="line">vim &#x2F;etc&#x2F;sysconfig&#x2F;network-scripts&#x2F;ifcfg-eth0</span><br><span class="line"># 重启网络</span><br><span class="line">service network restart</span><br><span class="line"># 查看改动后的效果</span><br><span class="line">ip addr</span><br></pre></td></tr></table></figure>
+      		<h3><span id="xiu-gai-ip">修改IP</span><a href="#xiu-gai-ip" class="header-anchor">#</a></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 通过修改配置文件</span><br><span class="line">vim &#x2F;etc&#x2F;sysconfig&#x2F;network-scripts&#x2F;ifcfg-eth0</span><br><span class="line"># 重启网络</span><br><span class="line">service network restart</span><br><span class="line"># 查看改动后的效果</span><br><span class="line">ip addr</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li><p>指定IP</p>
@@ -205,30 +215,30 @@
 </li>
 </ul>
 <hr>
-<h3 id="chmod"><a href="#chmod" class="headerlink" title="chmod"></a>chmod</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">chmod 更改权限</span><br><span class="line">o 所有者 g 组 o 其他</span><br><span class="line">r--4 w--2 x--1</span><br><span class="line">-R 处理指定目录以及其子目录下的所有文件</span><br><span class="line">chmod u+x,g+x index.html</span><br><span class="line">chmod 755 index.html</span><br><span class="line">chmod -R o+x fa</span><br></pre></td></tr></table></figure>
+<h3><span id="chmod">chmod</span><a href="#chmod" class="header-anchor">#</a></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">chmod 更改权限</span><br><span class="line">o 所有者 g 组 o 其他</span><br><span class="line">r--4 w--2 x--1</span><br><span class="line">-R 处理指定目录以及其子目录下的所有文件</span><br><span class="line">chmod u+x,g+x index.html</span><br><span class="line">chmod 755 index.html</span><br><span class="line">chmod -R o+x fa</span><br></pre></td></tr></table></figure>
 
 <hr>
-<h3 id="chown"><a href="#chown" class="headerlink" title="chown"></a>chown</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">chown 将指定文件的拥有者改为指定的用户或组</span><br><span class="line">chown [选项]... [所有者][:[组]] 文件...</span><br><span class="line">-R 处理指定目录以及其子目录下的所有文件</span><br><span class="line">chown weblogic:bea index.html</span><br><span class="line">chown -R weblogic:bea test1</span><br></pre></td></tr></table></figure>
+<h3><span id="chown">chown</span><a href="#chown" class="header-anchor">#</a></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">chown 将指定文件的拥有者改为指定的用户或组</span><br><span class="line">chown [选项]... [所有者][:[组]] 文件...</span><br><span class="line">-R 处理指定目录以及其子目录下的所有文件</span><br><span class="line">chown weblogic:bea index.html</span><br><span class="line">chown -R weblogic:bea test1</span><br></pre></td></tr></table></figure>
 
 <hr>
-<h3 id="firewall"><a href="#firewall" class="headerlink" title="firewall"></a>firewall</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"># 查看防火状态</span><br><span class="line">systemctl status firewalld</span><br><span class="line">service  iptables status</span><br><span class="line"># 暂时关闭防火墙</span><br><span class="line">systemctl stop firewalld</span><br><span class="line">service  iptables stop</span><br><span class="line"># 永久关闭防火墙</span><br><span class="line">systemctl disable firewalld</span><br><span class="line">chkconfig iptables off</span><br><span class="line"># 重启防火墙</span><br><span class="line">systemctl enable firewalld</span><br><span class="line">service iptables restart</span><br><span class="line"># 永久关闭后重启</span><br><span class="line">chkconfig iptables on</span><br><span class="line"></span><br><span class="line">#关闭selinux并重启系统</span><br><span class="line">vi &#x2F;etc&#x2F;sysconfig&#x2F;selinux</span><br><span class="line">...</span><br><span class="line">selinux&#x3D;disabled</span><br><span class="line">...</span><br><span class="line">reboot</span><br></pre></td></tr></table></figure>
+<h3><span id="firewall">firewall</span><a href="#firewall" class="header-anchor">#</a></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"># 查看防火状态</span><br><span class="line">systemctl status firewalld</span><br><span class="line">service  iptables status</span><br><span class="line"># 暂时关闭防火墙</span><br><span class="line">systemctl stop firewalld</span><br><span class="line">service  iptables stop</span><br><span class="line"># 永久关闭防火墙</span><br><span class="line">systemctl disable firewalld</span><br><span class="line">chkconfig iptables off</span><br><span class="line"># 重启防火墙</span><br><span class="line">systemctl enable firewalld</span><br><span class="line">service iptables restart</span><br><span class="line"># 永久关闭后重启</span><br><span class="line">chkconfig iptables on</span><br><span class="line"></span><br><span class="line">#关闭selinux并重启系统</span><br><span class="line">vi &#x2F;etc&#x2F;sysconfig&#x2F;selinux</span><br><span class="line">...</span><br><span class="line">selinux&#x3D;disabled</span><br><span class="line">...</span><br><span class="line">reboot</span><br></pre></td></tr></table></figure>
 
 <hr>
-<h3 id="vim"><a href="#vim" class="headerlink" title="vim"></a>vim</h3><p>编辑/etc/profile</p>
+<h3><span id="vim">vim</span><a href="#vim" class="header-anchor">#</a></h3><p>编辑/etc/profile</p>
 <p>在文件末尾加入如下内容</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alias vi&#x3D;vim</span><br></pre></td></tr></table></figure>
 
 <hr>
-<h3 id="yum"><a href="#yum" class="headerlink" title="yum"></a>yum</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install  xxx</span><br></pre></td></tr></table></figure>
+<h3><span id="yum">yum</span><a href="#yum" class="header-anchor">#</a></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install  xxx</span><br></pre></td></tr></table></figure>
 
 <hr>
-<h3 id="安装jdk"><a href="#安装jdk" class="headerlink" title="安装jdk"></a>安装jdk</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">mkdir &#x2F;usr&#x2F;java</span><br><span class="line"></span><br><span class="line">#上传jdk-8u192-linux-x64.tar.gz到&#x2F;usr&#x2F;java</span><br><span class="line">tar xvzf jdk-8u192-linux-x64.tar.gz</span><br><span class="line"></span><br><span class="line">vi &#x2F;etc&#x2F;profile</span><br><span class="line">java_home&#x3D;&quot;&#x2F;usr&#x2F;java&#x2F;jdk1.8.0_192&quot;</span><br><span class="line">java_bin&#x3D;&quot;&#x2F;usr&#x2F;java&#x2F;jdk1.8.0_192&#x2F;bin&quot;</span><br><span class="line">jre_home&#x3D;&quot;&#x2F;usr&#x2F;java&#x2F;jdk1.8.0_192&#x2F;jre&quot;</span><br><span class="line">path&#x3D;&quot;$PATH:$JAVA_HOME&#x2F;bin:$JRE_HOME&#x2F;bin&quot;</span><br><span class="line">classpath&#x3D;&quot;.:$JAVA_HOME&#x2F;lib&#x2F;dt.jar:$JAVA_HOME&#x2F;lib&#x2F;tools.jar&quot;</span><br><span class="line"></span><br><span class="line">source &#x2F;etc&#x2F;profile</span><br></pre></td></tr></table></figure>
+<h3><span id="an-zhuang-jdk">安装jdk</span><a href="#an-zhuang-jdk" class="header-anchor">#</a></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">mkdir &#x2F;usr&#x2F;java</span><br><span class="line"></span><br><span class="line">#上传jdk-8u192-linux-x64.tar.gz到&#x2F;usr&#x2F;java</span><br><span class="line">tar xvzf jdk-8u192-linux-x64.tar.gz</span><br><span class="line"></span><br><span class="line">vi &#x2F;etc&#x2F;profile</span><br><span class="line">java_home&#x3D;&quot;&#x2F;usr&#x2F;java&#x2F;jdk1.8.0_192&quot;</span><br><span class="line">java_bin&#x3D;&quot;&#x2F;usr&#x2F;java&#x2F;jdk1.8.0_192&#x2F;bin&quot;</span><br><span class="line">jre_home&#x3D;&quot;&#x2F;usr&#x2F;java&#x2F;jdk1.8.0_192&#x2F;jre&quot;</span><br><span class="line">path&#x3D;&quot;$PATH:$JAVA_HOME&#x2F;bin:$JRE_HOME&#x2F;bin&quot;</span><br><span class="line">classpath&#x3D;&quot;.:$JAVA_HOME&#x2F;lib&#x2F;dt.jar:$JAVA_HOME&#x2F;lib&#x2F;tools.jar&quot;</span><br><span class="line"></span><br><span class="line">source &#x2F;etc&#x2F;profile</span><br></pre></td></tr></table></figure>
 
 <hr>
-<h2 id="删除jdk"><a href="#删除jdk" class="headerlink" title="删除jdk"></a>删除jdk</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">删除自带openjdk</span><br><span class="line">#yum -y remove java</span><br><span class="line"></span><br><span class="line">清理残留文件</span><br><span class="line">#rpm -qa|grep java</span><br><span class="line">#rpm  -e  --nodeps  java-1.8.0-openjdk-headless-1.8.0.131-11.b12.el7.x86_64</span><br></pre></td></tr></table></figure>
+<h2><span id="shan-chu-jdk">删除jdk</span><a href="#shan-chu-jdk" class="header-anchor">#</a></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">删除自带openjdk</span><br><span class="line">#yum -y remove java</span><br><span class="line"></span><br><span class="line">清理残留文件</span><br><span class="line">#rpm -qa|grep java</span><br><span class="line">#rpm  -e  --nodeps  java-1.8.0-openjdk-headless-1.8.0.131-11.b12.el7.x86_64</span><br></pre></td></tr></table></figure>
 
 <hr>
-<h3 id="安装tomcat"><a href="#安装tomcat" class="headerlink" title="安装tomcat"></a>安装tomcat</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">下载解压tomcat</span><br><span class="line"># wget https:&#x2F;&#x2F;mirrors.hust.edu.cn&#x2F;apache&#x2F;tomcat&#x2F;tomcat-8&#x2F;v8.5.32&#x2F;bin&#x2F;apache-tomcat-8.5.32.tar.gz</span><br><span class="line"></span><br><span class="line"># tar zxvf apache-tomcat-8.5.34.tar.gz</span><br><span class="line"></span><br><span class="line"># mv apache-tomcat-8.5.34 &#x2F;usr&#x2F;local&#x2F;tomcat</span><br><span class="line"></span><br><span class="line">启动</span><br><span class="line"># &#x2F;usr&#x2F;local&#x2F;tomcat&#x2F;bin&#x2F;startup.sh</span><br><span class="line"></span><br><span class="line">Using CATALINA_BASE:   &#x2F;usr&#x2F;local&#x2F;tomcat</span><br><span class="line">Using CATALINA_HOME:   &#x2F;usr&#x2F;local&#x2F;tomcat</span><br><span class="line">Using CATALINA_TMPDIR: &#x2F;usr&#x2F;local&#x2F;tomcat&#x2F;temp</span><br><span class="line">Using JRE_HOME:        &#x2F;usr&#x2F;local&#x2F;jdk1.8</span><br><span class="line">Using CLASSPATH:       &#x2F;usr&#x2F;local&#x2F;tomcat&#x2F;bin&#x2F;bootstrap.jar:&#x2F;usr&#x2F;local&#x2F;tomcat&#x2F;bin&#x2F;tomcat-juli.jar</span><br><span class="line">Tomcat started.</span><br><span class="line"></span><br><span class="line">设置开机启动</span><br><span class="line"># echo &quot;&#x2F;usr&#x2F;local&#x2F;tomcat&#x2F;bin&#x2F;startup.sh&quot; &gt;&gt; &#x2F;etc&#x2F;rc.d&#x2F;rc.local </span><br><span class="line"></span><br><span class="line"># chmod a+x &#x2F;etc&#x2F;rc.d&#x2F;rc.local</span><br></pre></td></tr></table></figure>
+<h3><span id="an-zhuang-tomcat">安装tomcat</span><a href="#an-zhuang-tomcat" class="header-anchor">#</a></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">下载解压tomcat</span><br><span class="line"># wget https:&#x2F;&#x2F;mirrors.hust.edu.cn&#x2F;apache&#x2F;tomcat&#x2F;tomcat-8&#x2F;v8.5.32&#x2F;bin&#x2F;apache-tomcat-8.5.32.tar.gz</span><br><span class="line"></span><br><span class="line"># tar zxvf apache-tomcat-8.5.34.tar.gz</span><br><span class="line"></span><br><span class="line"># mv apache-tomcat-8.5.34 &#x2F;usr&#x2F;local&#x2F;tomcat</span><br><span class="line"></span><br><span class="line">启动</span><br><span class="line"># &#x2F;usr&#x2F;local&#x2F;tomcat&#x2F;bin&#x2F;startup.sh</span><br><span class="line"></span><br><span class="line">Using CATALINA_BASE:   &#x2F;usr&#x2F;local&#x2F;tomcat</span><br><span class="line">Using CATALINA_HOME:   &#x2F;usr&#x2F;local&#x2F;tomcat</span><br><span class="line">Using CATALINA_TMPDIR: &#x2F;usr&#x2F;local&#x2F;tomcat&#x2F;temp</span><br><span class="line">Using JRE_HOME:        &#x2F;usr&#x2F;local&#x2F;jdk1.8</span><br><span class="line">Using CLASSPATH:       &#x2F;usr&#x2F;local&#x2F;tomcat&#x2F;bin&#x2F;bootstrap.jar:&#x2F;usr&#x2F;local&#x2F;tomcat&#x2F;bin&#x2F;tomcat-juli.jar</span><br><span class="line">Tomcat started.</span><br><span class="line"></span><br><span class="line">设置开机启动</span><br><span class="line"># echo &quot;&#x2F;usr&#x2F;local&#x2F;tomcat&#x2F;bin&#x2F;startup.sh&quot; &gt;&gt; &#x2F;etc&#x2F;rc.d&#x2F;rc.local </span><br><span class="line"></span><br><span class="line"># chmod a+x &#x2F;etc&#x2F;rc.d&#x2F;rc.local</span><br></pre></td></tr></table></figure>
 
 
             <div class="clearfix"></div>
@@ -301,7 +311,13 @@
 </section>
 
 
-      
+      <section id="statement">
+    <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
+        <div class="row">
+            <p>虽然还没想好写点什么，但是总觉得这里放句话比较和谐。</p>
+        </div>
+    </div>
+</section>
 <!-- ============================ Footer =========================== -->
 
 <footer>

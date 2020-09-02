@@ -75,28 +75,38 @@
             <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
             <!-- Dropdown Menu -->
 			 
-            <li>
-                <a class="sb-toggle-submenu">Works<span class="sb-caret"></span></a>
-                <ul class="sb-submenu">
-                    
-                        <li><a href="/" target="_BLANK" class="animsition-link">AAA</a></li>
-                    
-                        <li><a href="/atom.xml" target="_BLANK" class="animsition-link">BBB</a></li>
-                    
-                </ul>
-            </li>
             
-            
+        	<li>
+        		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/categories/git/" class="animsition-link">git<small>(3)</small></a></li>
+				    
+				    <li><a href="/categories/linux/" class="animsition-link">linux<small>(7)</small></a></li>
+				    
+				    <li><a href="/categories/python/" class="animsition-link">python<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/sonar/" class="animsition-link">sonar<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/tess4j/" class="animsition-link">tess4j<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/基础/" class="animsition-link">基础<small>(1)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
             
             <li>
                 <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
                 <ul class="sb-submenu">
                     
-                    <li><a target="_blank" rel="noopener" href="http://go.kieran.top/" class="animsition-link">Kieran</a></li>
+                    <li><a target="_blank" rel="noopener" href="http://go.kieran.top/" class="animsition-link">source</a></li>
                     
-                    <li><a target="_blank" rel="noopener" href="http://domain.com/" class="animsition-link">Name</a></li>
+                    <li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/visugar/p/6821777.html" class="animsition-link">搭建blog-hexo参考</a></li>
                     
-                    <li><a target="_blank" rel="noopener" href="https://go.kieran.top/categories/Hexo/" class="animsition-link">source</a></li>
+                    <li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/f4dce0e76886" class="animsition-link">参考2</a></li>
+                    
+                    <li><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/configuration.html" class="animsition-link">官网</a></li>
                     
                 </ul>
             </li>
@@ -191,7 +201,7 @@
             </div>
         </div>
         <div class="col-md-8 col-md-offset-2">
-      		<h1 id="https-www-runoob-com-docker-docker-architecture-html"><a href="#https-www-runoob-com-docker-docker-architecture-html" class="headerlink" title="https://www.runoob.com/docker/docker-architecture.html"></a><a target="_blank" rel="noopener" href="https://www.runoob.com/docker/docker-architecture.html">https://www.runoob.com/docker/docker-architecture.html</a></h1><p>官网 <a target="_blank" rel="noopener" href="https://www.runoob.com/docker/docker-architecture.html">https://www.runoob.com/docker/docker-architecture.html</a></p>
+      		<h1><span id="https-www-runoob-com-docker-docker-architecture-html"></span><a href="#https-www-runoob-com-docker-docker-architecture-html" class="header-anchor">#</a></h1><p>官网 <a target="_blank" rel="noopener" href="https://www.runoob.com/docker/docker-architecture.html">https://www.runoob.com/docker/docker-architecture.html</a></p>
 <p>Docker 包括三个基本概念:</p>
 <ul>
 <li><strong>镜像（Image）</strong>：Docker 镜像（Image），就相当于是一个 root 文件系统。比如官方镜像 ubuntu:16.04 就包含了完整的一套 Ubuntu16.04 最小系统的 root 文件系统。</li>
@@ -216,7 +226,7 @@
 <td>类</td>
 </tr>
 </tbody></table>
-<h1 id="Docker-Hello-World"><a href="#Docker-Hello-World" class="headerlink" title="Docker Hello World"></a>Docker Hello World</h1><p>使用 <strong>docker run</strong> 命令来在容器内运行一个应用程序，输出Hello world</p>
+<h1><span id="docker-hello-world">Docker Hello World</span><a href="#docker-hello-world" class="header-anchor">#</a></h1><p>使用 <strong>docker run</strong> 命令来在容器内运行一个应用程序，输出Hello world</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run ubuntu:15.10 &#x2F;bin&#x2F;echo &quot;Hello world&quot;</span><br></pre></td></tr></table></figure>
 
 <p>各个参数解析：</p>
@@ -227,7 +237,7 @@
 <li><strong>/bin/echo “Hello world”:</strong> 在启动的容器里执行的命令</li>
 </ul>
 <hr>
-<h2 id="运行交互式的容器"><a href="#运行交互式的容器" class="headerlink" title="运行交互式的容器"></a>运行交互式的容器</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">runoob@runoob:~$ docker run -i -t ubuntu:15.10 &#x2F;bin&#x2F;bash</span><br><span class="line">#进入容器</span><br><span class="line">root@0123ce188bd8:&#x2F;#</span><br></pre></td></tr></table></figure>
+<h2><span id="yun-xing-jiao-hu-shi-de-rong-qi">运行交互式的容器</span><a href="#yun-xing-jiao-hu-shi-de-rong-qi" class="header-anchor">#</a></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">runoob@runoob:~$ docker run -i -t ubuntu:15.10 &#x2F;bin&#x2F;bash</span><br><span class="line">#进入容器</span><br><span class="line">root@0123ce188bd8:&#x2F;#</span><br></pre></td></tr></table></figure>
 
 <p>各个参数解析：</p>
 <ul>
@@ -237,7 +247,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#查看当前系统的版本信息</span><br><span class="line">cat &#x2F;proc&#x2F;version</span><br><span class="line">#查看当前目录下的文件列表</span><br><span class="line">ls</span><br><span class="line"></span><br><span class="line">#退出当前容器，返回到当前主机中</span><br><span class="line">exit  或ctrl+D</span><br></pre></td></tr></table></figure>
 
 <hr>
-<h2 id="启动容器（后台模式）"><a href="#启动容器（后台模式）" class="headerlink" title="启动容器（后台模式）"></a>启动容器（后台模式）</h2><p>创建一个以进程方式运行的容器</p>
+<h2><span id="qi-dong-rong-qi-hou-tai-mo-shi">启动容器（后台模式）</span><a href="#qi-dong-rong-qi-hou-tai-mo-shi" class="header-anchor">#</a></h2><p>创建一个以进程方式运行的容器</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d ubuntu:15.10 &#x2F;bin&#x2F;sh -c &quot;while true; do echo hello world; sleep 1; done&quot;</span><br></pre></td></tr></table></figure>
 
 <p>查看正在运行的容器</p>
@@ -247,20 +257,20 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker logs 容器id</span><br><span class="line">或</span><br><span class="line">docker logs 容器name</span><br></pre></td></tr></table></figure>
 
 <hr>
-<h2 id="停止容器"><a href="#停止容器" class="headerlink" title="停止容器"></a>停止容器</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker stop 容器id</span><br><span class="line">或</span><br><span class="line">docker stop 容器name</span><br></pre></td></tr></table></figure>
+<h2><span id="ting-zhi-rong-qi">停止容器</span><a href="#ting-zhi-rong-qi" class="header-anchor">#</a></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker stop 容器id</span><br><span class="line">或</span><br><span class="line">docker stop 容器name</span><br></pre></td></tr></table></figure>
 
 <hr>
-<h1 id="Docker-容器使用"><a href="#Docker-容器使用" class="headerlink" title="Docker 容器使用"></a>Docker 容器使用</h1><h2 id="Docker-客户端"><a href="#Docker-客户端" class="headerlink" title="Docker 客户端"></a>Docker 客户端</h2><p>查看docker客户端所有命令</p>
+<h1><span id="docker-rong-qi-shi-yong">Docker 容器使用</span><a href="#docker-rong-qi-shi-yong" class="header-anchor">#</a></h1><h2><span id="docker-ke-hu-duan">Docker 客户端</span><a href="#docker-ke-hu-duan" class="header-anchor">#</a></h2><p>查看docker客户端所有命令</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#docker</span><br></pre></td></tr></table></figure>
 
 <p>深入了解指定命令</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#docker &#39;命令&#39; --help</span><br></pre></td></tr></table></figure>
 
 <hr>
-<h2 id="容器使用"><a href="#容器使用" class="headerlink" title="容器使用"></a>容器使用</h2><h3 id="获取镜像"><a href="#获取镜像" class="headerlink" title="获取镜像"></a>获取镜像</h3><p>如果本地没有 ubuntu 镜像，可载入镜像 ：</p>
+<h2><span id="rong-qi-shi-yong">容器使用</span><a href="#rong-qi-shi-yong" class="header-anchor">#</a></h2><h3><span id="huo-qu-jing-xiang">获取镜像</span><a href="#huo-qu-jing-xiang" class="header-anchor">#</a></h3><p>如果本地没有 ubuntu 镜像，可载入镜像 ：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$docker pull ubuntu</span><br></pre></td></tr></table></figure>
 
-<h3 id="启动容器"><a href="#启动容器" class="headerlink" title="启动容器"></a>启动容器</h3><p>在镜像中启动容器，参数为以命令行模式进入该容器：</p>
+<h3><span id="qi-dong-rong-qi">启动容器</span><a href="#qi-dong-rong-qi" class="header-anchor">#</a></h3><p>在镜像中启动容器，参数为以命令行模式进入该容器：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$docker run -it ubuntu &#x2F;bin&#x2F;bash</span><br></pre></td></tr></table></figure>
 
 <p>参数说明：</p>
@@ -274,21 +284,21 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#exit</span><br></pre></td></tr></table></figure>
 
 <hr>
-<h3 id="启动已停止运行的容器"><a href="#启动已停止运行的容器" class="headerlink" title="启动已停止运行的容器"></a>启动已停止运行的容器</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$docker ps -a</span><br><span class="line">$docker start 容器id</span><br></pre></td></tr></table></figure>
+<h3><span id="qi-dong-yi-ting-zhi-yun-xing-de-rong-qi">启动已停止运行的容器</span><a href="#qi-dong-yi-ting-zhi-yun-xing-de-rong-qi" class="header-anchor">#</a></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$docker ps -a</span><br><span class="line">$docker start 容器id</span><br></pre></td></tr></table></figure>
 
-<h3 id="后台运行"><a href="#后台运行" class="headerlink" title="后台运行"></a>后台运行</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker run -itd --name ubuntu-test ubuntu &#x2F;bin&#x2F;bash</span><br></pre></td></tr></table></figure>
+<h3><span id="hou-tai-yun-xing">后台运行</span><a href="#hou-tai-yun-xing" class="header-anchor">#</a></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker run -itd --name ubuntu-test ubuntu &#x2F;bin&#x2F;bash</span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p>注：加了 <strong>-d</strong> 参数默认不会进入容器，想要进入容器需要使用指令 <strong>docker exec</strong>。</p>
 </blockquote>
-<h3 id="停止一个容器"><a href="#停止一个容器" class="headerlink" title="停止一个容器"></a>停止一个容器</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$docker stop 容器id</span><br><span class="line">重启</span><br><span class="line">$docker restart 容器id</span><br></pre></td></tr></table></figure>
+<h3><span id="ting-zhi-yi-ge-rong-qi">停止一个容器</span><a href="#ting-zhi-yi-ge-rong-qi" class="header-anchor">#</a></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$docker stop 容器id</span><br><span class="line">重启</span><br><span class="line">$docker restart 容器id</span><br></pre></td></tr></table></figure>
 
-<h3 id="进入容器"><a href="#进入容器" class="headerlink" title="进入容器"></a>进入容器</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker exec -it 243c32535da7 &#x2F;bin&#x2F;bash</span><br></pre></td></tr></table></figure>
+<h3><span id="jin-ru-rong-qi">进入容器</span><a href="#jin-ru-rong-qi" class="header-anchor">#</a></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker exec -it 243c32535da7 &#x2F;bin&#x2F;bash</span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p>注：从这个容器退出，不会导致容器的停止</p>
 </blockquote>
-<h3 id="导出和导入容器"><a href="#导出和导入容器" class="headerlink" title="导出和导入容器"></a>导出和导入容器</h3><p><strong>导出容器</strong></p>
+<h3><span id="dao-chu-he-dao-ru-rong-qi">导出和导入容器</span><a href="#dao-chu-he-dao-ru-rong-qi" class="header-anchor">#</a></h3><p><strong>导出容器</strong></p>
 <p>导出本地某个容器，快照到本地文件</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker export 1e560fca3906 &gt; .&#x2F;docker&#x2F;ubuntu.tar</span><br></pre></td></tr></table></figure>
 
@@ -299,13 +309,13 @@
 <p>也可以通过指定 URL 或者某个目录来导入，例如：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker import http:&#x2F;&#x2F;example.com&#x2F;exampleimage.tgz example&#x2F;imagerepo</span><br></pre></td></tr></table></figure>
 
-<h3 id="删除容器"><a href="#删除容器" class="headerlink" title="删除容器"></a>删除容器</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker rm -f 1e560fca3906</span><br></pre></td></tr></table></figure>
+<h3><span id="shan-chu-rong-qi">删除容器</span><a href="#shan-chu-rong-qi" class="header-anchor">#</a></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker rm -f 1e560fca3906</span><br></pre></td></tr></table></figure>
 
 <p>清理掉所有处于终止状态的容器</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker container prune</span><br></pre></td></tr></table></figure>
 
 <hr>
-<h2 id="运行一个-web-应用"><a href="#运行一个-web-应用" class="headerlink" title="运行一个 web 应用"></a>运行一个 web 应用</h2><p>使用docker 构建一个 web 应用程序</p>
+<h2><span id="yun-xing-yi-ge-web-ying-yong">运行一个 web 应用</span><a href="#yun-xing-yi-ge-web-ying-yong" class="header-anchor">#</a></h2><p>使用docker 构建一个 web 应用程序</p>
 <p>例：docker容器中运行一个 Python Flask 应用来运行一个web应用</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># docker pull training&#x2F;webapp</span><br><span class="line"># docker run -d -P training&#x2F;webapp python app.py</span><br><span class="line">	-d:让容器在后台运行。</span><br><span class="line">	-P:将容器内部使用的网络端口映射到我们使用的主机上</span><br><span class="line">#查看正在运行的容器</span><br><span class="line">docker ps</span><br><span class="line">#多了ports信息0.0.0.0:32769-&gt;5000&#x2F;tcp，浏览器可访问ip：32769</span><br></pre></td></tr></table></figure>
 
@@ -324,7 +334,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#停止web应用容器</span><br><span class="line">docker stop wizardly_chandrasekhar</span><br><span class="line">#重启web应用容器，正在运行的容器使用docker restart</span><br><span class="line">docker start wizardly_chandrasekhar</span><br><span class="line">#移除web应用容器，容器是停止状态，否则报错</span><br><span class="line">docker rm wizardly_chandrasekhar  </span><br></pre></td></tr></table></figure>
 
 <hr>
-<h1 id="Docker-镜像使用"><a href="#Docker-镜像使用" class="headerlink" title="Docker 镜像使用"></a>Docker 镜像使用</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">#列出本地主机上的镜像</span><br><span class="line">docker images</span><br><span class="line">#使用版本为15.10的ubuntu系统镜像来运行容器</span><br><span class="line">docker run -t -i ubuntu:15.10 &#x2F;bin&#x2F;bash</span><br><span class="line">#查找镜像如httpd或docker hub网址https:&#x2F;&#x2F;hub.docker.com&#x2F;</span><br><span class="line">docker search httpd</span><br><span class="line">#获取一个新的镜像,可以直接使用这个镜像来运行容器</span><br><span class="line">docker pull httpd</span><br><span class="line">#运行镜像</span><br><span class="line">docker run httpd</span><br><span class="line">#删除镜像</span><br><span class="line">#docker rmi hello-world</span><br><span class="line">#设置镜像标签</span><br><span class="line">docker tag 镜像id 镜像源名(repository name)和新的标签名(tag)</span><br></pre></td></tr></table></figure>
+<h1><span id="docker-jing-xiang-shi-yong">Docker 镜像使用</span><a href="#docker-jing-xiang-shi-yong" class="header-anchor">#</a></h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">#列出本地主机上的镜像</span><br><span class="line">docker images</span><br><span class="line">#使用版本为15.10的ubuntu系统镜像来运行容器</span><br><span class="line">docker run -t -i ubuntu:15.10 &#x2F;bin&#x2F;bash</span><br><span class="line">#查找镜像如httpd或docker hub网址https:&#x2F;&#x2F;hub.docker.com&#x2F;</span><br><span class="line">docker search httpd</span><br><span class="line">#获取一个新的镜像,可以直接使用这个镜像来运行容器</span><br><span class="line">docker pull httpd</span><br><span class="line">#运行镜像</span><br><span class="line">docker run httpd</span><br><span class="line">#删除镜像</span><br><span class="line">#docker rmi hello-world</span><br><span class="line">#设置镜像标签</span><br><span class="line">docker tag 镜像id 镜像源名(repository name)和新的标签名(tag)</span><br></pre></td></tr></table></figure>
 
 <p>参数说明：</p>
 <ul>
@@ -333,7 +343,7 @@
 <li><strong>ubuntu:15.10</strong>: 这是指用 ubuntu 15.10 版本镜像为基础来启动容器。</li>
 <li><strong>/bin/bash</strong>：放在镜像名后的是命令，这里我们希望有个交互式 Shell，因此用的是 /bin/bash。</li>
 </ul>
-<h2 id="创建镜像"><a href="#创建镜像" class="headerlink" title="创建镜像"></a>创建镜像</h2><h3 id="更新镜像"><a href="#更新镜像" class="headerlink" title="更新镜像"></a>更新镜像</h3><p>从已经创建的容器中更新镜像，并且提交这个镜像</p>
+<h2><span id="chuang-jian-jing-xiang">创建镜像</span><a href="#chuang-jian-jing-xiang" class="header-anchor">#</a></h2><h3><span id="geng-xin-jing-xiang">更新镜像</span><a href="#geng-xin-jing-xiang" class="header-anchor">#</a></h3><p>从已经创建的容器中更新镜像，并且提交这个镜像</p>
 <p>创建一个容器</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -t -i ubuntu:15.10 &#x2F;bin&#x2F;bash</span><br></pre></td></tr></table></figure>
 
@@ -353,7 +363,7 @@
 <p>使用我们的新镜像 <strong>runoob/ubuntu</strong> 来启动一个容器</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">runoob@runoob:~$ docker run -t -i runoob&#x2F;ubuntu:v2 &#x2F;bin&#x2F;bash                            </span><br><span class="line">root@1a9fbdeb5da3:&#x2F;#</span><br></pre></td></tr></table></figure>
 
-<h3 id="构建镜像"><a href="#构建镜像" class="headerlink" title="构建镜像"></a>构建镜像</h3><h1 id="Docker-容器连接"><a href="#Docker-容器连接" class="headerlink" title="Docker 容器连接"></a>Docker 容器连接</h1><h2 id="网络端口映射"><a href="#网络端口映射" class="headerlink" title="网络端口映射"></a>网络端口映射</h2><p>创建一个python应用的容器</p>
+<h3><span id="gou-jian-jing-xiang">构建镜像</span><a href="#gou-jian-jing-xiang" class="header-anchor">#</a></h3><h1><span id="docker-rong-qi-lian-jie">Docker 容器连接</span><a href="#docker-rong-qi-lian-jie" class="header-anchor">#</a></h1><h2><span id="wang-luo-duan-kou-ying-she">网络端口映射</span><a href="#wang-luo-duan-kou-ying-she" class="header-anchor">#</a></h2><p>创建一个python应用的容器</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d -P training&#x2F;webapp python app.py</span><br></pre></td></tr></table></figure>
 
 <ul>
@@ -376,14 +386,14 @@
 <p>查看端口的绑定情况</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker port 容器name 5000</span><br></pre></td></tr></table></figure>
 
-<h2 id="Docker-容器互联"><a href="#Docker-容器互联" class="headerlink" title="Docker 容器互联"></a>Docker 容器互联</h2><h3 id="容器命名"><a href="#容器命名" class="headerlink" title="容器命名"></a>容器命名</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#--name 标识来命名容器</span><br><span class="line">docker run -d -P --name runoob training&#x2F;webapp python app.py</span><br><span class="line">#查看容器</span><br><span class="line">docker ps -l</span><br></pre></td></tr></table></figure>
+<h2><span id="docker-rong-qi-hu-lian">Docker 容器互联</span><a href="#docker-rong-qi-hu-lian" class="header-anchor">#</a></h2><h3><span id="rong-qi-ming-ming">容器命名</span><a href="#rong-qi-ming-ming" class="header-anchor">#</a></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#--name 标识来命名容器</span><br><span class="line">docker run -d -P --name runoob training&#x2F;webapp python app.py</span><br><span class="line">#查看容器</span><br><span class="line">docker ps -l</span><br></pre></td></tr></table></figure>
 
-<h3 id="新建网络"><a href="#新建网络" class="headerlink" title="新建网络"></a>新建网络</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ docker network create -d bridge test-net</span><br><span class="line">#查看网络</span><br><span class="line">docker network_ls</span><br></pre></td></tr></table></figure>
+<h3><span id="xin-jian-wang-luo">新建网络</span><a href="#xin-jian-wang-luo" class="header-anchor">#</a></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ docker network create -d bridge test-net</span><br><span class="line">#查看网络</span><br><span class="line">docker network_ls</span><br></pre></td></tr></table></figure>
 
 <p>参数说明：</p>
 <p><strong>-d</strong>：参数指定 Docker 网络类型，有 bridge、overlay。</p>
 <hr>
-<h3 id="连接容器"><a href="#连接容器" class="headerlink" title="连接容器"></a>连接容器</h3><p>运行一个容器并连接到新建的 test-net 网络:</p>
+<h3><span id="lian-jie-rong-qi">连接容器</span><a href="#lian-jie-rong-qi" class="header-anchor">#</a></h3><p>运行一个容器并连接到新建的 test-net 网络:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker run -itd --name test1 --network test-net ubuntu &#x2F;bin&#x2F;bash</span><br></pre></td></tr></table></figure>
 
 <p>打开新的终端，再运行一个容器并加入到 test-net 网络:</p>
@@ -393,7 +403,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">apt-get update</span><br><span class="line">apt install iputils-ping</span><br></pre></td></tr></table></figure>
 
 <hr>
-<h2 id="配置-DNS"><a href="#配置-DNS" class="headerlink" title="配置 DNS"></a>配置 DNS</h2><p> 在/etc/docker/daemon.json 文件中增加以下内容来设置全部容器的 DNS：</p>
+<h2><span id="pei-zhi-dns">配置 DNS</span><a href="#pei-zhi-dns" class="header-anchor">#</a></h2><p> 在/etc/docker/daemon.json 文件中增加以下内容来设置全部容器的 DNS：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;dns&quot; : [</span><br><span class="line">    &quot;114.114.114.114&quot;,</span><br><span class="line">    &quot;8.8.8.8&quot;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#重启docker才生效</span><br><span class="line">&#x2F;etc&#x2F;init.d&#x2F;docker restart</span><br><span class="line">#验证</span><br><span class="line">$ docker run -it --rm ubuntu  cat etc&#x2F;resolv.conf</span><br></pre></td></tr></table></figure>
@@ -479,7 +489,13 @@
 </section>
 
 
-      
+      <section id="statement">
+    <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
+        <div class="row">
+            <p>虽然还没想好写点什么，但是总觉得这里放句话比较和谐。</p>
+        </div>
+    </div>
+</section>
 <!-- ============================ Footer =========================== -->
 
 <footer>

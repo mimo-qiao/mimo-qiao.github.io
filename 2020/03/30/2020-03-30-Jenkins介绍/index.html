@@ -75,28 +75,38 @@
             <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
             <!-- Dropdown Menu -->
 			 
-            <li>
-                <a class="sb-toggle-submenu">Works<span class="sb-caret"></span></a>
-                <ul class="sb-submenu">
-                    
-                        <li><a href="/" target="_BLANK" class="animsition-link">AAA</a></li>
-                    
-                        <li><a href="/atom.xml" target="_BLANK" class="animsition-link">BBB</a></li>
-                    
-                </ul>
-            </li>
             
-            
+        	<li>
+        		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/categories/git/" class="animsition-link">git<small>(3)</small></a></li>
+				    
+				    <li><a href="/categories/linux/" class="animsition-link">linux<small>(7)</small></a></li>
+				    
+				    <li><a href="/categories/python/" class="animsition-link">python<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/sonar/" class="animsition-link">sonar<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/tess4j/" class="animsition-link">tess4j<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/基础/" class="animsition-link">基础<small>(1)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
             
             <li>
                 <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
                 <ul class="sb-submenu">
                     
-                    <li><a target="_blank" rel="noopener" href="http://go.kieran.top/" class="animsition-link">Kieran</a></li>
+                    <li><a target="_blank" rel="noopener" href="http://go.kieran.top/" class="animsition-link">source</a></li>
                     
-                    <li><a target="_blank" rel="noopener" href="http://domain.com/" class="animsition-link">Name</a></li>
+                    <li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/visugar/p/6821777.html" class="animsition-link">搭建blog-hexo参考</a></li>
                     
-                    <li><a target="_blank" rel="noopener" href="https://go.kieran.top/categories/Hexo/" class="animsition-link">source</a></li>
+                    <li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/f4dce0e76886" class="animsition-link">参考2</a></li>
+                    
+                    <li><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/configuration.html" class="animsition-link">官网</a></li>
                     
                 </ul>
             </li>
@@ -200,32 +210,32 @@
 </ul>
 <p>1.持续集成(Continuous integration，简称CI)：频繁的将代码集成到主干。将个人研发部分向软件整体部分交付。</p>
 <ul>
-<li><p><input disabled="" type="checkbox">  开发人员每一次代码提交，都能自动在jenkins上自动build构建。</p>
+<li><p><input disabled type="checkbox">  开发人员每一次代码提交，都能自动在jenkins上自动build构建。</p>
 </li>
-<li><p><input disabled="" type="checkbox">  优点：可以快速发现错误，快速迭代。</p>
+<li><p><input disabled type="checkbox">  优点：可以快速发现错误，快速迭代。</p>
 </li>
-<li><p><input disabled="" type="checkbox">  核心措施：代码集成到主干之前，必须通过自动化测试。只要有一个测试用例失败，就不能集成。</p>
+<li><p><input disabled type="checkbox">  核心措施：代码集成到主干之前，必须通过自动化测试。只要有一个测试用例失败，就不能集成。</p>
 </li>
 </ul>
 <p>2.持续交付(Continuous Delivery，简称CD)：频繁的将软件的新版本交付给质量团队或用户，以供评审。持续交付在持续集成的基础上，将集成后的代码部署到更贴近真实运行环境的「类生产环境」</p>
 <ul>
-<li><input disabled="" type="checkbox"> 强调：不管怎么更新，软件是随时随地可以交付的</li>
+<li><input disabled type="checkbox"> 强调：不管怎么更新，软件是随时随地可以交付的</li>
 </ul>
 <p>3.持续部署(Continuous Deployment)：代码通过评审以后，自动部署到生产环境</p>
 <ul>
-<li><p><input disabled="" type="checkbox">  前提：能自动化完成测试、构建、部署等步骤</p>
+<li><p><input disabled type="checkbox">  前提：能自动化完成测试、构建、部署等步骤</p>
 </li>
-<li><p><input disabled="" type="checkbox">  功能：持续的软件版本发布/测试项目；监控外部调用执行的工作</p>
+<li><p><input disabled type="checkbox">  功能：持续的软件版本发布/测试项目；监控外部调用执行的工作</p>
 </li>
-<li><p><input disabled="" type="checkbox">  开发或测试人员操作：项目所需参数传给jenkins下对应你的项目的job，jenkins自动完成部署。</p>
+<li><p><input disabled type="checkbox">  开发或测试人员操作：项目所需参数传给jenkins下对应你的项目的job，jenkins自动完成部署。</p>
 </li>
-<li><p><input disabled="" type="checkbox">  运维：监控jenkins的相关指标，保证健康状态下运转，以及项目部署配置中出现的权限、参数配置、工具集成调用等问题</p>
+<li><p><input disabled type="checkbox">  运维：监控jenkins的相关指标，保证健康状态下运转，以及项目部署配置中出现的权限、参数配置、工具集成调用等问题</p>
 </li>
 </ul>
 <hr>
-<h2 id="Jenkins特性"><a href="#Jenkins特性" class="headerlink" title="Jenkins特性"></a>Jenkins特性</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">开源的java语言开发持续集成工具，支持CI，CD；</span><br><span class="line"></span><br><span class="line">易于安装部署配置：可通过yum安装,或下载war包以及通过docker容器等快速实现安装部署，可方便web界面配置管理；</span><br><span class="line"></span><br><span class="line">消息通知及测试报告：集成RSS&#x2F;E-mail通过RSS发布构建结果或当构建完成时通过e-mail通知，生成JUnit&#x2F;TestNG测试报告；</span><br><span class="line"></span><br><span class="line">分布式构建：支持Jenkins能够让多台计算机一起构建&#x2F;测试；</span><br><span class="line"></span><br><span class="line">文件识别:Jenkins能够跟踪哪次构建生成哪些jar，哪次构建使用哪个版本的jar等； </span><br><span class="line"></span><br><span class="line">丰富的插件支持:支持扩展插件，可以开发适合自己团队使用的工具，如git，svn，maven，docker等。</span><br></pre></td></tr></table></figure>
+<h2><span id="jenkins-te-xing">Jenkins特性</span><a href="#jenkins-te-xing" class="header-anchor">#</a></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">开源的java语言开发持续集成工具，支持CI，CD；</span><br><span class="line"></span><br><span class="line">易于安装部署配置：可通过yum安装,或下载war包以及通过docker容器等快速实现安装部署，可方便web界面配置管理；</span><br><span class="line"></span><br><span class="line">消息通知及测试报告：集成RSS&#x2F;E-mail通过RSS发布构建结果或当构建完成时通过e-mail通知，生成JUnit&#x2F;TestNG测试报告；</span><br><span class="line"></span><br><span class="line">分布式构建：支持Jenkins能够让多台计算机一起构建&#x2F;测试；</span><br><span class="line"></span><br><span class="line">文件识别:Jenkins能够跟踪哪次构建生成哪些jar，哪次构建使用哪个版本的jar等； </span><br><span class="line"></span><br><span class="line">丰富的插件支持:支持扩展插件，可以开发适合自己团队使用的工具，如git，svn，maven，docker等。</span><br></pre></td></tr></table></figure>
 
-<h2 id="Jenkins-Job构建"><a href="#Jenkins-Job构建" class="headerlink" title="Jenkins Job构建"></a>Jenkins Job构建</h2><p>代表一个任务或项目</p>
+<h2><span id="jenkins-job-gou-jian">Jenkins Job构建</span><a href="#jenkins-job-gou-jian" class="header-anchor">#</a></h2><p>代表一个任务或项目</p>
 <p>可配置与可执行</p>
 <p>执行后的记录称之为Bulid</p>
 <p>日志监控与记录</p>
@@ -323,7 +333,13 @@
 </section>
 
 
-      
+      <section id="statement">
+    <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
+        <div class="row">
+            <p>虽然还没想好写点什么，但是总觉得这里放句话比较和谐。</p>
+        </div>
+    </div>
+</section>
 <!-- ============================ Footer =========================== -->
 
 <footer>
