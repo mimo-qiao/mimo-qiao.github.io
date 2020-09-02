@@ -211,10 +211,10 @@
 <hr>
 <h3><span id="er-an-zhuang-jdk">二、安装JDK</span><a href="#er-an-zhuang-jdk" class="header-anchor">#</a></h3><h5><span id="1-shan-chu-linux-zi-dai-openjdk">1.删除linux自带openjdk</span><a href="#1-shan-chu-linux-zi-dai-openjdk" class="header-anchor">#</a></h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y remove java</span><br></pre></td></tr></table></figure>
 
-<p><img src="/document_image/wps1.jpg" alt="img"> </p>
+<p><img src="/images/wps1.jpg" alt="img"> </p>
 <h5><span id="2-qing-li-can-liu-wen-jian">2.清理残留文件</span><a href="#2-qing-li-can-liu-wen-jian" class="header-anchor">#</a></h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -qa|grep java</span><br></pre></td></tr></table></figure>
 
-<p><img src="/document_image/wps2.jpg" alt="img"> </p>
+<p><img src="/images/wps2.jpg" alt="img"> </p>
 <p>删除openjdk残留包</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm  -e  --nodeps  java-1.8.0-openjdk-headless-1.8.0.131-11.b12.el7.x86_64</span><br></pre></td></tr></table></figure>
 
@@ -225,28 +225,28 @@
 
 <h5><span id="4-xiu-gai-huan-jing-bian-liang">4.修改环境变量</span><a href="#4-xiu-gai-huan-jing-bian-liang" class="header-anchor">#</a></h5><p>编辑/etc/profile</p>
 <p>在文件末尾加入如下内容</p>
-<p><img src="/document_image/wps3.png" alt="img"> </p>
+<p><img src="/images/wps3.png" alt="img"> </p>
 <p> 配置文件生效</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source &#x2F;etc&#x2F;profile</span><br></pre></td></tr></table></figure>
 
 <p> 连接java程序</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># cd ~</span><br><span class="line"></span><br><span class="line"># ln -s -f  &#x2F;usr&#x2F;java&#x2F;jdk1.8.0_192&#x2F;jre&#x2F;bin&#x2F;java</span><br><span class="line"></span><br><span class="line"># ln -s -f  &#x2F;usr&#x2F;java&#x2F;jdk1.8.0_192&#x2F;bin&#x2F;javac</span><br></pre></td></tr></table></figure>
 
-<p><img src="/document_image/wps4.jpg" alt="img"> </p>
+<p><img src="/images/wps4.jpg" alt="img"> </p>
 <p>确认java版本</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># java -version</span><br></pre></td></tr></table></figure>
 
 <p> 显示java版本信息</p>
-<p><img src="/document_image/wps5.jpg" alt="img"> </p>
+<p><img src="/images/wps5.jpg" alt="img"> </p>
 <p>表示JDK安装正确</p>
 <h3><span id="san-chuang-jian-svnroot-yong-hu-he-svn-zu">三、创建svnroot用户和svn组</span><a href="#san-chuang-jian-svnroot-yong-hu-he-svn-zu" class="header-anchor">#</a></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#  useradd svnroot</span><br><span class="line"></span><br><span class="line">#  passwd svnroot</span><br></pre></td></tr></table></figure>
 
-<p><img src="/document_image/wps6.jpg" alt="img"> </p>
+<p><img src="/images/wps6.jpg" alt="img"> </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># groupadd svn  创建svn组</span><br><span class="line"></span><br><span class="line"># usermod -g svn svnroot  将svnroot用户加入svn组</span><br></pre></td></tr></table></figure>
 
 <p><code>下面这段可以不用进图形界面</code></p>
 <p><code>进入xwindows 界面，修改opt文件夹属性，如下图</code></p>
-<p><img src="/document_image/wps7.jpg" alt="img"></p>
+<p><img src="/images/wps7.jpg" alt="img"></p>
 <p><code>直接用下面的命令代替</code></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chown -R svnroot:svn &#x2F;home&#x2F;svnroot</span><br></pre></td></tr></table></figure>
 
@@ -257,13 +257,13 @@
 <p>修改</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">RUN_AS_USER&#x3D;svnroot</span><br><span class="line"></span><br><span class="line">JAVA_HOME&#x3D;&#x2F;usr&#x2F;java&#x2F;jdk1.8.0_192</span><br></pre></td></tr></table></figure>
 
-<p><img src="/document_image/wps8.jpg" alt="img"> </p>
+<p><img src="/images/wps8.jpg" alt="img"> </p>
 <p><strong>注意：修改后请去掉语句前面的#号</strong></p>
 <p>切换到root用户，把svn群组下的用户加入到sudo组</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#su - root</span><br><span class="line"></span><br><span class="line"># vi &#x2F;etc&#x2F;sudoers</span><br></pre></td></tr></table></figure>
 
 <p>找到root ALL=(ALL) ALL，在下一行加入svnroot ALL=(ALL) ALL</p>
-<p><img src="/document_image/wps9.jpg" alt="img"> </p>
+<p><img src="/images/wps9.jpg" alt="img"> </p>
 <p>ESC 输入:wq!强制保存退出。</p>
 <p>切换到root用户，运行svn安装程序</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># su - root </span><br><span class="line"></span><br><span class="line"># cd &#x2F;home&#x2F;svnroot</span><br><span class="line"></span><br><span class="line"># sudo -E csvn&#x2F;bin&#x2F;csvn install</span><br></pre></td></tr></table></figure>
@@ -271,21 +271,21 @@
 <p> 提示</p>
 <p> Detected RHEL or Fedora:</p>
 <p> Installing the CSVN Console daemon..</p>
-<p><img src="/document_image/wps10.jpg" alt="img"> </p>
+<p><img src="/images/wps10.jpg" alt="img"> </p>
 <p>切换到svnroot用户，运行csvn</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># su - svnroot</span><br><span class="line"></span><br><span class="line">$ cd &#x2F;home&#x2F;svnroot&#x2F;csvn&#x2F;bin</span><br><span class="line"></span><br><span class="line">$ .&#x2F;csvn start</span><br></pre></td></tr></table></figure>
 
-<p><img src="/document_image/wps11.jpg" alt="img"> </p>
+<p><img src="/images/wps11.jpg" alt="img"> </p>
 <p>出现提交失败的情况试试</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chown -R svnroot:svn &#x2F;home&#x2F;svnroot&#x2F;csvn&#x2F;data&#x2F;repositories&#x2F;acssvn  </span><br></pre></td></tr></table></figure>
 
 <h3><span id="wu-qi-dong-fu-wu">五、启动服务</span><a href="#wu-qi-dong-fu-wu" class="header-anchor">#</a></h3><p>如上图所示，安装成功后在浏览器中打开上图地址（localhost更换为Linux系统的IP地址），如下图所示，输入初始用户名admin，初始密码admin</p>
-<p><img src="/document_image/wps12.jpg" alt="img"> </p>
+<p><img src="/images/wps12.jpg" alt="img"> </p>
 <p>在页面里根据提示进行设置即可。</p>
-<p><img src="/document_image/wps13.jpg" alt="img"> </p>
-<p><img src="/document_image/wps14.jpg" alt="img"> </p>
+<p><img src="/images/wps13.jpg" alt="img"> </p>
+<p><img src="/images/wps14.jpg" alt="img"> </p>
 <p>如上图所示，在主机名里写上自己的主机名，端口号选择默认的18080，点击确定按钮。</p>
-<p><img src="/document_image/wps15.jpg" alt="img"> </p>
+<p><img src="/images/wps15.jpg" alt="img"> </p>
 <p>设置完之后在版本库里创建一个版本库，在本地连接即可（注意：上图中的主机名需换成主机IP）。</p>
 <blockquote>
 <p>注：下面两行在设定访问路径是80端口和443端口时候要使用到 </p>
@@ -366,7 +366,7 @@
 
       <section id="statement">
     <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
-        <div class="row">
+        <div class="state-row">
             <p>虽然还没想好写点什么，但是总觉得这里放句话比较和谐。</p>
         </div>
     </div>
