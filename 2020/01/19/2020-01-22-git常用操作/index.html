@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<!--<![endif]-->
+
+<head>
+  <title>git常用操作 | mimo</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="mimo">
+    <meta name="author" content="John Doe">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="mimo" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+    
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+  
+  
+  
+
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            <li>
+                <a class="sb-toggle-submenu">Works<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                        <li><a href="/" target="_BLANK" class="animsition-link">AAA</a></li>
+                    
+                        <li><a href="/atom.xml" target="_BLANK" class="animsition-link">BBB</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+            
+            <li>
+                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a target="_blank" rel="noopener" href="http://go.kieran.top/" class="animsition-link">Kieran</a></li>
+                    
+                    <li><a target="_blank" rel="noopener" href="http://domain.com/" class="animsition-link">Name</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            
+            <li><a href="javascript:;" class="popup-trigger" title="Search"><span class="search-icon"></span>Search</a></li>
+            
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo.png" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">mimo</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a></li>
+                            
+                            
+                            <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a></li>
+                            
+                            
+                            <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a></li>
+                            
+                            
+                            <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a></li>
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+
+      
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2020-01-18T16:00:00.000Z" itemprop="datePublished">
+          2020-01-19
+      </time>
+    
+    
+    | 
+    <a href='/tags/git/'>git</a>
+    
+    
+</span>
+                <h1>git常用操作</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<h2 id="git工作转换图："><a href="#git工作转换图：" class="headerlink" title="git工作转换图："></a>git工作转换图：</h2><p><img src="/document_image/git.jpg" alt="git"></p>
+<blockquote>
+<p>须知：Git近乎所有操作都是本地执行，只需要访问本地文件和资源，即离线状态下可commit到本地。待有网络连接时，再push到远程。</p>
+</blockquote>
+<h2 id="Git的四种状态："><a href="#Git的四种状态：" class="headerlink" title="Git的四种状态："></a>Git的四种状态：</h2><ul>
+<li><p>未被跟踪的（Untracked）:此文件在文件夹中,但并没有加入到<code>git</code>库, 不参与版本控制. 通过<code>git add</code>状态变为<code>Staged</code>.</p>
+</li>
+<li><p>已提交（committed）/未修改（Unmodify）：文件已经入库,未修改,即版本库中的文件快照内容与文件夹中完全一致.这种类型的文件有两种去处,如果它被修改,而变为<code>Modified</code>.如果使用<code>git rm</code>移出版本库,则成为<code>Untracked</code>文件.</p>
+</li>
+<li><p>已修改（modified）：修改了文件，但还没保存到数据库中,这种文件有两个去处，通过<code>git add</code>进入暂存状态，使用<code>git checkout</code>则丢弃修改过, 返回到<code>unmodify</code>状态,这个<code>git checkout</code>即从库中取出文件,覆盖当前修改.</p>
+</li>
+</ul>
+<ul>
+<li>已暂存（staged）：执行<code>git commit</code>则将修改同步到库中,这时库中的文件和本地文件又变为一致,文件为<code>Unmodify</code>状态.执行<code>git reset HEAD filename</code>取消暂存,文件状态为<code>Modified</code>.</li>
+</ul>
+<h2 id="Git项目的三个工作区域："><a href="#Git项目的三个工作区域：" class="headerlink" title="Git项目的三个工作区域："></a>Git项目的三个工作区域：</h2><p>Git仓库：Git 用来保存项目的元数据和对象数据库的地方。这是 Git 中最重要的部分，从其它计算机克隆仓库时，拷贝的就是这里的数据。</p>
+<p>工作目录：对项目的某个版本独立提取出来的内容。这些从 Git 仓库的压缩数据库中提取出来的文件，放在磁盘上供你使用或修改。</p>
+<p>暂存区域：是一个文件，保存了下次将提交的文件列表信息，一般在 Git 仓库目录中。有时候也被称作“索引”，不过一般说法还是叫暂存区域。</p>
+<hr>
+<h3 id="TortoiseGit："><a href="#TortoiseGit：" class="headerlink" title="TortoiseGit："></a>TortoiseGit：</h3><h5 id="1-提交代码"><a href="#1-提交代码" class="headerlink" title="1.提交代码"></a>1.提交代码</h5><p>1.选中想要提交的代码文件或目录，右键单击TortoiseGit–Add</p>
+<img src="/document_image/1578627070295.png" alt="1578627070295" style="zoom:50%;" />
+
+<p>2.输入message（必填），点击commit</p>
+<img src="/document_image/1578629168249.png" alt="1578629168249" style="zoom:50%;" />
+
+<p>3.提交代码成功</p>
+<img src="/document_image/1578629241809.png" alt="1578629241809" style="zoom:50%;" />
+
+<hr>
+<h5 id="2-拉取更新"><a href="#2-拉取更新" class="headerlink" title="2.拉取更新"></a>2.拉取更新</h5><p>1.项目空白处点击右键=&gt;TortoiseGit=&gt;Pull…，一般不做其他更改，默认点击OK</p>
+<blockquote>
+<p>注：如果拉取有bug，勾选Launch Rebase After Fetch</p>
+</blockquote>
+<img src="/document_image/1578634380355.png" alt="1578634380355" style="zoom:50%;" />
+
+<p>2.拉取成功：</p>
+<img src="/document_image/1578634510341.png" alt="1578634510341" style="zoom:50%;" />
+
+<p>3.项目修改后提交代码：</p>
+<p>4.将提交到本地的项目推送到远程：点击右键=&gt;TortoiseGit=&gt;Push…，默认点击OK</p>
+<img src="/document_image/1578634897777.png" alt="1578634897777" style="zoom:50%;" />
+
+<p>5.push成功：</p>
+<img src="/document_image/1578634982059.png" alt="1578634982059" style="zoom:50%;" />
+
+<hr>
+<h5 id="3-分支的创建及切换"><a href="#3-分支的创建及切换" class="headerlink" title="3.分支的创建及切换"></a>3.分支的创建及切换</h5><p>1.创建分支：项目右键 =&gt; TortoiseGit=&gt; Create Branch，点击OK</p>
+<img src="/document_image/1578627416316.png" alt="1578627416316" style="zoom:50%;" />
+
+<p>2.切换分支：项目右键=&gt; TortoiseGit=&gt;Switch/Checkout，点击OK</p>
+<img src="/document_image/1578627662951.png" alt="1578627662951" style="zoom:50%;" />
+
+<p>3.切换分支成功，提交分支，选择Commit：</p>
+<img src="/document_image/1578627770588.png" alt="1578627770588" style="zoom:50%;" />
+
+<p>4.输入message（必填），点击Commit&amp;Push，提交并推送分支：</p>
+<img src="/document_image/1578631183373.png" alt="1578631183373" style="zoom:50%;" />
+
+<p>5.推送分支到远端：</p>
+<img src="/document_image/1578631212188.png" alt="1578631212188" style="zoom:50%;" />
+
+<p>6.推送成功：</p>
+<img src="/document_image/1578631233021.png" alt="1578631233021" style="zoom:50%;" />
+
+<hr>
+<h5 id="4-分支合并"><a href="#4-分支合并" class="headerlink" title="4.分支合并"></a>4.分支合并</h5><blockquote>
+<p>前提：分支开发的代码先推送到远端，切换本地分支到master主分支</p>
+</blockquote>
+<p>1.项目右键=&gt;TortoiseGit=&gt;Merge，选择要合并到master的分支，勾选合并按钮Squash，点击OK</p>
+<img src="/document_image/1578633446888.png" alt="1578633446888" style="zoom:50%;" />
+
+<p>2.合并成功，点击Commit提交：</p>
+<img src="/document_image/1578633507991.png" alt="1578633507991" style="zoom:50%;" />
+
+<p>3.点击Commit&amp;Push，提交并推送到远端：</p>
+<img src="/document_image/1578633582640.png" alt="1578633582640" style="zoom:50%;" />
+
+<p>4.推送成功：</p>
+<img src="/document_image/1578633628876.png" alt="1578633628876" style="zoom:50%;" />
+
+<hr>
+<h5 id="5-删除分支"><a href="#5-删除分支" class="headerlink" title="5.删除分支"></a>5.删除分支</h5><blockquote>
+<p>注：首先切换到别的分支上，否则会报错</p>
+</blockquote>
+<p>1.项目右键=&gt; TortoiseGit=&gt;Switch/Checkout，点击如图按钮：</p>
+<img src="/document_image/1578635619363.png" alt="1578635619363" style="zoom:50%;" />
+
+<p>2.选中想要删除的分支，点击右键，点击Delete branch</p>
+<img src="/document_image/1578635678767.png" alt="1578635678767" style="zoom:50%;" />
+
+<p>3.点击是，则删除成功：</p>
+<img src="/document_image/1578635752136.png" alt="1578635752136" style="zoom:50%;" />
+
+<p>4.选择remotes远程分支，按照同样的步骤执行操作，可成功删除远程分支：</p>
+<img src="/document_image/1578636042449.png" alt="1578636042449" style="zoom:50%;" />
+
+<hr>
+<h3 id="Git-bash："><a href="#Git-bash：" class="headerlink" title="Git bash："></a>Git bash：</h3><p><code>git init</code>:初始化git仓库并出现<code>.git</code>文件夹</p>
+<h5 id="1-提交代码-1"><a href="#1-提交代码-1" class="headerlink" title="1.提交代码"></a>1.提交代码</h5><blockquote>
+<p>选中想要提交的代码文件或目录，右键单击Git Bash，输入命令：</p>
+</blockquote>
+<p>1.追踪修改过的文件：</p>
+<ul>
+<li><strong>git add:</strong> 将文件添加到暂存区</li>
+<li><strong>git add .:</strong> 将工作空间下所有文件添加到暂存区(new，modifyed)</li>
+<li><strong>git add -A:</strong> 将工作空间下所有文件添加到暂存区(new，modifyed，delete)</li>
+<li><strong>git add -u:</strong> 将工作空间下所有文件添加到暂存区(modifyed，delete)</li>
+</ul>
+<p><img src="/document_image/1578555355639.png" alt="1578555355639"></p>
+<p>2.将修改后的文件提交到版本库：</p>
+<ul>
+<li><strong>git commit -m <commit message>:</strong> 将暂存区的文件提交到版本库</li>
+<li><strong>git commit -am <commit message>:</strong> 跳过<code>git add</code>命令，直接将工作区所有已跟踪的文件提交到版本库，未跟踪的(untracked)文件不能使用该命令</li>
+</ul>
+<p><img src="/document_image/1578555386246.png" alt="1578555386246"></p>
+<hr>
+<h5 id="2-拉取更新-1"><a href="#2-拉取更新-1" class="headerlink" title="2.拉取更新"></a>2.拉取更新</h5><ol>
+<li><p>本地切换到自己的分支：git checkout develope</p>
+<p><img src="/document_image/1578557702200.png" alt="1578557702200"></p>
+</li>
+<li><p>从远程仓库拉取文件到本地分支：git pull origin develope    <img src="/document_image/1578637674517.png" alt="1578637674517"  /></p>
+</li>
+<li><p>本地分支修改后，提交代码：见提交代码</p>
+</li>
+<li><p>切换到master分支：见分支切换</p>
+</li>
+<li><p>将本地分支下的修改合并到master分支：见分支合并</p>
+</li>
+<li><p>将master分支的修改push到远程仓库分支：git push -u origin master    </p>
+<blockquote>
+<p>注意:在本地master分支下可以推送到远程任意分支！</p>
+</blockquote>
+</li>
+</ol>
+<p><img src="/document_image/1578555486817.png" alt="1578555486817"></p>
+<hr>
+<h5 id="3-分支的创建及切换-1"><a href="#3-分支的创建及切换-1" class="headerlink" title="3.分支的创建及切换"></a>3.分支的创建及切换</h5><p>右键单击Git Bash，输入命令</p>
+<blockquote>
+<p>前提：该项目必须是与远程的gitlab关联</p>
+</blockquote>
+<p>1.初始化：git init</p>
+<p><img src="/document_image/1578554186434.png" alt="1578554186434"></p>
+<p>2.查看所有分支：git branch</p>
+<blockquote>
+<p>注：*代表当前分支</p>
+</blockquote>
+<p><img src="/document_image/1578554209003.png" alt="1578554209003"></p>
+<p>3.创建分支：</p>
+<p><img src="/document_image/1578554381194.png" alt="1578554381194"></p>
+<p>4.切换分支：</p>
+<p><img src="/document_image/1578554464097.png" alt="1578554464097"></p>
+<p>5.新建并同时切换：git checkout -b deve （分支名），相当于git branch 分支名+git checkout 分支名</p>
+<p><img src="/document_image/1578638518758.png" alt="1578638518758"></p>
+<hr>
+<h5 id="4-分支合并-1"><a href="#4-分支合并-1" class="headerlink" title="4.分支合并"></a>4.分支合并</h5><p>1.切换到被合并分支：git checkout master</p>
+<p><img src="/document_image/1578555138239.png" alt="1578555138239"></p>
+<p>2.将develope分支的内容合并到master分支：git merge develope origin/master</p>
+<p><img src="/document_image/1578555187826.png" alt="1578555187826"></p>
+<p>3.提交并更新：见提交代码和更新</p>
+<hr>
+<h5 id="5-删除分支-1"><a href="#5-删除分支-1" class="headerlink" title="5.删除分支"></a>5.删除分支</h5><p>输入命令：git branch -d develope</p>
+<p><img src="/document_image/1578563465096.png" alt="1578563465096"></p>
+<hr>
+<h3 id="请求合并（GitLab）："><a href="#请求合并（GitLab）：" class="headerlink" title="请求合并（GitLab）："></a>请求合并（GitLab）：</h3><p>新建合并请求：</p>
+<p><img src="/document_image/1578559950179.png"></p>
+<p>来源分支：在当前用户的当前项目中发起请求的</p>
+<p>目标分支：可选择当前用户的当前项目所在的组及组内的其他人</p>
+<p><img src="/document_image/1578560010235.png"></p>
+<p>认真填写以下信息，点击提交即可。</p>
+<p><img src="/document_image/1578560110736.png"></p>
+<p><img src="/document_image/1578560177370.png"></p>
+<hr>
+<h3 id="遇到冲突时的分支合并："><a href="#遇到冲突时的分支合并：" class="headerlink" title="遇到冲突时的分支合并："></a>遇到冲突时的分支合并：</h3><p>1.在遇到冲突时，git用<code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code>，<code>=======</code>，<code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code>标记出冲突中不同分支的内容，需要我们手动的删除掉这些无关内容，手动合并两个分支中修改的内容，修改好文件再次提交即成功。</p>
+<p><img src="/document_image/1578650293225.png" alt="1578650293225"></p>
+
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
+    
+    <a class="pull-left" href="/2020/01/19/2020-01-19-git%E9%85%8D%E7%BD%AEssh%E5%85%8D%E5%AF%86%E7%99%BB%E5%BD%95/" style="float: left;">
+        ← 配置ssh免密登录
+    </a>
+    
+    
+    <a class="pull-right" href="/2019/06/02/2019-06-02-document/">
+        LOFFER文档 →
+    </a>
+    
+</nav>
+
+        <div class="col-md-8 col-md-offset-2 col-sm-24"><script type="text/javascript">
+  /**
+   * 搜狐畅言
+   */
+
+  /*
+  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
+
+  window.onload = function () {
+    (function () {
+      var appid = 'cytXXXX';
+      var conf = 'prod_xxxxxxxxxxxxxxxxx';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      var loadJs = function (d, a, id) {
+        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+        var b = document.createElement("script");
+        b.setAttribute("type", "text/javascript");
+        b.setAttribute("charset", "UTF-8");
+        b.setAttribute("src", d);
+        if (id) {
+          b.setAttribute("id", id);
+        }
+        if (typeof a === "function") {
+          if (window.attachEvent) {
+            b.onreadystatechange = function () {
+              var e = b.readyState;
+              if (e === "loaded" || e === "complete") {
+                b.onreadystatechange = null;
+                a()
+              }
+            }
+          } else {
+            b.onload = a
+          }
+        }
+        c.appendChild(b)
+      };
+
+      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
+        window.changyan.api.config({
+          appid: appid,
+          conf: conf
+        })
+      });
+    })();
+  }
+  */
+
+</script>
+</div>
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By John Doe. All Rights Reserved.
+                </p>
+                <p>Theme By <a target="_blank" rel="noopener" href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a>&nbsp;</li>
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+      
+            <style>
+.local-search-popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  background: rgba(255, 255, 255, .9);
+  color: #333;
+  z-index: 9999;
+  border-radius: 5px;
+  overflow: scroll;
+}
+#local-search-input {
+  width: 100%;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #151515;
+  background-color: initial;
+}
+.search-result-list {
+  list-style: none;
+  padding-left: 0;
+}
+.search-result-list > li {
+  margin-top: 15px;
+  border-bottom: 1px solid #ddd;
+  transition: all ease .3s;
+}
+.search-result-list > li:hover {
+  border-bottom: 1px solid gray;
+}
+.search-result-title {
+  font-size: 16px;
+}
+.search-result {
+  line-height: 20px;
+}
+.search-keyword {
+  font-weight: normal;
+  color: #c00;
+}
+
+@media (min-width: 890px) {
+  .popup-btn-close {
+    position: absolute;
+    top: 15px;
+    left: 35px;
+    border: 1px solid #151515;
+    padding: 0px 10px;
+    border-top-left-radius: 8px;
+    cursor: pointer;
+    transition: all ease .3s;
+  }
+  .popup-btn-close:hover {
+    background: #151515;
+    opacity: .9;
+    color: #fff;
+  }
+}
+@media (max-width: 890px) {
+  .popup-btn-close {
+    font-size: 0;
+    position: fixed;
+    right: 20px;
+    bottom: 50px;
+    width: 50px;
+    height: 50px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 1px 1px 5px #888;
+    cursor: pointer;
+  }
+  .popup-btn-close::after {
+    content: '←';
+    color: #151515;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 20px;
+    width: 100%;
+    height: 100%;
+    line-height: 50px;
+    text-align: center;
+  }
+}
+</style>
+
+<div class="popup search-popup local-search-popup">
+  <span class="popup-btn-close">
+    ESC
+  </span>
+  <div class="container">
+    <div class="col-md-8 col-md-offset-2">
+      <div class="local-search-header clearfix">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="local-search-input-wrapper">
+          <input autocomplete="off" placeholder="Search..." type="text" id="local-search-input">
+        </div>
+      </div>
+      <div id="local-search-result"></div>
+    </div>
+  </div>
+</div>
+
+<script src="/js/ziploader.js"></script>
+
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.json";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').fadeOut(300);
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $('.popup').fadeIn(300);
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // get search zip version
+    $.get('/searchVersion.txt?t=' + (+new Date()), function(res) {
+      if (localStorage.getItem('searchVersion') !== res) {
+        localStorage.setItem('searchVersion', res);
+        initSearchJson();
+      }
+    });
+
+    function initSearchJson () {
+      initLoad(['/search.zip'], {
+        loadOptions: {
+          success: function(obj) {
+            localStorage.setItem('searchJson', obj['search.json'])
+          },
+          error: function(e) {
+            return console.log(e)
+          }
+        },
+        returnOptions: {
+          'json': TYPE_TEXT
+        },
+        mimeOptions:{
+          'json':'application/json'
+        }
+      })
+    }
+
+
+    // search function;
+    var searchFunc = function(search_id, content_id) {
+      'use strict';
+
+      isfetched = true;
+      var datas = JSON.parse(localStorage.getItem('searchJson'));
+      console.log(search_id)
+      var input = document.getElementById(search_id);
+      var resultContent = document.getElementById(content_id);
+      var inputEventFunction = function() {
+        var searchText = input.value.trim().toLowerCase();
+        var keywords = searchText.split(/[\s\-]+/);
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        var resultItems = [];
+        if (searchText.length > 0) {
+          // perform local searching
+          datas.forEach(function(data) {
+            var isMatch = false;
+            var hitCount = 0;
+            var searchTextCount = 0;
+            var title = data.title ? data.title.trim() : '';
+            var titleInLowerCase = title.toLowerCase();
+            var content = data.content ? data.content.trim().replace(/<[^>]+>/g,"") : '';
+            var contentInLowerCase = content.toLowerCase();
+            var articleUrl = decodeURIComponent(data.url);
+            var indexOfTitle = [];
+            var indexOfContent = [];
+            // only match articles with not empty titles
+            keywords.forEach(function(keyword) {
+              function getIndexByWord(word, text, caseSensitive) {
+                var wordLen = word.length;
+                if (wordLen === 0) {
+                  return [];
+                }
+                var startPosition = 0, position = [], index = [];
+                if (!caseSensitive) {
+                  text = text.toLowerCase();
+                  word = word.toLowerCase();
+                }
+                while ((position = text.indexOf(word, startPosition)) > -1) {
+                  index.push({position: position, word: word});
+                  startPosition = position + wordLen;
+                }
+                return index;
+              }
+
+              indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+              indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+            });
+            if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+              isMatch = true;
+              hitCount = indexOfTitle.length + indexOfContent.length;
+            }
+
+            // show search results
+
+            if (isMatch) {
+              // sort index by position of keyword
+
+              [indexOfTitle, indexOfContent].forEach(function (index) {
+                index.sort(function (itemLeft, itemRight) {
+                  if (itemRight.position !== itemLeft.position) {
+                    return itemRight.position - itemLeft.position;
+                  } else {
+                    return itemLeft.word.length - itemRight.word.length;
+                  }
+                });
+              });
+
+              // merge hits into slices
+
+              function mergeIntoSlice(text, start, end, index) {
+                var item = index[index.length - 1];
+                var position = item.position;
+                var word = item.word;
+                var hits = [];
+                var searchTextCountInSlice = 0;
+                while (position + word.length <= end && index.length != 0) {
+                  if (word === searchText) {
+                    searchTextCountInSlice++;
+                  }
+                  hits.push({position: position, length: word.length});
+                  var wordEnd = position + word.length;
+
+                  // move to next position of hit
+
+                  index.pop();
+                  while (index.length != 0) {
+                    item = index[index.length - 1];
+                    position = item.position;
+                    word = item.word;
+                    if (wordEnd > position) {
+                      index.pop();
+                    } else {
+                      break;
+                    }
+                  }
+                }
+                searchTextCount += searchTextCountInSlice;
+                return {
+                  hits: hits,
+                  start: start,
+                  end: end,
+                  searchTextCount: searchTextCountInSlice
+                };
+              }
+
+              var slicesOfTitle = [];
+              if (indexOfTitle.length != 0) {
+                slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+              }
+
+              var slicesOfContent = [];
+              while (indexOfContent.length != 0) {
+                var item = indexOfContent[indexOfContent.length - 1];
+                var position = item.position;
+                var word = item.word;
+                // cut out 100 characters
+                var start = position - 20;
+                var end = position + 80;
+                if(start < 0){
+                  start = 0;
+                }
+                if (end < position + word.length) {
+                  end = position + word.length;
+                }
+                if(end > content.length){
+                  end = content.length;
+                }
+                slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+              }
+
+              // sort slices in content by search text's count and hits' count
+
+              slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                  return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                  return sliceRight.hits.length - sliceLeft.hits.length;
+                } else {
+                  return sliceLeft.start - sliceRight.start;
+                }
+              });
+
+              // select top N slices in content
+
+              var upperBound = parseInt('2');
+              if (upperBound >= 0) {
+                slicesOfContent = slicesOfContent.slice(0, upperBound);
+              }
+
+              // highlight title and content
+
+              function highlightKeyword(text, slice) {
+                var result = '';
+                var prevEnd = slice.start;
+                slice.hits.forEach(function (hit) {
+                  result += text.substring(prevEnd, hit.position);
+                  var end = hit.position + hit.length;
+                  result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                  prevEnd = end;
+                });
+                result += text.substring(prevEnd, slice.end);
+                return result;
+              }
+
+              var resultItem = '';
+
+              if (slicesOfTitle.length != 0) {
+                resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+              } else {
+                resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+              }
+
+              slicesOfContent.forEach(function (slice) {
+                resultItem += "<a target='_blank' href='" + articleUrl + "'>" +
+                  "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                  "...</p>" + "</a>";
+              });
+
+              resultItem += "</li>";
+              resultItems.push({
+                item: resultItem,
+                searchTextCount: searchTextCount,
+                hitCount: hitCount,
+                id: resultItems.length
+              });
+            }
+          })
+        };
+        if (keywords.length === 1 && keywords[0] === "") {
+          resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+        } else if (resultItems.length === 0) {
+          resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+        } else {
+          resultItems.sort(function (resultLeft, resultRight) {
+            if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+              return resultRight.searchTextCount - resultLeft.searchTextCount;
+            } else if (resultLeft.hitCount !== resultRight.hitCount) {
+              return resultRight.hitCount - resultLeft.hitCount;
+            } else {
+              return resultRight.id - resultLeft.id;
+            }
+          });
+          var searchResultList = '<ul class=\"search-result-list\">';
+          resultItems.forEach(function (result) {
+            searchResultList += result.item;
+          })
+          searchResultList += "</ul>";
+          resultContent.innerHTML = searchResultList;
+        }
+      }
+
+      if ('auto' === 'auto') {
+        input.addEventListener('input', inputEventFunction);
+      } else {
+        $('.search-icon').click(inputEventFunction);
+        input.addEventListener('keypress', function (event) {
+          if (event.keyCode === 13) {
+            inputEventFunction();
+          }
+        });
+      }
+
+      // remove loading animation
+      $('body').css('overflow', '');
+
+      proceedsearch();
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        $('.sb-close').click();
+        searchFunc('local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+      
+</body>
+</html>

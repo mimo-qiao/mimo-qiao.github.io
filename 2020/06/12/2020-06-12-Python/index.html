@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<!--<![endif]-->
+
+<head>
+  <title>python基础语言 | mimo</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="mimo">
+    <meta name="author" content="John Doe">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="mimo" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+    
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+  
+  
+  
+
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            <li>
+                <a class="sb-toggle-submenu">Works<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                        <li><a href="/" target="_BLANK" class="animsition-link">AAA</a></li>
+                    
+                        <li><a href="/atom.xml" target="_BLANK" class="animsition-link">BBB</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+            
+            <li>
+                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a target="_blank" rel="noopener" href="http://go.kieran.top/" class="animsition-link">Kieran</a></li>
+                    
+                    <li><a target="_blank" rel="noopener" href="http://domain.com/" class="animsition-link">Name</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            
+            <li><a href="javascript:;" class="popup-trigger" title="Search"><span class="search-icon"></span>Search</a></li>
+            
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo.png" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">mimo</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a></li>
+                            
+                            
+                            <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a></li>
+                            
+                            
+                            <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a></li>
+                            
+                            
+                            <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a></li>
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+
+      
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2020-06-11T16:00:00.000Z" itemprop="datePublished">
+          2020-06-12
+      </time>
+    
+    
+    | 
+    <a href='/tags/python/'>python</a>
+    
+    
+</span>
+                <h1>python基础语言</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<ol>
+<li><h5 id="无“；”"><a href="#无“；”" class="headerlink" title="无“；”"></a>无“；”</h5></li>
+<li><h5 id="import导入"><a href="#import导入" class="headerlink" title="import导入"></a>import导入</h5></li>
+<li><h5 id="无需事先声明变量和类型-x-y-z-1-x-y-z-10-’john’-2-0"><a href="#无需事先声明变量和类型-x-y-z-1-x-y-z-10-’john’-2-0" class="headerlink" title="无需事先声明变量和类型   x=y=z=1     x,y,z=10,’john’,2.0"></a>无需事先声明变量和类型   x=y=z=1     x,y,z=10,’john’,2.0</h5></li>
+<li><h5 id="if语句-无括号。后要有：-例：if-a-gt-b"><a href="#if语句-无括号。后要有：-例：if-a-gt-b" class="headerlink" title="if语句  无括号。后要有： 例：if a&gt;b:"></a>if语句  无括号。后要有： 例：if a&gt;b:</h5></li>
+<li><h5 id="可直接发挥计算器的作用：在Python中，除法-运算符总是返回浮点值。向下取整运算符-获取的是整型结果。-运算符用于计算余数。"><a href="#可直接发挥计算器的作用：在Python中，除法-运算符总是返回浮点值。向下取整运算符-获取的是整型结果。-运算符用于计算余数。" class="headerlink" title="可直接发挥计算器的作用：在Python中，除法(/) 运算符总是返回浮点值。向下取整运算符(//)获取的是整型结果。%运算符用于计算余数。"></a>可直接发挥计算器的作用：在Python中，除法(/) 运算符总是返回浮点值。向下取整运算符(//)获取的是整型结果。%运算符用于计算余数。</h5></li>
+<li><h5 id="数值类型转换：显式的将数字从一个类型转换为另一种类型，（int）a-complex-a-转换为复数"><a href="#数值类型转换：显式的将数字从一个类型转换为另一种类型，（int）a-complex-a-转换为复数" class="headerlink" title="数值类型转换：显式的将数字从一个类型转换为另一种类型，（int）a,complex(a)转换为复数"></a>数值类型转换：显式的将数字从一个类型转换为另一种类型，（int）a,complex(a)转换为复数</h5></li>
+<li><h5 id="字符串：双引号“-”，单引号‘-’-，a-1-索引，从0开始，倒着数从-1开始"><a href="#字符串：双引号“-”，单引号‘-’-，a-1-索引，从0开始，倒着数从-1开始" class="headerlink" title="字符串：双引号“ ”，单引号‘ ’ ，a[1],索引，从0开始，倒着数从-1开始"></a>字符串：双引号“ ”，单引号‘ ’ ，a[1],索引，从0开始，倒着数从-1开始</h5><p>字符串拼接和重复：‘hi’*2+‘hello’     ‘hihihello’</p>
+<p>切片：str[0:2]  顾前不顾后，省略不写默认</p>
+</li>
+<li><h5 id="转义字符"><a href="#转义字符" class="headerlink" title="转义字符"></a>转义字符</h5></li>
+</ol>
+<table>
+<thead>
+<tr>
+<th align="left">标记</th>
+<th align="left">十六进制字符</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">a</td>
+<td align="left">0x07</td>
+<td align="left">响铃或警告</td>
+</tr>
+<tr>
+<td align="left">b</td>
+<td align="left">0x08</td>
+<td align="left">退格（Backspace）</td>
+</tr>
+<tr>
+<td align="left">cx</td>
+<td align="left"></td>
+<td align="left">Control-x</td>
+</tr>
+<tr>
+<td align="left">n</td>
+<td align="left">0x0a</td>
+<td align="left">新起一行</td>
+</tr>
+<tr>
+<td align="left">C-x</td>
+<td align="left"></td>
+<td align="left">Control-x</td>
+</tr>
+<tr>
+<td align="left">e</td>
+<td align="left">0x1b</td>
+<td align="left">转义</td>
+</tr>
+<tr>
+<td align="left">f</td>
+<td align="left">0x0c</td>
+<td align="left">换页</td>
+</tr>
+<tr>
+<td align="left">s</td>
+<td align="left">0x20</td>
+<td align="left">空格</td>
+</tr>
+<tr>
+<td align="left">M-C-x</td>
+<td align="left"></td>
+<td align="left">Meta-control-x</td>
+</tr>
+<tr>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left">字符x</td>
+</tr>
+<tr>
+<td align="left">nnn</td>
+<td align="left"></td>
+<td align="left">八进行标记，n为0到7范围内的值</td>
+</tr>
+<tr>
+<td align="left">r</td>
+<td align="left">0x0d</td>
+<td align="left">回车</td>
+</tr>
+<tr>
+<td align="left">xnn</td>
+<td align="left"></td>
+<td align="left">十六进制标记，n为0-9, a-f或A-F范围内的值</td>
+</tr>
+<tr>
+<td align="left">t</td>
+<td align="left">0x09</td>
+<td align="left">Tab制表符</td>
+</tr>
+<tr>
+<td align="left">v</td>
+<td align="left">0x0b</td>
+<td align="left">垂直制表符</td>
+</tr>
+</tbody></table>
+<ul>
+<li>特殊的字符串运算符</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="left">运算符</th>
+<th align="left">描述</th>
+<th align="left">示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">+</td>
+<td align="left">拼接：将运算符两边的值相加</td>
+<td align="left">a + b将得到HelloWorld</td>
+</tr>
+<tr>
+<td align="left">[]</td>
+<td align="left">切片：得到给定索引的字符串</td>
+<td align="left">a[7]将得到r</td>
+</tr>
+<tr>
+<td align="left">[ : ]</td>
+<td align="left">范围切片：得到指定范围内的字符</td>
+<td align="left">a[1:4]将得到ell</td>
+</tr>
+<tr>
+<td align="left">*</td>
+<td align="left">重复：创建新的字符串，将相同字符串的多个拷贝进行拼接</td>
+<td align="left">a*2将得到HelloHello</td>
+</tr>
+<tr>
+<td align="left">not in</td>
+<td align="left">成员：如果字符不在字符串中返回true</td>
+<td align="left">Z not in a将得到1</td>
+</tr>
+<tr>
+<td align="left">in</td>
+<td align="left">成员：如果字符在字符串中返回true</td>
+<td align="left">H in a将得到1</td>
+</tr>
+<tr>
+<td align="left">%</td>
+<td align="left">格式化：执行字符串格式化</td>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<ul>
+<li>%字符串格式化运算符</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;print(&#39;hello %s and %d &#39;%(&#39;world&#39;,2020))</span><br><span class="line">hello world and 2020 </span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th align="left">序号</th>
+<th align="left">格式符号和转化</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">1</td>
+<td align="left">%c – 字符</td>
+</tr>
+<tr>
+<td align="left">2</td>
+<td align="left">%s – 在格式化之前通过str()转换的字符串</td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="left">%i – 有符号十进制整数</td>
+</tr>
+<tr>
+<td align="left">4</td>
+<td align="left">%d – 有符号十进制整数</td>
+</tr>
+<tr>
+<td align="left">5</td>
+<td align="left">%u – 无符号十进制整数</td>
+</tr>
+<tr>
+<td align="left">6</td>
+<td align="left">%o – 八进制整数</td>
+</tr>
+<tr>
+<td align="left">7</td>
+<td align="left">%x – 十六进制整数（小写字母）</td>
+</tr>
+<tr>
+<td align="left">8</td>
+<td align="left">%X –十六进制整数（大写字母）</td>
+</tr>
+<tr>
+<td align="left">9</td>
+<td align="left">%e – 指数标记（使用小写 e）</td>
+</tr>
+<tr>
+<td align="left">10</td>
+<td align="left">%E –指数标记（使用大写 E）</td>
+</tr>
+<tr>
+<td align="left">11</td>
+<td align="left">%f – 浮点实数</td>
+</tr>
+</tbody></table>
+<h5 id="9-三引号：可跨行"><a href="#9-三引号：可跨行" class="headerlink" title="9.三引号：可跨行"></a>9.三引号：可跨行</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; &#39;&#39;&#39;abcd</span><br><span class="line">abcd</span><br><span class="line">abcd&#39;&#39;&#39;</span><br><span class="line">&#39;abcd\nabcd\nabcd&#39;</span><br></pre></td></tr></table></figure>
+
+<h5 id="10-列表list"><a href="#10-列表list" class="headerlink" title="10.列表list"></a>10.列表list</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; numbers &#x3D; [10,20,30,40,50,60]</span><br><span class="line">&gt;&gt;&gt; del numbers[3]    删除元素del</span><br><span class="line">&gt;&gt;&gt; print(numbers)</span><br><span class="line">[10, 20, 30, 50, 60]</span><br><span class="line">&gt;&gt;&gt; numbers[0]&#x3D;60	  更新元素</span><br><span class="line">&gt;&gt;&gt; print(numbers)</span><br><span class="line">[60, 20, 30, 50, 60]</span><br></pre></td></tr></table></figure>
+
+<p>基本列表运算</p>
+<table>
+<thead>
+<tr>
+<th align="left">描述</th>
+<th align="left">表达式</th>
+<th align="left">结果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">拼接</td>
+<td align="left">[30, 50, 60] + [‘Hello’, 75, 66]</td>
+<td align="left">[30, 50, 60, ‘Hello’, 75, 66]</td>
+</tr>
+<tr>
+<td align="left">成员</td>
+<td align="left">45 in [45, 58, 99, 65]</td>
+<td align="left">TRUE</td>
+</tr>
+<tr>
+<td align="left">迭代</td>
+<td align="left">for x in [45, 58, 99]: print(x, end=’ ‘)</td>
+<td align="left">45 58 99</td>
+</tr>
+<tr>
+<td align="left">重复</td>
+<td align="left">[‘Python’] * 3</td>
+<td align="left">[‘Python’, ‘Python’, ‘Python’]</td>
+</tr>
+<tr>
+<td align="left">取长度</td>
+<td align="left">len([45, 58, 99, 65])</td>
+<td align="left">4</td>
+</tr>
+</tbody></table>
+<h5 id="11-元组"><a href="#11-元组" class="headerlink" title="11.元组"></a>11.元组</h5><p>数据结构不可变，不能修改元素，以逗号分隔的值的有序序列，以括号进行包裹。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">#元组可以括号进行包裹</span><br><span class="line">    t1 &#x3D; &#39;h&#39;, &#39;e&#39;, &#39;l&#39;, &#39;l&#39;, &#39;o&#39;</span><br><span class="line">    t1 &#x3D; (&#39;h&#39;, &#39;e&#39;, &#39;l&#39;, &#39;l&#39;, &#39;o&#39;)</span><br><span class="line">#是元组</span><br><span class="line">	t1 &#x3D; &#39;h&#39;,</span><br><span class="line">#非元组，是字符串</span><br><span class="line">	t1 &#x3D; (&#39;a&#39;)</span><br><span class="line">#创建空元组</span><br><span class="line">	t1&#x3D;tuple()</span><br><span class="line">#如果该函数的参数是一个序列（字符串、列表或元组），结果是这个序列元素组成的元组：</span><br><span class="line">&gt;&gt;&gt;t &#x3D; tuple(&#39;aiyouwei&#39;)</span><br><span class="line">&gt;&gt;&gt; print(t)</span><br><span class="line">(&#39;a&#39;, &#39;i&#39;, &#39;y&#39;, &#39;o&#39;, &#39;u&#39;, &#39;w&#39;, &#39;e&#39;, &#39;i&#39;)</span><br><span class="line">#max()和min()</span><br><span class="line">&gt;&gt;&gt; number &#x3D; (1,2,3,4,5)</span><br><span class="line">&gt;&gt;&gt; print(max(number))</span><br><span class="line">5</span><br><span class="line">&gt;&gt;&gt; print(min(number))</span><br><span class="line">1</span><br></pre></td></tr></table></figure>
+
+<p>基本元组运算 同 列表，[ ]变为( )</p>
+<h5 id="12-集合set"><a href="#12-集合set" class="headerlink" title="12.集合set"></a>12.集合set</h5><p><code>无序</code>且<code>无重复值</code>的元素集，集合的基本用法是检查成员关系测试和删除重复项。这些集合对象支持数学运算，如并集、交集、差集以及对等差分。我们可以使用大括号{}或函数set()来创建集合。如果想要创建一个空的集合，使用set()而不是{}。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; a&#x3D; set(&#39;abc&#39;)</span><br><span class="line">&gt;&gt;&gt; b&#x3D;set(&#39;acd&#39;)</span><br><span class="line">&gt;&gt;&gt; a-b</span><br><span class="line">&#123;&#39;b&#39;&#125;</span><br><span class="line">&gt;&gt;&gt; b-a</span><br><span class="line">&#123;&#39;d&#39;&#125;</span><br><span class="line">&gt;&gt;&gt; a|b</span><br><span class="line">&#123;&#39;d&#39;, &#39;a&#39;, &#39;b&#39;, &#39;c&#39;&#125;</span><br><span class="line">&gt;&gt;&gt; a&amp;b</span><br><span class="line">&#123;&#39;a&#39;, &#39;c&#39;&#125;</span><br><span class="line">&gt;&gt;&gt; a^b</span><br><span class="line">&#123;&#39;d&#39;, &#39;b&#39;&#125;</span><br><span class="line">#推导式，&#39;abracadabra&#39; not in &#39;abc&#39;中</span><br><span class="line">&gt;&gt;&gt; a &#x3D; &#123;x for x in &#39;abracadabra&#39; if x not in &#39;abc&#39;&#125;</span><br><span class="line">&gt;&gt;&gt; a</span><br><span class="line">&#123;&#39;r&#39;, &#39;d&#39;&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="13-字典"><a href="#13-字典" class="headerlink" title="13.字典"></a>13.字典</h5><p>一种数据类型，由键值对组成，在大括号{ }中，无序的并通过键进行索引，且键唯一，键为不可变类型，元组在包含字符串、数字、或元组时，可作为字典的键。</p>
+<p>仅仅使用{}就会创建一个空的字典。同样可以使用del来删除一个键值对。如果使用了已有的键进行存储，就会抹除该键原来关联的值，使用不存在的键来提取值会报错</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; stu &#x3D; &#123;&#39;name&#39;:&#39;mimo&#39;,&#39;age&#39;:25&#125;</span><br><span class="line">#增加key、value值</span><br><span class="line">&gt;&gt;&gt; stu[&#39;address&#39;] &#x3D; &#39;beijing&#39;</span><br><span class="line">&gt;&gt;&gt; stu</span><br><span class="line">&#123;&#39;name&#39;: &#39;mimo&#39;, &#39;age&#39;: 25, &#39;address&#39;: &#39;beijing&#39;&#125;</span><br><span class="line">#通过key拿到value</span><br><span class="line">&gt;&gt;&gt; stu[&#39;age&#39;]</span><br><span class="line">25</span><br><span class="line">#删除key、value值</span><br><span class="line">&gt;&gt;&gt; del stu[&#39;address&#39;]</span><br><span class="line">&gt;&gt;&gt; stu</span><br><span class="line">&#123;&#39;name&#39;: &#39;mimo&#39;, &#39;age&#39;: 25&#125;</span><br><span class="line">&gt;&gt;&gt; &#39;Name&#39; in student</span><br><span class="line">True</span><br><span class="line">&gt;&gt;&gt; &#39;Age&#39; not in student</span><br><span class="line">False</span><br><span class="line">#报错？？</span><br><span class="line">&gt;&gt;&gt;list(stu.keys())</span><br><span class="line">#推导式</span><br><span class="line">&gt;&gt;&gt; &#123;x:x*2 for x in (2,4,6,8)&#125;</span><br><span class="line">&#123;2: 4, 4: 8, 6: 12, 8: 16&#125;</span><br><span class="line">#使用关键字参数的方式制定键值对</span><br><span class="line">&gt;&gt;&gt; dict(John&#x3D;25, Nick&#x3D;27, Jack&#x3D;28)</span><br><span class="line">&#123;&#39;Nick&#39;: 27, &#39;Jack&#39;: 28, &#39;John&#39;: 25&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="14-解析命令行参数"><a href="#14-解析命令行参数" class="headerlink" title="14.解析命令行参数"></a>14.解析命令行参数</h5><p>不太理解。。。</p>
+<h5 id="15-决策制定（流程控制语句）if语句"><a href="#15-决策制定（流程控制语句）if语句" class="headerlink" title="15.决策制定（流程控制语句）if语句"></a>15.决策制定（流程控制语句）if语句</h5><p>if语句的主体通过缩进来表示。语句主体通过缩进来表示第一行的开始，通过取消缩进表示主体的结束。</p>
+<p>if…else语句</p>
+<p>if…elif…else语句</p>
+<h5 id="16-循环for-while"><a href="#16-循环for-while" class="headerlink" title="16.循环for+while"></a>16.循环for+while</h5><p>i在每次迭代时获取序列中各项值的变量。在到达序列最后一项之前循环会一直执行。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">numbers &#x3D; [6, 5, 3, 8, 4, 2, 5, 4, 11]</span><br><span class="line">sum &#x3D; 0</span><br><span class="line">for i in numbers:</span><br><span class="line">        sum &#x3D; sum + i</span><br><span class="line">        print(&quot;The sum is&quot;, sum)</span><br><span class="line"> </span><br><span class="line">输出结果：</span><br><span class="line">The sum is 6</span><br><span class="line">The sum is 11</span><br><span class="line">The sum is 14</span><br><span class="line">The sum is 22</span><br><span class="line">The sum is 26</span><br><span class="line">The sum is 28</span><br><span class="line">The sum is 33</span><br><span class="line">The sum is 37</span><br><span class="line">The sum is 48</span><br></pre></td></tr></table></figure>
+
+<p>range()函数：range(10)会生成0~9的数字。</p>
+<p>while循环：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">a &#x3D; 10</span><br><span class="line">sum &#x3D; 0</span><br><span class="line">i &#x3D; 1</span><br><span class="line">while i &lt;&#x3D; a:</span><br><span class="line">        sum &#x3D; sum + i</span><br><span class="line">        i &#x3D; i + 1</span><br><span class="line">        print(&quot;The sum is&quot;, sum)</span><br><span class="line"> </span><br><span class="line">运行结果：</span><br><span class="line">The sum is 1</span><br><span class="line">The sum is 3</span><br><span class="line">The sum is 6</span><br><span class="line">The sum is 10</span><br><span class="line">The sum is 15</span><br><span class="line">The sum is 21</span><br><span class="line">The sum is 28</span><br><span class="line">The sum is 36</span><br><span class="line">The sum is 45</span><br><span class="line">The sum is 55</span><br></pre></td></tr></table></figure>
+
+<h5 id="18-迭代器"><a href="#18-迭代器" class="headerlink" title="18.迭代器"></a>18.迭代器</h5><p>迭代器是可进行迭代的对象。这个对象会返回数据，每次返回一个元素。Python的迭代器对象实现了两个方法：<strong>iter</strong>()和<strong>next</strong>()。大多数情况下迭代器在循环、生成器和推导式中实现。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">numbers &#x3D; [10, 20, 30, 40]</span><br><span class="line">numbers_iter &#x3D; iter(numbers)</span><br><span class="line"></span><br><span class="line">print(next(numbers_iter))</span><br><span class="line">print(numbers_iter.__next__())</span><br><span class="line">next(numbers_iter)</span><br><span class="line">next(numbers_iter)</span><br><span class="line"></span><br><span class="line">输出结果：</span><br><span class="line">10</span><br><span class="line">20</span><br><span class="line">30</span><br><span class="line">40</span><br><span class="line">#再输出就报错</span><br></pre></td></tr></table></figure>
+
+<h5 id="19-生成器"><a href="#19-生成器" class="headerlink" title="19.生成器"></a>19.生成器</h5><p>生成器是返回一个可以迭代对象的函数。在Python中创建生成器非常容易。我们可以定义一个函数，使用yield语句来代替return语句即可创建生成器。如果函数中至少包含一个yield语句，它就变成了一个生成器函数。yield和return语句会从函数中返回某些值。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">def my_gen():</span><br><span class="line">        n &#x3D; 1</span><br><span class="line">        print(&quot;This is printed first&quot;)</span><br><span class="line">        yield n</span><br><span class="line">        n +&#x3D; 1</span><br><span class="line">        print(&quot;This is printed second&quot;)</span><br><span class="line">        yield n</span><br><span class="line">        n +&#x3D; 1</span><br><span class="line">        print(&quot;This is printed at last&quot;)</span><br><span class="line">        yield n</span><br><span class="line"></span><br><span class="line">for item in my_gen():</span><br><span class="line">        print(item)</span><br><span class="line"></span><br><span class="line">输出结果：</span><br><span class="line">This is printed first</span><br><span class="line">1</span><br><span class="line">This is printed second</span><br><span class="line">2</span><br><span class="line">This is printed at last</span><br><span class="line">3</span><br></pre></td></tr></table></figure>
+
+<h5 id="20-函数"><a href="#20-函数" class="headerlink" title="20.函数"></a>20.函数</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">def welcome(name):</span><br><span class="line">        print(&quot;Hello &quot; + name + &quot;, Welcome to Python Programming!&quot;)</span><br><span class="line"> </span><br><span class="line">welcome(&quot;John&quot;)</span><br><span class="line"> </span><br><span class="line">输出结果：</span><br><span class="line">Hello John, Welcome to Python Programming!</span><br></pre></td></tr></table></figure>
+
+<p>return语句</p>
+<p>lambda函数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">numbers &#x3D; [10, 25, 54, 86, 89, 11, 33, 22]</span><br><span class="line">new_numbers &#x3D; list(filter(lambda x: (x%2 &#x3D;&#x3D; 0), numbers))</span><br><span class="line"> </span><br><span class="line">print(new_numbers)</span><br><span class="line"></span><br><span class="line">输出结果：</span><br><span class="line">[10, 54, 86, 22]</span><br></pre></td></tr></table></figure>
+
+<h5 id="21-模块"><a href="#21-模块" class="headerlink" title="21.模块"></a>21.模块</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># sample.py</span><br><span class="line">def addition(num1, num2):</span><br><span class="line">        result &#x3D; num1 + num2</span><br><span class="line">        return result</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># add.py</span><br><span class="line">import sample</span><br><span class="line">sum &#x3D; sample.addition(10, 20)</span><br><span class="line">print(sum)</span><br><span class="line"> </span><br><span class="line">输出结果：</span><br><span class="line">30</span><br></pre></td></tr></table></figure>
+
+
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
+    
+    <a class="pull-left" href="/2020/07/15/2020-07-15-git%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4/" style="float: left;">
+        ← git基本命令
+    </a>
+    
+    
+    <a class="pull-right" href="/2020/06/09/2020-06-09-xml%E6%96%87%E4%BB%B6%E8%A7%A3%E6%9E%90%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F/">
+        xml文件解析的几种方式 →
+    </a>
+    
+</nav>
+
+        <div class="col-md-8 col-md-offset-2 col-sm-24"><script type="text/javascript">
+  /**
+   * 搜狐畅言
+   */
+
+  /*
+  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
+
+  window.onload = function () {
+    (function () {
+      var appid = 'cytXXXX';
+      var conf = 'prod_xxxxxxxxxxxxxxxxx';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      var loadJs = function (d, a, id) {
+        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+        var b = document.createElement("script");
+        b.setAttribute("type", "text/javascript");
+        b.setAttribute("charset", "UTF-8");
+        b.setAttribute("src", d);
+        if (id) {
+          b.setAttribute("id", id);
+        }
+        if (typeof a === "function") {
+          if (window.attachEvent) {
+            b.onreadystatechange = function () {
+              var e = b.readyState;
+              if (e === "loaded" || e === "complete") {
+                b.onreadystatechange = null;
+                a()
+              }
+            }
+          } else {
+            b.onload = a
+          }
+        }
+        c.appendChild(b)
+      };
+
+      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
+        window.changyan.api.config({
+          appid: appid,
+          conf: conf
+        })
+      });
+    })();
+  }
+  */
+
+</script>
+</div>
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By John Doe. All Rights Reserved.
+                </p>
+                <p>Theme By <a target="_blank" rel="noopener" href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a>&nbsp;</li>
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+      
+            <style>
+.local-search-popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  background: rgba(255, 255, 255, .9);
+  color: #333;
+  z-index: 9999;
+  border-radius: 5px;
+  overflow: scroll;
+}
+#local-search-input {
+  width: 100%;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #151515;
+  background-color: initial;
+}
+.search-result-list {
+  list-style: none;
+  padding-left: 0;
+}
+.search-result-list > li {
+  margin-top: 15px;
+  border-bottom: 1px solid #ddd;
+  transition: all ease .3s;
+}
+.search-result-list > li:hover {
+  border-bottom: 1px solid gray;
+}
+.search-result-title {
+  font-size: 16px;
+}
+.search-result {
+  line-height: 20px;
+}
+.search-keyword {
+  font-weight: normal;
+  color: #c00;
+}
+
+@media (min-width: 890px) {
+  .popup-btn-close {
+    position: absolute;
+    top: 15px;
+    left: 35px;
+    border: 1px solid #151515;
+    padding: 0px 10px;
+    border-top-left-radius: 8px;
+    cursor: pointer;
+    transition: all ease .3s;
+  }
+  .popup-btn-close:hover {
+    background: #151515;
+    opacity: .9;
+    color: #fff;
+  }
+}
+@media (max-width: 890px) {
+  .popup-btn-close {
+    font-size: 0;
+    position: fixed;
+    right: 20px;
+    bottom: 50px;
+    width: 50px;
+    height: 50px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 1px 1px 5px #888;
+    cursor: pointer;
+  }
+  .popup-btn-close::after {
+    content: '←';
+    color: #151515;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 20px;
+    width: 100%;
+    height: 100%;
+    line-height: 50px;
+    text-align: center;
+  }
+}
+</style>
+
+<div class="popup search-popup local-search-popup">
+  <span class="popup-btn-close">
+    ESC
+  </span>
+  <div class="container">
+    <div class="col-md-8 col-md-offset-2">
+      <div class="local-search-header clearfix">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="local-search-input-wrapper">
+          <input autocomplete="off" placeholder="Search..." type="text" id="local-search-input">
+        </div>
+      </div>
+      <div id="local-search-result"></div>
+    </div>
+  </div>
+</div>
+
+<script src="/js/ziploader.js"></script>
+
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.json";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').fadeOut(300);
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $('.popup').fadeIn(300);
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // get search zip version
+    $.get('/searchVersion.txt?t=' + (+new Date()), function(res) {
+      if (localStorage.getItem('searchVersion') !== res) {
+        localStorage.setItem('searchVersion', res);
+        initSearchJson();
+      }
+    });
+
+    function initSearchJson () {
+      initLoad(['/search.zip'], {
+        loadOptions: {
+          success: function(obj) {
+            localStorage.setItem('searchJson', obj['search.json'])
+          },
+          error: function(e) {
+            return console.log(e)
+          }
+        },
+        returnOptions: {
+          'json': TYPE_TEXT
+        },
+        mimeOptions:{
+          'json':'application/json'
+        }
+      })
+    }
+
+
+    // search function;
+    var searchFunc = function(search_id, content_id) {
+      'use strict';
+
+      isfetched = true;
+      var datas = JSON.parse(localStorage.getItem('searchJson'));
+      console.log(search_id)
+      var input = document.getElementById(search_id);
+      var resultContent = document.getElementById(content_id);
+      var inputEventFunction = function() {
+        var searchText = input.value.trim().toLowerCase();
+        var keywords = searchText.split(/[\s\-]+/);
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        var resultItems = [];
+        if (searchText.length > 0) {
+          // perform local searching
+          datas.forEach(function(data) {
+            var isMatch = false;
+            var hitCount = 0;
+            var searchTextCount = 0;
+            var title = data.title ? data.title.trim() : '';
+            var titleInLowerCase = title.toLowerCase();
+            var content = data.content ? data.content.trim().replace(/<[^>]+>/g,"") : '';
+            var contentInLowerCase = content.toLowerCase();
+            var articleUrl = decodeURIComponent(data.url);
+            var indexOfTitle = [];
+            var indexOfContent = [];
+            // only match articles with not empty titles
+            keywords.forEach(function(keyword) {
+              function getIndexByWord(word, text, caseSensitive) {
+                var wordLen = word.length;
+                if (wordLen === 0) {
+                  return [];
+                }
+                var startPosition = 0, position = [], index = [];
+                if (!caseSensitive) {
+                  text = text.toLowerCase();
+                  word = word.toLowerCase();
+                }
+                while ((position = text.indexOf(word, startPosition)) > -1) {
+                  index.push({position: position, word: word});
+                  startPosition = position + wordLen;
+                }
+                return index;
+              }
+
+              indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+              indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+            });
+            if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+              isMatch = true;
+              hitCount = indexOfTitle.length + indexOfContent.length;
+            }
+
+            // show search results
+
+            if (isMatch) {
+              // sort index by position of keyword
+
+              [indexOfTitle, indexOfContent].forEach(function (index) {
+                index.sort(function (itemLeft, itemRight) {
+                  if (itemRight.position !== itemLeft.position) {
+                    return itemRight.position - itemLeft.position;
+                  } else {
+                    return itemLeft.word.length - itemRight.word.length;
+                  }
+                });
+              });
+
+              // merge hits into slices
+
+              function mergeIntoSlice(text, start, end, index) {
+                var item = index[index.length - 1];
+                var position = item.position;
+                var word = item.word;
+                var hits = [];
+                var searchTextCountInSlice = 0;
+                while (position + word.length <= end && index.length != 0) {
+                  if (word === searchText) {
+                    searchTextCountInSlice++;
+                  }
+                  hits.push({position: position, length: word.length});
+                  var wordEnd = position + word.length;
+
+                  // move to next position of hit
+
+                  index.pop();
+                  while (index.length != 0) {
+                    item = index[index.length - 1];
+                    position = item.position;
+                    word = item.word;
+                    if (wordEnd > position) {
+                      index.pop();
+                    } else {
+                      break;
+                    }
+                  }
+                }
+                searchTextCount += searchTextCountInSlice;
+                return {
+                  hits: hits,
+                  start: start,
+                  end: end,
+                  searchTextCount: searchTextCountInSlice
+                };
+              }
+
+              var slicesOfTitle = [];
+              if (indexOfTitle.length != 0) {
+                slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+              }
+
+              var slicesOfContent = [];
+              while (indexOfContent.length != 0) {
+                var item = indexOfContent[indexOfContent.length - 1];
+                var position = item.position;
+                var word = item.word;
+                // cut out 100 characters
+                var start = position - 20;
+                var end = position + 80;
+                if(start < 0){
+                  start = 0;
+                }
+                if (end < position + word.length) {
+                  end = position + word.length;
+                }
+                if(end > content.length){
+                  end = content.length;
+                }
+                slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+              }
+
+              // sort slices in content by search text's count and hits' count
+
+              slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                  return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                  return sliceRight.hits.length - sliceLeft.hits.length;
+                } else {
+                  return sliceLeft.start - sliceRight.start;
+                }
+              });
+
+              // select top N slices in content
+
+              var upperBound = parseInt('2');
+              if (upperBound >= 0) {
+                slicesOfContent = slicesOfContent.slice(0, upperBound);
+              }
+
+              // highlight title and content
+
+              function highlightKeyword(text, slice) {
+                var result = '';
+                var prevEnd = slice.start;
+                slice.hits.forEach(function (hit) {
+                  result += text.substring(prevEnd, hit.position);
+                  var end = hit.position + hit.length;
+                  result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                  prevEnd = end;
+                });
+                result += text.substring(prevEnd, slice.end);
+                return result;
+              }
+
+              var resultItem = '';
+
+              if (slicesOfTitle.length != 0) {
+                resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+              } else {
+                resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+              }
+
+              slicesOfContent.forEach(function (slice) {
+                resultItem += "<a target='_blank' href='" + articleUrl + "'>" +
+                  "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                  "...</p>" + "</a>";
+              });
+
+              resultItem += "</li>";
+              resultItems.push({
+                item: resultItem,
+                searchTextCount: searchTextCount,
+                hitCount: hitCount,
+                id: resultItems.length
+              });
+            }
+          })
+        };
+        if (keywords.length === 1 && keywords[0] === "") {
+          resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+        } else if (resultItems.length === 0) {
+          resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+        } else {
+          resultItems.sort(function (resultLeft, resultRight) {
+            if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+              return resultRight.searchTextCount - resultLeft.searchTextCount;
+            } else if (resultLeft.hitCount !== resultRight.hitCount) {
+              return resultRight.hitCount - resultLeft.hitCount;
+            } else {
+              return resultRight.id - resultLeft.id;
+            }
+          });
+          var searchResultList = '<ul class=\"search-result-list\">';
+          resultItems.forEach(function (result) {
+            searchResultList += result.item;
+          })
+          searchResultList += "</ul>";
+          resultContent.innerHTML = searchResultList;
+        }
+      }
+
+      if ('auto' === 'auto') {
+        input.addEventListener('input', inputEventFunction);
+      } else {
+        $('.search-icon').click(inputEventFunction);
+        input.addEventListener('keypress', function (event) {
+          if (event.keyCode === 13) {
+            inputEventFunction();
+          }
+        });
+      }
+
+      // remove loading animation
+      $('body').css('overflow', '');
+
+      proceedsearch();
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        $('.sb-close').click();
+        searchFunc('local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+      
+</body>
+</html>
