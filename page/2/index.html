@@ -399,6 +399,55 @@ CentOS 8
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
                 <div class="col-md-4">
+                    <h3><a href="/2020/03/20/2020-03-20-linux部署sonar/">linux环境部署sonar</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2020-03-19T16:00:00.000Z" itemprop="datePublished">
+          2020-03-20
+      </time>
+    
+    
+    | 
+    <a href='/tags/部署/'>部署</a>,
+    
+    <a href='/tags/sonar/'>sonar</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        安装前准备环境#Centos7(Linux2.6/3.x/4/x  64-bit):
+
+vm.max_map_count 大于或等于262144
+
+fs.file-max 大于或等于65536
+
+运行SonarQube的用户可以打开至少65536个文件描述符
+
+运行SonarQube的用户可以打开至少2048个线程
+
+
+用root用户新增两个配置文件即可满足上述要求：
+　　vim /etc/sysctl.d/99-sonarqube.c
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2020/03/20/2020-03-20-linux部署sonar/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
                     <h3><a href="/2020/03/20/2020-03-20-linux部署gitlab/">linux环境部署Gitlab</a></h3>
                     <span>
                         <span class="post-meta">
@@ -439,55 +488,6 @@ CentOS 8
                     
                     <p class="pull-right readMore">
                         <a href="/2020/03/20/2020-03-20-linux部署gitlab/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2020/03/20/2020-03-20-linux部署sonar/">linux环境部署sonar</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2020-03-19T16:00:00.000Z" itemprop="datePublished">
-          2020-03-20
-      </time>
-    
-    
-    | 
-    <a href='/tags/部署/'>部署</a>,
-    
-    <a href='/tags/sonar/'>sonar</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        安装前准备环境#Centos7(Linux2.6/3.x/4/x  64-bit):
-
-vm.max_map_count 大于或等于262144
-
-fs.file-max 大于或等于65536
-
-运行SonarQube的用户可以打开至少65536个文件描述符
-
-运行SonarQube的用户可以打开至少2048个线程
-
-
-用root用户新增两个配置文件即可满足上述要求：
-　　vim /etc/sysctl.d/99-sonarqube.c
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2020/03/20/2020-03-20-linux部署sonar/">Read More...</a>
                     </p>
                     
                 </div>
