@@ -16,6 +16,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
 <!--<![endif]-->
 
+
 <head>
   <title>git基本命令 | mimo</title>
   <!-- Meta data -->
@@ -58,9 +59,9 @@
   <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
 </head>
 
-<!--
+
 <body class="post-template">
--->
+
 <body id="index" class="lightnav animsition">
 
       <!-- ============================ Off-canvas navigation =========================== -->
@@ -71,13 +72,13 @@
         </div>
         <!-- Lists in Slidebars -->
         <ul class="sb-menu">
-            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
-            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <li><a href="/" class="animsition-link" title="Home">主 页</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">归 档</a></li>
             <!-- Dropdown Menu -->
 			 
             
         	<li>
-        		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
+        		<a class="sb-toggle-submenu">分 类<span class="sb-caret"></span></a>
             	<ul class="sb-submenu">
 				  	
 				    <li><a href="/categories/git/" class="animsition-link">git<small>(3)</small></a></li>
@@ -95,9 +96,53 @@
 				</ul>
         	</li>
 			
+			
+			<li>
+        		<a class="sb-toggle-submenu">标 签<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/tags/docker/" class="animsition-link">docker<small>(2)</small></a></li>
+				    
+				    <li><a href="/tags/git/" class="animsition-link">git<small>(3)</small></a></li>
+				    
+				    <li><a href="/tags/gitlab/" class="animsition-link">gitlab<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/jenkins/" class="animsition-link">jenkins<small>(2)</small></a></li>
+				    
+				    <li><a href="/tags/linux/" class="animsition-link">linux<small>(2)</small></a></li>
+				    
+				    <li><a href="/tags/log4j/" class="animsition-link">log4j<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/python/" class="animsition-link">python<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/sonar/" class="animsition-link">sonar<small>(2)</small></a></li>
+				    
+				    <li><a href="/tags/svn/" class="animsition-link">svn<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/synchronized/" class="animsition-link">synchronized<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/tess4j/" class="animsition-link">tess4j<small>(2)</small></a></li>
+				    
+				    <li><a href="/tags/xml/" class="animsition-link">xml<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/日志/" class="animsition-link">日志<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/正则/" class="animsition-link">正则<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/解析/" class="animsition-link">解析<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/识别/" class="animsition-link">识别<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/部署/" class="animsition-link">部署<small>(6)</small></a></li>
+				    
+				    <li><a href="/tags/验证码/" class="animsition-link">验证码<small>(1)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
             
             <li>
-                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                <a class="sb-toggle-submenu">链 接<span class="sb-caret"></span></a>
                 <ul class="sb-submenu">
                     
                     <li><a target="_blank" rel="noopener" href="http://go.kieran.top/" class="animsition-link">source</a></li>
@@ -115,10 +160,10 @@
         <!-- Lists in Slidebars -->
         <ul class="sb-menu secondary">
             
-            <li><a href="javascript:;" class="popup-trigger" title="Search"><span class="search-icon"></span>Search</a></li>
+            <li><a href="javascript:;" class="popup-trigger" title="Search"><span class="search-icon"></span>搜 索</a></li>
             
-            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
-            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+            <li><a href="/about.html" class="animsition-link" title="about">关 于</a></li>
+            <!-- <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li> -->
         </ul>
     </div>
     
@@ -183,8 +228,8 @@
 
       
 <section id="intro">
-    <div class="container">
-        <div class="row col-md-offset-2">
+    <div class="post-container">
+        <div class="row col-md-offset-22">
             <div class="col-md-8">
     			<span class="post-meta">
       <time datetime="2020-07-14T16:00:00.000Z" itemprop="datePublished">
@@ -200,26 +245,26 @@
                 <h1>git基本命令</h1>
             </div>
         </div>
-        <div class="col-md-8 col-md-offset-2">
-      		<h3><span id="git-init">git init</span><a href="#git-init" class="header-anchor">#</a></h3><p>初始化<code>git</code>仓库并出现<code>.git</code>文件夹</p>
-<h3><span id="git-add">git add</span><a href="#git-add" class="header-anchor">#</a></h3><ul>
+		<div class="post-content">
+      		<h3><span id="git-init">git init</span></h3><p>初始化<code>git</code>仓库并出现<code>.git</code>文件夹</p>
+<h3><span id="git-add">git add</span></h3><ul>
 <li><strong>git add:</strong> 将文件添加到暂存区</li>
 <li><strong>git add .:</strong> 将工作空间下所有文件添加到暂存区(new，modifyed)</li>
 <li><strong>git add -A:</strong> 将工作空间下所有文件添加到暂存区(new，modifyed，delete)</li>
 <li><strong>git add -u:</strong> 将工作空间下所有文件添加到暂存区(modifyed，delete)</li>
 </ul>
-<h3><span id="git-commit">git commit</span><a href="#git-commit" class="header-anchor">#</a></h3><ul>
+<h3><span id="git-commit">git commit</span></h3><ul>
 <li><strong>git commit -m <commit message>:</commit></strong> 将暂存区的文件提交到版本库</li>
 <li><strong>git commit -am <commit message>:</commit></strong> 跳过<code>git add</code>命令，直接将工作区所有已跟踪的文件提交到版本库，未跟踪的(untracked)文件不能使用该命令</li>
 </ul>
-<h3><span id="git-status">git status</span><a href="#git-status" class="header-anchor">#</a></h3><ul>
+<h3><span id="git-status">git status</span></h3><ul>
 <li><strong>git status -s:</strong> 以精简的方式显示文件状态。</li>
 </ul>
-<h3><span id="git-log">git log</span><a href="#git-log" class="header-anchor">#</a></h3><ul>
+<h3><span id="git-log">git log</span></h3><ul>
 <li><strong>git log –oneline:</strong> 查看所有分支<code>commit</code>历史(oneline 一条提交信息用一行展示)</li>
 <li><strong>git log –graph –oneline:</strong> 查看所有分支图形化的<code>commit</code>历史(oneline 一条提交信息用一行展示)</li>
 </ul>
-<h3><span id="git-config">git config</span><a href="#git-config" class="header-anchor">#</a></h3><ul>
+<h3><span id="git-config">git config</span></h3><ul>
 <li><p><strong>git全局配置命令</strong></p>
 </li>
 <li><ul>
@@ -230,13 +275,13 @@
 <li><p><strong>查看配置</strong> <code>git config --list</code></p>
 </li>
 </ul>
-<h3><span id="git-stash">git stash</span><a href="#git-stash" class="header-anchor">#</a></h3><ul>
+<h3><span id="git-stash">git stash</span></h3><ul>
 <li><strong>git stash:</strong> 暂存本地修改内容(不想提交修改的内容，想切换分支)</li>
 <li><strong>git stash list:</strong> 查看暂存的历史记录</li>
 <li><strong>git stash apple –index:</strong> 恢复之前暂存的某个记录</li>
 <li><strong>git stash drop –index:</strong> 删除某个暂存记录</li>
 </ul>
-<h3><span id="git-rm">git rm</span><a href="#git-rm" class="header-anchor">#</a></h3><ul>
+<h3><span id="git-rm">git rm</span></h3><ul>
 <li><p>用于从工作区和索引中删除文件</p>
 </li>
 <li><p>常见使用：删除已经提价到远程仓库的<code>.idea</code>,<code>.seting</code>文件/文件夹(项目构建自动生成的)如:</p>
@@ -248,12 +293,12 @@
 </ul>
 </li>
 </ul>
-<h3><span id="git-diff">Git diff</span><a href="#git-diff" class="header-anchor">#</a></h3><ul>
+<h3><span id="git-diff">Git diff</span></h3><ul>
 <li><strong>git diff:</strong> 比较本地工作空间和<code>staged</code>区的差异</li>
 <li><strong>git diff – staged:</strong> 比较<code>staged</code>区和本地仓库中的差异</li>
 <li><strong>git diff HEAD:</strong> 比较本地工作空间和本地仓库中的差异</li>
 </ul>
-<h3><span id="git-che-xiao-cao-zuo">Git 撤销操作</span><a href="#git-che-xiao-cao-zuo" class="header-anchor">#</a></h3><ul>
+<h3><span id="git-撤销操作">Git 撤销操作</span></h3><ul>
 <li><p><strong>git commit –amend:</strong> 撤销上一次提交将暂存区的文件重新提交(改写提交)</p>
 </li>
 <li><p><strong>git checkout –filename:</strong> 拉取暂存区的文件并将其替换工作区的文件,注意与<code>git checkout branchname</code>区别</p>
@@ -269,7 +314,7 @@
 </ul>
 </li>
 </ul>
-<h3><span id="git-fen-zhi">Git 分支</span><a href="#git-fen-zhi" class="header-anchor">#</a></h3><ul>
+<h3><span id="git-分支">Git 分支</span></h3><ul>
 <li><p><strong>git 分支创建、修改、删除、切换:</strong></p>
 </li>
 <li><ul>
@@ -291,7 +336,7 @@
 <li><p><strong>查看分支来自哪一个分支:</strong> <code>git reflog --date=local | grep &lt;branchname&gt;</code></p>
 </li>
 </ul>
-<h3><span id="git-yuan-cheng-cang-ku">Git远程仓库</span><a href="#git-yuan-cheng-cang-ku" class="header-anchor">#</a></h3><ul>
+<h3><span id="git远程仓库">Git远程仓库</span></h3><ul>
 <li><p><code>git clone</code>:<code>git clone http://github.com/test.git</code></p>
 </li>
 <li><p><code>git remote -v</code>:查看远程信息</p>
@@ -308,23 +353,112 @@
 <li><p><code>git fetch</code>:<code>git fetch origin dev</code>获取远程dev分支但不做合并</p>
 </li>
 </ul>
-<h3><span id="guan-lian-yuan-cheng-cang-ku">关联远程仓库</span><a href="#guan-lian-yuan-cheng-cang-ku" class="header-anchor">#</a></h3><ul>
+<h3><span id="关联远程仓库">关联远程仓库</span></h3><ul>
 <li><code>git remote add origin</code></li>
 </ul>
-<h3><span id="git-tag">Git tag</span><a href="#git-tag" class="header-anchor">#</a></h3><ul>
+<h3><span id="git-tag">Git tag</span></h3><ul>
 <li><code>git tag</code>:查看当前所有tag</li>
 <li><code>git tag -a &lt;tagname&gt;</code>:创建tag</li>
 <li><code>git tag -a &lt;tagname&gt; &lt;headId&gt;</code>:创建一个指向某一次提交的tag</li>
 <li><code>git tag -a &lt;tagname&gt; -m &lt;message&gt;</code></li>
 <li><code>git show &lt;tagname&gt;</code>:查看tag</li>
 </ul>
-<h3><span id="git-help">Git Help</span><a href="#git-help" class="header-anchor">#</a></h3><ul>
+<h3><span id="git-help">Git Help</span></h3><ul>
 <li><code>git help</code></li>
 </ul>
 
             <div class="clearfix"></div>
             <hr class="nogutter">
         </div>
+		<!-- ============================ 目录 =========================== -->
+		<div class="post-toc">
+			<div class="tocbot-list">
+			</div>
+			<div class="tocbot-list-menu">
+				<a class="tocbot-toc-expand" onclick="expand_toc()">全部展开</a>
+				<a onclick="go_top()">回到顶部</a>
+				<a onclick="go_bottom()">回到底部</a>
+			</div>
+		</div>
+		<script>
+			$(document).ready(
+				function (){
+					if ($('.tocbot-list').length > 0) {
+						var headerEl = 'h1,h2,h3,h4,h5',
+							content = '.post-content',
+							idArr = {};
+				 
+						$(content).children(headerEl).each(function () {
+							//去除空格以及多余标点
+							var headerId = $(this).children('span').text().replace(/[\s|\~|`|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\_|\+|\=|\||\|\[|\]|\{|\}|\;|\:|\"|\'|\,|\<|\.|\>|\/|\?|\：|\，|\。]/g, '');
+					 
+							headerId = headerId.toLowerCase();
+							if (idArr[headerId]) {
+								//id已经存在
+								$(this).attr('id', headerId + '-' + idArr[headerId]);
+								idArr[headerId]++;
+							}
+							else {
+								//id未存在
+								idArr[headerId] = 1;
+								$(this).attr('id', headerId);
+							}
+						});
+					}
+				}
+			)
+			
+			$(document).ready(
+				function () {
+					tocbot.init({
+						tocSelector: '.tocbot-list',
+						contentSelector: '.post-content',
+						headingSelector: 'h1, h2, h3, h4, h5',
+						collapseDepth: 1,
+						orderedList: false,
+						scrollSmooth: true,
+					})
+				}
+			)
+
+			function expand_toc() {
+				var b = document.querySelector(".tocbot-toc-expand");
+				tocbot.init({
+					tocSelector: '.tocbot-list',
+					contentSelector: '.post-content',
+					headingSelector: 'h1, h2, h3, h4, h5',
+					collapseDepth: 6,
+					orderedList: false,
+					scrollSmooth: true,
+				});
+				b.setAttribute("onclick", "collapse_toc()");
+				b.innerHTML = "全部折叠"
+			}
+
+			function collapse_toc() {
+				var b = document.querySelector(".tocbot-toc-expand");
+				tocbot.init({
+					tocSelector: '.tocbot-list',
+					contentSelector: '.post-content',
+					headingSelector: 'h1, h2, h3, h4, h5',
+					collapseDepth: 1,
+					orderedList: false,
+					scrollSmooth: true,
+				});
+				b.setAttribute("onclick", "expand_toc()");
+				b.innerHTML = "全部展开"
+			}
+
+			function go_top() {
+				window.scrollTo(0, 0);
+			}
+
+			function go_bottom() {
+				window.scrollTo(0, document.body.scrollHeight);
+			}
+
+		</script>
+		<!-- ============================ 目录end =========================== -->
         <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
     
     <a class="pull-left" href="/2020/07/17/2020-07-17-tess4j%E9%85%8D%E7%BD%AE/" style="float: left;">
@@ -338,7 +472,7 @@
     
 </nav>
 
-        <div class="col-md-8 col-md-offset-2 col-sm-24"><script type="text/javascript">
+        <div class="post-content col-sm-24"><script type="text/javascript">
   /**
    * 搜狐畅言
    */
@@ -452,6 +586,7 @@
 </script>
 <script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
 <script src="/js/scripts.js"></script><!-- Theme scripts -->
+<script src="/js/tocbot.min.js"></script>
 
 
 <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
@@ -470,7 +605,6 @@ $('#intro').find('img').each(function(){
   $('.fancybox').fancybox();
 })(jQuery);
 </script>
-
 
 
       

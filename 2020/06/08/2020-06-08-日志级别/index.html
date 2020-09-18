@@ -16,6 +16,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
 <!--<![endif]-->
 
+
 <head>
   <title>日志级别 | mimo</title>
   <!-- Meta data -->
@@ -58,9 +59,9 @@
   <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
 </head>
 
-<!--
+
 <body class="post-template">
--->
+
 <body id="index" class="lightnav animsition">
 
       <!-- ============================ Off-canvas navigation =========================== -->
@@ -71,13 +72,13 @@
         </div>
         <!-- Lists in Slidebars -->
         <ul class="sb-menu">
-            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
-            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <li><a href="/" class="animsition-link" title="Home">主 页</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">归 档</a></li>
             <!-- Dropdown Menu -->
 			 
             
         	<li>
-        		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
+        		<a class="sb-toggle-submenu">分 类<span class="sb-caret"></span></a>
             	<ul class="sb-submenu">
 				  	
 				    <li><a href="/categories/git/" class="animsition-link">git<small>(3)</small></a></li>
@@ -95,9 +96,53 @@
 				</ul>
         	</li>
 			
+			
+			<li>
+        		<a class="sb-toggle-submenu">标 签<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/tags/docker/" class="animsition-link">docker<small>(2)</small></a></li>
+				    
+				    <li><a href="/tags/git/" class="animsition-link">git<small>(3)</small></a></li>
+				    
+				    <li><a href="/tags/gitlab/" class="animsition-link">gitlab<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/jenkins/" class="animsition-link">jenkins<small>(2)</small></a></li>
+				    
+				    <li><a href="/tags/linux/" class="animsition-link">linux<small>(2)</small></a></li>
+				    
+				    <li><a href="/tags/log4j/" class="animsition-link">log4j<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/python/" class="animsition-link">python<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/sonar/" class="animsition-link">sonar<small>(2)</small></a></li>
+				    
+				    <li><a href="/tags/svn/" class="animsition-link">svn<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/synchronized/" class="animsition-link">synchronized<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/tess4j/" class="animsition-link">tess4j<small>(2)</small></a></li>
+				    
+				    <li><a href="/tags/xml/" class="animsition-link">xml<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/日志/" class="animsition-link">日志<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/正则/" class="animsition-link">正则<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/解析/" class="animsition-link">解析<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/识别/" class="animsition-link">识别<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/部署/" class="animsition-link">部署<small>(6)</small></a></li>
+				    
+				    <li><a href="/tags/验证码/" class="animsition-link">验证码<small>(1)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
             
             <li>
-                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                <a class="sb-toggle-submenu">链 接<span class="sb-caret"></span></a>
                 <ul class="sb-submenu">
                     
                     <li><a target="_blank" rel="noopener" href="http://go.kieran.top/" class="animsition-link">source</a></li>
@@ -115,10 +160,10 @@
         <!-- Lists in Slidebars -->
         <ul class="sb-menu secondary">
             
-            <li><a href="javascript:;" class="popup-trigger" title="Search"><span class="search-icon"></span>Search</a></li>
+            <li><a href="javascript:;" class="popup-trigger" title="Search"><span class="search-icon"></span>搜 索</a></li>
             
-            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
-            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+            <li><a href="/about.html" class="animsition-link" title="about">关 于</a></li>
+            <!-- <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li> -->
         </ul>
     </div>
     
@@ -183,8 +228,8 @@
 
       
 <section id="intro">
-    <div class="container">
-        <div class="row col-md-offset-2">
+    <div class="post-container">
+        <div class="row col-md-offset-22">
             <div class="col-md-8">
     			<span class="post-meta">
       <time datetime="2020-06-07T16:00:00.000Z" itemprop="datePublished">
@@ -202,9 +247,9 @@
                 <h1>日志级别</h1>
             </div>
         </div>
-        <div class="col-md-8 col-md-offset-2">
+		<div class="post-content">
       		<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/xingele0917/p/4120320.html#a2">原文档</a></p>
-<h2><span id="log4j-de-8-ge-ri-zhi-deng-ji">Log4j的8个日志等级。</span><a href="#log4j-de-8-ge-ri-zhi-deng-ji" class="header-anchor">#</a></h2><p>优先级从高到底：</p>
+<h2><span id="log4j的8个日志等级">Log4j的8个日志等级。</span></h2><p>优先级从高到底：</p>
 <ol>
 <li>OFF：最高等级，用于关闭所有日志记录</li>
 <li>FATAL：指出每个严重的错误事件将会导致应用程序的退出。这个级别比较高了。重大错误，这种级别你可以直接停止程序了。</li>
@@ -217,7 +262,7 @@
 </ol>
 <p>Log4j建议只使用四个级别，优先级从高到低分别是ERROR、WARN、INFO、DEBUG。</p>
 <p>如果设置优先级为WARN，那么OFF、FATAL、ERROR、WARN 4个级别的log能正常输出，而INFO、DEBUG、TRACE、 ALL级别的log则会被忽略。</p>
-<h2><span id="java-util-logging-logger-shu-yu-java-log-yu-log4j-bu-tong">java.util.logging.Logger;属于Java log，与log4j不同</span><a href="#java-util-logging-logger-shu-yu-java-log-yu-log4j-bu-tong" class="header-anchor">#</a></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">static Logger getLogger(String name) </span><br><span class="line">         查找或创建一个logger。</span><br><span class="line">static Logger getLogger(String name, String resourceBundleName) </span><br><span class="line">         为指定子系统查找或创建一个logger。</span><br></pre></td></tr></table></figure>
+<h2><span id="javautillogginglogger属于java-log与log4j不同">java.util.logging.Logger;属于Java log，与log4j不同</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">static Logger getLogger(String name) </span><br><span class="line">         查找或创建一个logger。</span><br><span class="line">static Logger getLogger(String name, String resourceBundleName) </span><br><span class="line">         为指定子系统查找或创建一个logger。</span><br></pre></td></tr></table></figure>
 
 <ol>
 <li><p>logger.severe(“严重信息”);1000</p>
@@ -238,14 +283,14 @@
 </ol>
 <p>logger默认的级别是info，比info更低的日志不显示。</p>
 <p>Logger默认的<strong>输出媒介控制器</strong>(Handler)是java.util.logging.ConsolerHandler，也就是将信息输出至控制台。一个Logger可以拥有多个handler，每个handler可以有自己的日志级别，在通过Logger的级别限制后，实际上还要再经过handler的级别限制。</p>
-<h1><span id="handler">Handler</span><a href="#handler" class="header-anchor">#</a></h1><p>Handler对象从Logger中获取日志信息，并将这些信息导出。例如，它可将这些信息写入控制台或文件中，也可以将这些信息发送到网络日志服务中，或将其转发到操作系统日志中。</p>
+<h1><span id="handler">Handler</span></h1><p>Handler对象从Logger中获取日志信息，并将这些信息导出。例如，它可将这些信息写入控制台或文件中，也可以将这些信息发送到网络日志服务中，或将其转发到操作系统日志中。</p>
 <p>Java SE实现了5个Handler：</p>
 <p>(1) java.util.logging.ConsoleHandler 以System.err输出日志。是Logger默认的输出处理者。</p>
 <p>(2) java.util.logging.FileHandler 将信息输出到文件。默认输出格式是xml格式。</p>
 <p>(3) java.util.logging.!StreamHandler以指定的!OutputStream实例输出日志。</p>
 <p>(4) java.util.logging.!SocketHandler将信息通过Socket传送至远程主机。</p>
 <p>(5) java.util.logging.!MemoryHandler将信息暂存在内存中。</p>
-<h1><span id="formatter">Formatter</span><a href="#formatter" class="header-anchor">#</a></h1><p>一般来说，每个Handler都有关联的Formatter。Formatter接受LogRecord，并将它转换为一个字符串。</p>
+<h1><span id="formatter">Formatter</span></h1><p>一般来说，每个Handler都有关联的Formatter。Formatter接受LogRecord，并将它转换为一个字符串。</p>
 <p>默认提供了两种Formatter：<br><strong>1.java.util.logging.SimpleFormatter</strong>：标准日志格式，类似于</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">2004-12-20 23:08:52 org.apache.coyote.http11.Http11Protocol init</span><br><span class="line">信息: Initializing Coyote HTTP&#x2F;1.1 on http-8080</span><br></pre></td></tr></table></figure>
 
@@ -259,6 +304,95 @@
             <div class="clearfix"></div>
             <hr class="nogutter">
         </div>
+		<!-- ============================ 目录 =========================== -->
+		<div class="post-toc">
+			<div class="tocbot-list">
+			</div>
+			<div class="tocbot-list-menu">
+				<a class="tocbot-toc-expand" onclick="expand_toc()">全部展开</a>
+				<a onclick="go_top()">回到顶部</a>
+				<a onclick="go_bottom()">回到底部</a>
+			</div>
+		</div>
+		<script>
+			$(document).ready(
+				function (){
+					if ($('.tocbot-list').length > 0) {
+						var headerEl = 'h1,h2,h3,h4,h5',
+							content = '.post-content',
+							idArr = {};
+				 
+						$(content).children(headerEl).each(function () {
+							//去除空格以及多余标点
+							var headerId = $(this).children('span').text().replace(/[\s|\~|`|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\_|\+|\=|\||\|\[|\]|\{|\}|\;|\:|\"|\'|\,|\<|\.|\>|\/|\?|\：|\，|\。]/g, '');
+					 
+							headerId = headerId.toLowerCase();
+							if (idArr[headerId]) {
+								//id已经存在
+								$(this).attr('id', headerId + '-' + idArr[headerId]);
+								idArr[headerId]++;
+							}
+							else {
+								//id未存在
+								idArr[headerId] = 1;
+								$(this).attr('id', headerId);
+							}
+						});
+					}
+				}
+			)
+			
+			$(document).ready(
+				function () {
+					tocbot.init({
+						tocSelector: '.tocbot-list',
+						contentSelector: '.post-content',
+						headingSelector: 'h1, h2, h3, h4, h5',
+						collapseDepth: 1,
+						orderedList: false,
+						scrollSmooth: true,
+					})
+				}
+			)
+
+			function expand_toc() {
+				var b = document.querySelector(".tocbot-toc-expand");
+				tocbot.init({
+					tocSelector: '.tocbot-list',
+					contentSelector: '.post-content',
+					headingSelector: 'h1, h2, h3, h4, h5',
+					collapseDepth: 6,
+					orderedList: false,
+					scrollSmooth: true,
+				});
+				b.setAttribute("onclick", "collapse_toc()");
+				b.innerHTML = "全部折叠"
+			}
+
+			function collapse_toc() {
+				var b = document.querySelector(".tocbot-toc-expand");
+				tocbot.init({
+					tocSelector: '.tocbot-list',
+					contentSelector: '.post-content',
+					headingSelector: 'h1, h2, h3, h4, h5',
+					collapseDepth: 1,
+					orderedList: false,
+					scrollSmooth: true,
+				});
+				b.setAttribute("onclick", "expand_toc()");
+				b.innerHTML = "全部展开"
+			}
+
+			function go_top() {
+				window.scrollTo(0, 0);
+			}
+
+			function go_bottom() {
+				window.scrollTo(0, document.body.scrollHeight);
+			}
+
+		</script>
+		<!-- ============================ 目录end =========================== -->
         <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
     
     <a class="pull-left" href="/2020/06/09/2020-06-09-xml%E6%96%87%E4%BB%B6%E8%A7%A3%E6%9E%90%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F/" style="float: left;">
@@ -272,7 +406,7 @@
     
 </nav>
 
-        <div class="col-md-8 col-md-offset-2 col-sm-24"><script type="text/javascript">
+        <div class="post-content col-sm-24"><script type="text/javascript">
   /**
    * 搜狐畅言
    */
@@ -386,6 +520,7 @@
 </script>
 <script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
 <script src="/js/scripts.js"></script><!-- Theme scripts -->
+<script src="/js/tocbot.min.js"></script>
 
 
 <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
@@ -404,7 +539,6 @@ $('#intro').find('img').each(function(){
   $('.fancybox').fancybox();
 })(jQuery);
 </script>
-
 
 
       

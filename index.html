@@ -16,6 +16,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
 <!--<![endif]-->
 
+
 <head>
   <title>mimo</title>
   <!-- Meta data -->
@@ -58,9 +59,9 @@
   <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
 </head>
 
-<!--
+
 <body class="home-template">
--->
+
 <body id="index" class="lightnav animsition">
 
       <!-- ============================ Off-canvas navigation =========================== -->
@@ -71,13 +72,13 @@
         </div>
         <!-- Lists in Slidebars -->
         <ul class="sb-menu">
-            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
-            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <li><a href="/" class="animsition-link" title="Home">主 页</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">归 档</a></li>
             <!-- Dropdown Menu -->
 			 
             
         	<li>
-        		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
+        		<a class="sb-toggle-submenu">分 类<span class="sb-caret"></span></a>
             	<ul class="sb-submenu">
 				  	
 				    <li><a href="/categories/git/" class="animsition-link">git<small>(3)</small></a></li>
@@ -95,9 +96,53 @@
 				</ul>
         	</li>
 			
+			
+			<li>
+        		<a class="sb-toggle-submenu">标 签<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/tags/docker/" class="animsition-link">docker<small>(2)</small></a></li>
+				    
+				    <li><a href="/tags/git/" class="animsition-link">git<small>(3)</small></a></li>
+				    
+				    <li><a href="/tags/gitlab/" class="animsition-link">gitlab<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/jenkins/" class="animsition-link">jenkins<small>(2)</small></a></li>
+				    
+				    <li><a href="/tags/linux/" class="animsition-link">linux<small>(2)</small></a></li>
+				    
+				    <li><a href="/tags/log4j/" class="animsition-link">log4j<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/python/" class="animsition-link">python<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/sonar/" class="animsition-link">sonar<small>(2)</small></a></li>
+				    
+				    <li><a href="/tags/svn/" class="animsition-link">svn<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/synchronized/" class="animsition-link">synchronized<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/tess4j/" class="animsition-link">tess4j<small>(2)</small></a></li>
+				    
+				    <li><a href="/tags/xml/" class="animsition-link">xml<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/日志/" class="animsition-link">日志<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/正则/" class="animsition-link">正则<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/解析/" class="animsition-link">解析<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/识别/" class="animsition-link">识别<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/部署/" class="animsition-link">部署<small>(6)</small></a></li>
+				    
+				    <li><a href="/tags/验证码/" class="animsition-link">验证码<small>(1)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
             
             <li>
-                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                <a class="sb-toggle-submenu">链 接<span class="sb-caret"></span></a>
                 <ul class="sb-submenu">
                     
                     <li><a target="_blank" rel="noopener" href="http://go.kieran.top/" class="animsition-link">source</a></li>
@@ -115,10 +160,10 @@
         <!-- Lists in Slidebars -->
         <ul class="sb-menu secondary">
             
-            <li><a href="javascript:;" class="popup-trigger" title="Search"><span class="search-icon"></span>Search</a></li>
+            <li><a href="javascript:;" class="popup-trigger" title="Search"><span class="search-icon"></span>搜 索</a></li>
             
-            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
-            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+            <li><a href="/about.html" class="animsition-link" title="about">关 于</a></li>
+            <!-- <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li> -->
         </ul>
     </div>
     
@@ -215,9 +260,11 @@
 
 <section id="intro">
     <div class="container">
+		
         
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
+				<!-- 首页标题 -->
                 <div class="col-md-4">
                     <h3><a href="/2020/09/01/hello-world/">Hello World</a></h3>
                     <span>
@@ -229,12 +276,13 @@
 </span>
                     </span>
                 </div>
+				<!-- 首页内容 -->
                 <div class="col-md-8">
                     <p>
                       
                         [TOC]
 Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick Start#Create 
+Quick StartCreate a
                       
                     </p>
                     
@@ -250,6 +298,7 @@ Quick Start#Create
         
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
+				<!-- 首页标题 -->
                 <div class="col-md-4">
                     <h3><a href="/2020/07/28/2020-07-28-Java+Selenium+tess4j识别验证码/">Java+Selenium+tess4j识别验证码</a></h3>
                     <span>
@@ -270,12 +319,13 @@ Quick Start#Create
 </span>
                     </span>
                 </div>
+				<!-- 首页内容 -->
                 <div class="col-md-8">
                     <p>
                       
-                        导入selenium包#1234&lt;!--selenium 依赖--&gt;&lt;dependency&gt;&lt;groupId&gt;org.seleniumhq.selenium&lt;/groupId&gt;&lt;artifactId&gt;selenium-java&lt;/artifactId&gt;&lt;version&gt;3.5.3&lt;/version&gt;&lt;/dependency&gt;
+                        导入selenium包1234&lt;!--selenium 依赖--&gt;&lt;dependency&gt;&lt;groupId&gt;org.seleniumhq.selenium&lt;/groupId&gt;&lt;artifactId&gt;selenium-java&lt;/artifactId&gt;&lt;version&gt;3.5.3&lt;/version&gt;&lt;/dependency&gt;
 
-识
+识别
                       
                     </p>
                     
@@ -291,6 +341,7 @@ Quick Start#Create
         
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
+				<!-- 首页标题 -->
                 <div class="col-md-4">
                     <h3><a href="/2020/07/17/2020-07-17-tess4j配置/">tess4j基础配置</a></h3>
                     <span>
@@ -307,13 +358,14 @@ Quick Start#Create
 </span>
                     </span>
                 </div>
+				<!-- 首页内容 -->
                 <div class="col-md-8">
                     <p>
                       
-                        #pom.xml#12345&lt;dependency&gt;    &lt;groupId&gt;net.sourceforge.tess4j&lt;&#x2F;groupId&gt;    &lt;artifactId&gt;tess4j&lt;&#x2F;artifactId&gt;    &lt;version&gt;4.5.2&lt;&#x2F;version&gt;&lt;&#x2F;dependency&gt;
+                        pom.xml12345&lt;dependency&gt;    &lt;groupId&gt;net.sourceforge.tess4j&lt;&#x2F;groupId&gt;    &lt;artifactId&gt;tess4j&lt;&#x2F;artifactId&gt;    &lt;version&gt;4.5.2&lt;&#x2F;version&gt;&lt;&#x2F;dependency&gt;
 
 
-解压
+解压此j
                       
                     </p>
                     
@@ -329,6 +381,7 @@ Quick Start#Create
         
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
+				<!-- 首页标题 -->
                 <div class="col-md-4">
                     <h3><a href="/2020/07/15/2020-07-15-git基本命令/">git基本命令</a></h3>
                     <span>
@@ -345,18 +398,19 @@ Quick Start#Create
 </span>
                     </span>
                 </div>
+				<!-- 首页内容 -->
                 <div class="col-md-8">
                     <p>
                       
-                        git init#初始化git仓库并出现.git文件夹
-git add#
+                        git init初始化git仓库并出现.git文件夹
+git add
 git add: 将文件添加到暂存区
 git add .: 将工作空间下所有文件添加到暂存区(new，modifyed)
 git add -A: 将工作空间下所有文件添加到暂存区(new，modifyed，delete)
 git add -u: 将工作空间下所有文件添加到暂存区(modifyed，delete)
 
-git commit#
-git commit -m
+git commit
+git commit -m : 
                       
                     </p>
                     
@@ -372,6 +426,7 @@ git commit -m
         
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
+				<!-- 首页标题 -->
                 <div class="col-md-4">
                     <h3><a href="/2020/06/12/2020-06-12-Python/">python基础语言</a></h3>
                     <span>
@@ -388,17 +443,18 @@ git commit -m
 </span>
                     </span>
                 </div>
+				<!-- 首页内容 -->
                 <div class="col-md-8">
                     <p>
                       
                         
-无“；”#
-import导入#
-无需事先声明变量和类型   x=y=z=1     x,y,z=10,’john’,2.0#
-if语句  无括号。后要有： 例：if a&gt;b:#
-可直接发挥计算器的作用：在Python中，除法(/) 运算符总是返回浮点值。向下取整运算符(//)获取的是整型结果。%运算符用于计算余数。#
-数值类型转换：显式的将数字从一个类型转换为另一种类型，（int）a,complex(a)转换为复数#
-字符串：双
+无“；”
+import导入
+无需事先声明变量和类型   x=y=z=1     x,y,z=10,’john’,2.0
+if语句  无括号。后要有： 例：if a&gt;b:
+可直接发挥计算器的作用：在Python中，除法(/) 运算符总是返回浮点值。向下取整运算符(//)获取的是整型结果。%运算符用于计算余数。
+数值类型转换：显式的将数字从一个类型转换为另一种类型，（int）a,complex(a)转换为复数
+字符串：双引号“ ”，
                       
                     </p>
                     
@@ -414,6 +470,7 @@ if语句  无括号。后要有： 例：if a&gt;b:#
         
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
+				<!-- 首页标题 -->
                 <div class="col-md-4">
                     <h3><a href="/2020/06/09/2020-06-09-xml文件解析的几种方式/">xml文件解析的几种方式</a></h3>
                     <span>
@@ -432,12 +489,15 @@ if语句  无括号。后要有： 例：if a&gt;b:#
 </span>
                     </span>
                 </div>
+				<!-- 首页内容 -->
                 <div class="col-md-8">
                     <p>
                       
-                        #基于dom解析的xml解析器是将其转换为一个对象模型的集合，用树这种数据结构对信息进行储存。利用DOM接口访问的方式也被称为随机访问。
+                        基于dom解析的xml解析器是将其转换为一个对象模型的集合，用树这种数据结构对信息进行储存。利用DOM接口访问的方式也被称为随机访问。
 缺点：当文件结构较大或者数据较复杂的时候，这种方式对内存的要求就比较高，且对于结构复杂的树进行遍历也是一种非常耗时的操作。
-DOM解析中有以下4个核心操作接口#1.Document：此接口代表了整个xml文档，表示为整个DOM的根，即为该树的入口，通过该接口可以访问xml中所有元素的内容。常用方法：
+DOM解析中有以下4个核心操作接口1.Document：此接口代表了整个xml文档，表示为整个DOM的根，即为该树的入口，通过该接口可以访问xml中所有元素的内容。常用方法：
+
+
 
                       
                     </p>
@@ -454,6 +514,7 @@ DOM解析中有以下4个核心操作接口#1.Document：此接口代表了整�
         
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
+				<!-- 首页标题 -->
                 <div class="col-md-4">
                     <h3><a href="/2020/06/08/2020-06-08-日志级别/">日志级别</a></h3>
                     <span>
@@ -472,17 +533,18 @@ DOM解析中有以下4个核心操作接口#1.Document：此接口代表了整�
 </span>
                     </span>
                 </div>
+				<!-- 首页内容 -->
                 <div class="col-md-8">
                     <p>
                       
                         原文档
-Log4j的8个日志等级。#优先级从高到底：
+Log4j的8个日志等级。优先级从高到底：
 
 OFF：最高等级，用于关闭所有日志记录
 FATAL：指出每个严重的错误事件将会导致应用程序的退出。这个级别比较高了。重大错误，这种级别你可以直接停止程序了。
 ERROR：指出虽然发生错误事件，但仍然不影响系统的继续运行。打印错误和异常信息，如果不想输出太多的日志，可以使用这个级别。
 WARN：表明会出现潜在错误的情形，有些信息不是错误信息，但是也要给程序员的一些提示。
-INFO：消
+INFO：消息
                       
                     </p>
                     
@@ -498,6 +560,7 @@ INFO：消
         
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
+				<!-- 首页标题 -->
                 <div class="col-md-4">
                     <h3><a href="/2020/05/26/2020-05-26-synchronized同步锁/">synchronized</a></h3>
                     <span>
@@ -514,16 +577,17 @@ INFO：消
 </span>
                     </span>
                 </div>
+				<!-- 首页内容 -->
                 <div class="col-md-8">
                     <p>
                       
-                        1.实现原理#synchronized可以保证方法或者代码块在运行时，同一时刻只有一个方法可以进入到临界区，同时他还可以保证共享变量的内存可见性。是Java中解决并发问题的一种最常用最简单的方法。他可以确保线程互斥的访问同步代码。
-2.为什么#在并发编程中存在线程安全问题，主要原因有：
+                        1.实现原理synchronized可以保证方法或者代码块在运行时，同一时刻只有一个方法可以进入到临界区，同时他还可以保证共享变量的内存可见性。是Java中解决并发问题的一种最常用最简单的方法。他可以确保线程互斥的访问同步代码。
+2.为什么在并发编程中存在线程安全问题，主要原因有：
 
 存在共享数据
 多线程共同操作共享数据。
 
-关键字synchronized可以保证在同一时刻，只有一个线程可以执行某个方法或某个代码块，同时synchr
+关键字synchronized可以保证在同一时刻，只有一个线程可以执行某个方法或某个代码块，同时synchron
                       
                     </p>
                     
@@ -539,6 +603,7 @@ INFO：消
         
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
+				<!-- 首页标题 -->
                 <div class="col-md-4">
                     <h3><a href="/2020/04/09/2020-04-09-sonar静态扫描/">sonar静态扫描方式</a></h3>
                     <span>
@@ -555,15 +620,16 @@ INFO：消
 </span>
                     </span>
                 </div>
+				<!-- 首页内容 -->
                 <div class="col-md-8">
                     <p>
                       
-                        集成maven#先决条件#
+                        集成maven先决条件
 Maven的3.x
 至少正在使用SonarQube服务器支持的最低Java版本
 
 打开”maven安装目录/conf/settings.xml”，增加以下配置信息：
-12345678910111213141516171819&lt;settings&gt;    &lt;pluginGroups&gt;        &lt;pluginGroup&gt;org.sonarsource.scanner.mav
+12345678910111213141516171819&lt;settings&gt;    &lt;pluginGroups&gt;        &lt;pluginGroup&gt;org.sonarsource.scanner.maven
                       
                     </p>
                     
@@ -579,6 +645,7 @@ Maven的3.x
         
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
+				<!-- 首页标题 -->
                 <div class="col-md-4">
                     <h3><a href="/2020/04/07/2020-04-07-docker使用/">Docker架构</a></h3>
                     <span>
@@ -595,14 +662,15 @@ Maven的3.x
 </span>
                     </span>
                 </div>
+				<!-- 首页内容 -->
                 <div class="col-md-8">
                     <p>
                       
-                        #官网 https://www.runoob.com/docker/docker-architecture.html
+                        官网 https://www.runoob.com/docker/docker-architecture.html
 Docker 包括三个基本概念:
 
 镜像（Image）：Docker 镜像（Image），就相当于是一个 root 文件系统。比如官方镜像 ubuntu:16.04 就包含了完整的一套 Ubuntu16.04 最小系统的 root 文件系统。
-容器（Container）：镜像（Image）和容器（Container）的关
+容器（Container）：镜像（Image）和容器（Container）的关系
                       
                     </p>
                     
@@ -616,9 +684,10 @@ Docker 包括三个基本概念:
             </div>
         </div>
         
+		<!-- page -->
         <nav class="pagination" role="pagination">
           
-          <a class="pull-right" href="/page/2/">Older Posts →</a>
+          <a class="pull-right" href="/page/2/">下一页 →</a>
         </nav>
     </div>
 </section>
@@ -692,6 +761,7 @@ Docker 包括三个基本概念:
 </script>
 <script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
 <script src="/js/scripts.js"></script><!-- Theme scripts -->
+<script src="/js/tocbot.min.js"></script>
 
 
 <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
@@ -710,7 +780,6 @@ $('#intro').find('img').each(function(){
   $('.fancybox').fancybox();
 })(jQuery);
 </script>
-
 
 
       

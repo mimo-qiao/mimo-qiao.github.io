@@ -16,6 +16,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
 <!--<![endif]-->
 
+
 <head>
   <title>部署jenkins | mimo</title>
   <!-- Meta data -->
@@ -58,9 +59,9 @@
   <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
 </head>
 
-<!--
+
 <body class="post-template">
--->
+
 <body id="index" class="lightnav animsition">
 
       <!-- ============================ Off-canvas navigation =========================== -->
@@ -71,13 +72,13 @@
         </div>
         <!-- Lists in Slidebars -->
         <ul class="sb-menu">
-            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
-            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <li><a href="/" class="animsition-link" title="Home">主 页</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">归 档</a></li>
             <!-- Dropdown Menu -->
 			 
             
         	<li>
-        		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
+        		<a class="sb-toggle-submenu">分 类<span class="sb-caret"></span></a>
             	<ul class="sb-submenu">
 				  	
 				    <li><a href="/categories/git/" class="animsition-link">git<small>(3)</small></a></li>
@@ -95,9 +96,53 @@
 				</ul>
         	</li>
 			
+			
+			<li>
+        		<a class="sb-toggle-submenu">标 签<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/tags/docker/" class="animsition-link">docker<small>(2)</small></a></li>
+				    
+				    <li><a href="/tags/git/" class="animsition-link">git<small>(3)</small></a></li>
+				    
+				    <li><a href="/tags/gitlab/" class="animsition-link">gitlab<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/jenkins/" class="animsition-link">jenkins<small>(2)</small></a></li>
+				    
+				    <li><a href="/tags/linux/" class="animsition-link">linux<small>(2)</small></a></li>
+				    
+				    <li><a href="/tags/log4j/" class="animsition-link">log4j<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/python/" class="animsition-link">python<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/sonar/" class="animsition-link">sonar<small>(2)</small></a></li>
+				    
+				    <li><a href="/tags/svn/" class="animsition-link">svn<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/synchronized/" class="animsition-link">synchronized<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/tess4j/" class="animsition-link">tess4j<small>(2)</small></a></li>
+				    
+				    <li><a href="/tags/xml/" class="animsition-link">xml<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/日志/" class="animsition-link">日志<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/正则/" class="animsition-link">正则<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/解析/" class="animsition-link">解析<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/识别/" class="animsition-link">识别<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/部署/" class="animsition-link">部署<small>(6)</small></a></li>
+				    
+				    <li><a href="/tags/验证码/" class="animsition-link">验证码<small>(1)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
             
             <li>
-                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                <a class="sb-toggle-submenu">链 接<span class="sb-caret"></span></a>
                 <ul class="sb-submenu">
                     
                     <li><a target="_blank" rel="noopener" href="http://go.kieran.top/" class="animsition-link">source</a></li>
@@ -115,10 +160,10 @@
         <!-- Lists in Slidebars -->
         <ul class="sb-menu secondary">
             
-            <li><a href="javascript:;" class="popup-trigger" title="Search"><span class="search-icon"></span>Search</a></li>
+            <li><a href="javascript:;" class="popup-trigger" title="Search"><span class="search-icon"></span>搜 索</a></li>
             
-            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
-            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+            <li><a href="/about.html" class="animsition-link" title="about">关 于</a></li>
+            <!-- <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li> -->
         </ul>
     </div>
     
@@ -183,8 +228,8 @@
 
       
 <section id="intro">
-    <div class="container">
-        <div class="row col-md-offset-2">
+    <div class="post-container">
+        <div class="row col-md-offset-22">
             <div class="col-md-8">
     			<span class="post-meta">
       <time datetime="2020-03-29T16:00:00.000Z" itemprop="datePublished">
@@ -202,8 +247,8 @@
                 <h1>部署jenkins</h1>
             </div>
         </div>
-        <div class="col-md-8 col-md-offset-2">
-      		<h2><span id="huan-jing-zhun-bei">环境准备</span><a href="#huan-jing-zhun-bei" class="header-anchor">#</a></h2><h2><span id="linux-huan-jing-zhun-bei">linux环境准备</span><a href="#linux-huan-jing-zhun-bei" class="header-anchor">#</a></h2><blockquote>
+		<div class="post-content">
+      		<h2><span id="环境准备">环境准备</span></h2><h2><span id="linux环境准备">linux环境准备</span></h2><blockquote>
 <p>安装最低配置：不少于256M内存，不低于1G磁盘，JDK版本&gt;=8（openjdk也可以）。</p>
 </blockquote>
 <blockquote>
@@ -211,36 +256,36 @@
 </blockquote>
 <hr>
 <p>本地PC正常访问外网，CentOS7桥接本机pc网卡上</p>
-<h5><span id="1-tian-jia-yum-cang-ku-yuan">1.添加yum仓库源</span><a href="#1-tian-jia-yum-cang-ku-yuan" class="header-anchor">#</a></h5><p>若无wget命令，则安装：</p>
+<h5><span id="1添加yum仓库源">1.添加yum仓库源</span></h5><p>若无wget命令，则安装：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># yum install wget -y</span><br><span class="line"></span><br><span class="line"># wget -O &#x2F;etc&#x2F;yum.repos.d&#x2F;jenkins.repo https:&#x2F;&#x2F;pkg.jenkins.io&#x2F;redhat-stable&#x2F;jenkins.repo</span><br></pre></td></tr></table></figure>
 
 <p>安装jenkins key</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm --import https:&#x2F;&#x2F;pkg.jenkins.io&#x2F;redhat-stable&#x2F;jenkins.io.key</span><br></pre></td></tr></table></figure>
 
-<h5><span id="2-bao-zheng-xi-tong-java-ban-ben-8-0-huo-yi-shang">2.保证系统java版本8.0或以上</span><a href="#2-bao-zheng-xi-tong-java-ban-ben-8-0-huo-yi-shang" class="header-anchor">#</a></h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># yum -y install java</span><br><span class="line"></span><br><span class="line"># java -version</span><br></pre></td></tr></table></figure>
+<h5><span id="2保证系统java版本80或以上">2.保证系统java版本8.0或以上</span></h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># yum -y install java</span><br><span class="line"></span><br><span class="line"># java -version</span><br></pre></td></tr></table></figure>
 
-<h5><span id="3-guan-bi-xi-tong-fang-huo-qiang">3.关闭系统防火墙</span><a href="#3-guan-bi-xi-tong-fang-huo-qiang" class="header-anchor">#</a></h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># systemctl stop firewalld</span><br><span class="line"># systemctl disable firewalld</span><br></pre></td></tr></table></figure>
+<h5><span id="3关闭系统防火墙">3.关闭系统防火墙</span></h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># systemctl stop firewalld</span><br><span class="line"># systemctl disable firewalld</span><br></pre></td></tr></table></figure>
 
-<h5><span id="4-guan-bi-selinux-bing-chong-qi-xi-tong">4.关闭selinux并重启系统</span><a href="#4-guan-bi-selinux-bing-chong-qi-xi-tong" class="header-anchor">#</a></h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># vi &#x2F;etc&#x2F;sysconfig&#x2F;selinux</span><br><span class="line">...</span><br><span class="line">selinux&#x3D;disabled</span><br><span class="line">...</span><br><span class="line"># reboot</span><br></pre></td></tr></table></figure>
+<h5><span id="4关闭selinux并重启系统">4.关闭selinux并重启系统</span></h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># vi &#x2F;etc&#x2F;sysconfig&#x2F;selinux</span><br><span class="line">...</span><br><span class="line">selinux&#x3D;disabled</span><br><span class="line">...</span><br><span class="line"># reboot</span><br></pre></td></tr></table></figure>
 
 <hr>
-<h2><span id="jenkins-an-zhuang-yu-chu-shi-hua-pei-zhi">Jenkins安装与初始化配置</span><a href="#jenkins-an-zhuang-yu-chu-shi-hua-pei-zhi" class="header-anchor">#</a></h2><h5><span id="1-yum-yuan-an-zhuang-jenkins-zui-xin-ban-ben-huo-xia-zai-war-bao">1.yum源安装jenkins最新版本，或下载war包</span><a href="#1-yum-yuan-an-zhuang-jenkins-zui-xin-ban-ben-huo-xia-zai-war-bao" class="header-anchor">#</a></h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># yum install jenkins</span><br></pre></td></tr></table></figure>
+<h2><span id="jenkins安装与初始化配置">Jenkins安装与初始化配置</span></h2><h5><span id="1yum源安装jenkins最新版本或下载war包">1.yum源安装jenkins最新版本，或下载war包</span></h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># yum install jenkins</span><br></pre></td></tr></table></figure>
 
-<h5><span id="2-chuang-jian-jenkins-xi-tong-yong-hu">2.创建Jenkins系统用户</span><a href="#2-chuang-jian-jenkins-xi-tong-yong-hu" class="header-anchor">#</a></h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># useradd deploy</span><br></pre></td></tr></table></figure>
+<h5><span id="2创建jenkins系统用户">2.创建Jenkins系统用户</span></h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># useradd deploy</span><br></pre></td></tr></table></figure>
 
-<h5><span id="3-geng-gai-jenkins-qi-dong-yong-hu-yu-duan-kou">3.更改Jenkins启动用户与端口</span><a href="#3-geng-gai-jenkins-qi-dong-yong-hu-yu-duan-kou" class="header-anchor">#</a></h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># vi &#x2F;etc&#x2F;sysconfig&#x2F;jenkins</span><br><span class="line">...</span><br><span class="line">JENKINS_USER&#x3D;DEPLOY</span><br><span class="line">JENKINS_PORT&#x3D;8080</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<h5><span id="3更改jenkins启动用户与端口">3.更改Jenkins启动用户与端口</span></h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># vi &#x2F;etc&#x2F;sysconfig&#x2F;jenkins</span><br><span class="line">...</span><br><span class="line">JENKINS_USER&#x3D;DEPLOY</span><br><span class="line">JENKINS_PORT&#x3D;8080</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
 
 <p>更改jenkins默认的家目录以及log日志目录的数主和数组权限： </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chown -R deploy:deploy &#x2F;var&#x2F;lib&#x2F;jenkins</span><br><span class="line">chown -R deploy:deploy &#x2F;var&#x2F;log&#x2F;jenkins</span><br></pre></td></tr></table></figure>
 
-<h5><span id="4-qi-dong-jenkins">4.启动Jenkins</span><a href="#4-qi-dong-jenkins" class="header-anchor">#</a></h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># systemctl start jenkins</span><br></pre></td></tr></table></figure>
+<h5><span id="4启动jenkins">4.启动Jenkins</span></h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># systemctl start jenkins</span><br></pre></td></tr></table></figure>
 
 <p>确认jenkins服务是否正常启动：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lsof -i:8080</span><br></pre></td></tr></table></figure>
 
-<h5><span id="5-an-ru-xia-fang-wen-huo-zhi-jie-ip-8080-fang-wen-ke-xuan">5.按如下访问或直接ip:8080访问（可选）</span><a href="#5-an-ru-xia-fang-wen-huo-zhi-jie-ip-8080-fang-wen-ke-xuan" class="header-anchor">#</a></h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">运行找到c:\windows\system32\drivers\etc\hosts，用记事本打开</span><br><span class="line"></span><br><span class="line">加一行</span><br><span class="line"></span><br><span class="line">ip     jenkins.example.com</span><br><span class="line"></span><br><span class="line">直接在浏览器找域名</span><br></pre></td></tr></table></figure>
+<h5><span id="5按如下访问或直接ip8080访问可选">5.按如下访问或直接ip:8080访问（可选）</span></h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">运行找到c:\windows\system32\drivers\etc\hosts，用记事本打开</span><br><span class="line"></span><br><span class="line">加一行</span><br><span class="line"></span><br><span class="line">ip     jenkins.example.com</span><br><span class="line"></span><br><span class="line">直接在浏览器找域名</span><br></pre></td></tr></table></figure>
 
-<h5><span id="6-an-zhuang-cha-jian-chuang-jian-yong-hu">6.安装插件、创建用户</span><a href="#6-an-zhuang-cha-jian-chuang-jian-yong-hu" class="header-anchor">#</a></h5><p>插件安装完成后，重启jenkins服务</p>
+<h5><span id="6安装插件-创建用户">6.安装插件、创建用户</span></h5><p>插件安装完成后，重启jenkins服务</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># systemctl restart jenkins</span><br></pre></td></tr></table></figure>
 
 <p>生成秘钥</p>
@@ -249,7 +294,7 @@
 <p>程序主目录：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># ls &#x2F;var&#x2F;lib&#x2F;jenkins&#x2F;</span><br><span class="line"></span><br><span class="line">jobs	浏览器上面创建的任务都会存放在这里</span><br><span class="line">logs	存放jenkins相关的日志</span><br><span class="line">nodes	多节点时用到</span><br><span class="line">plugins	插件所在目录</span><br><span class="line">secrets	密码秘钥所在目录</span><br></pre></td></tr></table></figure>
 
-<h2><span id="windows-huan-jing">windows环境</span><a href="#windows-huan-jing" class="header-anchor">#</a></h2><p>JDK环境变量</p>
+<h2><span id="windows环境">windows环境</span></h2><p>JDK环境变量</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">JAVA_HOME:C:\Program Files\Java\jdk1.8.0_201</span><br><span class="line"></span><br><span class="line">PATH:%JAVA_HOME%\bin;%PATH%</span><br><span class="line"></span><br><span class="line">CLASSPATH:.;%JAVA_HOME%\lib;%JAVA_HOME%\lib\tools.jar</span><br></pre></td></tr></table></figure>
 
 <p>Tomcat环境变量</p>
@@ -260,6 +305,95 @@
             <div class="clearfix"></div>
             <hr class="nogutter">
         </div>
+		<!-- ============================ 目录 =========================== -->
+		<div class="post-toc">
+			<div class="tocbot-list">
+			</div>
+			<div class="tocbot-list-menu">
+				<a class="tocbot-toc-expand" onclick="expand_toc()">全部展开</a>
+				<a onclick="go_top()">回到顶部</a>
+				<a onclick="go_bottom()">回到底部</a>
+			</div>
+		</div>
+		<script>
+			$(document).ready(
+				function (){
+					if ($('.tocbot-list').length > 0) {
+						var headerEl = 'h1,h2,h3,h4,h5',
+							content = '.post-content',
+							idArr = {};
+				 
+						$(content).children(headerEl).each(function () {
+							//去除空格以及多余标点
+							var headerId = $(this).children('span').text().replace(/[\s|\~|`|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\_|\+|\=|\||\|\[|\]|\{|\}|\;|\:|\"|\'|\,|\<|\.|\>|\/|\?|\：|\，|\。]/g, '');
+					 
+							headerId = headerId.toLowerCase();
+							if (idArr[headerId]) {
+								//id已经存在
+								$(this).attr('id', headerId + '-' + idArr[headerId]);
+								idArr[headerId]++;
+							}
+							else {
+								//id未存在
+								idArr[headerId] = 1;
+								$(this).attr('id', headerId);
+							}
+						});
+					}
+				}
+			)
+			
+			$(document).ready(
+				function () {
+					tocbot.init({
+						tocSelector: '.tocbot-list',
+						contentSelector: '.post-content',
+						headingSelector: 'h1, h2, h3, h4, h5',
+						collapseDepth: 1,
+						orderedList: false,
+						scrollSmooth: true,
+					})
+				}
+			)
+
+			function expand_toc() {
+				var b = document.querySelector(".tocbot-toc-expand");
+				tocbot.init({
+					tocSelector: '.tocbot-list',
+					contentSelector: '.post-content',
+					headingSelector: 'h1, h2, h3, h4, h5',
+					collapseDepth: 6,
+					orderedList: false,
+					scrollSmooth: true,
+				});
+				b.setAttribute("onclick", "collapse_toc()");
+				b.innerHTML = "全部折叠"
+			}
+
+			function collapse_toc() {
+				var b = document.querySelector(".tocbot-toc-expand");
+				tocbot.init({
+					tocSelector: '.tocbot-list',
+					contentSelector: '.post-content',
+					headingSelector: 'h1, h2, h3, h4, h5',
+					collapseDepth: 1,
+					orderedList: false,
+					scrollSmooth: true,
+				});
+				b.setAttribute("onclick", "expand_toc()");
+				b.innerHTML = "全部展开"
+			}
+
+			function go_top() {
+				window.scrollTo(0, 0);
+			}
+
+			function go_bottom() {
+				window.scrollTo(0, document.body.scrollHeight);
+			}
+
+		</script>
+		<!-- ============================ 目录end =========================== -->
         <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
     
     <a class="pull-left" href="/2020/03/30/2020-03-30-Jenkins%E4%BB%8B%E7%BB%8D/" style="float: left;">
@@ -273,7 +407,7 @@
     
 </nav>
 
-        <div class="col-md-8 col-md-offset-2 col-sm-24"><script type="text/javascript">
+        <div class="post-content col-sm-24"><script type="text/javascript">
   /**
    * 搜狐畅言
    */
@@ -387,6 +521,7 @@
 </script>
 <script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
 <script src="/js/scripts.js"></script><!-- Theme scripts -->
+<script src="/js/tocbot.min.js"></script>
 
 
 <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
@@ -405,7 +540,6 @@ $('#intro').find('img').each(function(){
   $('.fancybox').fancybox();
 })(jQuery);
 </script>
-
 
 
       

@@ -16,6 +16,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
 <!--<![endif]-->
 
+
 <head>
   <title>synchronized | mimo</title>
   <!-- Meta data -->
@@ -58,9 +59,9 @@
   <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
 </head>
 
-<!--
+
 <body class="post-template">
--->
+
 <body id="index" class="lightnav animsition">
 
       <!-- ============================ Off-canvas navigation =========================== -->
@@ -71,13 +72,13 @@
         </div>
         <!-- Lists in Slidebars -->
         <ul class="sb-menu">
-            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
-            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <li><a href="/" class="animsition-link" title="Home">主 页</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">归 档</a></li>
             <!-- Dropdown Menu -->
 			 
             
         	<li>
-        		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
+        		<a class="sb-toggle-submenu">分 类<span class="sb-caret"></span></a>
             	<ul class="sb-submenu">
 				  	
 				    <li><a href="/categories/git/" class="animsition-link">git<small>(3)</small></a></li>
@@ -95,9 +96,53 @@
 				</ul>
         	</li>
 			
+			
+			<li>
+        		<a class="sb-toggle-submenu">标 签<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/tags/docker/" class="animsition-link">docker<small>(2)</small></a></li>
+				    
+				    <li><a href="/tags/git/" class="animsition-link">git<small>(3)</small></a></li>
+				    
+				    <li><a href="/tags/gitlab/" class="animsition-link">gitlab<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/jenkins/" class="animsition-link">jenkins<small>(2)</small></a></li>
+				    
+				    <li><a href="/tags/linux/" class="animsition-link">linux<small>(2)</small></a></li>
+				    
+				    <li><a href="/tags/log4j/" class="animsition-link">log4j<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/python/" class="animsition-link">python<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/sonar/" class="animsition-link">sonar<small>(2)</small></a></li>
+				    
+				    <li><a href="/tags/svn/" class="animsition-link">svn<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/synchronized/" class="animsition-link">synchronized<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/tess4j/" class="animsition-link">tess4j<small>(2)</small></a></li>
+				    
+				    <li><a href="/tags/xml/" class="animsition-link">xml<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/日志/" class="animsition-link">日志<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/正则/" class="animsition-link">正则<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/解析/" class="animsition-link">解析<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/识别/" class="animsition-link">识别<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/部署/" class="animsition-link">部署<small>(6)</small></a></li>
+				    
+				    <li><a href="/tags/验证码/" class="animsition-link">验证码<small>(1)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
             
             <li>
-                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                <a class="sb-toggle-submenu">链 接<span class="sb-caret"></span></a>
                 <ul class="sb-submenu">
                     
                     <li><a target="_blank" rel="noopener" href="http://go.kieran.top/" class="animsition-link">source</a></li>
@@ -115,10 +160,10 @@
         <!-- Lists in Slidebars -->
         <ul class="sb-menu secondary">
             
-            <li><a href="javascript:;" class="popup-trigger" title="Search"><span class="search-icon"></span>Search</a></li>
+            <li><a href="javascript:;" class="popup-trigger" title="Search"><span class="search-icon"></span>搜 索</a></li>
             
-            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
-            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+            <li><a href="/about.html" class="animsition-link" title="about">关 于</a></li>
+            <!-- <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li> -->
         </ul>
     </div>
     
@@ -183,8 +228,8 @@
 
       
 <section id="intro">
-    <div class="container">
-        <div class="row col-md-offset-2">
+    <div class="post-container">
+        <div class="row col-md-offset-22">
             <div class="col-md-8">
     			<span class="post-meta">
       <time datetime="2020-05-25T16:00:00.000Z" itemprop="datePublished">
@@ -200,15 +245,15 @@
                 <h1>synchronized</h1>
             </div>
         </div>
-        <div class="col-md-8 col-md-offset-2">
-      		<h3><span id="1-shi-xian-yuan-li">1.实现原理</span><a href="#1-shi-xian-yuan-li" class="header-anchor">#</a></h3><p><strong>synchronized</strong>可以保证方法或者代码块在运行时，同一时刻只有一个方法可以进入到临界区，同时他还可以保证共享变量的内存可见性。是Java中解决并发问题的一种最常用最简单的方法。他可以确保线程互斥的访问同步代码。</p>
-<h3><span id="2-wei-shi-me">2.为什么</span><a href="#2-wei-shi-me" class="header-anchor">#</a></h3><p>在并发编程中存在线程安全问题，主要原因有：</p>
+		<div class="post-content">
+      		<h3><span id="1实现原理">1.实现原理</span></h3><p><strong>synchronized</strong>可以保证方法或者代码块在运行时，同一时刻只有一个方法可以进入到临界区，同时他还可以保证共享变量的内存可见性。是Java中解决并发问题的一种最常用最简单的方法。他可以确保线程互斥的访问同步代码。</p>
+<h3><span id="2为什么">2.为什么</span></h3><p>在并发编程中存在线程安全问题，主要原因有：</p>
 <ol>
 <li>存在共享数据</li>
 <li>多线程共同操作共享数据。</li>
 </ol>
 <p>关键字<strong>synchronized</strong>可以保证在同一时刻，只有一个线程可以执行某个方法或某个代码块，同时<strong>synchronized</strong>可以保证一个线程的变化可见。</p>
-<h3><span id="3-yong-fa-fen-lei">3.用法分类</span><a href="#3-yong-fa-fen-lei" class="header-anchor">#</a></h3><h5><span id="1-gen-ju-xiu-shi-dui-xiang-fen-lei">1. 根据修饰对象分类</span><a href="#1-gen-ju-xiu-shi-dui-xiang-fen-lei" class="header-anchor">#</a></h5><ul>
+<h3><span id="3用法分类">3.用法分类</span></h3><h5><span id="1-根据修饰对象分类">1. 根据修饰对象分类</span></h5><ul>
 <li>修饰代码块<ul>
 <li>synchronized(this或object) {}</li>
 <li>synchronized(类.class) {}</li>
@@ -220,7 +265,7 @@
 </ul>
 </li>
 </ul>
-<h5><span id="2-gen-ju-huo-qu-de-suo-fen-lei">2. 根据获取的锁分类</span><a href="#2-gen-ju-huo-qu-de-suo-fen-lei" class="header-anchor">#</a></h5><ul>
+<h5><span id="2-根据获取的锁分类">2. 根据获取的锁分类</span></h5><ul>
 <li><p>获取对象锁</p>
 <blockquote>
 <p>如果是同一个实例，就会按顺序访问，但是如果是不同实例，就可以同时访问。</p>
@@ -240,7 +285,7 @@
 </ul>
 </li>
 </ul>
-<h3><span id="4-san-chong-ying-yong-fang-shi">4.三种应用方式</span><a href="#4-san-chong-ying-yong-fang-shi" class="header-anchor">#</a></h3><p>普通同步方法（实例方法），对象锁，锁是当前实例对象 ，进入同步代码前要获得当前实例的锁</p>
+<h3><span id="4三种应用方式">4.三种应用方式</span></h3><p>普通同步方法（实例方法），对象锁，锁是当前实例对象 ，进入同步代码前要获得当前实例的锁</p>
 <blockquote>
 <p>当两个或多个同步方法时，其他线程来访问synchronized修饰的其他方法时需要等待线程1先把锁释放</p>
 <p>当一个同步方法，一个非同步方法时，如果某个线程得到了对象锁，但是另一个线程还是可以访问没有进行同步的方法或者代码。</p>
@@ -259,6 +304,95 @@
             <div class="clearfix"></div>
             <hr class="nogutter">
         </div>
+		<!-- ============================ 目录 =========================== -->
+		<div class="post-toc">
+			<div class="tocbot-list">
+			</div>
+			<div class="tocbot-list-menu">
+				<a class="tocbot-toc-expand" onclick="expand_toc()">全部展开</a>
+				<a onclick="go_top()">回到顶部</a>
+				<a onclick="go_bottom()">回到底部</a>
+			</div>
+		</div>
+		<script>
+			$(document).ready(
+				function (){
+					if ($('.tocbot-list').length > 0) {
+						var headerEl = 'h1,h2,h3,h4,h5',
+							content = '.post-content',
+							idArr = {};
+				 
+						$(content).children(headerEl).each(function () {
+							//去除空格以及多余标点
+							var headerId = $(this).children('span').text().replace(/[\s|\~|`|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\_|\+|\=|\||\|\[|\]|\{|\}|\;|\:|\"|\'|\,|\<|\.|\>|\/|\?|\：|\，|\。]/g, '');
+					 
+							headerId = headerId.toLowerCase();
+							if (idArr[headerId]) {
+								//id已经存在
+								$(this).attr('id', headerId + '-' + idArr[headerId]);
+								idArr[headerId]++;
+							}
+							else {
+								//id未存在
+								idArr[headerId] = 1;
+								$(this).attr('id', headerId);
+							}
+						});
+					}
+				}
+			)
+			
+			$(document).ready(
+				function () {
+					tocbot.init({
+						tocSelector: '.tocbot-list',
+						contentSelector: '.post-content',
+						headingSelector: 'h1, h2, h3, h4, h5',
+						collapseDepth: 1,
+						orderedList: false,
+						scrollSmooth: true,
+					})
+				}
+			)
+
+			function expand_toc() {
+				var b = document.querySelector(".tocbot-toc-expand");
+				tocbot.init({
+					tocSelector: '.tocbot-list',
+					contentSelector: '.post-content',
+					headingSelector: 'h1, h2, h3, h4, h5',
+					collapseDepth: 6,
+					orderedList: false,
+					scrollSmooth: true,
+				});
+				b.setAttribute("onclick", "collapse_toc()");
+				b.innerHTML = "全部折叠"
+			}
+
+			function collapse_toc() {
+				var b = document.querySelector(".tocbot-toc-expand");
+				tocbot.init({
+					tocSelector: '.tocbot-list',
+					contentSelector: '.post-content',
+					headingSelector: 'h1, h2, h3, h4, h5',
+					collapseDepth: 1,
+					orderedList: false,
+					scrollSmooth: true,
+				});
+				b.setAttribute("onclick", "expand_toc()");
+				b.innerHTML = "全部展开"
+			}
+
+			function go_top() {
+				window.scrollTo(0, 0);
+			}
+
+			function go_bottom() {
+				window.scrollTo(0, document.body.scrollHeight);
+			}
+
+		</script>
+		<!-- ============================ 目录end =========================== -->
         <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
     
     <a class="pull-left" href="/2020/06/08/2020-06-08-%E6%97%A5%E5%BF%97%E7%BA%A7%E5%88%AB/" style="float: left;">
@@ -272,7 +406,7 @@
     
 </nav>
 
-        <div class="col-md-8 col-md-offset-2 col-sm-24"><script type="text/javascript">
+        <div class="post-content col-sm-24"><script type="text/javascript">
   /**
    * 搜狐畅言
    */
@@ -386,6 +520,7 @@
 </script>
 <script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
 <script src="/js/scripts.js"></script><!-- Theme scripts -->
+<script src="/js/tocbot.min.js"></script>
 
 
 <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
@@ -404,7 +539,6 @@ $('#intro').find('img').each(function(){
   $('.fancybox').fancybox();
 })(jQuery);
 </script>
-
 
 
       

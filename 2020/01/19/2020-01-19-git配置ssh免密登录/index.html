@@ -16,6 +16,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
 <!--<![endif]-->
 
+
 <head>
   <title>配置ssh免密登录 | mimo</title>
   <!-- Meta data -->
@@ -58,9 +59,9 @@
   <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
 </head>
 
-<!--
+
 <body class="post-template">
--->
+
 <body id="index" class="lightnav animsition">
 
       <!-- ============================ Off-canvas navigation =========================== -->
@@ -71,13 +72,13 @@
         </div>
         <!-- Lists in Slidebars -->
         <ul class="sb-menu">
-            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
-            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <li><a href="/" class="animsition-link" title="Home">主 页</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">归 档</a></li>
             <!-- Dropdown Menu -->
 			 
             
         	<li>
-        		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
+        		<a class="sb-toggle-submenu">分 类<span class="sb-caret"></span></a>
             	<ul class="sb-submenu">
 				  	
 				    <li><a href="/categories/git/" class="animsition-link">git<small>(3)</small></a></li>
@@ -95,9 +96,53 @@
 				</ul>
         	</li>
 			
+			
+			<li>
+        		<a class="sb-toggle-submenu">标 签<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/tags/docker/" class="animsition-link">docker<small>(2)</small></a></li>
+				    
+				    <li><a href="/tags/git/" class="animsition-link">git<small>(3)</small></a></li>
+				    
+				    <li><a href="/tags/gitlab/" class="animsition-link">gitlab<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/jenkins/" class="animsition-link">jenkins<small>(2)</small></a></li>
+				    
+				    <li><a href="/tags/linux/" class="animsition-link">linux<small>(2)</small></a></li>
+				    
+				    <li><a href="/tags/log4j/" class="animsition-link">log4j<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/python/" class="animsition-link">python<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/sonar/" class="animsition-link">sonar<small>(2)</small></a></li>
+				    
+				    <li><a href="/tags/svn/" class="animsition-link">svn<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/synchronized/" class="animsition-link">synchronized<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/tess4j/" class="animsition-link">tess4j<small>(2)</small></a></li>
+				    
+				    <li><a href="/tags/xml/" class="animsition-link">xml<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/日志/" class="animsition-link">日志<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/正则/" class="animsition-link">正则<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/解析/" class="animsition-link">解析<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/识别/" class="animsition-link">识别<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/部署/" class="animsition-link">部署<small>(6)</small></a></li>
+				    
+				    <li><a href="/tags/验证码/" class="animsition-link">验证码<small>(1)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
             
             <li>
-                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                <a class="sb-toggle-submenu">链 接<span class="sb-caret"></span></a>
                 <ul class="sb-submenu">
                     
                     <li><a target="_blank" rel="noopener" href="http://go.kieran.top/" class="animsition-link">source</a></li>
@@ -115,10 +160,10 @@
         <!-- Lists in Slidebars -->
         <ul class="sb-menu secondary">
             
-            <li><a href="javascript:;" class="popup-trigger" title="Search"><span class="search-icon"></span>Search</a></li>
+            <li><a href="javascript:;" class="popup-trigger" title="Search"><span class="search-icon"></span>搜 索</a></li>
             
-            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
-            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+            <li><a href="/about.html" class="animsition-link" title="about">关 于</a></li>
+            <!-- <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li> -->
         </ul>
     </div>
     
@@ -183,8 +228,8 @@
 
       
 <section id="intro">
-    <div class="container">
-        <div class="row col-md-offset-2">
+    <div class="post-container">
+        <div class="row col-md-offset-22">
             <div class="col-md-8">
     			<span class="post-meta">
       <time datetime="2020-01-18T16:00:00.000Z" itemprop="datePublished">
@@ -200,30 +245,30 @@
                 <h1>配置ssh免密登录</h1>
             </div>
         </div>
-        <div class="col-md-8 col-md-offset-2">
-      		<h2><span id="xia-zai-an-zhuang">下载安装</span><a href="#xia-zai-an-zhuang" class="header-anchor">#</a></h2><h3><span id="an-zhuang-tortoisegit-2-9-0-0-64bit">安装TortoiseGit-2.9.0.0-64bit</span><a href="#an-zhuang-tortoisegit-2-9-0-0-64bit" class="header-anchor">#</a></h3><p>下载链接：<a target="_blank" rel="noopener" href="https://tortoisegit.org/download/">https://tortoisegit.org/download/</a></p>
-<h5><span id="1-shuang-ji-an-zhuang-bao-dian-ji-yun-xing">1.双击安装包，点击运行：</span><a href="#1-shuang-ji-an-zhuang-bao-dian-ji-yun-xing" class="header-anchor">#</a></h5><p><img src="/images/1578885234067.png" alt="1578885234067"></p>
-<h5><span id="2-mo-ren-dian-ji-next-jin-ru-xia-yi-bu">2.默认点击next进入下一步：</span><a href="#2-mo-ren-dian-ji-next-jin-ru-xia-yi-bu" class="header-anchor">#</a></h5><p><img src="/images/1578885253413.png" alt="1578885253413"></p>
-<h5><span id="3-mo-ren-dian-ji-next-jin-ru-xia-yi-bu">3.默认点击next进入下一步：</span><a href="#3-mo-ren-dian-ji-next-jin-ru-xia-yi-bu" class="header-anchor">#</a></h5><p><img src="/images/1578885275967.png" alt="1578885275967"></p>
-<h5><span id="4-xuan-ze-zi-ji-de-an-zhuang-lu-jing-dian-ji-next-jin-ru-xia-yi-bu">4.选择自己的安装路径，点击next进入下一步：</span><a href="#4-xuan-ze-zi-ji-de-an-zhuang-lu-jing-dian-ji-next-jin-ru-xia-yi-bu" class="header-anchor">#</a></h5><p><img src="/images/1578885341723.png" alt="1578885341723"></p>
-<h5><span id="4-dian-ji-install-jin-xing-an-zhuang">4.点击Install进行安装：</span><a href="#4-dian-ji-install-jin-xing-an-zhuang" class="header-anchor">#</a></h5><p><img src="/images/1578885376333.png" alt="1578885376333"></p>
-<h5><span id="5-deng-dai-an-zhuang-wan-cheng">5.等待安装完成：</span><a href="#5-deng-dai-an-zhuang-wan-cheng" class="header-anchor">#</a></h5><p><img src="/images/1578885437162.png" alt="1578885437162"></p>
-<h5><span id="6-ke-qu-xiao-gou-xuan-yun-xing-shou-ci-qi-dong-dao-xiang-run-first-start-wizard-ruo-gou-xuan-yi-lu-mo-ren-next-ji-ke-dian-ji-finish-ru-guo-you-jiu-ban-ben-xuan-ze-fu-gai-guan-bi-jiu-cheng-xu-bing-chang-shi-chong-qi-ji-ke">6.可取消勾选运行首次启动导向Run first start wizard，若勾选一路默认next即可，点击Finish，如果有旧版本，选择覆盖，关闭旧程序并尝试重启即可</span><a href="#6-ke-qu-xiao-gou-xuan-yun-xing-shou-ci-qi-dong-dao-xiang-run-first-start-wizard-ruo-gou-xuan-yi-lu-mo-ren-next-ji-ke-dian-ji-finish-ru-guo-you-jiu-ban-ben-xuan-ze-fu-gai-guan-bi-jiu-cheng-xu-bing-chang-shi-chong-qi-ji-ke" class="header-anchor">#</a></h5><p><img src="/images/1578885468053.png" alt="；"></p>
+		<div class="post-content">
+      		<h2><span id="下载安装">下载安装</span></h2><h3><span id="安装tortoisegit-2900-64bit">安装TortoiseGit-2.9.0.0-64bit</span></h3><p>下载链接：<a target="_blank" rel="noopener" href="https://tortoisegit.org/download/">https://tortoisegit.org/download/</a></p>
+<h5><span id="1双击安装包点击运行">1.双击安装包，点击运行：</span></h5><p><img src="/images/1578885234067.png" alt="1578885234067"></p>
+<h5><span id="2默认点击next进入下一步">2.默认点击next进入下一步：</span></h5><p><img src="/images/1578885253413.png" alt="1578885253413"></p>
+<h5><span id="3默认点击next进入下一步">3.默认点击next进入下一步：</span></h5><p><img src="/images/1578885275967.png" alt="1578885275967"></p>
+<h5><span id="4选择自己的安装路径点击next进入下一步">4.选择自己的安装路径，点击next进入下一步：</span></h5><p><img src="/images/1578885341723.png" alt="1578885341723"></p>
+<h5><span id="4点击install进行安装">4.点击Install进行安装：</span></h5><p><img src="/images/1578885376333.png" alt="1578885376333"></p>
+<h5><span id="5等待安装完成">5.等待安装完成：</span></h5><p><img src="/images/1578885437162.png" alt="1578885437162"></p>
+<h5><span id="6可取消勾选运行首次启动导向run-first-start-wizard若勾选一路默认next即可点击finish如果有旧版本选择覆盖关闭旧程序并尝试重启即可">6.可取消勾选运行首次启动导向Run first start wizard，若勾选一路默认next即可，点击Finish，如果有旧版本，选择覆盖，关闭旧程序并尝试重启即可</span></h5><p><img src="/images/1578885468053.png" alt="；"></p>
 <p><img src="/images/1578885544466.png" alt="1578885544466"></p>
 <p><img src="/images/1578885561435.png" alt="1578885561435"></p>
 <p><img src="/images/1578885583814.png" alt="1578885583814"></p>
 <p><img src="/images/1578885603537.png" alt="1578885603537"></p>
 <p><img src="/images/1578885622728.png" alt="1578885622728"></p>
 <hr>
-<h3><span id="an-zhuang-git-2-24-1-2-64-bit-exe">安装Git-2.24.1.2-64-bit.exe</span><a href="#an-zhuang-git-2-24-1-2-64-bit-exe" class="header-anchor">#</a></h3><p>​            下载链接：<a target="_blank" rel="noopener" href="https://git-scm.com/download/win">https://git-scm.com/download/win</a></p>
-<h5><span id="1-shuang-ji-an-zhuang-bao-dian-ji-yun-xing">1.双击安装包，点击运行：</span><a href="#1-shuang-ji-an-zhuang-bao-dian-ji-yun-xing" class="header-anchor">#</a></h5><p><img src="/images/1578881365014.png" alt="1578881365014"></p>
-<h5><span id="2-mo-ren-dian-ji-next-jin-ru-xia-yi-bu">2.默认点击next进入下一步：</span><a href="#2-mo-ren-dian-ji-next-jin-ru-xia-yi-bu" class="header-anchor">#</a></h5><p><img src="/images/1578880908152.png" alt="1578880908152"></p>
-<h5><span id="3-xuan-ze-an-zhuang-lu-jing-dian-ji-next-jin-ru-xia-yi-bu">3.选择安装路径，点击next进入下一步：</span><a href="#3-xuan-ze-an-zhuang-lu-jing-dian-ji-next-jin-ru-xia-yi-bu" class="header-anchor">#</a></h5><p><img src="/images/1578881486379.png" alt="1578881486379"></p>
-<h5><span id="4-dan-chu-an-zhuang-pei-zhi-chuang-kou-mo-ren-dian-ji-next-jin-ru-xia-yi-bu">4.弹出安装配置窗口，默认点击next进入下一步：</span><a href="#4-dan-chu-an-zhuang-pei-zhi-chuang-kou-mo-ren-dian-ji-next-jin-ru-xia-yi-bu" class="header-anchor">#</a></h5><p><img src="/images/1578880931986.png" alt="1578880931986"></p>
-<h5><span id="5-dan-chu-xuan-ze-kai-shi-cai-dan-wen-jian-jia-mo-ren-dian-ji-next-jin-ru-xia-yi-bu">5.弹出“选择开始菜单文件夹”，默认点击next进入下一步：</span><a href="#5-dan-chu-xuan-ze-kai-shi-cai-dan-wen-jian-jia-mo-ren-dian-ji-next-jin-ru-xia-yi-bu" class="header-anchor">#</a></h5><p><img src="/images/1578881828994.png" alt="1578881828994"></p>
-<h5><span id="6-dan-chu-xuan-ze-git-shi-yong-de-mo-ren-bian-ji-qi-jian-yi-shi-yong-vim-bian-ji-qi-mo-ren-dian-ji-next-jin-ru-xia-yi-bu">6.弹出“选择Git使用的默认编辑器”，建议使用VIM编辑器，默认点击next进入下一步：</span><a href="#6-dan-chu-xuan-ze-git-shi-yong-de-mo-ren-bian-ji-qi-jian-yi-shi-yong-vim-bian-ji-qi-mo-ren-dian-ji-next-jin-ru-xia-yi-bu" class="header-anchor">#</a></h5><p>Use the Nano editor by default  默认使用 Nano 编辑器<br>Use Vim (The ubiquitous text editor) as Git’s default editor  使用 Vim 作为 Git 的默认编辑器<br>Use Notepad++ as Git’s default editor  使用 Notepad++ 作为 Git 的默认编辑器<br>Use Visual Studio Code as Git’s default editor  使用 Visual Studio Code 作为Git 的默认编辑器<br>Use Visual Studio Code Insiders as Git’s default editor  使用Visual Studio Code Insiders 作为 Git 的默认编辑器</p>
+<h3><span id="安装git-22412-64-bitexe">安装Git-2.24.1.2-64-bit.exe</span></h3><p>​            下载链接：<a target="_blank" rel="noopener" href="https://git-scm.com/download/win">https://git-scm.com/download/win</a></p>
+<h5><span id="1双击安装包点击运行">1.双击安装包，点击运行：</span></h5><p><img src="/images/1578881365014.png" alt="1578881365014"></p>
+<h5><span id="2默认点击next进入下一步">2.默认点击next进入下一步：</span></h5><p><img src="/images/1578880908152.png" alt="1578880908152"></p>
+<h5><span id="3选择安装路径点击next进入下一步">3.选择安装路径，点击next进入下一步：</span></h5><p><img src="/images/1578881486379.png" alt="1578881486379"></p>
+<h5><span id="4弹出安装配置窗口默认点击next进入下一步">4.弹出安装配置窗口，默认点击next进入下一步：</span></h5><p><img src="/images/1578880931986.png" alt="1578880931986"></p>
+<h5><span id="5弹出选择开始菜单文件夹默认点击next进入下一步">5.弹出“选择开始菜单文件夹”，默认点击next进入下一步：</span></h5><p><img src="/images/1578881828994.png" alt="1578881828994"></p>
+<h5><span id="6弹出选择git使用的默认编辑器建议使用vim编辑器默认点击next进入下一步">6.弹出“选择Git使用的默认编辑器”，建议使用VIM编辑器，默认点击next进入下一步：</span></h5><p>Use the Nano editor by default  默认使用 Nano 编辑器<br>Use Vim (The ubiquitous text editor) as Git’s default editor  使用 Vim 作为 Git 的默认编辑器<br>Use Notepad++ as Git’s default editor  使用 Notepad++ 作为 Git 的默认编辑器<br>Use Visual Studio Code as Git’s default editor  使用 Visual Studio Code 作为Git 的默认编辑器<br>Use Visual Studio Code Insiders as Git’s default editor  使用Visual Studio Code Insiders 作为 Git 的默认编辑器</p>
 <p><img src="/images/1578880962617.png" alt="1578880962617"></p>
-<h5><span id="7-diao-zheng-path-huan-jing-bian-liang-mo-ren-dian-ji-next-jin-ru-xia-yi-bu">7.“调整Path环境变量”，默认点击next进入下一步：</span><a href="#7-diao-zheng-path-huan-jing-bian-liang-mo-ren-dian-ji-next-jin-ru-xia-yi-bu" class="header-anchor">#</a></h5><p><img src="/images/1578881001394.png" alt="1578881001394"></p>
+<h5><span id="7调整path环境变量默认点击next进入下一步">7.“调整Path环境变量”，默认点击next进入下一步：</span></h5><p><img src="/images/1578881001394.png" alt="1578881001394"></p>
 <blockquote>
 <p>Use Git from Git Bash only<br>This is the safest choice as your PATH will not be modified at all.You will only be able to use the Git command line tools form Git Bash.<br>这是最安全的选择，因为您的PATH根本不会被修改。您只能使用 Git Bash 的 Git 命令行工具。</p>
 </blockquote>
@@ -233,71 +278,156 @@
 <blockquote>
 <p>Use Git and optional Unix tools from the Windows Command Prompt<br>从Windows命令提示符使用Git和可选的Unix工具<br>Both Git and the optional Unix tools will be added to you PATH<br>Git和可选的Unix工具都将添加到您计算机的 PATH 中<br>Warning:This will override Windows tools like “find and sort”.Only use this option if you understand the implications.<br>警告：这将覆盖Windows工具，如 “ find 和 sort ”。只有在了解其含义后才使用此选项。</p>
 </blockquote>
-<h5><span id="8-xuan-ze-https-chuan-shu-hou-duan-mo-ren-dian-ji-next-jin-ru-xia-yi-bu">8.选择HTTPS传输后端，默认点击next进入下一步：</span><a href="#8-xuan-ze-https-chuan-shu-hou-duan-mo-ren-dian-ji-next-jin-ru-xia-yi-bu" class="header-anchor">#</a></h5><p><img src="/images/1578881015155.png" alt="1578881015155"></p>
-<h5><span id="9-pei-zhi-xing-jie-shu-fu-mo-ren-dian-ji-next-jin-ru-xia-yi-bu">9.配置行结束符，默认点击next进入下一步：</span><a href="#9-pei-zhi-xing-jie-shu-fu-mo-ren-dian-ji-next-jin-ru-xia-yi-bu" class="header-anchor">#</a></h5><p><img src="/images/1578881040916.png" alt="1578881040916"></p>
-<h5><span id="10-pei-zhi-zhong-duan-mo-ni-qi-mo-ren-dian-ji-next-jin-ru-xia-yi-bu">10.配置终端模拟器，默认点击next进入下一步：</span><a href="#10-pei-zhi-zhong-duan-mo-ni-qi-mo-ren-dian-ji-next-jin-ru-xia-yi-bu" class="header-anchor">#</a></h5><p><img src="/images/1578881056945.png" alt="1578881056945"></p>
-<h5><span id="11-pei-zhi-e-wai-xuan-xiang-mo-ren-dian-ji-next-jin-ru-xia-yi-bu">11.配置额外选项，默认点击next进入下一步：</span><a href="#11-pei-zhi-e-wai-xuan-xiang-mo-ren-dian-ji-next-jin-ru-xia-yi-bu" class="header-anchor">#</a></h5><p><img src="/images/1578881076358.png" alt="1578881076358"></p>
-<h5><span id="12-dian-ji-install-jin-xing-an-zhuang">12.点击Install进行安装：</span><a href="#12-dian-ji-install-jin-xing-an-zhuang" class="header-anchor">#</a></h5><p><img src="/images/1578881105460.png" alt="1578881105460"></p>
-<h5><span id="13-deng-dai-an-zhuang-wan-cheng">13.等待安装完成：</span><a href="#13-deng-dai-an-zhuang-wan-cheng" class="header-anchor">#</a></h5><p><img src="/images/1578881920877.png" alt="1578881920877"></p>
-<h5><span id="14-mo-ren-xia-tu-gou-xuan-hui-chu-xian-cha-kan-shuo-ming-de-ye-mian-ke-qu-xiao-view-release-notes-gou-xuan-dian-ji-finish-wan-cheng">14.默认下图勾选会出现查看说明的页面，可取消View Release Notes勾选，点击finish完成。</span><a href="#14-mo-ren-xia-tu-gou-xuan-hui-chu-xian-cha-kan-shuo-ming-de-ye-mian-ke-qu-xiao-view-release-notes-gou-xuan-dian-ji-finish-wan-cheng" class="header-anchor">#</a></h5><p><img src="/images/1578881163857.png" alt="1578881163857"></p>
+<h5><span id="8选择https传输后端默认点击next进入下一步">8.选择HTTPS传输后端，默认点击next进入下一步：</span></h5><p><img src="/images/1578881015155.png" alt="1578881015155"></p>
+<h5><span id="9配置行结束符默认点击next进入下一步">9.配置行结束符，默认点击next进入下一步：</span></h5><p><img src="/images/1578881040916.png" alt="1578881040916"></p>
+<h5><span id="10配置终端模拟器默认点击next进入下一步">10.配置终端模拟器，默认点击next进入下一步：</span></h5><p><img src="/images/1578881056945.png" alt="1578881056945"></p>
+<h5><span id="11配置额外选项默认点击next进入下一步">11.配置额外选项，默认点击next进入下一步：</span></h5><p><img src="/images/1578881076358.png" alt="1578881076358"></p>
+<h5><span id="12点击install进行安装">12.点击Install进行安装：</span></h5><p><img src="/images/1578881105460.png" alt="1578881105460"></p>
+<h5><span id="13等待安装完成">13.等待安装完成：</span></h5><p><img src="/images/1578881920877.png" alt="1578881920877"></p>
+<h5><span id="14默认下图勾选会出现查看说明的页面可取消view-release-notes勾选点击finish完成">14.默认下图勾选会出现查看说明的页面，可取消View Release Notes勾选，点击finish完成。</span></h5><p><img src="/images/1578881163857.png" alt="1578881163857"></p>
 <hr>
-<h2><span id="di-er-bu">第二步</span><a href="#di-er-bu" class="header-anchor">#</a></h2><h5><span id="1-an-zhuang-wan-cheng-git-hou-xu-yao-pei-zhi-quan-ju-de-yong-hu-ming-he-you-xiang">1.安装完成git后，需要配置全局的用户名和邮箱</span><a href="#1-an-zhuang-wan-cheng-git-hou-xu-yao-pei-zhi-quan-ju-de-yong-hu-ming-he-you-xiang" class="header-anchor">#</a></h5><h5><span id="2-you-jian-dan-ji-git-bash-here-shu-ru-ming-ling-li">2.右键单击Git Bash Here，输入命令，例：</span><a href="#2-you-jian-dan-ji-git-bash-here-shu-ru-ming-ling-li" class="header-anchor">#</a></h5><p>git config –global user.name  ‘liqiao’</p>
+<h2><span id="第二步">第二步</span></h2><h5><span id="1安装完成git后需要配置全局的用户名和邮箱">1.安装完成git后，需要配置全局的用户名和邮箱</span></h5><h5><span id="2右键单击git-bash-here输入命令例">2.右键单击Git Bash Here，输入命令，例：</span></h5><p>git config –global user.name  ‘liqiao’</p>
 <p>git config –global user.email ‘liqiao@ysstech.com’</p>
-<h5><span id="3-tong-guo-git-config-list-ke-yi-lie-chu-pei-zhi-xin-xi">3.通过git config –list可以列出配置信息</span><a href="#3-tong-guo-git-config-list-ke-yi-lie-chu-pei-zhi-xin-xi" class="header-anchor">#</a></h5><p><img src="/images/1578900395749.png" alt="1578900395749"></p>
+<h5><span id="3通过git-config-list可以列出配置信息">3.通过git config –list可以列出配置信息</span></h5><p><img src="/images/1578900395749.png" alt="1578900395749"></p>
 <hr>
-<h2><span id="di-san-bu-pei-zhi-mi-yao">第三步配置秘钥</span><a href="#di-san-bu-pei-zhi-mi-yao" class="header-anchor">#</a></h2><h3><span id="git">Git：</span><a href="#git" class="header-anchor">#</a></h3><h5><span id="1-zai-ren-yi-chu-dian-ji-you-jian-xuan-ze-git-bash-here">1.在任意处点击右键选择Git Bash Here</span><a href="#1-zai-ren-yi-chu-dian-ji-you-jian-xuan-ze-git-bash-here" class="header-anchor">#</a></h5><h5><span id="2-shu-ru-ming-ling-li-ssh-keygen-t-rsa-c-liqiao-hui-che-chu-xian-xia-tu-hong-kuang-zhong-de-lu-jing-wei-sheng-cheng-mi-yao-de-mo-ren-lu-jing-ji-xu-hui-che">2.输入命令：例 ssh-keygen -t rsa -C ‘liqiao’，回车，出现下图红框中的路径为生成秘钥的默认路径，继续回车：</span><a href="#2-shu-ru-ming-ling-li-ssh-keygen-t-rsa-c-liqiao-hui-che-chu-xian-xia-tu-hong-kuang-zhong-de-lu-jing-wei-sheng-cheng-mi-yao-de-mo-ren-lu-jing-ji-xu-hui-che" class="header-anchor">#</a></h5><blockquote>
+<h2><span id="第三步配置秘钥">第三步配置秘钥</span></h2><h3><span id="git">Git：</span></h3><h5><span id="1在任意处点击右键选择git-bash-here">1.在任意处点击右键选择Git Bash Here</span></h5><h5><span id="2输入命令例-ssh-keygen-t-rsa-c-liqiao回车出现下图红框中的路径为生成秘钥的默认路径继续回车">2.输入命令：例 ssh-keygen -t rsa -C ‘liqiao’，回车，出现下图红框中的路径为生成秘钥的默认路径，继续回车：</span></h5><blockquote>
 <p>注： -t 选项指定密钥类型。如果没有指定则默认生成用于SSH-2的RSA密钥。这里使用的是rsa。-C来指定在密钥中密钥类型的一个注释字段，可以方便用户标识这个密钥，指出密钥的用途或其他有用的信息。</p>
 </blockquote>
 <p><img src="/images/1578882890827.png" alt="1578882890827"></p>
-<h5><span id="3-ru-guo-zhi-qian-xia-zai-guo-hui-xun-wen-ni-shi-fou-fu-gai-shu-ru-y-que-ren-zai-hui-che-fou-ze-tiao-guo-ci-bu-zou">3.如果之前下载过会询问你是否覆盖，输入y确认再回车，否则跳过此步骤。</span><a href="#3-ru-guo-zhi-qian-xia-zai-guo-hui-xun-wen-ni-shi-fou-fu-gai-shu-ru-y-que-ren-zai-hui-che-fou-ze-tiao-guo-ci-bu-zou" class="header-anchor">#</a></h5><p><img src="/images/1578883047704.png" alt="1578883047704"></p>
-<h5><span id="4-ci-chu-yao-qiu-shu-ru-mi-ma-ke-hu-lue-zhi-jie-hui-che">4.此处要求输入密码，可忽略直接回车：</span><a href="#4-ci-chu-yao-qiu-shu-ru-mi-ma-ke-hu-lue-zhi-jie-hui-che" class="header-anchor">#</a></h5><p><img src="/images/1578883068005.png" alt="1578883068005"></p>
-<h5><span id="5-que-ren-mi-ma-hui-che">5.确认密码，回车：</span><a href="#5-que-ren-mi-ma-hui-che" class="header-anchor">#</a></h5><p><img src="/images/1578883088313.png" alt="1578883088313"></p>
-<h5><span id="6-sheng-cheng-wan-cheng">6.生成完成</span><a href="#6-sheng-cheng-wan-cheng" class="header-anchor">#</a></h5><p><img src="/images/1578883119541.png" alt="1578883119541"></p>
-<h5><span id="7-gen-ju-gang-gang-ti-dao-de-lu-jing-zhao-dao-sheng-cheng-de-wen-jian">7.根据刚刚提到的路径找到生成的文件：</span><a href="#7-gen-ju-gang-gang-ti-dao-de-lu-jing-zhao-dao-sheng-cheng-de-wen-jian" class="header-anchor">#</a></h5><p><img src="/images/1578883300953.png" alt="1578883300953"></p>
-<h5><span id="8-cha-kan-id-rsa-pub-bing-fu-zhi-suo-you-nei-rong">8.查看id_rsa.pub并复制所有内容：</span><a href="#8-cha-kan-id-rsa-pub-bing-fu-zhi-suo-you-nei-rong" class="header-anchor">#</a></h5><p><img src="/images/1578883356160.png" alt="1578883356160"></p>
-<h5><span id="9-jin-ru-zi-ji-de-gitlab-zhang-hao-xuan-ze-settings-she-zhi">9.进入自己的gitLab账号，选择Settings设置：</span><a href="#9-jin-ru-zi-ji-de-gitlab-zhang-hao-xuan-ze-settings-she-zhi" class="header-anchor">#</a></h5><p><img src="/images/1578883559831.png" alt="1578883559831"></p>
-<h5><span id="10-zai-zuo-ce-lan-xuan-ze-ssh-keys">10.在左侧栏选择SSH Keys：</span><a href="#10-zai-zuo-ce-lan-xuan-ze-ssh-keys" class="header-anchor">#</a></h5><p><img src="/images/1578883608026.png" alt="1578883608026"></p>
-<h5><span id="11-nian-tie-dao-key-kuang-zhong-dian-ji-add-key">11.粘贴到key框中，点击Add key：</span><a href="#11-nian-tie-dao-key-kuang-zhong-dian-ji-add-key" class="header-anchor">#</a></h5><p><img src="/images/1578883445758.png" alt="1578883445758"></p>
-<h5><span id="12-ze-pei-zhi-cheng-gong">12.则配置成功：</span><a href="#12-ze-pei-zhi-cheng-gong" class="header-anchor">#</a></h5><p><img src="/images/1578883506675.png" alt="1578883506675"></p>
+<h5><span id="3如果之前下载过会询问你是否覆盖输入y确认再回车否则跳过此步骤">3.如果之前下载过会询问你是否覆盖，输入y确认再回车，否则跳过此步骤。</span></h5><p><img src="/images/1578883047704.png" alt="1578883047704"></p>
+<h5><span id="4此处要求输入密码可忽略直接回车">4.此处要求输入密码，可忽略直接回车：</span></h5><p><img src="/images/1578883068005.png" alt="1578883068005"></p>
+<h5><span id="5确认密码回车">5.确认密码，回车：</span></h5><p><img src="/images/1578883088313.png" alt="1578883088313"></p>
+<h5><span id="6生成完成">6.生成完成</span></h5><p><img src="/images/1578883119541.png" alt="1578883119541"></p>
+<h5><span id="7根据刚刚提到的路径找到生成的文件">7.根据刚刚提到的路径找到生成的文件：</span></h5><p><img src="/images/1578883300953.png" alt="1578883300953"></p>
+<h5><span id="8查看id_rsapub并复制所有内容">8.查看id_rsa.pub并复制所有内容：</span></h5><p><img src="/images/1578883356160.png" alt="1578883356160"></p>
+<h5><span id="9进入自己的gitlab账号选择settings设置">9.进入自己的gitLab账号，选择Settings设置：</span></h5><p><img src="/images/1578883559831.png" alt="1578883559831"></p>
+<h5><span id="10在左侧栏选择ssh-keys">10.在左侧栏选择SSH Keys：</span></h5><p><img src="/images/1578883608026.png" alt="1578883608026"></p>
+<h5><span id="11粘贴到key框中点击add-key">11.粘贴到key框中，点击Add key：</span></h5><p><img src="/images/1578883445758.png" alt="1578883445758"></p>
+<h5><span id="12则配置成功">12.则配置成功：</span></h5><p><img src="/images/1578883506675.png" alt="1578883506675"></p>
 <hr>
-<h3><span id="tortoisegit">TortoiseGit：</span><a href="#tortoisegit" class="header-anchor">#</a></h3><h5><span id="1-kai-shi-gt-tortoisegit-gt-puttygen-jin-ru-putty-key-generator">1.开始-&gt;TortoiseGit-&gt;PuTTYgen,进入PuTTY Key Generator</span><a href="#1-kai-shi-gt-tortoisegit-gt-puttygen-jin-ru-putty-key-generator" class="header-anchor">#</a></h5><p><img src="/images/1578898045051.png" alt="1578898045051"></p>
-<h5><span id="2-dian-ji-generate-sheng-cheng-mi-yao">2.点击Generate，生成秘钥</span><a href="#2-dian-ji-generate-sheng-cheng-mi-yao" class="header-anchor">#</a></h5><blockquote>
+<h3><span id="tortoisegit">TortoiseGit：</span></h3><h5><span id="1开始-gttortoisegit-gtputtygen进入putty-key-generator">1.开始-&gt;TortoiseGit-&gt;PuTTYgen,进入PuTTY Key Generator</span></h5><p><img src="/images/1578898045051.png" alt="1578898045051"></p>
+<h5><span id="2点击generate生成秘钥">2.点击Generate，生成秘钥</span></h5><blockquote>
 <p>注：鼠标要落在此窗口上，否则进度条不动</p>
 </blockquote>
 <p><img src="/images/1578898139086.png" alt="1578898139086"></p>
-<h5><span id="3-dian-ji-save-private-key-ba-si-you-de-mi-yao-cun-qi-lai-ji-zhu-chu-cun-de-wei-zhi">3.点击Save private key把私有的秘钥存起来，记住储存的位置</span><a href="#3-dian-ji-save-private-key-ba-si-you-de-mi-yao-cun-qi-lai-ji-zhu-chu-cun-de-wei-zhi" class="header-anchor">#</a></h5><p><img src="/images/1578898477926.png" alt="1578898477926"></p>
-<h5><span id="4-ba-sheng-cheng-chu-lai-de-public-key-fu-zhi-nian-tie-dao-gitlab-shang-mian-pei-zhi-ssh-key-ru-git-cao-zuo-ci-chu-lue">4.把生成出来的public key复制粘贴到Gitlab上面，配置SSH key，如Git操作，此处略</span><a href="#4-ba-sheng-cheng-chu-lai-de-public-key-fu-zhi-nian-tie-dao-gitlab-shang-mian-pei-zhi-ssh-key-ru-git-cao-zuo-ci-chu-lue" class="header-anchor">#</a></h5><blockquote>
+<h5><span id="3点击save-private-key把私有的秘钥存起来记住储存的位置">3.点击Save private key把私有的秘钥存起来，记住储存的位置</span></h5><p><img src="/images/1578898477926.png" alt="1578898477926"></p>
+<h5><span id="4把生成出来的public-key复制粘贴到gitlab上面配置ssh-key如git操作此处略">4.把生成出来的public key复制粘贴到Gitlab上面，配置SSH key，如Git操作，此处略</span></h5><blockquote>
 <p>注：gitlab可有多个秘钥</p>
 </blockquote>
 <p><img src="/images/1578898551734.png" alt="1578898551734"></p>
 <blockquote>
 <p>注：使用TortoiseGit进行和远端输出项目时，Pageant必须启动且添加了对应的私钥，否则会报错。</p>
 </blockquote>
-<h5><span id="5-kai-shi-gt-tortoisegit-gt-pageant-da-kai-hou-you-xia-jiao-you-tu-biao-shuang-ji-da-kai">5.开始-&gt;TortoiseGit-&gt;Pageant,打开后右下角有图标，双击打开</span><a href="#5-kai-shi-gt-tortoisegit-gt-pageant-da-kai-hou-you-xia-jiao-you-tu-biao-shuang-ji-da-kai" class="header-anchor">#</a></h5><p><img src="/images/1090314-20180715112336418-408948865.png"></p>
+<h5><span id="5开始-gttortoisegit-gtpageant打开后右下角有图标双击打开">5.开始-&gt;TortoiseGit-&gt;Pageant,打开后右下角有图标，双击打开</span></h5><p><img src="/images/1090314-20180715112336418-408948865.png"></p>
 <p><img src="/images/1090314-20180715112340290-1252272067.png"></p>
-<h5><span id="6-tian-jia-qian-mian-sheng-cheng-de-si-yao-ran-hou-close-guan-bi">6.添加前面生成的私钥，然后close关闭</span><a href="#6-tian-jia-qian-mian-sheng-cheng-de-si-yao-ran-hou-close-guan-bi" class="header-anchor">#</a></h5><p><img src="/images/1578899877413.png" alt="1578899877413"></p>
+<h5><span id="6添加前面生成的私钥然后close关闭">6.添加前面生成的私钥，然后close关闭</span></h5><p><img src="/images/1578899877413.png" alt="1578899877413"></p>
 <hr>
-<h2><span id="di-si-bu-shi-yong-shi-li">第四步使用实例</span><a href="#di-si-bu-shi-yong-shi-li" class="header-anchor">#</a></h2><h3><span id="tortoisegit">TortoiseGit：</span><a href="#tortoisegit" class="header-anchor">#</a></h3><h5><span id="1-you-jian-dan-ji-git-clone-fu-zhi-gitlab-de-clone-with-ssh-lian-jie-nian-tie-dao-url-dian-ji-ok">1.右键单击Git Clone…，复制gitlab的clone with ssh链接，粘贴到url，点击ok</span><a href="#1-you-jian-dan-ji-git-clone-fu-zhi-gitlab-de-clone-with-ssh-lian-jie-nian-tie-dao-url-dian-ji-ok" class="header-anchor">#</a></h5><p><img src="/images/1578900611673.png" alt="1578900611673"></p>
-<h5><span id="2-ruo-wu-xu-shu-ru-mi-ma-deng-xin-xi-clone-cheng-gong-bing-you-dui-ying-de-xiang-mu-ze-pei-zhi-cheng-gong">2.若无需输入密码等信息clone成功并有对应的项目，则配置成功</span><a href="#2-ruo-wu-xu-shu-ru-mi-ma-deng-xin-xi-clone-cheng-gong-bing-you-dui-ying-de-xiang-mu-ze-pei-zhi-cheng-gong" class="header-anchor">#</a></h5><p><img src="/images/1578900814683.png" alt="1578900814683"></p>
-<h3><span id="git">Git：</span><a href="#git" class="header-anchor">#</a></h3><h5><span id="1-fu-zhi-gitlab-de-clone-with-ssh-lian-jie-you-jian-dan-ji-git-bash-here-shu-ru-git-clone-nian-tie-fu-zhi-de-lian-jie">1.复制gitlab的clone with ssh链接，右键单击Git Bash Here，输入：git clone 粘贴复制的链接</span><a href="#1-fu-zhi-gitlab-de-clone-with-ssh-lian-jie-you-jian-dan-ji-git-bash-here-shu-ru-git-clone-nian-tie-fu-zhi-de-lian-jie" class="header-anchor">#</a></h5><h5><span id="2-ruo-wu-xu-shu-ru-mi-ma-deng-xin-xi-clone-cheng-gong-bing-you-dui-ying-de-xiang-mu-ze-pei-zhi-cheng-gong">2.若无需输入密码等信息clone成功并有对应的项目，则配置成功</span><a href="#2-ruo-wu-xu-shu-ru-mi-ma-deng-xin-xi-clone-cheng-gong-bing-you-dui-ying-de-xiang-mu-ze-pei-zhi-cheng-gong" class="header-anchor">#</a></h5><p><img src="/images/1578900912395.png" alt="1578900912395"></p>
+<h2><span id="第四步使用实例">第四步使用实例</span></h2><h3><span id="tortoisegit">TortoiseGit：</span></h3><h5><span id="1右键单击git-clone复制gitlab的clone-with-ssh链接粘贴到url点击ok">1.右键单击Git Clone…，复制gitlab的clone with ssh链接，粘贴到url，点击ok</span></h5><p><img src="/images/1578900611673.png" alt="1578900611673"></p>
+<h5><span id="2若无需输入密码等信息clone成功并有对应的项目则配置成功">2.若无需输入密码等信息clone成功并有对应的项目，则配置成功</span></h5><p><img src="/images/1578900814683.png" alt="1578900814683"></p>
+<h3><span id="git">Git：</span></h3><h5><span id="1复制gitlab的clone-with-ssh链接右键单击git-bash-here输入git-clone-粘贴复制的链接">1.复制gitlab的clone with ssh链接，右键单击Git Bash Here，输入：git clone 粘贴复制的链接</span></h5><h5><span id="2若无需输入密码等信息clone成功并有对应的项目则配置成功">2.若无需输入密码等信息clone成功并有对应的项目，则配置成功</span></h5><p><img src="/images/1578900912395.png" alt="1578900912395"></p>
 
             <div class="clearfix"></div>
             <hr class="nogutter">
         </div>
+		<!-- ============================ 目录 =========================== -->
+		<div class="post-toc">
+			<div class="tocbot-list">
+			</div>
+			<div class="tocbot-list-menu">
+				<a class="tocbot-toc-expand" onclick="expand_toc()">全部展开</a>
+				<a onclick="go_top()">回到顶部</a>
+				<a onclick="go_bottom()">回到底部</a>
+			</div>
+		</div>
+		<script>
+			$(document).ready(
+				function (){
+					if ($('.tocbot-list').length > 0) {
+						var headerEl = 'h1,h2,h3,h4,h5',
+							content = '.post-content',
+							idArr = {};
+				 
+						$(content).children(headerEl).each(function () {
+							//去除空格以及多余标点
+							var headerId = $(this).children('span').text().replace(/[\s|\~|`|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\_|\+|\=|\||\|\[|\]|\{|\}|\;|\:|\"|\'|\,|\<|\.|\>|\/|\?|\：|\，|\。]/g, '');
+					 
+							headerId = headerId.toLowerCase();
+							if (idArr[headerId]) {
+								//id已经存在
+								$(this).attr('id', headerId + '-' + idArr[headerId]);
+								idArr[headerId]++;
+							}
+							else {
+								//id未存在
+								idArr[headerId] = 1;
+								$(this).attr('id', headerId);
+							}
+						});
+					}
+				}
+			)
+			
+			$(document).ready(
+				function () {
+					tocbot.init({
+						tocSelector: '.tocbot-list',
+						contentSelector: '.post-content',
+						headingSelector: 'h1, h2, h3, h4, h5',
+						collapseDepth: 1,
+						orderedList: false,
+						scrollSmooth: true,
+					})
+				}
+			)
+
+			function expand_toc() {
+				var b = document.querySelector(".tocbot-toc-expand");
+				tocbot.init({
+					tocSelector: '.tocbot-list',
+					contentSelector: '.post-content',
+					headingSelector: 'h1, h2, h3, h4, h5',
+					collapseDepth: 6,
+					orderedList: false,
+					scrollSmooth: true,
+				});
+				b.setAttribute("onclick", "collapse_toc()");
+				b.innerHTML = "全部折叠"
+			}
+
+			function collapse_toc() {
+				var b = document.querySelector(".tocbot-toc-expand");
+				tocbot.init({
+					tocSelector: '.tocbot-list',
+					contentSelector: '.post-content',
+					headingSelector: 'h1, h2, h3, h4, h5',
+					collapseDepth: 1,
+					orderedList: false,
+					scrollSmooth: true,
+				});
+				b.setAttribute("onclick", "expand_toc()");
+				b.innerHTML = "全部展开"
+			}
+
+			function go_top() {
+				window.scrollTo(0, 0);
+			}
+
+			function go_bottom() {
+				window.scrollTo(0, document.body.scrollHeight);
+			}
+
+		</script>
+		<!-- ============================ 目录end =========================== -->
         <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
     
-    <a class="pull-left" href="/2020/03/09/2020-03-09-linux%E7%B3%BB%E7%BB%9F%E5%90%84%E6%96%87%E4%BB%B6%E5%A4%B9%E4%BD%9C%E7%94%A8/" style="float: left;">
-        ← linux系统文档
+    <a class="pull-left" href="/2020/01/19/2020-01-22-git%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/" style="float: left;">
+        ← git常用操作
     </a>
     
-    
-    <a class="pull-right" href="/2020/01/19/2020-01-22-git%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/">
-        git常用操作 →
-    </a>
     
 </nav>
 
-        <div class="col-md-8 col-md-offset-2 col-sm-24"><script type="text/javascript">
+        <div class="post-content col-sm-24"><script type="text/javascript">
   /**
    * 搜狐畅言
    */
@@ -411,6 +541,7 @@
 </script>
 <script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
 <script src="/js/scripts.js"></script><!-- Theme scripts -->
+<script src="/js/tocbot.min.js"></script>
 
 
 <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
@@ -429,7 +560,6 @@ $('#intro').find('img').each(function(){
   $('.fancybox').fancybox();
 })(jQuery);
 </script>
-
 
 
       
