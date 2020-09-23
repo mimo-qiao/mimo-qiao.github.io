@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<!--<![endif]-->
+
+
+<head>
+  <title>直播回顾 | 林晓斌：我的 MySQL 心路历程 | mimo</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="mimo">
+    <meta name="author" content="mimo">
+    <meta name="description" content="Q" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="mimo" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+    
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+  
+  
+  
+
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!-- 
+<body class="post-template">
+ -->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">主 页</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">归 档</a></li>
+            <!-- Dropdown Menu -->
+			 
+            
+        	<li>
+        		<a class="sb-toggle-submenu">分 类<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/categories/git/" class="animsition-link">git<small>(3)</small></a></li>
+				    
+				    <li><a href="/categories/linux/" class="animsition-link">linux<small>(7)</small></a></li>
+				    
+				    <li><a href="/categories/mysql实战45讲/" class="animsition-link">mysql实战45讲<small>(49)</small></a></li>
+				    
+				    <li><a href="/categories/python/" class="animsition-link">python<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/sonar/" class="animsition-link">sonar<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/tess4j/" class="animsition-link">tess4j<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/基础/" class="animsition-link">基础<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/数据结构与算法之美/" class="animsition-link">数据结构与算法之美<small>(79)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
+			
+			<li>
+        		<a class="sb-toggle-submenu">标 签<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/tags/docker/" class="animsition-link">docker<small>(2)</small></a></li>
+				    
+				    <li><a href="/tags/git/" class="animsition-link">git<small>(3)</small></a></li>
+				    
+				    <li><a href="/tags/gitlab/" class="animsition-link">gitlab<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/jenkins/" class="animsition-link">jenkins<small>(2)</small></a></li>
+				    
+				    <li><a href="/tags/linux/" class="animsition-link">linux<small>(2)</small></a></li>
+				    
+				    <li><a href="/tags/log4j/" class="animsition-link">log4j<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/python/" class="animsition-link">python<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/sonar/" class="animsition-link">sonar<small>(2)</small></a></li>
+				    
+				    <li><a href="/tags/svn/" class="animsition-link">svn<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/synchronized/" class="animsition-link">synchronized<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/tess4j/" class="animsition-link">tess4j<small>(2)</small></a></li>
+				    
+				    <li><a href="/tags/xml/" class="animsition-link">xml<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/日志/" class="animsition-link">日志<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/正则/" class="animsition-link">正则<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/解析/" class="animsition-link">解析<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/识别/" class="animsition-link">识别<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/部署/" class="animsition-link">部署<small>(6)</small></a></li>
+				    
+				    <li><a href="/tags/验证码/" class="animsition-link">验证码<small>(1)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
+            
+            <li>
+                <a class="sb-toggle-submenu">链 接<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a target="_blank" rel="noopener" href="http://go.kieran.top/" class="animsition-link">source</a></li>
+                    
+                    <li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/visugar/p/6821777.html" class="animsition-link">搭建blog-hexo参考</a></li>
+                    
+                    <li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/f4dce0e76886" class="animsition-link">参考2</a></li>
+                    
+                    <li><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/configuration.html" class="animsition-link">官网</a></li>
+                    
+                    <li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/31eb5c754c01" class="animsition-link">nginx部署</a></li>
+                    
+                    <li><a target="_blank" rel="noopener" href="https://segmentfault.com/p/1210000010636536/read" class="animsition-link">hexo原理</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            
+            <li><a href="javascript:;" class="popup-trigger" title="Search"><span class="search-icon"></span>搜 索</a></li>
+            
+            <li><a href="/about.html" class="animsition-link" title="about">关 于</a></li>
+            <!-- <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li> -->
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo.png" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">mimo</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a></li>
+                            
+                            
+                            <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a></li>
+                            
+                            
+                            <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a></li>
+                            
+                            
+                            <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a></li>
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+
+      
+<section id="intro">
+    <div class="post-container">
+        <div class="row col-md-offset-22">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2020-08-19T02:33:48.000Z" itemprop="datePublished">
+          2020-08-19
+      </time>
+    
+</span>
+                <h1>直播回顾 | 林晓斌：我的 MySQL 心路历程</h1>
+            </div>
+        </div>
+		<div class="post-content">
+      		<p>在专栏上线后的11月21日，我来到极客时间做了一场直播，主题就是“我的MySQL心路历程”。今天，我特意将这个直播的回顾文章，放在了专栏下面，希望你可以从我这些年和MySQL打交道的经历中，找到对你有所帮助的点。</p>
+<p>这里，我先和你说一下，在这个直播中，我主要分享的内容：</p>
+<ul>
+<li><p>我和MySQL打交道的经历；</p>
+</li>
+<li><p>你为什么要了解数据库原理；</p>
+</li>
+<li><p>我建议的MySQL学习路径；</p>
+</li>
+<li><p>DBA的修炼之道。</p>
+</li>
+</ul>
+<h1><span id="我的经历">我的经历</span></h1># 以丰富的经历进入百度
+我是福州大学毕业的，据我了解，那时候我们学校的应届生很难直接进入百度，都要考到浙江大学读个研究生才行。没想到的是，我投递了简历后居然进了面试。
+
+<p>入职以后，我跑去问当时的面试官，为什么我的简历可以通过筛选？他们说：“因为你的简历厚啊”。我在读书的时候，确实做了很多项目，也实习过不少公司，所以简历里面的经历就显得很丰富了。</p>
+<p>在面试的时候，有个让我印象很深刻的事儿。面试官问我说，你有这么多实习经历，有没有什么比较好玩儿的事？我想了想答道，跟你说个数据量很大的事儿 ，在跟移动做日志分析的时候我碰到了几千万行的数据。他听完以后就笑了。</p>
+<p>后来，我进了百度才知道，几千万行那都是小数据。</p>
+<h1><span id="开始尝试看源码解决问题">开始尝试看源码解决问题</span></h1><p>加入百度后，我是在贴吧做后端程序，比如权限系统等等。其实很简单，就是写一个C语言程序，响应客户端请求，然后返回结果。</p>
+<p>那个时候，我还仅仅是个MySQL的普通用户，使用了一段时间后就出现问题了：一个跑得很快的请求，偶尔会又跑得非常慢。老板问这是什么原因，而我又不好意思说不知道，于是就自己上网查资料。</p>
+<p>但是，2008年那会儿，网上资料很少，花了挺长时间也没查出个所以然。最终，我只好去看源码。翻到源码，我当时就觉得它还蛮有意思的。而且，源码真的可以帮我解决一些问题。</p>
+<p>于是一发不可收拾，我从那时候就入了源码的“坑”。</p>
+<h1><span id="混社区分享经验">混社区分享经验</span></h1><p>2010年的时候，阿里正好在招数据库的开发人员。虽然那时我还只是看得懂源码，没有什么开发经验，但还是抱着试试看的态度投了简历。然后顺利通过了面试，成功进入了阿里。之后，我就跟着褚霸（霸爷）干了7年多才离开了阿里。</p>
+<p>在百度的时候，我基本上没有参加过社区活动。因为那时候百度可能更提倡内部分享，解决问题的经验基本上都是在内网分享。所以，去了阿里以后，我才建了博客、开了微博。我在阿里的花名叫丁奇，博客、微博、社区也因此都是用的这个名字。</p>
+<h1><span id="为什么要了解数据库原理">为什么要了解数据库原理？</span></h1>这里，我讲几个亲身经历的事情，和你聊聊为什么要了解数据库原理。
+
+<h1><span id="了解原理能帮你更好地定位问题">了解原理能帮你更好地定位问题</span></h1><p>一次同学聚会，大家谈起了技术问题。一个在政府里的同学说，他们的系统很奇怪，每天早上都得重启一下应用程序，否则就提示连接数据库失败，他们都不知道该怎么办。</p>
+<p>我分析说，按照这个错误提示，应该就是连接时间过长了，断开了连接。数据库默认的超时时间是8小时，而你们平时六点下班，下班之后系统就没有人用了，等到第二天早上九点甚至十点才上班，这中间的时间已经超过10个小时了，数据库的连接肯定就会断开了。</p>
+<p>我当时说，估计这个系统程序写得比较差，连接失败也不会重连，仍然用原来断掉的连接，所以就报错了。然后，我让他回去把超时时间改得长一点。后来他跟我说，按照这个方法，问题已经解决了。</p>
+<p>由此，我也更深刻地体会到，作为开发人员，即使我们只知道每个参数的意思，可能就可以给出一些问题的正确应对方法。</p>
+<h1><span id="了解原理能让你更巧妙地解决问题">了解原理能让你更巧妙地解决问题</span></h1><p>我在做贴吧系统的时候，每次访问页面都要请求一次权限。所以，这个请求权限的请求，访问概率会非常高，不可能每次都去数据库里查，怎么办呢？</p>
+<p>我想了个简单的方案：在应用程序里面开了个很大的内存，启动的时候就把整张表全部load到内存里去。这样再有权限请求的时候，直接从内存里取就行了。</p>
+<p>数据库重启时，我的进程也会跟着重启，接下来就会到数据表里面做全表扫描，把整个用户相关信息全部塞到内存里面去。</p>
+<p>但是，后来我遇到了一个很郁闷的情况。有时候MySQL 崩溃了，我的程序重新加载权限到内存里，结果这个select语句要执行30分钟左右。本来MySQL正常重启一下是很快的，进程重启也很快，正常加载权限的过程只需要两分钟就跑完了。但是，为什么异常重启的时候就要30分钟呢？</p>
+<p>我没辙了，只好去看源码。然后，我发现MySQL有个机制，当它觉得系统空闲时会尽量去刷脏页。</p>
+<p>具体到我们的例子里，MySQL重启以后，会执行我的进程做全表扫描，但是因为这个时候权限数据还没有初始化完成，我的Server层不可能提供服务，于是MySQL里面就只有我那一个select全表扫描的请求，MySQL就认为现在很闲，开始拼命地刷脏页，结果就吃掉了大量的磁盘资源，导致我的全表扫描也跑得很慢。</p>
+<p>知道了这个机制以后，我就写了个脚本，每隔0.5秒发一个请求，执行一个简单的SQL查询，告诉数据库其实我现在很忙，脏页刷得慢一点。</p>
+<p>脚本一发布使用，脏页果然刷得慢了，加载权限的扫描也跑得很快了。据说我离职两年多以后，这个脚本还在用。</p>
+<p>你看，如果我们懂得一些参数，并可以理解这些参数，就可以做正确的设置了。而如果我们进一步地懂得一些原理，就可以更巧妙地解决问题了。</p>
+<h1><span id="看得懂源码让你有更多的方法">看得懂源码让你有更多的方法</span></h1><p>2012年的时候，阿里双十一业务的压力比较大。当时还没有这么多的SSD，是机械硬盘的时代。</p>
+<p>为了应对压力我们开始引入SSD，但是不敢把SSD直接当存储用，而是作为二级缓存。当时，我们用了一个叫作Flashcache的开源系统（现在已经是老古董级别了，不知道你有没有听过这个系统）。</p>
+<p>Flashcache实现，把SSD当作物理盘的二级缓存，可以提升性能。但是，我们自己部署后发现性能提升的效果没有预想的那么好，甚至还不如纯机械盘。</p>
+<p>于是，我跟霸爷就开始研究。霸爷负责分析Flashcache的源码，我负责分析MySQL源码。后来我们发现Flashcache是有脏页比例的，当脏页比例到了80%就会停下来强行刷盘。</p>
+<p>一开始我们以为这个脏页比例是全部的20%，看了源码才知道，原来它分了很多个桶，比如说一个桶20M，这个桶如果用完80%，它就认为脏页满了，就开始刷脏页。这也就意味着，如果你是顺序写的话，很容易就会把一个桶写满。</p>
+<p>知道了这个原理以后，我就把日志之类顺序写的数据全都放到了机械硬盘，把随机写的数据放到了Flashcache上。这样修改以后，效果就好了。</p>
+<p>你看，如果能看得懂源码，你的操作行为就会不一样。</p>
+<h1><span id="mysql学习路径">MySQL学习路径</span></h1>说到MySQL的学习路径，其实我上面分享的这些内容，都可以归结为学习路径。
+
+<p>首先你要会用，要去了解每个参数的意义，这样你的运维行为（使用行为）就会不一样。千万不要从网上拿了一些使用建议，别人怎么用，你就怎么用，而不去想为什么。再往后，就要去了解每个参数的实现原理。一旦你了解了这些原理，你的操作行为就会不一样。 再进一步，如果看得懂源码，那么你对数据库的理解也会不一样。</p>
+<p>再来讲讲我是怎么带应届生的。实践是很好的学习方式，所以我会让新人来了以后先搭主备，然后你就会发现每个人的自学能力都不一样。比如遇到有延迟，或者我们故意构造一个主备数据不一致的场景，让新人了解怎么分析问题，解决问题。</p>
+<p>如果一定要总结出一条学习路径的话，那首先要会<strong>用</strong>，然后可以<strong>发现问题</strong>。</p>
+<p>在专栏里面，我在每篇文章末尾，都会提出一个常见问题，作为思考题。这些问题都不会很难，是跟专栏文章挂钩、又是会经常遇到的，但又无法直接从文章里拿到答案。</p>
+<p>我的建议是，你可以尝试先不看答案自己去思考，或者去数据库里面翻一翻，这将会是一个不错的过程。</p>
+<p>再下一步就是<strong>实践</strong>。之后当你觉得开始有一些“线”的概念了，再去<strong>看MySQL的官方手册</strong>。在我的专栏里，有人曾问我要不要直接去看手册？</p>
+<p>我的建议是，一开始千万不要着急看手册，这里面有100多万个英文单词，你就算再厉害，也是看了后面忘了前面。所以，你一定要自己先有脉络，然后有一个知识网络，再看手册去查漏补缺。</p>
+<p>我自己就是这么一路走过来的。</p>
+<p>另外，在专栏的留言区，很多用户都希望我能推荐一本书搭配专栏学习。如果只推荐一本的话，我建议你读一下《高性能MySQL》这本书，它是MySQL这个领域的经典图书，已经出到第三版了，你可以想象一下它的流行度。</p>
+<p>这本书的其中两位译者（彭立勋、翟卫祥）是我原团队的小伙伴，有着非常丰富的MySQL源码开发经验，他们对MySQL的深刻理解，让这本书保持了跟原作英文版同样高的质量。</p>
+<p>极客时间的编辑说，他们已经和出版社沟通，为我们专栏的用户争取到了全网最低价，仅限3天，你可以直接<a href="time://mall?url=https%3A%2F%2Fh5.youzan.com%2Fv2%2Fgoods%2F27413vk03dzk8">点击链接</a>购买。<br><br><img src="/mysqlimages/%E7%9B%B4%E6%92%AD%E5%9B%9E%E9%A1%BE%E6%9E%97%E6%99%93%E6%96%8C%EF%BC%9A%E6%88%91%E7%9A%84MySQL%E5%BF%83%E8%B7%AF%E5%8E%86%E7%A8%8B/cebd662dab97995a7718c4a38009cfc8.png"></p>
+<h1><span id="dba的修炼">DBA的修炼</span></h1># DBA和开发工程师有什么相同点？
+我带过开发团队，也带过DBA团队，所以可以分享一下这两个岗位的交集。
+
+<p>其实，DBA本身要有些开发底子，比如说做运维系统的开发。另外，自动化程度越高，DBA的日常运维工作量就越少，DBA得去了解开发业务逻辑，往业务架构师这个方向去做。</p>
+<p>开发工程师也是一样，不能所有的问题都指望DBA来解决。因为，DBA在每个公司都是很少的几个人。所以，开发也需要对数据库原理有一定的了解，这样向DBA请教问题时才能更专业，更高效地解决问题。</p>
+<p>所以说，这两个岗位应该有一定程度的融合，即：开发要了解数据库原理，DBA要了解业务和开发。</p>
+<h1><span id="dba有前途吗">DBA有前途吗？</span></h1><p>这里我要强调的是，每个岗位都有前途，只需要根据时代变迁稍微调整一下方向。</p>
+<p>像原来开玩笑说DBA要体力好，因为得搬服务器。后来DBA的核心技能成了会搭库、会主备切换，但是现在这些也不够用了，因为已经有了自动化系统。</p>
+<p>所以，DBA接下来一方面是要了解业务，做业务的架构师；另一方面，是要有前瞻性，做主动诊断系统，把每个业务的问题挑出来做成月报，让业务开发去优化，有不清楚的地方，开发同学会来找你咨询。你帮助他们做好了优化之后，可以把优化的指标呈现出来。这将很好地体现出你对于公司的价值。</p>
+<h1><span id="有哪些比较好的习惯和提高sql效率的方法">有哪些比较好的习惯和提高SQL效率的方法？</span></h1><p>这个方法，总结起来就是：要多写SQL，培养自己对SQL语句执行效率的感觉。以后再写或者建索引的时候，知道这个语句执行下去大概的时间复杂度，是全表扫描还是索引扫描、是不是需要回表，在心里都有一个大概的概念。</p>
+<p>这样每次写出来的SQL都会快一点，而且不容易犯低级错误。这也正式我开设这个专栏的目标。</p>
+<h1><span id="看源码需要什么技术">看源码需要什么技术？</span></h1><p>看源码的话，一是要掌握C和C++；另外还要熟悉一些调试工具。因为代码是静态的，运行起来是动态的，看代码是单线程的，运行起来是多线程的，所以要会调试。</p>
+<p>另外，我不建议你用可视化的工具。虽然可视化工具很方便，但你不知道这个操作点下去以后，实际上做了什么，所以我建议你自己手写代码和SQL语句，这样对一些底层原理你会更明白。</p>
+<h1><span id="怎么学习c-c">怎么学习C、C++？</span></h1><p>我在读研究生的时候，在C和C++语言的学习上进步最大。</p>
+<p>那时，我去给专科上C和C++的课。我觉得自己已经会了，完全可以教得了。但去了之后，我才知道，自己会跟能够教别人完全是两码事儿。备课的时候，你不能只讲会用的部分，还得把原理讲清楚。这样，就会倒逼自己进行更深入更全面的学习。</p>
+<p>有的人看完技术博客和专栏，会把这篇文章的提纲列一下，写写自己的问题和对这篇文章的理解。这个过程，是非常利于学习的。因为你听进来是一回事儿，讲出去则是另一回事儿。</p>
+<h1><span id="学数据库要保持什么心态">学数据库要保持什么心态？</span></h1><p>不只是数据库，所有多线程的服务，调试和追查问题的过程都是很枯燥的，遇到问题都会很麻烦。但是，你找出问题时的那一下会很爽。</p>
+<p>我觉得你得找到这种感觉，它可以支持你度过接下来要枯燥很久的那段时光，这样你才能继续坚持下去。</p>
+<p>当然，如果有更快乐的学习过程还是更好的，希望这个专栏能让你学习得轻松些。</p>
+
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+		
+		<!-- ============================ 目录 =========================== -->
+		<div class="post-toc">
+			<div class="tocbot-list">
+			</div>
+			<div class="tocbot-list-menu">
+				<a class="tocbot-toc-expand" onclick="expand_toc()">全部展开</a>
+				<a onclick="go_top()">回到顶部</a>
+				<a onclick="go_bottom()">回到底部</a>
+			</div>
+		</div>
+		<script>
+			window.onload = function(){
+				$('.post-content').find('img').each(function(){
+					var picWidth = parseInt($(this).width());
+					if(picWidth > 800){
+						var pW = $(this).width();
+						var pH = $(this).height();
+						var BL = pH / pW;
+						var outH = 800 * BL;
+						$(this).width(800);
+						$(this).height(outH);
+					}
+				})
+			};
+			$(document).ready(
+				function (){
+					if ($('.tocbot-list').length > 0) {
+						var headerEl = 'h1,h2,h3,h4,h5',
+							content = '.post-content',
+							idArr = {};
+				 
+						$(content).children(headerEl).each(function () {
+							//去除空格以及多余标点
+							var headerId = $(this).children('span').text().replace(/[\s|\~|`|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\_|\+|\=|\||\|\[|\]|\{|\}|\;|\:|\"|\'|\,|\<|\.|\>|\/|\?|\：|\，|\。]/g, '');
+					 
+							headerId = headerId.toLowerCase();
+							if (idArr[headerId]) {
+								//id已经存在
+								$(this).attr('id', headerId + '-' + idArr[headerId]);
+								idArr[headerId]++;
+							}
+							else {
+								//id未存在
+								idArr[headerId] = 1;
+								$(this).attr('id', headerId);
+							}
+						});
+					}
+				}
+			)
+			
+			$(document).ready(
+				function () {
+					tocbot.init({
+						tocSelector: '.tocbot-list',
+						contentSelector: '.post-content',
+						headingSelector: 'h1, h2, h3, h4, h5',
+						collapseDepth: 1,
+						orderedList: false,
+						scrollSmooth: true,
+					})
+				}
+			)
+
+			function expand_toc() {
+				var b = document.querySelector(".tocbot-toc-expand");
+				tocbot.init({
+					tocSelector: '.tocbot-list',
+					contentSelector: '.post-content',
+					headingSelector: 'h1, h2, h3, h4, h5',
+					collapseDepth: 6,
+					orderedList: false,
+					scrollSmooth: true,
+				});
+				b.setAttribute("onclick", "collapse_toc()");
+				b.innerHTML = "全部折叠"
+			}
+
+			function collapse_toc() {
+				var b = document.querySelector(".tocbot-toc-expand");
+				tocbot.init({
+					tocSelector: '.tocbot-list',
+					contentSelector: '.post-content',
+					headingSelector: 'h1, h2, h3, h4, h5',
+					collapseDepth: 1,
+					orderedList: false,
+					scrollSmooth: true,
+				});
+				b.setAttribute("onclick", "expand_toc()");
+				b.innerHTML = "全部展开"
+			}
+
+			function go_top() {
+				window.scrollTo(0, 0);
+			}
+
+			function go_bottom() {
+				window.scrollTo(0, document.body.scrollHeight);
+			}
+
+		</script>
+		<!-- ============================ 目录end =========================== -->
+        <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
+    
+    <a class="pull-left" href="/2020/08/19/mysql%E5%AE%9E%E6%88%9845%E8%AE%B2/%E7%BB%93%E6%9D%9F%E8%AF%AD%E7%82%B9%E7%BA%BF%E7%BD%91%E9%9D%A2%EF%BC%8C%E4%B8%80%E8%B5%B7%E6%9E%84%E5%BB%BAMySQL%E7%9F%A5%E8%AF%86%E7%BD%91%E7%BB%9C/" style="float: left;">
+        ← 结束语 | 点线网面，一起构建MySQL知识网络
+    </a>
+    
+    
+    <a class="pull-right" href="/2020/08/19/mysql%E5%AE%9E%E6%88%9845%E8%AE%B2/45%E8%87%AA%E5%A2%9Eid%E7%94%A8%E5%AE%8C%E6%80%8E%E4%B9%88%E5%8A%9E/">
+        45 | 自增id用完怎么办？ →
+    </a>
+    
+</nav>
+
+        <div class="post-content col-sm-24"><script type="text/javascript">
+  /**
+   * 搜狐畅言
+   */
+
+  /*
+  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
+
+  window.onload = function () {
+    (function () {
+      var appid = 'cytXXXX';
+      var conf = 'prod_xxxxxxxxxxxxxxxxx';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      var loadJs = function (d, a, id) {
+        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+        var b = document.createElement("script");
+        b.setAttribute("type", "text/javascript");
+        b.setAttribute("charset", "UTF-8");
+        b.setAttribute("src", d);
+        if (id) {
+          b.setAttribute("id", id);
+        }
+        if (typeof a === "function") {
+          if (window.attachEvent) {
+            b.onreadystatechange = function () {
+              var e = b.readyState;
+              if (e === "loaded" || e === "complete") {
+                b.onreadystatechange = null;
+                a()
+              }
+            }
+          } else {
+            b.onload = a
+          }
+        }
+        c.appendChild(b)
+      };
+
+      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
+        window.changyan.api.config({
+          appid: appid,
+          conf: conf
+        })
+      });
+    })();
+  }
+  */
+
+</script>
+</div>
+    </div>
+</section>
+
+
+      <section id="statement">
+    <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
+        <div class="state-row">
+            <p>虽然还没想好写点什么，但是总觉得这里放句话比较和谐。</p>
+        </div>
+    </div>
+</section>
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By mimo. All Rights Reserved.
+                </p>
+                <p>Theme By <a target="_blank" rel="noopener" href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a>&nbsp;</li>
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+<script src="/js/tocbot.min.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+      
+            <style>
+.local-search-popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  background: rgba(255, 255, 255, .9);
+  color: #333;
+  z-index: 9999;
+  border-radius: 5px;
+  overflow: scroll;
+}
+#local-search-input {
+  width: 100%;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #151515;
+  background-color: initial;
+}
+.search-result-list {
+  list-style: none;
+  padding-left: 0;
+}
+.search-result-list > li {
+  margin-top: 15px;
+  border-bottom: 1px solid #ddd;
+  transition: all ease .3s;
+}
+.search-result-list > li:hover {
+  border-bottom: 1px solid gray;
+}
+.search-result-title {
+  font-size: 16px;
+}
+.search-result {
+  line-height: 20px;
+}
+.search-keyword {
+  font-weight: normal;
+  color: #c00;
+}
+
+@media (min-width: 890px) {
+  .popup-btn-close {
+    position: absolute;
+    top: 15px;
+    left: 35px;
+    border: 1px solid #151515;
+    padding: 0px 10px;
+    border-top-left-radius: 8px;
+    cursor: pointer;
+    transition: all ease .3s;
+  }
+  .popup-btn-close:hover {
+    background: #151515;
+    opacity: .9;
+    color: #fff;
+  }
+}
+@media (max-width: 890px) {
+  .popup-btn-close {
+    font-size: 0;
+    position: fixed;
+    right: 20px;
+    bottom: 50px;
+    width: 50px;
+    height: 50px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 1px 1px 5px #888;
+    cursor: pointer;
+  }
+  .popup-btn-close::after {
+    content: '←';
+    color: #151515;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 20px;
+    width: 100%;
+    height: 100%;
+    line-height: 50px;
+    text-align: center;
+  }
+}
+</style>
+
+<div class="popup search-popup local-search-popup">
+  <span class="popup-btn-close">
+    ESC
+  </span>
+  <div class="container">
+    <div class="col-md-8 col-md-offset-2">
+      <div class="local-search-header clearfix">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="local-search-input-wrapper">
+          <input autocomplete="off" placeholder="Search..." type="text" id="local-search-input">
+        </div>
+      </div>
+      <div id="local-search-result"></div>
+    </div>
+  </div>
+</div>
+
+<script src="/js/ziploader.js"></script>
+
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.json";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').fadeOut(300);
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $('.popup').fadeIn(300);
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // get search zip version
+    $.get('/searchVersion.txt?t=' + (+new Date()), function(res) {
+      if (localStorage.getItem('searchVersion') !== res) {
+        localStorage.setItem('searchVersion', res);
+        initSearchJson();
+      }
+    });
+
+    function initSearchJson () {
+      initLoad(['/search.zip'], {
+        loadOptions: {
+          success: function(obj) {
+            localStorage.setItem('searchJson', obj['search.json'])
+          },
+          error: function(e) {
+            return console.log(e)
+          }
+        },
+        returnOptions: {
+          'json': TYPE_TEXT
+        },
+        mimeOptions:{
+          'json':'application/json'
+        }
+      })
+    }
+
+
+    // search function;
+    var searchFunc = function(search_id, content_id) {
+      'use strict';
+
+      isfetched = true;
+      var datas = JSON.parse(localStorage.getItem('searchJson'));
+      console.log(search_id)
+      var input = document.getElementById(search_id);
+      var resultContent = document.getElementById(content_id);
+      var inputEventFunction = function() {
+        var searchText = input.value.trim().toLowerCase();
+        var keywords = searchText.split(/[\s\-]+/);
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        var resultItems = [];
+        if (searchText.length > 0) {
+          // perform local searching
+          datas.forEach(function(data) {
+            var isMatch = false;
+            var hitCount = 0;
+            var searchTextCount = 0;
+            var title = data.title ? data.title.trim() : '';
+            var titleInLowerCase = title.toLowerCase();
+            var content = data.content ? data.content.trim().replace(/<[^>]+>/g,"") : '';
+            var contentInLowerCase = content.toLowerCase();
+            var articleUrl = decodeURIComponent(data.url);
+            var indexOfTitle = [];
+            var indexOfContent = [];
+            // only match articles with not empty titles
+            keywords.forEach(function(keyword) {
+              function getIndexByWord(word, text, caseSensitive) {
+                var wordLen = word.length;
+                if (wordLen === 0) {
+                  return [];
+                }
+                var startPosition = 0, position = [], index = [];
+                if (!caseSensitive) {
+                  text = text.toLowerCase();
+                  word = word.toLowerCase();
+                }
+                while ((position = text.indexOf(word, startPosition)) > -1) {
+                  index.push({position: position, word: word});
+                  startPosition = position + wordLen;
+                }
+                return index;
+              }
+
+              indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+              indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+            });
+            if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+              isMatch = true;
+              hitCount = indexOfTitle.length + indexOfContent.length;
+            }
+
+            // show search results
+
+            if (isMatch) {
+              // sort index by position of keyword
+
+              [indexOfTitle, indexOfContent].forEach(function (index) {
+                index.sort(function (itemLeft, itemRight) {
+                  if (itemRight.position !== itemLeft.position) {
+                    return itemRight.position - itemLeft.position;
+                  } else {
+                    return itemLeft.word.length - itemRight.word.length;
+                  }
+                });
+              });
+
+              // merge hits into slices
+
+              function mergeIntoSlice(text, start, end, index) {
+                var item = index[index.length - 1];
+                var position = item.position;
+                var word = item.word;
+                var hits = [];
+                var searchTextCountInSlice = 0;
+                while (position + word.length <= end && index.length != 0) {
+                  if (word === searchText) {
+                    searchTextCountInSlice++;
+                  }
+                  hits.push({position: position, length: word.length});
+                  var wordEnd = position + word.length;
+
+                  // move to next position of hit
+
+                  index.pop();
+                  while (index.length != 0) {
+                    item = index[index.length - 1];
+                    position = item.position;
+                    word = item.word;
+                    if (wordEnd > position) {
+                      index.pop();
+                    } else {
+                      break;
+                    }
+                  }
+                }
+                searchTextCount += searchTextCountInSlice;
+                return {
+                  hits: hits,
+                  start: start,
+                  end: end,
+                  searchTextCount: searchTextCountInSlice
+                };
+              }
+
+              var slicesOfTitle = [];
+              if (indexOfTitle.length != 0) {
+                slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+              }
+
+              var slicesOfContent = [];
+              while (indexOfContent.length != 0) {
+                var item = indexOfContent[indexOfContent.length - 1];
+                var position = item.position;
+                var word = item.word;
+                // cut out 100 characters
+                var start = position - 20;
+                var end = position + 80;
+                if(start < 0){
+                  start = 0;
+                }
+                if (end < position + word.length) {
+                  end = position + word.length;
+                }
+                if(end > content.length){
+                  end = content.length;
+                }
+                slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+              }
+
+              // sort slices in content by search text's count and hits' count
+
+              slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                  return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                  return sliceRight.hits.length - sliceLeft.hits.length;
+                } else {
+                  return sliceLeft.start - sliceRight.start;
+                }
+              });
+
+              // select top N slices in content
+
+              var upperBound = parseInt('2');
+              if (upperBound >= 0) {
+                slicesOfContent = slicesOfContent.slice(0, upperBound);
+              }
+
+              // highlight title and content
+
+              function highlightKeyword(text, slice) {
+                var result = '';
+                var prevEnd = slice.start;
+                slice.hits.forEach(function (hit) {
+                  result += text.substring(prevEnd, hit.position);
+                  var end = hit.position + hit.length;
+                  result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                  prevEnd = end;
+                });
+                result += text.substring(prevEnd, slice.end);
+                return result;
+              }
+
+              var resultItem = '';
+
+              if (slicesOfTitle.length != 0) {
+                resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+              } else {
+                resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+              }
+
+              slicesOfContent.forEach(function (slice) {
+                resultItem += "<a target='_blank' href='" + articleUrl + "'>" +
+                  "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                  "...</p>" + "</a>";
+              });
+
+              resultItem += "</li>";
+              resultItems.push({
+                item: resultItem,
+                searchTextCount: searchTextCount,
+                hitCount: hitCount,
+                id: resultItems.length
+              });
+            }
+          })
+        };
+        if (keywords.length === 1 && keywords[0] === "") {
+          resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+        } else if (resultItems.length === 0) {
+          resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+        } else {
+          resultItems.sort(function (resultLeft, resultRight) {
+            if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+              return resultRight.searchTextCount - resultLeft.searchTextCount;
+            } else if (resultLeft.hitCount !== resultRight.hitCount) {
+              return resultRight.hitCount - resultLeft.hitCount;
+            } else {
+              return resultRight.id - resultLeft.id;
+            }
+          });
+          var searchResultList = '<ul class=\"search-result-list\">';
+          resultItems.forEach(function (result) {
+            searchResultList += result.item;
+          })
+          searchResultList += "</ul>";
+          resultContent.innerHTML = searchResultList;
+        }
+      }
+
+      if ('auto' === 'auto') {
+        input.addEventListener('input', inputEventFunction);
+      } else {
+        $('.search-icon').click(inputEventFunction);
+        input.addEventListener('keypress', function (event) {
+          if (event.keyCode === 13) {
+            inputEventFunction();
+          }
+        });
+      }
+
+      // remove loading animation
+      $('body').css('overflow', '');
+
+      proceedsearch();
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        $('.sb-close').click();
+        searchFunc('local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+      
+</body>
+</html>

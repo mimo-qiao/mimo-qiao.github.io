@@ -24,8 +24,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content="mimo">
-    <meta name="author" content="John Doe">
-    <meta name="description" content="" />
+    <meta name="author" content="mimo">
+    <meta name="description" content="Q" />
     <meta name="keywords" content="" />
 
     <!-- Favicon, (keep icon in root folder) -->
@@ -85,6 +85,8 @@
 				    
 				    <li><a href="/categories/linux/" class="animsition-link">linux<small>(7)</small></a></li>
 				    
+				    <li><a href="/categories/mysql实战45讲/" class="animsition-link">mysql实战45讲<small>(49)</small></a></li>
+				    
 				    <li><a href="/categories/python/" class="animsition-link">python<small>(1)</small></a></li>
 				    
 				    <li><a href="/categories/sonar/" class="animsition-link">sonar<small>(1)</small></a></li>
@@ -92,6 +94,8 @@
 				    <li><a href="/categories/tess4j/" class="animsition-link">tess4j<small>(1)</small></a></li>
 				    
 				    <li><a href="/categories/基础/" class="animsition-link">基础<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/数据结构与算法之美/" class="animsition-link">数据结构与算法之美<small>(79)</small></a></li>
 				    
 				</ul>
         	</li>
@@ -152,6 +156,10 @@
                     <li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/f4dce0e76886" class="animsition-link">参考2</a></li>
                     
                     <li><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/configuration.html" class="animsition-link">官网</a></li>
+                    
+                    <li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/31eb5c754c01" class="animsition-link">nginx部署</a></li>
+                    
+                    <li><a target="_blank" rel="noopener" href="https://segmentfault.com/p/1210000010636536/read" class="animsition-link">hexo原理</a></li>
                     
                 </ul>
             </li>
@@ -248,9 +256,10 @@
             </div>
         </div>
 		<div class="post-content">
-      		<h2><span id="dom解析"></span></h2><p>基于dom解析的xml解析器是将其转换为一个对象模型的集合，用<strong>树</strong>这种数据结构对信息进行储存。利用DOM接口访问的方式也被称为随机访问。</p>
+      		<p>基于dom解析的xml解析器是将其转换为一个对象模型的集合，用<strong>树</strong>这种数据结构对信息进行储存。利用DOM接口访问的方式也被称为随机访问。</p>
 <p>缺点：当文件结构较大或者数据较复杂的时候，这种方式对内存的要求就比较高，且对于结构复杂的树进行遍历也是一种非常耗时的操作。</p>
-<h3><span id="dom解析中有以下4个核心操作接口">DOM解析中有以下4个核心操作接口</span></h3><p>1.Document：此接口代表了整个xml文档，表示为整个DOM的根，即为<code>该树的入口</code>，通过该接口可以访问xml中所有元素的内容。常用方法：</p>
+<h1><span id="dom解析">DOM解析</span></h1><p>有以下4个核心操作接口</p>
+<h2><span id="1document">1.Document</span></h2><p>此接口代表了整个xml文档，表示为整个DOM的根，即为<code>该树的入口</code>，通过该接口可以访问xml中所有元素的内容。常用方法：</p>
 <table>
 <thead>
 <tr>
@@ -275,7 +284,7 @@
 <td><strong>创建一个属性</strong></td>
 </tr>
 </tbody></table>
-<p>2.Node：此接口在整个DOM树中有着举足轻重的地位，DOM操作的核心接口都继承于Node(Document、Element、Attr)。在DOM树中，每一个Node接口代表了一个DOM树节点</p>
+<h2><span id="2node">2.Node</span></h2><p>此接口在整个DOM树中有着举足轻重的地位，DOM操作的核心接口都继承于Node(Document、Element、Attr)。在DOM树中，每一个Node接口代表了一个DOM树节点</p>
 <p>Node接口常用方法：</p>
 <table>
 <thead>
@@ -305,7 +314,7 @@
 <td><strong>获取节点内容</strong></td>
 </tr>
 </tbody></table>
-<p>3.NodeList：此接口表示一个点的集合，一般用于有序关系的一组节点。 NodeList常用方法：</p>
+<h2><span id="3nodelist">3.NodeList</span></h2><p>此接口表示一个点的集合，一般用于有序关系的一组节点。 NodeList常用方法：</p>
 <table>
 <thead>
 <tr>
@@ -318,25 +327,27 @@
 <td><strong>根据索引取得节点对象</strong></td>
 </tr>
 </tbody></table>
-<p>4.NamedNodeMap：此接口表示一组节点和其唯一名称对应的一一关系，主要用于节点属性的表示</p>
+<h2><span id="4namednodemap">4.NamedNodeMap</span></h2><p>此接口表示一组节点和其唯一名称对应的一一关系，主要用于节点属性的表示</p>
 <h3><span id="详解解析">详解解析：</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;建立DocumentBuilderFactor，用于获得DocumentBuilder对象</span><br><span class="line">DocumentBuilderFactory factory &#x3D; DocumentBuilderFactory.newInstance();</span><br><span class="line">&#x2F;&#x2F;建立DocumentBuidler</span><br><span class="line">DocumentBuilder builder &#x3D; factory.newDocumentBuilder();</span><br><span class="line">&#x2F;&#x2F;建立Document对象，获取树的入口</span><br><span class="line">Document doc &#x3D; builder.parse(&quot;src\\main\\resources\\DomDemo.xml&quot;);</span><br><span class="line">&#x2F;&#x2F;建立NodeList</span><br><span class="line">NodeList list &#x3D; doc.getElementsByTagName(&quot;linkman&quot;);</span><br><span class="line">    for (int i &#x3D; 0; i &lt; list.getLength(); i++) &#123;</span><br><span class="line">   		Element node &#x3D; (Element)list.item(i);</span><br><span class="line">	System.out.println(node.getElementsByTagName(&quot;name&quot;).item(0).getFirstChild().getNodeValue());</span><br><span class="line">System.out.println(node.getElementsByTagName(&quot;email&quot;).item(0).getFirstChild());&#125;</span><br></pre></td></tr></table></figure>
 
 <hr>
-<h2><span id="dom4j">Dom4j</span></h2><p>dom4j是一个第三方开发组开发出的插件，要去<a target="_blank" rel="noopener" href="https://dom4j.github.io/">下载</a>一下dom4j对应版本的jar导入在我们项目中。</p>
+<h1><span id="dom4j">Dom4j</span></h1><p>dom4j是一个第三方开发组开发出的插件，要去<a target="_blank" rel="noopener" href="https://dom4j.github.io/">下载</a>一下dom4j对应版本的jar导入在我们项目中。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version&#x3D;&quot;1.0&quot; encoding&#x3D;&quot;GBK&quot;?&gt;</span><br><span class="line">&lt;四大名著&gt;</span><br><span class="line">    &lt;水浒传 id&#x3D;&quot;001&quot;&gt;      #id&#x3D;“”，Attribute</span><br><span class="line">        &lt;作者&gt;罗贯中&lt;&#x2F;作者&gt; #作者：element，罗贯中：newElement.setText</span><br><span class="line">        &lt;朝代&gt;van_darkholme@163.com&lt;&#x2F;朝代&gt;</span><br><span class="line">    &lt;&#x2F;水浒传&gt;</span><br><span class="line">&lt;&#x2F;四大名著&gt;</span><br></pre></td></tr></table></figure>
 
-<h5><span id="获得document对象的方式有3种">获得Document对象的方式有3种：</span></h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;1.读取xml文件，获得document对象</span><br><span class="line">SAXReader reader &#x3D; new SAXReader();</span><br><span class="line">Document document &#x3D; reader.read(&quot;&quot;);</span><br><span class="line">&#x2F;&#x2F;2.解析xml形式的文本，得到document对象</span><br><span class="line">Document document1 &#x3D; DocumentHelper.parseText(&quot;&quot;);</span><br><span class="line">&#x2F;&#x2F;3.主动创建document对象</span><br><span class="line">final Document document2 &#x3D; DocumentHelper.createDocument();</span><br><span class="line">Element root &#x3D; document2.addElement(&quot;&quot;);</span><br></pre></td></tr></table></figure>
+<h2><span id="获得document对象的方式">获得Document对象的方式：</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">#有3种</span><br><span class="line">&#x2F;&#x2F;1.读取xml文件，获得document对象</span><br><span class="line">SAXReader reader &#x3D; new SAXReader();</span><br><span class="line">Document document &#x3D; reader.read(&quot;&quot;);</span><br><span class="line">&#x2F;&#x2F;2.解析xml形式的文本，得到document对象</span><br><span class="line">Document document1 &#x3D; DocumentHelper.parseText(&quot;&quot;);</span><br><span class="line">&#x2F;&#x2F;3.主动创建document对象</span><br><span class="line">final Document document2 &#x3D; DocumentHelper.createDocument();</span><br><span class="line">Element root &#x3D; document2.addElement(&quot;&quot;);</span><br></pre></td></tr></table></figure>
 
-<h5><span id="节点对象操作的方法">节点对象操作的方法：</span></h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">1.获取文档的根节点</span><br><span class="line">Element root &#x3D; document.getRootElement();</span><br><span class="line">2.取得某个节点的子节点,&lt;&gt;里的</span><br><span class="line">Element element&#x3D;node.element(“四大名著&quot;);</span><br><span class="line">3.取得节点的文字</span><br><span class="line">String text&#x3D;node.getText();</span><br><span class="line">4.取得某节点下所有名为“csdn”的子节点，并进行遍历</span><br><span class="line">List nodes &#x3D; rootElm.elements(&quot;csdn&quot;); </span><br><span class="line">for (Iterator it &#x3D; nodes.iterator(); it.hasNext();) &#123;   </span><br><span class="line">	Element elm &#x3D; (Element) it.next();  </span><br><span class="line">	&#x2F;&#x2F; do something</span><br><span class="line">&#125;</span><br><span class="line">5.对某节点下的所有子节点进行遍历</span><br><span class="line">for(Iterator it&#x3D;root.elementIterator();it.hasNext();)&#123;      </span><br><span class="line">	Element element &#x3D; (Element) it.next();      </span><br><span class="line">	&#x2F;&#x2F; do something </span><br><span class="line">&#125;</span><br><span class="line">6.在某节点下添加子节点</span><br><span class="line">Element elm &#x3D; newElm.addElement(&quot;朝代&quot;);</span><br><span class="line">7.设置节点文字</span><br><span class="line">elm.setText(&quot;明朝&quot;);</span><br><span class="line">8.删除某节点.&#x2F;&#x2F;childElement是待删除的节点,parentElement是其父节点  parentElement.remove(childElment);</span><br><span class="line">9.添加一个CDATA节点</span><br><span class="line">Element contentElm &#x3D; infoElm.addElement(&quot;content&quot;);contentElm.addCDATA(“cdata区域”);</span><br></pre></td></tr></table></figure>
+<h2><span id="节点对象操作的方法">节点对象操作的方法：</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">1.获取文档的根节点</span><br><span class="line">Element root &#x3D; document.getRootElement();</span><br><span class="line">2.取得某个节点的子节点,&lt;&gt;里的</span><br><span class="line">Element element&#x3D;node.element(“四大名著&quot;);</span><br><span class="line">3.取得节点的文字</span><br><span class="line">String text&#x3D;node.getText();</span><br><span class="line">4.取得某节点下所有名为“csdn”的子节点，并进行遍历</span><br><span class="line">List nodes &#x3D; rootElm.elements(&quot;csdn&quot;); </span><br><span class="line">for (Iterator it &#x3D; nodes.iterator(); it.hasNext();) &#123;   </span><br><span class="line">	Element elm &#x3D; (Element) it.next();  </span><br><span class="line">	&#x2F;&#x2F; do something</span><br><span class="line">&#125;</span><br><span class="line">5.对某节点下的所有子节点进行遍历</span><br><span class="line">for(Iterator it&#x3D;root.elementIterator();it.hasNext();)&#123;      </span><br><span class="line">	Element element &#x3D; (Element) it.next();      </span><br><span class="line">	&#x2F;&#x2F; do something </span><br><span class="line">&#125;</span><br><span class="line">6.在某节点下添加子节点</span><br><span class="line">Element elm &#x3D; newElm.addElement(&quot;朝代&quot;);</span><br><span class="line">7.设置节点文字</span><br><span class="line">elm.setText(&quot;明朝&quot;);</span><br><span class="line">8.删除某节点.&#x2F;&#x2F;childElement是待删除的节点,parentElement是其父节点  parentElement.remove(childElment);</span><br><span class="line">9.添加一个CDATA节点</span><br><span class="line">Element contentElm &#x3D; infoElm.addElement(&quot;content&quot;);contentElm.addCDATA(“cdata区域”);</span><br></pre></td></tr></table></figure>
 
-<h5><span id="节点对象的属性方法操作">节点对象的属性方法操作：</span></h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">1.取得某节点下的某属性</span><br><span class="line">Element root&#x3D;document.getRootElement();</span><br><span class="line">&#x2F;&#x2F;属性名</span><br><span class="line">Attribute attribute&#x3D;root.attribute(&quot;id&quot;);</span><br><span class="line">2.取得属性的文字</span><br><span class="line">String text&#x3D;attribute.getText();</span><br><span class="line">3.删除某属性 </span><br><span class="line">Attribute attribute&#x3D;root.attribute(&quot;size&quot;); </span><br><span class="line">root.remove(attribute);</span><br><span class="line">4.遍历某节点的所有属性</span><br><span class="line">Element root&#x3D;document.getRootElement();      </span><br><span class="line"> for(Iterator it&#x3D;root.attributeIterator();it.hasNext();)&#123;        </span><br><span class="line">     Attribute attribute &#x3D; (Attribute) it.next();         </span><br><span class="line">     String text&#x3D;attribute.getText();        </span><br><span class="line">     System.out.println(text);  </span><br><span class="line"> &#125;</span><br><span class="line">5.设置某节点的属性和文字.   </span><br><span class="line">	newMemberElm.addAttribute(&quot;name&quot;, &quot;sitinspring&quot;);</span><br><span class="line">6.设置属性的文字   </span><br><span class="line">	Attribute attribute&#x3D;root.attribute(&quot;name&quot;);</span><br><span class="line">    attribute.setText(&quot;csdn&quot;);</span><br></pre></td></tr></table></figure>
+<h2><span id="节点对象的属性方法操作">节点对象的属性方法操作：</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">1.取得某节点下的某属性</span><br><span class="line">Element root&#x3D;document.getRootElement();</span><br><span class="line">&#x2F;&#x2F;属性名</span><br><span class="line">Attribute attribute&#x3D;root.attribute(&quot;id&quot;);</span><br><span class="line">2.取得属性的文字</span><br><span class="line">String text&#x3D;attribute.getText();</span><br><span class="line">3.删除某属性 </span><br><span class="line">Attribute attribute&#x3D;root.attribute(&quot;size&quot;); </span><br><span class="line">root.remove(attribute);</span><br><span class="line">4.遍历某节点的所有属性</span><br><span class="line">Element root&#x3D;document.getRootElement();      </span><br><span class="line"> for(Iterator it&#x3D;root.attributeIterator();it.hasNext();)&#123;        </span><br><span class="line">     Attribute attribute &#x3D; (Attribute) it.next();         </span><br><span class="line">     String text&#x3D;attribute.getText();        </span><br><span class="line">     System.out.println(text);  </span><br><span class="line"> &#125;</span><br><span class="line">5.设置某节点的属性和文字.   </span><br><span class="line">	newMemberElm.addAttribute(&quot;name&quot;, &quot;sitinspring&quot;);</span><br><span class="line">6.设置属性的文字   </span><br><span class="line">	Attribute attribute&#x3D;root.attribute(&quot;name&quot;);</span><br><span class="line">    attribute.setText(&quot;csdn&quot;);</span><br></pre></td></tr></table></figure>
 
-<h5><span id="写入xml文件">写入XML文件：</span></h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">1.文档中全为英文,不设置编码,直接写入的形式.  </span><br><span class="line">       XMLWriter writer &#x3D; new XMLWriter(new  FileWriter(&quot;ot.xml&quot;)); </span><br><span class="line">       writer.write(document);  </span><br><span class="line">       writer.close();</span><br><span class="line">2.文档中含有中文,设置编码格式写入的形式.</span><br><span class="line">&#x2F;&#x2F; 创建文件输出的时候，自动缩进的格式 </span><br><span class="line">  	   OutputFormat format &#x3D; OutputFormat.createPrettyPrint();                 </span><br><span class="line">       format.setEncoding(&quot;UTF-8&quot;);&#x2F;&#x2F;设置编码</span><br><span class="line">       XMLWriter writer &#x3D; new XMLWriter(newFileWriter(&quot;output.xml&quot;),format);</span><br><span class="line">       writer.write(document);</span><br><span class="line">       writer.close();</span><br></pre></td></tr></table></figure>
+<h2><span id="写入xml文件">写入XML文件：</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">1.文档中全为英文,不设置编码,直接写入的形式.  </span><br><span class="line">       XMLWriter writer &#x3D; new XMLWriter(new  FileWriter(&quot;ot.xml&quot;)); </span><br><span class="line">       writer.write(document);  </span><br><span class="line">       writer.close();</span><br><span class="line">2.文档中含有中文,设置编码格式写入的形式.</span><br><span class="line">&#x2F;&#x2F; 创建文件输出的时候，自动缩进的格式 </span><br><span class="line">  	   OutputFormat format &#x3D; OutputFormat.createPrettyPrint();                 </span><br><span class="line">       format.setEncoding(&quot;UTF-8&quot;);&#x2F;&#x2F;设置编码</span><br><span class="line">       XMLWriter writer &#x3D; new XMLWriter(newFileWriter(&quot;output.xml&quot;),format);</span><br><span class="line">       writer.write(document);</span><br><span class="line">       writer.close();</span><br></pre></td></tr></table></figure>
 
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/a1353206432/article/details/80583302">dom解析链接</a></p>
 
             <div class="clearfix"></div>
             <hr class="nogutter">
         </div>
+		
 		<!-- ============================ 目录 =========================== -->
 		<div class="post-toc">
 			<div class="tocbot-list">
@@ -348,6 +359,19 @@
 			</div>
 		</div>
 		<script>
+			window.onload = function(){
+				$('.post-content').find('img').each(function(){
+					var picWidth = parseInt($(this).width());
+					if(picWidth > 800){
+						var pW = $(this).width();
+						var pH = $(this).height();
+						var BL = pH / pW;
+						var outH = 800 * BL;
+						$(this).width(800);
+						$(this).height(outH);
+					}
+				})
+			};
 			$(document).ready(
 				function (){
 					if ($('.tocbot-list').length > 0) {
@@ -506,7 +530,7 @@
     <div class="container">
             <div class="copy">
                 <p>
-                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By John Doe. All Rights Reserved.
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By mimo. All Rights Reserved.
                 </p>
                 <p>Theme By <a target="_blank" rel="noopener" href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
             </div>

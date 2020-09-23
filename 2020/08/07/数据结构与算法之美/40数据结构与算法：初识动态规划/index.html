@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<!--<![endif]-->
+
+
+<head>
+  <title>40 | 初识动态规划：如何巧妙解决“双十一”购物时的凑单问题？ | mimo</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="mimo">
+    <meta name="author" content="mimo">
+    <meta name="description" content="Q" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="mimo" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+    
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+  
+  
+  
+
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!-- 
+<body class="post-template">
+ -->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">主 页</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">归 档</a></li>
+            <!-- Dropdown Menu -->
+			 
+            
+        	<li>
+        		<a class="sb-toggle-submenu">分 类<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/categories/git/" class="animsition-link">git<small>(3)</small></a></li>
+				    
+				    <li><a href="/categories/linux/" class="animsition-link">linux<small>(7)</small></a></li>
+				    
+				    <li><a href="/categories/mysql实战45讲/" class="animsition-link">mysql实战45讲<small>(49)</small></a></li>
+				    
+				    <li><a href="/categories/python/" class="animsition-link">python<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/sonar/" class="animsition-link">sonar<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/tess4j/" class="animsition-link">tess4j<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/基础/" class="animsition-link">基础<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/数据结构与算法之美/" class="animsition-link">数据结构与算法之美<small>(79)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
+			
+			<li>
+        		<a class="sb-toggle-submenu">标 签<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/tags/docker/" class="animsition-link">docker<small>(2)</small></a></li>
+				    
+				    <li><a href="/tags/git/" class="animsition-link">git<small>(3)</small></a></li>
+				    
+				    <li><a href="/tags/gitlab/" class="animsition-link">gitlab<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/jenkins/" class="animsition-link">jenkins<small>(2)</small></a></li>
+				    
+				    <li><a href="/tags/linux/" class="animsition-link">linux<small>(2)</small></a></li>
+				    
+				    <li><a href="/tags/log4j/" class="animsition-link">log4j<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/python/" class="animsition-link">python<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/sonar/" class="animsition-link">sonar<small>(2)</small></a></li>
+				    
+				    <li><a href="/tags/svn/" class="animsition-link">svn<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/synchronized/" class="animsition-link">synchronized<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/tess4j/" class="animsition-link">tess4j<small>(2)</small></a></li>
+				    
+				    <li><a href="/tags/xml/" class="animsition-link">xml<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/日志/" class="animsition-link">日志<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/正则/" class="animsition-link">正则<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/解析/" class="animsition-link">解析<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/识别/" class="animsition-link">识别<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/部署/" class="animsition-link">部署<small>(6)</small></a></li>
+				    
+				    <li><a href="/tags/验证码/" class="animsition-link">验证码<small>(1)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
+            
+            <li>
+                <a class="sb-toggle-submenu">链 接<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a target="_blank" rel="noopener" href="http://go.kieran.top/" class="animsition-link">source</a></li>
+                    
+                    <li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/visugar/p/6821777.html" class="animsition-link">搭建blog-hexo参考</a></li>
+                    
+                    <li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/f4dce0e76886" class="animsition-link">参考2</a></li>
+                    
+                    <li><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/configuration.html" class="animsition-link">官网</a></li>
+                    
+                    <li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/31eb5c754c01" class="animsition-link">nginx部署</a></li>
+                    
+                    <li><a target="_blank" rel="noopener" href="https://segmentfault.com/p/1210000010636536/read" class="animsition-link">hexo原理</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            
+            <li><a href="javascript:;" class="popup-trigger" title="Search"><span class="search-icon"></span>搜 索</a></li>
+            
+            <li><a href="/about.html" class="animsition-link" title="about">关 于</a></li>
+            <!-- <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li> -->
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo.png" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">mimo</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a></li>
+                            
+                            
+                            <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a></li>
+                            
+                            
+                            <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a></li>
+                            
+                            
+                            <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a></li>
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+
+      
+<section id="intro">
+    <div class="post-container">
+        <div class="row col-md-offset-22">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2020-08-07T03:09:31.000Z" itemprop="datePublished">
+          2020-08-07
+      </time>
+    
+</span>
+                <h1>40 | 初识动态规划：如何巧妙解决“双十一”购物时的凑单问题？</h1>
+            </div>
+        </div>
+		<div class="post-content">
+      		<p>淘宝的“双十一”购物节有各种促销活动，比如“满200元减50元”。假设你女朋友的购物车中有n个（n&gt;100）想买的商品，她希望从里面选几个，在凑够满减条件的前提下，让选出来的商品价格总和最大程度地接近满减条件（200元），这样就可以极大限度地“薅羊毛”。作为程序员的你，能不能编个代码来帮她搞定呢？</p>
+<p>要想高效地解决这个问题，就要用到我们今天讲的动态规划（Dynamic Programming）。</p>
+<h1><span id="动态规划学习路线">动态规划学习路线</span></h1><p>动态规划比较适合用来求解最优问题，比如求最大值、最小值等等。它可以非常显著地降低时间复杂度，提高代码的执行效率。不过，它也是出了名的难学。它的主要学习难点跟递归类似，那就是，求解问题的过程不太符合人类常规的思维方式。对于新手来说，要想入门确实不容易。不过，等你掌握了之后，你会发现，实际上并没有想象中那么难。</p>
+<p>为了让你更容易理解动态规划，我分了三节给你讲解。这三节分别是，初识动态规划、动态规划理论、动态规划实战。</p>
+<p>第一节，我会通过两个非常经典的动态规划问题模型，向你展示我们为什么需要动态规划，以及动态规划解题方法是如何演化出来的。实际上，你只要掌握了这两个例子的解决思路，对于其他很多动态规划问题，你都可以套用类似的思路来解决。</p>
+<p>第二节，我会总结动态规划适合解决的问题的特征，以及动态规划解题思路。除此之外，我还会将贪心、分治、回溯、动态规划这四种算法思想放在一起，对比分析它们各自的特点以及适用的场景。</p>
+<p>第三节，我会教你应用第二节讲的动态规划理论知识，实战解决三个非常经典的动态规划问题，加深你对理论的理解。弄懂了这三节中的例子，对于动态规划这个知识点，你就算是入门了。</p>
+<h1><span id="0-1背包问题">0-1背包问题</span></h1><p>我在讲贪心算法、回溯算法的时候，多次讲到背包问题。今天，我们依旧拿这个问题来举例。</p>
+<p>对于一组不同重量、不可分割的物品，我们需要选择一些装入背包，在满足背包最大重量限制的前提下，背包中物品总重量的最大值是多少呢？</p>
+<p>关于这个问题，我们上一节讲了回溯的解决方法，也就是穷举搜索所有可能的装法，然后找出满足条件的最大值。不过，回溯算法的复杂度比较高，是指数级别的。那有没有什么规律，可以有效降低时间复杂度呢？我们一起来看看。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 回溯算法实现。注意：我把输入的变量都定义成了成员变量。</span><br><span class="line">private int maxW &#x3D; Integer.MIN_VALUE; &#x2F;&#x2F; 结果放到maxW中</span><br><span class="line">private int[] weight &#x3D; &#123;2，2，4，6，3&#125;;  &#x2F;&#x2F; 物品重量</span><br><span class="line">private int n &#x3D; 5; &#x2F;&#x2F; 物品个数</span><br><span class="line">private int w &#x3D; 9; &#x2F;&#x2F; 背包承受的最大重量</span><br><span class="line">public void f(int i, int cw) &#123; &#x2F;&#x2F; 调用f(0, 0)</span><br><span class="line">  if (cw &#x3D;&#x3D; w || i &#x3D;&#x3D; n) &#123; &#x2F;&#x2F; cw&#x3D;&#x3D;w表示装满了，i&#x3D;&#x3D;n表示物品都考察完了</span><br><span class="line">    if (cw &gt; maxW) maxW &#x3D; cw;</span><br><span class="line">    return;</span><br><span class="line">  &#125;</span><br><span class="line">  f(i+1, cw); &#x2F;&#x2F; 选择不装第i个物品</span><br><span class="line">  if (cw + weight[i] &lt;&#x3D; w) &#123;</span><br><span class="line">    f(i+1,cw + weight[i]); &#x2F;&#x2F; 选择装第i个物品</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>规律是不是不好找？那我们就举个例子、画个图看看。我们假设背包的最大承载重量是9。我们有5个不同的物品，每个物品的重量分别是2，2，4，6，3。如果我们把这个例子的回溯求解过程，用递归树画出来，就是下面这个样子：</p>
+<p><img src="/shuimages/40%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%EF%BC%9A%E5%88%9D%E8%AF%86%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/42ca6cec4ad034fc3e5c0605fbacecea.jpg"></p>
+<p>递归树中的每个节点表示一种状态，我们用（i, cw）来表示。其中，i表示将要决策第几个物品是否装入背包，cw表示当前背包中物品的总重量。比如，（2，2）表示我们将要决策第2个物品是否装入背包，在决策前，背包中物品的总重量是2。</p>
+<p>从递归树中，你应该能会发现，有些子问题的求解是重复的，比如图中f(2, 2)和f(3,4)都被重复计算了两次。我们可以借助<a target="_blank" rel="noopener" href="https://time.geekbang.org/column/article/41440">递归</a>那一节讲的“备忘录”的解决方式，记录已经计算好的f(i, cw)，当再次计算到重复的f(i, cw)的时候，可以直接从备忘录中取出来用，就不用再递归计算了，这样就可以避免冗余计算。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">private int maxW &#x3D; Integer.MIN_VALUE; &#x2F;&#x2F; 结果放到maxW中</span><br><span class="line">private int[] weight &#x3D; &#123;2，2，4，6，3&#125;;  &#x2F;&#x2F; 物品重量</span><br><span class="line">private int n &#x3D; 5; &#x2F;&#x2F; 物品个数</span><br><span class="line">private int w &#x3D; 9; &#x2F;&#x2F; 背包承受的最大重量</span><br><span class="line">private boolean[][] mem &#x3D; new boolean[5][10]; &#x2F;&#x2F; 备忘录，默认值false</span><br><span class="line">public void f(int i, int cw) &#123; &#x2F;&#x2F; 调用f(0, 0)</span><br><span class="line">  if (cw &#x3D;&#x3D; w || i &#x3D;&#x3D; n) &#123; &#x2F;&#x2F; cw&#x3D;&#x3D;w表示装满了，i&#x3D;&#x3D;n表示物品都考察完了</span><br><span class="line">    if (cw &gt; maxW) maxW &#x3D; cw;</span><br><span class="line">    return;</span><br><span class="line">  &#125;</span><br><span class="line">  if (mem[i][cw]) return; &#x2F;&#x2F; 重复状态</span><br><span class="line">  mem[i][cw] &#x3D; true; &#x2F;&#x2F; 记录(i, cw)这个状态</span><br><span class="line">  f(i+1, cw); &#x2F;&#x2F; 选择不装第i个物品</span><br><span class="line">  if (cw + weight[i] &lt;&#x3D; w) &#123;</span><br><span class="line">    f(i+1,cw + weight[i]); &#x2F;&#x2F; 选择装第i个物品</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这种解决方法非常好。实际上，它已经跟动态规划的执行效率基本上没有差别。但是，多一种方法就多一种解决思路，我们现在来看看动态规划是怎么做的。</p>
+<p>我们把整个求解过程分为n个阶段，每个阶段会决策一个物品是否放到背包中。每个物品决策（放入或者不放入背包）完之后，背包中的物品的重量会有多种情况，也就是说，会达到多种不同的状态，对应到递归树中，就是有很多不同的节点。</p>
+<p>我们把每一层重复的状态（节点）合并，只记录不同的状态，然后基于上一层的状态集合，来推导下一层的状态集合。我们可以通过合并每一层重复的状态，这样就保证每一层不同状态的个数都不会超过w个（w表示背包的承载重量），也就是例子中的9。于是，我们就成功避免了每层状态个数的指数级增长。</p>
+<p>我们用一个二维数组states[n][w+1]，来记录每层可以达到的不同状态。</p>
+<p>第0个（下标从0开始编号）物品的重量是2，要么装入背包，要么不装入背包，决策完之后，会对应背包的两种状态，背包中物品的总重量是0或者2。我们用states[0][0]=true和states[0][2]=true来表示这两种状态。</p>
+<p>第1个物品的重量也是2，基于之前的背包状态，在这个物品决策完之后，不同的状态有3个，背包中物品总重量分别是0(0+0)，2(0+2 or 2+0)，4(2+2)。我们用states[1][0]=true，states[1][2]=true，states[1][4]=true来表示这三种状态。</p>
+<p>以此类推，直到考察完所有的物品后，整个states状态数组就都计算好了。我把整个计算的过程画了出来，你可以看看。图中0表示false，1表示true。我们只需要在最后一层，找一个值为true的最接近w（这里是9）的值，就是背包中物品总重量的最大值。</p>
+<p><img src="/shuimages/40%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%EF%BC%9A%E5%88%9D%E8%AF%86%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/aaf51df520ea6b8056f4e62aed81a5b5.jpg"><img src="/shuimages/40%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%EF%BC%9A%E5%88%9D%E8%AF%86%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/bbbb934247219db8299bd46dba9dd47e.jpg"></p>
+<p>文字描述可能还不够清楚。我把上面的过程，翻译成代码，你可以结合着一块看下。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">weight:物品重量，n:物品个数，w:背包可承载重量</span><br><span class="line">public int knapsack(int[] weight, int n, int w) &#123;</span><br><span class="line">  boolean[][] states &#x3D; new boolean[n][w+1]; &#x2F;&#x2F; 默认值false</span><br><span class="line">  states[0][0] &#x3D; true;  &#x2F;&#x2F; 第一行的数据要特殊处理，可以利用哨兵优化</span><br><span class="line">  if (weight[0] &lt;&#x3D; w) &#123;</span><br><span class="line">    states[0][weight[0]] &#x3D; true;</span><br><span class="line">  &#125;</span><br><span class="line">  for (int i &#x3D; 1; i &lt; n; ++i) &#123; &#x2F;&#x2F; 动态规划状态转移</span><br><span class="line">    for (int j &#x3D; 0; j &lt;&#x3D; w; ++j) &#123;&#x2F;&#x2F; 不把第i个物品放入背包</span><br><span class="line">      if (states[i-1][j] &#x3D;&#x3D; true) states[i][j] &#x3D; states[i-1][j];</span><br><span class="line">    &#125;</span><br><span class="line">    for (int j &#x3D; 0; j &lt;&#x3D; w-weight[i]; ++j) &#123;&#x2F;&#x2F;把第i个物品放入背包</span><br><span class="line">      if (states[i-1][j]&#x3D;&#x3D;true) states[i][j+weight[i]] &#x3D; true;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  for (int i &#x3D; w; i &gt;&#x3D; 0; --i) &#123; &#x2F;&#x2F; 输出结果</span><br><span class="line">    if (states[n-1][i] &#x3D;&#x3D; true) return i;</span><br><span class="line">  &#125;</span><br><span class="line">  return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>实际上，这就是一种用动态规划解决问题的思路。我们把问题分解为多个阶段，每个阶段对应一个决策。我们记录每一个阶段可达的状态集合（去掉重复的），然后通过当前阶段的状态集合，来推导下一个阶段的状态集合，动态地往前推进。这也是动态规划这个名字的由来，你可以自己体会一下，是不是还挺形象的？</p>
+<p>前面我们讲到，用回溯算法解决这个问题的时间复杂度O(2^n)，是指数级的。那动态规划解决方案的时间复杂度是多少呢？我来分析一下。</p>
+<p>这个代码的时间复杂度非常好分析，耗时最多的部分就是代码中的两层for循环，所以时间复杂度是O(n*w)。n表示物品个数，w表示背包可以承载的总重量。</p>
+<p>从理论上讲，指数级的时间复杂度肯定要比O(n*w)高很多，但是为了让你有更加深刻的感受，我来举一个例子给你比较一下。</p>
+<p>我们假设有10000个物品，重量分布在1到15000之间，背包可以承载的总重量是30000。如果我们用回溯算法解决，用具体的数值表示出时间复杂度，就是2^10000，这是一个相当大的一个数字。如果我们用动态规划解决，用具体的数值表示出时间复杂度，就是10000*30000。虽然看起来也很大，但是和2^10000比起来，要小太多了。</p>
+<p>尽管动态规划的执行效率比较高，但是就刚刚的代码实现来说，我们需要额外申请一个n乘以w+1的二维数组，对空间的消耗比较多。所以，有时候，我们会说，动态规划是一种空间换时间的解决思路。你可能要问了，有什么办法可以降低空间消耗吗？</p>
+<p>实际上，我们只需要一个大小为w+1的一维数组就可以解决这个问题。动态规划状态转移的过程，都可以基于这个一维数组来操作。具体的代码实现我贴在这里，你可以仔细看下。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">public static int knapsack2(int[] items, int n, int w) &#123;</span><br><span class="line">  boolean[] states &#x3D; new boolean[w+1]; &#x2F;&#x2F; 默认值false</span><br><span class="line">  states[0] &#x3D; true;  &#x2F;&#x2F; 第一行的数据要特殊处理，可以利用哨兵优化</span><br><span class="line">  if (items[0] &lt;&#x3D; w) &#123;</span><br><span class="line">    states[items[0]] &#x3D; true;</span><br><span class="line">  &#125;</span><br><span class="line">  for (int i &#x3D; 1; i &lt; n; ++i) &#123; &#x2F;&#x2F; 动态规划</span><br><span class="line">    for (int j &#x3D; w-items[i]; j &gt;&#x3D; 0; --j) &#123;&#x2F;&#x2F;把第i个物品放入背包</span><br><span class="line">      if (states[j]&#x3D;&#x3D;true) states[j+items[i]] &#x3D; true;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  for (int i &#x3D; w; i &gt;&#x3D; 0; --i) &#123; &#x2F;&#x2F; 输出结果</span><br><span class="line">    if (states[i] &#x3D;&#x3D; true) return i;</span><br><span class="line">  &#125;</span><br><span class="line">  return 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>这里我特别强调一下代码中的第8行，j需要从大到小来处理。如果我们按照j从小到大处理的话，会出现for循环重复计算的问题。你可以自己想一想，这里我就不详细说了。</p>
+<h1><span id="0-1背包问题升级版">0-1背包问题升级版</span></h1><p>我们继续升级难度。我改造了一下刚刚的背包问题。你看这个问题又该如何用动态规划解决？</p>
+<p>我们刚刚讲的背包问题，只涉及背包重量和物品重量。我们现在引入物品价值这一变量。对于一组不同重量、不同价值、不可分割的物品，我们选择将某些物品装入背包，在满足背包最大重量限制的前提下，背包中可装入物品的总价值最大是多少呢？</p>
+<p>这个问题依旧可以用回溯算法来解决。这个问题并不复杂，所以具体的实现思路，我就不用文字描述了，直接给你看代码。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">private int maxV &#x3D; Integer.MIN_VALUE; &#x2F;&#x2F; 结果放到maxV中</span><br><span class="line">private int[] items &#x3D; &#123;2，2，4，6，3&#125;;  &#x2F;&#x2F; 物品的重量</span><br><span class="line">private int[] value &#x3D; &#123;3，4，8，9，6&#125;; &#x2F;&#x2F; 物品的价值</span><br><span class="line">private int n &#x3D; 5; &#x2F;&#x2F; 物品个数</span><br><span class="line">private int w &#x3D; 9; &#x2F;&#x2F; 背包承受的最大重量</span><br><span class="line">public void f(int i, int cw, int cv) &#123; &#x2F;&#x2F; 调用f(0, 0, 0)</span><br><span class="line">  if (cw &#x3D;&#x3D; w || i &#x3D;&#x3D; n) &#123; &#x2F;&#x2F; cw&#x3D;&#x3D;w表示装满了，i&#x3D;&#x3D;n表示物品都考察完了</span><br><span class="line">    if (cv &gt; maxV) maxV &#x3D; cv;</span><br><span class="line">    return;</span><br><span class="line">  &#125;</span><br><span class="line">  f(i+1, cw, cv); &#x2F;&#x2F; 选择不装第i个物品</span><br><span class="line">  if (cw + weight[i] &lt;&#x3D; w) &#123;</span><br><span class="line">    f(i+1,cw+weight[i], cv+value[i]); &#x2F;&#x2F; 选择装第i个物品</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>针对上面的代码，我们还是照例画出递归树。在递归树中，每个节点表示一个状态。现在我们需要3个变量（i, cw, cv）来表示一个状态。其中，i表示即将要决策第i个物品是否装入背包，cw表示当前背包中物品的总重量，cv表示当前背包中物品的总价值。</p>
+<p><img src="/shuimages/40%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%EF%BC%9A%E5%88%9D%E8%AF%86%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/bf0aa18f367db1b8dfd392906cb5693f.jpg"></p>
+<p>我们发现，在递归树中，有几个节点的i和cw是完全相同的，比如f(2,2,4)和f(2,2,3)。在背包中物品总重量一样的情况下，f(2,2,4)这种状态对应的物品总价值更大，我们可以舍弃f(2,2,3)这种状态，只需要沿着f(2,2,4)这条决策路线继续往下决策就可以。</p>
+<p>也就是说，对于(i, cw)相同的不同状态，那我们只需要保留cv值最大的那个，继续递归处理，其他状态不予考虑。</p>
+<p>思路说完了，但是代码如何实现呢？如果用回溯算法，这个问题就没法再用“备忘录”解决了。所以，我们就需要换一种思路，看看动态规划是不是更容易解决这个问题？</p>
+<p>我们还是把整个求解过程分为n个阶段，每个阶段会决策一个物品是否放到背包中。每个阶段决策完之后，背包中的物品的总重量以及总价值，会有多种情况，也就是会达到多种不同的状态。</p>
+<p>我们用一个二维数组states[n][w+1]，来记录每层可以达到的不同状态。不过这里数组存储的值不再是boolean类型的了，而是当前状态对应的最大总价值。我们把每一层中(i, cw)重复的状态（节点）合并，只记录cv值最大的那个状态，然后基于这些状态来推导下一层的状态。</p>
+<p>我们把这个动态规划的过程翻译成代码，就是下面这个样子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">public static int knapsack3(int[] weight, int[] value, int n, int w) &#123;</span><br><span class="line">  int[][] states &#x3D; new int[n][w+1];</span><br><span class="line">  for (int i &#x3D; 0; i &lt; n; ++i) &#123; &#x2F;&#x2F; 初始化states</span><br><span class="line">    for (int j &#x3D; 0; j &lt; w+1; ++j) &#123;</span><br><span class="line">      states[i][j] &#x3D; -1;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  states[0][0] &#x3D; 0;</span><br><span class="line">  if (weight[0] &lt;&#x3D; w) &#123;</span><br><span class="line">    states[0][weight[0]] &#x3D; value[0];</span><br><span class="line">  &#125;</span><br><span class="line">  for (int i &#x3D; 1; i &lt; n; ++i) &#123; &#x2F;&#x2F;动态规划，状态转移</span><br><span class="line">    for (int j &#x3D; 0; j &lt;&#x3D; w; ++j) &#123; &#x2F;&#x2F; 不选择第i个物品</span><br><span class="line">      if (states[i-1][j] &gt;&#x3D; 0) states[i][j] &#x3D; states[i-1][j];</span><br><span class="line">    &#125;</span><br><span class="line">    for (int j &#x3D; 0; j &lt;&#x3D; w-weight[i]; ++j) &#123; &#x2F;&#x2F; 选择第i个物品</span><br><span class="line">      if (states[i-1][j] &gt;&#x3D; 0) &#123;</span><br><span class="line">        int v &#x3D; states[i-1][j] + value[i];</span><br><span class="line">        if (v &gt; states[i][j+weight[i]]) &#123;</span><br><span class="line">          states[i][j+weight[i]] &#x3D; v;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  &#x2F;&#x2F; 找出最大值</span><br><span class="line">  int maxvalue &#x3D; -1;</span><br><span class="line">  for (int j &#x3D; 0; j &lt;&#x3D; w; ++j) &#123;</span><br><span class="line">    if (states[n-1][j] &gt; maxvalue) maxvalue &#x3D; states[n-1][j];</span><br><span class="line">  &#125;</span><br><span class="line">  return maxvalue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>关于这个问题的时间、空间复杂度的分析，跟上一个例子大同小异，所以我就不赘述了。我直接给出答案，时间复杂度是O(n<em>w)，空间复杂度也是O(n</em>w)。跟上一个例子类似，空间复杂度也是可以优化的，你可以自己写一下。</p>
+<h1><span id="解答开篇">解答开篇</span></h1><p>掌握了今天讲的两个问题之后，你是不是觉得，开篇的问题很简单？</p>
+<p>对于这个问题，你当然可以利用回溯算法，穷举所有的排列组合，看大于等于200并且最接近200的组合是哪一个？但是，这样效率太低了点，时间复杂度非常高，是指数级的。当n很大的时候，可能“双十一”已经结束了，你的代码还没有运行出结果，这显然会让你在女朋友心中的形象大大减分。</p>
+<p>实际上，它跟第一个例子中讲的0-1背包问题很像，只不过是把“重量”换成了“价格”而已。购物车中有n个商品。我们针对每个商品都决策是否购买。每次决策之后，对应不同的状态集合。我们还是用一个二维数组states[n][x]，来记录每次决策之后所有可达的状态。不过，这里的x值是多少呢？</p>
+<p>0-1背包问题中，我们找的是小于等于w的最大值，x就是背包的最大承载重量w+1。对于这个问题来说，我们要找的是大于等于200（满减条件）的值中最小的，所以就不能设置为200加1了。就这个实际的问题而言，如果要购买的物品的总价格超过200太多，比如1000，那这个羊毛“薅”得就没有太大意义了。所以，我们可以限定x值为1001。</p>
+<p>不过，这个问题不仅要求大于等于200的总价格中的最小的，我们还要找出这个最小总价格对应都要购买哪些商品。实际上，我们可以利用states数组，倒推出这个被选择的商品序列。我先把代码写出来，待会再照着代码给你解释。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; items商品价格，n商品个数, w表示满减条件，比如200</span><br><span class="line">public static void double11advance(int[] items, int n, int w) &#123;</span><br><span class="line">  boolean[][] states &#x3D; new boolean[n][3*w+1];&#x2F;&#x2F;超过3倍就没有薅羊毛的价值了</span><br><span class="line">  states[0][0] &#x3D; true;  &#x2F;&#x2F; 第一行的数据要特殊处理</span><br><span class="line">  if (items[0] &lt;&#x3D; 3*w) &#123;</span><br><span class="line">    states[0][items[0]] &#x3D; true;</span><br><span class="line">  &#125;</span><br><span class="line">  for (int i &#x3D; 1; i &lt; n; ++i) &#123; &#x2F;&#x2F; 动态规划</span><br><span class="line">    for (int j &#x3D; 0; j &lt;&#x3D; 3*w; ++j) &#123;&#x2F;&#x2F; 不购买第i个商品</span><br><span class="line">      if (states[i-1][j] &#x3D;&#x3D; true) states[i][j] &#x3D; states[i-1][j];</span><br><span class="line">    &#125;</span><br><span class="line">    for (int j &#x3D; 0; j &lt;&#x3D; 3*w-items[i]; ++j) &#123;&#x2F;&#x2F;购买第i个商品</span><br><span class="line">      if (states[i-1][j]&#x3D;&#x3D;true) states[i][j+items[i]] &#x3D; true;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  int j;</span><br><span class="line">  for (j &#x3D; w; j &lt; 3*w+1; ++j) &#123; </span><br><span class="line">    if (states[n-1][j] &#x3D;&#x3D; true) break; &#x2F;&#x2F; 输出结果大于等于w的最小值</span><br><span class="line">  &#125;</span><br><span class="line">  if (j &#x3D;&#x3D; 3*w+1) return; &#x2F;&#x2F; 没有可行解</span><br><span class="line">  for (int i &#x3D; n-1; i &gt;&#x3D; 1; --i) &#123; &#x2F;&#x2F; i表示二维数组中的行，j表示列</span><br><span class="line">    if(j-items[i] &gt;&#x3D; 0 &amp;&amp; states[i-1][j-items[i]] &#x3D;&#x3D; true) &#123;</span><br><span class="line">      System.out.print(items[i] + &quot; &quot;); &#x2F;&#x2F; 购买这个商品</span><br><span class="line">      j &#x3D; j - items[i];</span><br><span class="line">    &#125; &#x2F;&#x2F; else 没有购买这个商品，j不变。</span><br><span class="line">  &#125;</span><br><span class="line">  if (j !&#x3D; 0) System.out.print(items[0]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>代码的前半部分跟0-1背包问题没有什么不同，我们着重看后半部分，看它是如何打印出选择购买哪些商品的。</p>
+<p>状态(i, j)只有可能从(i-1, j)或者(i-1, j-value[i])两个状态推导过来。所以，我们就检查这两个状态是否是可达的，也就是states[i-1][j]或者states[i-1][j-value[i]]是否是true。</p>
+<p>如果states[i-1][j]可达，就说明我们没有选择购买第i个商品，如果states[i-1][j-value[i]]可达，那就说明我们选择了购买第i个商品。我们从中选择一个可达的状态（如果两个都可达，就随意选择一个），然后，继续迭代地考察其他商品是否有选择购买。</p>
+<h1><span id="内容小结">内容小结</span></h1><p>动态规划的第一节到此就讲完了。内容比较多，你可能需要多一点时间来消化。为了帮助你有的放矢地学习，我来强调一下，今天你应该掌握的重点内容。</p>
+<p>今天的内容不涉及动态规划的理论，我通过两个例子，给你展示了动态规划是如何解决问题的，并且一点一点详细给你讲解了动态规划解决问题的思路。这两个例子都是非常经典的动态规划问题，只要你真正搞懂这两个问题，基本上动态规划已经入门一半了。所以，你要多花点时间，真正弄懂这两个问题。</p>
+<p>从例子中，你应该能发现，大部分动态规划能解决的问题，都可以通过回溯算法来解决，只不过回溯算法解决起来效率比较低，时间复杂度是指数级的。动态规划算法，在执行效率方面，要高很多。尽管执行效率提高了，但是动态规划的空间复杂度也提高了，所以，很多时候，我们会说，动态规划是一种空间换时间的算法思想。</p>
+<p>我前面也说了，今天的内容并不涉及理论的知识。这两个例子的分析过程，我并没有涉及任何高深的理论方面的东西。而且，我个人觉得，贪心、分治、回溯、动态规划，这四个算法思想有关的理论知识，大部分都是“后验性”的，也就是说，在解决问题的过程中，我们往往是先想到如何用某个算法思想解决问题，然后才用算法理论知识，去验证这个算法思想解决问题的正确性。所以，你大可不必过于急于寻求动态规划的理论知识。</p>
+<h1><span id="课后思考">课后思考</span></h1><p>“杨辉三角”不知道你听说过吗？我们现在对它进行一些改造。每个位置的数字可以随意填写，经过某个数字只能到达下面一层相邻的两个数字。</p>
+<p>假设你站在第一层，往下移动，我们把移动到最底层所经过的所有数字之和，定义为路径的长度。请你编程求出从最高层移动到最底层的最短路径长度。</p>
+<p><img src="/shuimages/40%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%EF%BC%9A%E5%88%9D%E8%AF%86%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/f756eade65a5da08e7c0f1e93f9f20cc.jpg"></p>
+<p>欢迎留言和我分享，也欢迎点击“<span class="orange">请朋友读</span>”，把今天的内容分享给你的好友，和他一起讨论、学习。</p>
+
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+		
+		<!-- ============================ 目录 =========================== -->
+		<div class="post-toc">
+			<div class="tocbot-list">
+			</div>
+			<div class="tocbot-list-menu">
+				<a class="tocbot-toc-expand" onclick="expand_toc()">全部展开</a>
+				<a onclick="go_top()">回到顶部</a>
+				<a onclick="go_bottom()">回到底部</a>
+			</div>
+		</div>
+		<script>
+			window.onload = function(){
+				$('.post-content').find('img').each(function(){
+					var picWidth = parseInt($(this).width());
+					if(picWidth > 800){
+						var pW = $(this).width();
+						var pH = $(this).height();
+						var BL = pH / pW;
+						var outH = 800 * BL;
+						$(this).width(800);
+						$(this).height(outH);
+					}
+				})
+			};
+			$(document).ready(
+				function (){
+					if ($('.tocbot-list').length > 0) {
+						var headerEl = 'h1,h2,h3,h4,h5',
+							content = '.post-content',
+							idArr = {};
+				 
+						$(content).children(headerEl).each(function () {
+							//去除空格以及多余标点
+							var headerId = $(this).children('span').text().replace(/[\s|\~|`|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\_|\+|\=|\||\|\[|\]|\{|\}|\;|\:|\"|\'|\,|\<|\.|\>|\/|\?|\：|\，|\。]/g, '');
+					 
+							headerId = headerId.toLowerCase();
+							if (idArr[headerId]) {
+								//id已经存在
+								$(this).attr('id', headerId + '-' + idArr[headerId]);
+								idArr[headerId]++;
+							}
+							else {
+								//id未存在
+								idArr[headerId] = 1;
+								$(this).attr('id', headerId);
+							}
+						});
+					}
+				}
+			)
+			
+			$(document).ready(
+				function () {
+					tocbot.init({
+						tocSelector: '.tocbot-list',
+						contentSelector: '.post-content',
+						headingSelector: 'h1, h2, h3, h4, h5',
+						collapseDepth: 1,
+						orderedList: false,
+						scrollSmooth: true,
+					})
+				}
+			)
+
+			function expand_toc() {
+				var b = document.querySelector(".tocbot-toc-expand");
+				tocbot.init({
+					tocSelector: '.tocbot-list',
+					contentSelector: '.post-content',
+					headingSelector: 'h1, h2, h3, h4, h5',
+					collapseDepth: 6,
+					orderedList: false,
+					scrollSmooth: true,
+				});
+				b.setAttribute("onclick", "collapse_toc()");
+				b.innerHTML = "全部折叠"
+			}
+
+			function collapse_toc() {
+				var b = document.querySelector(".tocbot-toc-expand");
+				tocbot.init({
+					tocSelector: '.tocbot-list',
+					contentSelector: '.post-content',
+					headingSelector: 'h1, h2, h3, h4, h5',
+					collapseDepth: 1,
+					orderedList: false,
+					scrollSmooth: true,
+				});
+				b.setAttribute("onclick", "expand_toc()");
+				b.innerHTML = "全部展开"
+			}
+
+			function go_top() {
+				window.scrollTo(0, 0);
+			}
+
+			function go_bottom() {
+				window.scrollTo(0, document.body.scrollHeight);
+			}
+
+		</script>
+		<!-- ============================ 目录end =========================== -->
+        <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
+    
+    <a class="pull-left" href="/2020/08/07/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E4%B9%8B%E7%BE%8E/41%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%EF%BC%9A%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%90%86%E8%AE%BA/" style="float: left;">
+        ← 41 | 动态规划理论：一篇文章带你彻底搞懂最优子结构、无后效性和重复子问题
+    </a>
+    
+    
+    <a class="pull-right" href="/2020/08/07/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E4%B9%8B%E7%BE%8E/39%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%EF%BC%9A%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95/">
+        39 | 回溯算法：从电影《蝴蝶效应》中学习回溯算法的核心思想 →
+    </a>
+    
+</nav>
+
+        <div class="post-content col-sm-24"><script type="text/javascript">
+  /**
+   * 搜狐畅言
+   */
+
+  /*
+  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
+
+  window.onload = function () {
+    (function () {
+      var appid = 'cytXXXX';
+      var conf = 'prod_xxxxxxxxxxxxxxxxx';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      var loadJs = function (d, a, id) {
+        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+        var b = document.createElement("script");
+        b.setAttribute("type", "text/javascript");
+        b.setAttribute("charset", "UTF-8");
+        b.setAttribute("src", d);
+        if (id) {
+          b.setAttribute("id", id);
+        }
+        if (typeof a === "function") {
+          if (window.attachEvent) {
+            b.onreadystatechange = function () {
+              var e = b.readyState;
+              if (e === "loaded" || e === "complete") {
+                b.onreadystatechange = null;
+                a()
+              }
+            }
+          } else {
+            b.onload = a
+          }
+        }
+        c.appendChild(b)
+      };
+
+      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
+        window.changyan.api.config({
+          appid: appid,
+          conf: conf
+        })
+      });
+    })();
+  }
+  */
+
+</script>
+</div>
+    </div>
+</section>
+
+
+      <section id="statement">
+    <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
+        <div class="state-row">
+            <p>虽然还没想好写点什么，但是总觉得这里放句话比较和谐。</p>
+        </div>
+    </div>
+</section>
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By mimo. All Rights Reserved.
+                </p>
+                <p>Theme By <a target="_blank" rel="noopener" href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a>&nbsp;</li>
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+<script src="/js/tocbot.min.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+      
+            <style>
+.local-search-popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  background: rgba(255, 255, 255, .9);
+  color: #333;
+  z-index: 9999;
+  border-radius: 5px;
+  overflow: scroll;
+}
+#local-search-input {
+  width: 100%;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #151515;
+  background-color: initial;
+}
+.search-result-list {
+  list-style: none;
+  padding-left: 0;
+}
+.search-result-list > li {
+  margin-top: 15px;
+  border-bottom: 1px solid #ddd;
+  transition: all ease .3s;
+}
+.search-result-list > li:hover {
+  border-bottom: 1px solid gray;
+}
+.search-result-title {
+  font-size: 16px;
+}
+.search-result {
+  line-height: 20px;
+}
+.search-keyword {
+  font-weight: normal;
+  color: #c00;
+}
+
+@media (min-width: 890px) {
+  .popup-btn-close {
+    position: absolute;
+    top: 15px;
+    left: 35px;
+    border: 1px solid #151515;
+    padding: 0px 10px;
+    border-top-left-radius: 8px;
+    cursor: pointer;
+    transition: all ease .3s;
+  }
+  .popup-btn-close:hover {
+    background: #151515;
+    opacity: .9;
+    color: #fff;
+  }
+}
+@media (max-width: 890px) {
+  .popup-btn-close {
+    font-size: 0;
+    position: fixed;
+    right: 20px;
+    bottom: 50px;
+    width: 50px;
+    height: 50px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 1px 1px 5px #888;
+    cursor: pointer;
+  }
+  .popup-btn-close::after {
+    content: '←';
+    color: #151515;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 20px;
+    width: 100%;
+    height: 100%;
+    line-height: 50px;
+    text-align: center;
+  }
+}
+</style>
+
+<div class="popup search-popup local-search-popup">
+  <span class="popup-btn-close">
+    ESC
+  </span>
+  <div class="container">
+    <div class="col-md-8 col-md-offset-2">
+      <div class="local-search-header clearfix">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="local-search-input-wrapper">
+          <input autocomplete="off" placeholder="Search..." type="text" id="local-search-input">
+        </div>
+      </div>
+      <div id="local-search-result"></div>
+    </div>
+  </div>
+</div>
+
+<script src="/js/ziploader.js"></script>
+
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.json";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').fadeOut(300);
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $('.popup').fadeIn(300);
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // get search zip version
+    $.get('/searchVersion.txt?t=' + (+new Date()), function(res) {
+      if (localStorage.getItem('searchVersion') !== res) {
+        localStorage.setItem('searchVersion', res);
+        initSearchJson();
+      }
+    });
+
+    function initSearchJson () {
+      initLoad(['/search.zip'], {
+        loadOptions: {
+          success: function(obj) {
+            localStorage.setItem('searchJson', obj['search.json'])
+          },
+          error: function(e) {
+            return console.log(e)
+          }
+        },
+        returnOptions: {
+          'json': TYPE_TEXT
+        },
+        mimeOptions:{
+          'json':'application/json'
+        }
+      })
+    }
+
+
+    // search function;
+    var searchFunc = function(search_id, content_id) {
+      'use strict';
+
+      isfetched = true;
+      var datas = JSON.parse(localStorage.getItem('searchJson'));
+      console.log(search_id)
+      var input = document.getElementById(search_id);
+      var resultContent = document.getElementById(content_id);
+      var inputEventFunction = function() {
+        var searchText = input.value.trim().toLowerCase();
+        var keywords = searchText.split(/[\s\-]+/);
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        var resultItems = [];
+        if (searchText.length > 0) {
+          // perform local searching
+          datas.forEach(function(data) {
+            var isMatch = false;
+            var hitCount = 0;
+            var searchTextCount = 0;
+            var title = data.title ? data.title.trim() : '';
+            var titleInLowerCase = title.toLowerCase();
+            var content = data.content ? data.content.trim().replace(/<[^>]+>/g,"") : '';
+            var contentInLowerCase = content.toLowerCase();
+            var articleUrl = decodeURIComponent(data.url);
+            var indexOfTitle = [];
+            var indexOfContent = [];
+            // only match articles with not empty titles
+            keywords.forEach(function(keyword) {
+              function getIndexByWord(word, text, caseSensitive) {
+                var wordLen = word.length;
+                if (wordLen === 0) {
+                  return [];
+                }
+                var startPosition = 0, position = [], index = [];
+                if (!caseSensitive) {
+                  text = text.toLowerCase();
+                  word = word.toLowerCase();
+                }
+                while ((position = text.indexOf(word, startPosition)) > -1) {
+                  index.push({position: position, word: word});
+                  startPosition = position + wordLen;
+                }
+                return index;
+              }
+
+              indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+              indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+            });
+            if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+              isMatch = true;
+              hitCount = indexOfTitle.length + indexOfContent.length;
+            }
+
+            // show search results
+
+            if (isMatch) {
+              // sort index by position of keyword
+
+              [indexOfTitle, indexOfContent].forEach(function (index) {
+                index.sort(function (itemLeft, itemRight) {
+                  if (itemRight.position !== itemLeft.position) {
+                    return itemRight.position - itemLeft.position;
+                  } else {
+                    return itemLeft.word.length - itemRight.word.length;
+                  }
+                });
+              });
+
+              // merge hits into slices
+
+              function mergeIntoSlice(text, start, end, index) {
+                var item = index[index.length - 1];
+                var position = item.position;
+                var word = item.word;
+                var hits = [];
+                var searchTextCountInSlice = 0;
+                while (position + word.length <= end && index.length != 0) {
+                  if (word === searchText) {
+                    searchTextCountInSlice++;
+                  }
+                  hits.push({position: position, length: word.length});
+                  var wordEnd = position + word.length;
+
+                  // move to next position of hit
+
+                  index.pop();
+                  while (index.length != 0) {
+                    item = index[index.length - 1];
+                    position = item.position;
+                    word = item.word;
+                    if (wordEnd > position) {
+                      index.pop();
+                    } else {
+                      break;
+                    }
+                  }
+                }
+                searchTextCount += searchTextCountInSlice;
+                return {
+                  hits: hits,
+                  start: start,
+                  end: end,
+                  searchTextCount: searchTextCountInSlice
+                };
+              }
+
+              var slicesOfTitle = [];
+              if (indexOfTitle.length != 0) {
+                slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+              }
+
+              var slicesOfContent = [];
+              while (indexOfContent.length != 0) {
+                var item = indexOfContent[indexOfContent.length - 1];
+                var position = item.position;
+                var word = item.word;
+                // cut out 100 characters
+                var start = position - 20;
+                var end = position + 80;
+                if(start < 0){
+                  start = 0;
+                }
+                if (end < position + word.length) {
+                  end = position + word.length;
+                }
+                if(end > content.length){
+                  end = content.length;
+                }
+                slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+              }
+
+              // sort slices in content by search text's count and hits' count
+
+              slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                  return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                  return sliceRight.hits.length - sliceLeft.hits.length;
+                } else {
+                  return sliceLeft.start - sliceRight.start;
+                }
+              });
+
+              // select top N slices in content
+
+              var upperBound = parseInt('2');
+              if (upperBound >= 0) {
+                slicesOfContent = slicesOfContent.slice(0, upperBound);
+              }
+
+              // highlight title and content
+
+              function highlightKeyword(text, slice) {
+                var result = '';
+                var prevEnd = slice.start;
+                slice.hits.forEach(function (hit) {
+                  result += text.substring(prevEnd, hit.position);
+                  var end = hit.position + hit.length;
+                  result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                  prevEnd = end;
+                });
+                result += text.substring(prevEnd, slice.end);
+                return result;
+              }
+
+              var resultItem = '';
+
+              if (slicesOfTitle.length != 0) {
+                resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+              } else {
+                resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+              }
+
+              slicesOfContent.forEach(function (slice) {
+                resultItem += "<a target='_blank' href='" + articleUrl + "'>" +
+                  "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                  "...</p>" + "</a>";
+              });
+
+              resultItem += "</li>";
+              resultItems.push({
+                item: resultItem,
+                searchTextCount: searchTextCount,
+                hitCount: hitCount,
+                id: resultItems.length
+              });
+            }
+          })
+        };
+        if (keywords.length === 1 && keywords[0] === "") {
+          resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+        } else if (resultItems.length === 0) {
+          resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+        } else {
+          resultItems.sort(function (resultLeft, resultRight) {
+            if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+              return resultRight.searchTextCount - resultLeft.searchTextCount;
+            } else if (resultLeft.hitCount !== resultRight.hitCount) {
+              return resultRight.hitCount - resultLeft.hitCount;
+            } else {
+              return resultRight.id - resultLeft.id;
+            }
+          });
+          var searchResultList = '<ul class=\"search-result-list\">';
+          resultItems.forEach(function (result) {
+            searchResultList += result.item;
+          })
+          searchResultList += "</ul>";
+          resultContent.innerHTML = searchResultList;
+        }
+      }
+
+      if ('auto' === 'auto') {
+        input.addEventListener('input', inputEventFunction);
+      } else {
+        $('.search-icon').click(inputEventFunction);
+        input.addEventListener('keypress', function (event) {
+          if (event.keyCode === 13) {
+            inputEventFunction();
+          }
+        });
+      }
+
+      // remove loading animation
+      $('body').css('overflow', '');
+
+      proceedsearch();
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        $('.sb-close').click();
+        searchFunc('local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+      
+</body>
+</html>

@@ -1,0 +1,1191 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<!--<![endif]-->
+
+
+<head>
+  <title>28 | 读写分离有哪些坑？ | mimo</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="mimo">
+    <meta name="author" content="mimo">
+    <meta name="description" content="Q" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="mimo" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+    
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+  
+  
+  
+
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!-- 
+<body class="post-template">
+ -->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">主 页</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">归 档</a></li>
+            <!-- Dropdown Menu -->
+			 
+            
+        	<li>
+        		<a class="sb-toggle-submenu">分 类<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/categories/git/" class="animsition-link">git<small>(3)</small></a></li>
+				    
+				    <li><a href="/categories/linux/" class="animsition-link">linux<small>(7)</small></a></li>
+				    
+				    <li><a href="/categories/mysql实战45讲/" class="animsition-link">mysql实战45讲<small>(49)</small></a></li>
+				    
+				    <li><a href="/categories/python/" class="animsition-link">python<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/sonar/" class="animsition-link">sonar<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/tess4j/" class="animsition-link">tess4j<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/基础/" class="animsition-link">基础<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/数据结构与算法之美/" class="animsition-link">数据结构与算法之美<small>(79)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
+			
+			<li>
+        		<a class="sb-toggle-submenu">标 签<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/tags/docker/" class="animsition-link">docker<small>(2)</small></a></li>
+				    
+				    <li><a href="/tags/git/" class="animsition-link">git<small>(3)</small></a></li>
+				    
+				    <li><a href="/tags/gitlab/" class="animsition-link">gitlab<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/jenkins/" class="animsition-link">jenkins<small>(2)</small></a></li>
+				    
+				    <li><a href="/tags/linux/" class="animsition-link">linux<small>(2)</small></a></li>
+				    
+				    <li><a href="/tags/log4j/" class="animsition-link">log4j<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/python/" class="animsition-link">python<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/sonar/" class="animsition-link">sonar<small>(2)</small></a></li>
+				    
+				    <li><a href="/tags/svn/" class="animsition-link">svn<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/synchronized/" class="animsition-link">synchronized<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/tess4j/" class="animsition-link">tess4j<small>(2)</small></a></li>
+				    
+				    <li><a href="/tags/xml/" class="animsition-link">xml<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/日志/" class="animsition-link">日志<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/正则/" class="animsition-link">正则<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/解析/" class="animsition-link">解析<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/识别/" class="animsition-link">识别<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/部署/" class="animsition-link">部署<small>(6)</small></a></li>
+				    
+				    <li><a href="/tags/验证码/" class="animsition-link">验证码<small>(1)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
+            
+            <li>
+                <a class="sb-toggle-submenu">链 接<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a target="_blank" rel="noopener" href="http://go.kieran.top/" class="animsition-link">source</a></li>
+                    
+                    <li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/visugar/p/6821777.html" class="animsition-link">搭建blog-hexo参考</a></li>
+                    
+                    <li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/f4dce0e76886" class="animsition-link">参考2</a></li>
+                    
+                    <li><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/configuration.html" class="animsition-link">官网</a></li>
+                    
+                    <li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/31eb5c754c01" class="animsition-link">nginx部署</a></li>
+                    
+                    <li><a target="_blank" rel="noopener" href="https://segmentfault.com/p/1210000010636536/read" class="animsition-link">hexo原理</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            
+            <li><a href="javascript:;" class="popup-trigger" title="Search"><span class="search-icon"></span>搜 索</a></li>
+            
+            <li><a href="/about.html" class="animsition-link" title="about">关 于</a></li>
+            <!-- <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li> -->
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo.png" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">mimo</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a></li>
+                            
+                            
+                            <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a></li>
+                            
+                            
+                            <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a></li>
+                            
+                            
+                            <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a></li>
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+
+      
+<section id="intro">
+    <div class="post-container">
+        <div class="row col-md-offset-22">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2020-08-19T02:32:59.000Z" itemprop="datePublished">
+          2020-08-19
+      </time>
+    
+</span>
+                <h1>28 | 读写分离有哪些坑？</h1>
+            </div>
+        </div>
+		<div class="post-content">
+      		<p>在上一篇文章中，我和你介绍了一主多从的结构以及切换流程。今天我们就继续聊聊一主多从架构的应用场景：读写分离，以及怎么处理主备延迟导致的读写分离问题。</p>
+<p>我们在上一篇文章中提到的一主多从的结构，其实就是读写分离的基本结构了。这里，我再把这张图贴过来，方便你理解。</p>
+<p><img src="/mysqlimages/28%E8%AF%BB%E5%86%99%E5%88%86%E7%A6%BB%E6%9C%89%E5%93%AA%E4%BA%9B%E5%9D%91/1334b9c08b8fd837832fdb2d82e6b0aa.png"></p>
+<center><span class="reference">图1 读写分离基本结构</span></center>读写分离的主要目标就是分摊主库的压力。图1中的结构是客户端（client）主动做负载均衡，这种模式下一般会把数据库的连接信息放在客户端的连接层。也就是说，由客户端来选择后端数据库进行查询。
+
+<p>还有一种架构是，在MySQL和客户端之间有一个中间代理层proxy，客户端只连接proxy， 由proxy根据请求类型和上下文决定请求的分发路由。</p>
+<p><img src="/mysqlimages/28%E8%AF%BB%E5%86%99%E5%88%86%E7%A6%BB%E6%9C%89%E5%93%AA%E4%BA%9B%E5%9D%91/1b1ea74a48e1a16409e9b4d02172b945.jpg"></p>
+<center><span class="reference">图2 带proxy的读写分离架构</span></center>接下来，我们就看一下客户端直连和带proxy的读写分离架构，各有哪些特点。
+
+<ul>
+<li><p>客户端直连方案，因为少了一层proxy转发，所以查询性能稍微好一点儿，并且整体架构简单，排查问题更方便。但是这种方案，由于要了解后端部署细节，所以在出现主备切换、库迁移等操作的时候，客户端都会感知到，并且需要调整数据库连接信息。<br><br>你可能会觉得这样客户端也太麻烦了，信息大量冗余，架构很丑。其实也未必，一般采用这样的架构，一定会伴随一个负责管理后端的组件，比如Zookeeper，尽量让业务端只专注于业务逻辑开发。</p>
+</li>
+<li><p>带proxy的架构，对客户端比较友好。客户端不需要关注后端细节，连接维护、后端信息维护等工作，都是由proxy完成的。但这样的话，对后端维护团队的要求会更高。而且，proxy也需要有高可用架构。因此，带proxy架构的整体就相对比较复杂。</p>
+</li>
+</ul>
+<p>理解了这两种方案的优劣，具体选择哪个方案就取决于数据库团队提供的能力了。但目前看，趋势是往带proxy的架构方向发展的。</p>
+<p>但是，不论使用哪种架构，你都会碰到我们今天要讨论的问题：由于主从可能存在延迟，客户端执行完一个更新事务后马上发起查询，如果查询选择的是从库的话，就有可能读到刚刚的事务更新之前的状态。</p>
+<p><strong>这种“在从库上会读到系统的一个过期状态”的现象，在这篇文章里，我们暂且称之为“过期读”。</strong> 前面我们说过了几种可能导致主备延迟的原因，以及对应的优化策略，但是主从延迟还是不能100%避免的。</p>
+<p>不论哪种结构，客户端都希望查询从库的数据结果，跟查主库的数据结果是一样的。</p>
+<p>接下来，我们就来讨论怎么处理过期读问题。</p>
+<p>这里，我先把文章中涉及到的处理过期读的方案汇总在这里，以帮助你更好地理解和掌握全文的知识脉络。这些方案包括：</p>
+<ul>
+<li><p>强制走主库方案；</p>
+</li>
+<li><p>sleep方案；</p>
+</li>
+<li><p>判断主备无延迟方案；</p>
+</li>
+<li><p>配合semi-sync方案；</p>
+</li>
+<li><p>等主库位点方案；</p>
+</li>
+<li><p>等GTID方案。</p>
+<h1><span id="强制走主库方案">强制走主库方案</span></h1>强制走主库方案其实就是，将查询请求做分类。通常情况下，我们可以将查询请求分为这么两类：
+</li>
+<li><p>对于必须要拿到最新结果的请求，强制将其发到主库上。比如，在一个交易平台上，卖家发布商品以后，马上要返回主页面，看商品是否发布成功。那么，这个请求需要拿到最新的结果，就必须走主库。</p>
+</li>
+<li><p>对于可以读到旧数据的请求，才将其发到从库上。在这个交易平台上，买家来逛商铺页面，就算晚几秒看到最新发布的商品，也是可以接受的。那么，这类请求就可以走从库。</p>
+</li>
+</ul>
+<p>你可能会说，这个方案是不是有点畏难和取巧的意思，但其实这个方案是用得最多的。</p>
+<p>当然，这个方案最大的问题在于，有时候你会碰到“所有查询都不能是过期读”的需求，比如一些金融类的业务。这样的话，你就要放弃读写分离，所有读写压力都在主库，等同于放弃了扩展性。</p>
+<p>因此接下来，我们来讨论的话题是：可以支持读写分离的场景下，有哪些解决过期读的方案，并分析各个方案的优缺点。</p>
+<h1><span id="sleep-方案">Sleep 方案</span></h1>主库更新后，读从库之前先sleep一下。具体的方案就是，类似于执行一条select sleep(1)命令。
+
+<p>这个方案的假设是，大多数情况下主备延迟在1秒之内，做一个sleep可以有很大概率拿到最新的数据。</p>
+<p>这个方案给你的第一感觉，很可能是不靠谱儿，应该不会有人用吧？并且，你还可能会说，直接在发起查询时先执行一条sleep语句，用户体验很不友好啊。</p>
+<p>但，这个思路确实可以在一定程度上解决问题。为了看起来更靠谱儿，我们可以换一种方式。</p>
+<p>以卖家发布商品为例，商品发布后，用Ajax（Asynchronous JavaScript + XML，异步JavaScript和XML）直接把客户端输入的内容作为“新的商品”显示在页面上，而不是真正地去数据库做查询。</p>
+<p>这样，卖家就可以通过这个显示，来确认产品已经发布成功了。等到卖家再刷新页面，去查看商品的时候，其实已经过了一段时间，也就达到了sleep的目的，进而也就解决了过期读的问题。</p>
+<p>也就是说，这个sleep方案确实解决了类似场景下的过期读问题。但，从严格意义上来说，这个方案存在的问题就是不精确。这个不精确包含了两层意思：</p>
+<ul>
+<li><p>如果这个查询请求本来0.5秒就可以在从库上拿到正确结果，也会等1秒；</p>
+</li>
+<li><p>如果延迟超过1秒，还是会出现过期读。</p>
+</li>
+</ul>
+<p>看到这里，你是不是有一种“你是不是在逗我”的感觉，这个改进方案虽然可以解决类似Ajax场景下的过期读问题，但还是怎么看都不靠谱儿。别着急，接下来我就和你介绍一些更准确的方案。</p>
+<h1><span id="判断主备无延迟方案">判断主备无延迟方案</span></h1>要确保备库无延迟，通常有三种做法。
+
+<p>通过前面的<a target="_blank" rel="noopener" href="https://time.geekbang.org/column/article/76795">第25篇</a>文章，我们知道show slave status结果里的seconds_behind_master参数的值，可以用来衡量主备延迟时间的长短。</p>
+<p>所以<strong>第一种确保主备无延迟的方法是，</strong>每次从库执行查询请求前，先判断seconds_behind_master是否已经等于0。如果还不等于0 ，那就必须等到这个参数变为0才能执行查询请求。</p>
+<p>seconds_behind_master的单位是秒，如果你觉得精度不够的话，还可以采用对比位点和GTID的方法来确保主备无延迟，也就是我们接下来要说的第二和第三种方法。</p>
+<p>如图3所示，是一个show slave status结果的部分截图。</p>
+<p><img src="/mysqlimages/28%E8%AF%BB%E5%86%99%E5%88%86%E7%A6%BB%E6%9C%89%E5%93%AA%E4%BA%9B%E5%9D%91/00110923007513e865d7f43a124887c1.png"></p>
+<center><span class="reference">图3 show slave status结果</span></center>现在，我们就通过这个结果，来看看具体如何通过对比位点和GTID来确保主备无延迟。
+
+<p><strong>第二种方法，</strong>对比位点确保主备无延迟：</p>
+<ul>
+<li>Master_Log_File和Read_Master_Log_Pos，表示的是读到的主库的最新位点；</li>
+<li>Relay_Master_Log_File和Exec_Master_Log_Pos，表示的是备库执行的最新位点。<br>如果Master_Log_File和Relay_Master_Log_File、Read_Master_Log_Pos和Exec_Master_Log_Pos这两组值完全相同，就表示接收到的日志已经同步完成。</li>
+</ul>
+<p><strong>第三种方法，</strong>对比GTID集合确保主备无延迟：</p>
+<ul>
+<li>Auto_Position=1 ，表示这对主备关系使用了GTID协议。</li>
+<li>Retrieved_Gtid_Set，是备库收到的所有日志的GTID集合；</li>
+<li>Executed_Gtid_Set，是备库所有已经执行完成的GTID集合。<br>如果这两个集合相同，也表示备库接收到的日志都已经同步完成。</li>
+</ul>
+<p>可见，对比位点和对比GTID这两种方法，都要比判断seconds_behind_master是否为0更准确。</p>
+<p>在执行查询请求之前，先判断从库是否同步完成的方法，相比于sleep方案，准确度确实提升了不少，但还是没有达到“精确”的程度。为什么这么说呢？</p>
+<p>我们现在一起来回顾下，一个事务的binlog在主备库之间的状态：</p>
+<ul>
+<li><p>主库执行完成，写入binlog，并反馈给客户端；</p>
+</li>
+<li><p>binlog被从主库发送给备库，备库收到；</p>
+</li>
+<li><p>在备库执行binlog完成。</p>
+</li>
+</ul>
+<p>我们上面判断主备无延迟的逻辑，是“备库收到的日志都执行完成了”。但是，从binlog在主备之间状态的分析中，不难看出还有一部分日志，处于客户端已经收到提交确认，而备库还没收到日志的状态。</p>
+<p>如图4所示就是这样的一个状态。</p>
+<p><img src="/mysqlimages/28%E8%AF%BB%E5%86%99%E5%88%86%E7%A6%BB%E6%9C%89%E5%93%AA%E4%BA%9B%E5%9D%91/557445207b57d6c0f2747509d7d6619e.png"></p>
+<center><span class="reference">图4 备库还没收到trx3</span></center>这时，主库上执行完成了三个事务trx1、trx2和trx3，其中：
+
+<ul>
+<li><p>trx1和trx2已经传到从库，并且已经执行完成了；</p>
+</li>
+<li><p>trx3在主库执行完成，并且已经回复给客户端，但是还没有传到从库中。</p>
+</li>
+</ul>
+<p>如果这时候你在从库B上执行查询请求，按照我们上面的逻辑，从库认为已经没有同步延迟，但还是查不到trx3的。严格地说，就是出现了过期读。</p>
+<p>那么，这个问题有没有办法解决呢？</p>
+<h1><span id="配合semi-sync">配合semi-sync</span></h1>要解决这个问题，就要引入半同步复制，也就是semi-sync replication。
+
+<p>semi-sync做了这样的设计：</p>
+<ul>
+<li><p>事务提交的时候，主库把binlog发给从库；</p>
+</li>
+<li><p>从库收到binlog以后，发回给主库一个ack，表示收到了；</p>
+</li>
+<li><p>主库收到这个ack以后，才能给客户端返回“事务完成”的确认。</p>
+</li>
+</ul>
+<p>也就是说，如果启用了semi-sync，就表示所有给客户端发送过确认的事务，都确保了备库已经收到了这个日志。</p>
+<p>在<a target="_blank" rel="noopener" href="https://time.geekbang.org/column/article/76795">第25篇文章</a>的评论区，有同学问到：如果主库掉电的时候，有些binlog还来不及发给从库，会不会导致系统数据丢失？</p>
+<p>答案是，如果使用的是普通的异步复制模式，就可能会丢失，但semi-sync就可以解决这个问题。</p>
+<p>这样，semi-sync配合前面关于位点的判断，就能够确定在从库上执行的查询请求，可以避免过期读。</p>
+<p>但是，semi-sync+位点判断的方案，只对一主一备的场景是成立的。在一主多从场景中，主库只要等到一个从库的ack，就开始给客户端返回确认。这时，在从库上执行查询请求，就有两种情况：</p>
+<ul>
+<li><p>如果查询是落在这个响应了ack的从库上，是能够确保读到最新数据；</p>
+</li>
+<li><p>但如果是查询落到其他从库上，它们可能还没有收到最新的日志，就会产生过期读的问题。</p>
+</li>
+</ul>
+<p>其实，判断同步位点的方案还有另外一个潜在的问题，即：如果在业务更新的高峰期，主库的位点或者GTID集合更新很快，那么上面的两个位点等值判断就会一直不成立，很可能出现从库上迟迟无法响应查询请求的情况。</p>
+<p>实际上，回到我们最初的业务逻辑里，当发起一个查询请求以后，我们要得到准确的结果，其实并不需要等到“主备完全同步”。</p>
+<p>为什么这么说呢？我们来看一下这个时序图。</p>
+<p><img src="/mysqlimages/28%E8%AF%BB%E5%86%99%E5%88%86%E7%A6%BB%E6%9C%89%E5%93%AA%E4%BA%9B%E5%9D%91/9cf54f3e91dc8f7b8947d7d8e384aa09.png"></p>
+<center><span class="reference">图5 主备持续延迟一个事务</span></center>图5所示，就是等待位点方案的一个bad case。图中备库B下的虚线框，分别表示relaylog和binlog中的事务。可以看到，图5中从状态1 到状态4，一直处于延迟一个事务的状态。
+
+<p>备库B一直到状态4都和主库A存在延迟，如果用上面必须等到无延迟才能查询的方案，select语句直到状态4都不能被执行。</p>
+<p>但是，其实客户端是在发完trx1更新后发起的select语句，我们只需要确保trx1已经执行完成就可以执行select语句了。也就是说，如果在状态3执行查询请求，得到的就是预期结果了。</p>
+<p>到这里，我们小结一下，semi-sync配合判断主备无延迟的方案，存在两个问题：</p>
+<ul>
+<li><p>一主多从的时候，在某些从库执行查询请求会存在过期读的现象；</p>
+</li>
+<li><p>在持续延迟的情况下，可能出现过度等待的问题。</p>
+</li>
+</ul>
+<p>接下来，我要和你介绍的等主库位点方案，就可以解决这两个问题。</p>
+<h1><span id="等主库位点方案">等主库位点方案</span></h1>要理解等主库位点方案，我需要先和你介绍一条命令：
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select master_pos_wait(file, pos[, timeout]);</span><br></pre></td></tr></table></figure>
+<p>这条命令的逻辑如下：</p>
+<ul>
+<li><p>它是在从库执行的；</p>
+</li>
+<li><p>参数file和pos指的是主库上的文件名和位置；</p>
+</li>
+<li><p>timeout可选，设置为正整数N表示这个函数最多等待N秒。</p>
+</li>
+</ul>
+<p>这个命令正常返回的结果是一个正整数M，表示从命令开始执行，到应用完file和pos表示的binlog位置，执行了多少事务。</p>
+<p>当然，除了正常返回一个正整数M外，这条命令还会返回一些其他结果，包括：</p>
+<ul>
+<li><p>如果执行期间，备库同步线程发生异常，则返回NULL；</p>
+</li>
+<li><p>如果等待超过N秒，就返回-1；</p>
+</li>
+<li><p>如果刚开始执行的时候，就发现已经执行过这个位置了，则返回0。</p>
+</li>
+</ul>
+<p>对于图5中先执行trx1，再执行一个查询请求的逻辑，要保证能够查到正确的数据，我们可以使用这个逻辑：</p>
+<ul>
+<li><p>trx1事务更新完成后，马上执行show master status得到当前主库执行到的File和Position；</p>
+</li>
+<li><p>选定一个从库执行查询语句；</p>
+</li>
+<li><p>在从库上执行select master_pos_wait(File, Position, 1)；</p>
+</li>
+<li><p>如果返回值是&gt;=0的正整数，则在这个从库执行查询语句；</p>
+</li>
+<li><p>否则，到主库执行查询语句。</p>
+</li>
+</ul>
+<p>我把上面这个流程画出来。</p>
+<p><img src="/mysqlimages/28%E8%AF%BB%E5%86%99%E5%88%86%E7%A6%BB%E6%9C%89%E5%93%AA%E4%BA%9B%E5%9D%91/b20ae91ea46803df1b63ed683e1de357.png"></p>
+<center><span class="reference">图6 master_pos_wait方案</span></center>这里我们假设，这条select查询最多在从库上等待1秒。那么，如果1秒内master_pos_wait返回一个大于等于0的整数，就确保了从库上执行的这个查询结果一定包含了trx1的数据。
+
+<p>步骤5到主库执行查询语句，是这类方案常用的退化机制。因为从库的延迟时间不可控，不能无限等待，所以如果等待超时，就应该放弃，然后到主库去查。</p>
+<p>你可能会说，如果所有的从库都延迟超过1秒了，那查询压力不就都跑到主库上了吗？确实是这样。</p>
+<p>但是，按照我们设定不允许过期读的要求，就只有两种选择，一种是超时放弃，一种是转到主库查询。具体怎么选择，就需要业务开发同学做好限流策略了。</p>
+<h1><span id="gtid方案">GTID方案</span></h1>如果你的数据库开启了GTID模式，对应的也有等待GTID的方案。
+
+<p>MySQL中同样提供了一个类似的命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select wait_for_executed_gtid_set(gtid_set, 1);</span><br></pre></td></tr></table></figure>
+<p>这条命令的逻辑是：</p>
+<ul>
+<li><p>等待，直到这个库执行的事务中包含传入的gtid_set，返回0；</p>
+</li>
+<li><p>超时返回1。</p>
+</li>
+</ul>
+<p>在前面等位点的方案中，我们执行完事务后，还要主动去主库执行show master status。而MySQL 5.7.6版本开始，允许在执行完更新类事务后，把这个事务的GTID返回给客户端，这样等GTID的方案就可以减少一次查询。</p>
+<p>这时，等GTID的执行流程就变成了：</p>
+<ul>
+<li><p>trx1事务更新完成后，从返回包直接获取这个事务的GTID，记为gtid1；</p>
+</li>
+<li><p>选定一个从库执行查询语句；</p>
+</li>
+<li><p>在从库上执行 select wait_for_executed_gtid_set(gtid1, 1)；</p>
+</li>
+<li><p>如果返回值是0，则在这个从库执行查询语句；</p>
+</li>
+<li><p>否则，到主库执行查询语句。</p>
+</li>
+</ul>
+<p>跟等主库位点的方案一样，等待超时后是否直接到主库查询，需要业务开发同学来做限流考虑。</p>
+<p>我把这个流程图画出来。</p>
+<p><img src="/mysqlimages/28%E8%AF%BB%E5%86%99%E5%88%86%E7%A6%BB%E6%9C%89%E5%93%AA%E4%BA%9B%E5%9D%91/d521de8017297aff59db2f68170ee739.png"></p>
+<center><span class="reference">图7 wait_for_executed_gtid_set方案</span></center>在上面的第一步中，trx1事务更新完成后，从返回包直接获取这个事务的GTID。问题是，怎么能够让MySQL在执行事务后，返回包中带上GTID呢？
+
+<p>你只需要将参数session_track_gtids设置为OWN_GTID，然后通过API接口mysql_session_track_get_first从返回包解析出GTID的值即可。</p>
+<p>在专栏的<a target="_blank" rel="noopener" href="https://time.geekbang.org/column/article/68319">第一篇文章</a>中，我介绍mysql_reset_connection的时候，评论区有同学留言问这类接口应该怎么使用。</p>
+<p>这里我再回答一下。其实，MySQL并没有提供这类接口的SQL用法，是提供给程序的API(<a target="_blank" rel="noopener" href="https://dev.mysql.com/doc/refman/5.7/en/c-api-functions.html">https://dev.mysql.com/doc/refman/5.7/en/c-api-functions.html</a>)。</p>
+<p>比如，为了让客户端在事务提交后，返回的GITD能够在客户端显示出来，我对MySQL客户端代码做了点修改，如下所示：</p>
+<p><img src="/mysqlimages/28%E8%AF%BB%E5%86%99%E5%88%86%E7%A6%BB%E6%9C%89%E5%93%AA%E4%BA%9B%E5%9D%91/973bdd8741f830acebe005cbf37a7663.png"></p>
+<center><span class="reference">图8 显示更新事务的GTID--代码</span></center>这样，就可以看到语句执行完成，显示出GITD的值。
+
+<p><img src="/mysqlimages/28%E8%AF%BB%E5%86%99%E5%88%86%E7%A6%BB%E6%9C%89%E5%93%AA%E4%BA%9B%E5%9D%91/253106d31d9d97aaa2846b2015f593fe.png"></p>
+<center><span class="reference">图9 显示更新事务的GTID--效果</span></center>当然了，这只是一个例子。你要使用这个方案的时候，还是应该在你的客户端代码中调用mysql_session_track_get_first这个函数。
+
+<h1><span id="小结">小结</span></h1>在今天这篇文章中，我跟你介绍了一主多从做读写分离时，可能碰到过期读的原因，以及几种应对的方案。
+
+<p>这几种方案中，有的方案看上去是做了妥协，有的方案看上去不那么靠谱儿，但都是有实际应用场景的，你需要根据业务需求选择。</p>
+<p>即使是最后等待位点和等待GTID这两个方案，虽然看上去比较靠谱儿，但仍然存在需要权衡的情况。如果所有的从库都延迟，那么请求就会全部落到主库上，这时候会不会由于压力突然增大，把主库打挂了呢？</p>
+<p>其实，在实际应用中，这几个方案是可以混合使用的。</p>
+<p>比如，先在客户端对请求做分类，区分哪些请求可以接受过期读，而哪些请求完全不能接受过期读；然后，对于不能接受过期读的语句，再使用等GTID或等位点的方案。</p>
+<p>但话说回来，过期读在本质上是由一写多读导致的。在实际应用中，可能会有别的不需要等待就可以水平扩展的数据库方案，但这往往是用牺牲写性能换来的，也就是需要在读性能和写性能中取权衡。</p>
+<p>最后 ，我给你留下一个问题吧。</p>
+<p>假设你的系统采用了我们文中介绍的最后一个方案，也就是等GTID的方案，现在你要对主库的一张大表做DDL，可能会出现什么情况呢？为了避免这种情况，你会怎么做呢？</p>
+<p>你可以把你的分析和方案设计写在评论区，我会在下一篇文章跟你讨论这个问题。感谢你的收听，也欢迎你把这篇文章分享给更多的朋友一起阅读。</p>
+<h1><span id="上期问题时间">上期问题时间</span></h1>上期给你留的问题是，在GTID模式下，如果一个新的从库接上主库，但是需要的binlog已经没了，要怎么做？
+
+<p>@某、人同学给了很详细的分析，我把他的回答略做修改贴过来。</p>
+<ul>
+<li><p>如果业务允许主从不一致的情况，那么可以在主库上先执行show global variables like ‘gtid_purged’，得到主库已经删除的GTID集合，假设是gtid_purged1；然后先在从库上执行reset master，再执行set global gtid_purged =‘gtid_purged1’；最后执行start slave，就会从主库现存的binlog开始同步。binlog缺失的那一部分，数据在从库上就可能会有丢失，造成主从不一致。</p>
+</li>
+<li><p>如果需要主从数据一致的话，最好还是通过重新搭建从库来做。</p>
+</li>
+<li><p>如果有其他的从库保留有全量的binlog的话，可以把新的从库先接到这个保留了全量binlog的从库，追上日志以后，如果有需要，再接回主库。</p>
+</li>
+<li><p>如果binlog有备份的情况，可以先在从库上应用缺失的binlog，然后再执行start slave。</p>
+</li>
+</ul>
+<p>评论区留言点赞板：</p>
+<blockquote>
+@悟空 同学级联实验，验证了seconds_behind_master的计算逻辑。
+
+</blockquote><blockquote>
+@_CountingStars 问了一个好问题：MySQL是怎么快速定位binlog里面的某一个GTID位置的？答案是，在binlog文件头部的Previous_gtids可以解决这个问题。
+
+</blockquote><blockquote>
+@王朋飞 同学问了一个好问题，sql_slave_skip_counter跳过的是一个event，由于MySQL总不能执行一半的事务，所以既然跳过了一个event，就会跳到这个事务的末尾，因此set global sql_slave_skip_counter=1;start slave是可以跳过整个事务的。
+
+</blockquote>
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+		
+		<!-- ============================ 目录 =========================== -->
+		<div class="post-toc">
+			<div class="tocbot-list">
+			</div>
+			<div class="tocbot-list-menu">
+				<a class="tocbot-toc-expand" onclick="expand_toc()">全部展开</a>
+				<a onclick="go_top()">回到顶部</a>
+				<a onclick="go_bottom()">回到底部</a>
+			</div>
+		</div>
+		<script>
+			window.onload = function(){
+				$('.post-content').find('img').each(function(){
+					var picWidth = parseInt($(this).width());
+					if(picWidth > 800){
+						var pW = $(this).width();
+						var pH = $(this).height();
+						var BL = pH / pW;
+						var outH = 800 * BL;
+						$(this).width(800);
+						$(this).height(outH);
+					}
+				})
+			};
+			$(document).ready(
+				function (){
+					if ($('.tocbot-list').length > 0) {
+						var headerEl = 'h1,h2,h3,h4,h5',
+							content = '.post-content',
+							idArr = {};
+				 
+						$(content).children(headerEl).each(function () {
+							//去除空格以及多余标点
+							var headerId = $(this).children('span').text().replace(/[\s|\~|`|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\_|\+|\=|\||\|\[|\]|\{|\}|\;|\:|\"|\'|\,|\<|\.|\>|\/|\?|\：|\，|\。]/g, '');
+					 
+							headerId = headerId.toLowerCase();
+							if (idArr[headerId]) {
+								//id已经存在
+								$(this).attr('id', headerId + '-' + idArr[headerId]);
+								idArr[headerId]++;
+							}
+							else {
+								//id未存在
+								idArr[headerId] = 1;
+								$(this).attr('id', headerId);
+							}
+						});
+					}
+				}
+			)
+			
+			$(document).ready(
+				function () {
+					tocbot.init({
+						tocSelector: '.tocbot-list',
+						contentSelector: '.post-content',
+						headingSelector: 'h1, h2, h3, h4, h5',
+						collapseDepth: 1,
+						orderedList: false,
+						scrollSmooth: true,
+					})
+				}
+			)
+
+			function expand_toc() {
+				var b = document.querySelector(".tocbot-toc-expand");
+				tocbot.init({
+					tocSelector: '.tocbot-list',
+					contentSelector: '.post-content',
+					headingSelector: 'h1, h2, h3, h4, h5',
+					collapseDepth: 6,
+					orderedList: false,
+					scrollSmooth: true,
+				});
+				b.setAttribute("onclick", "collapse_toc()");
+				b.innerHTML = "全部折叠"
+			}
+
+			function collapse_toc() {
+				var b = document.querySelector(".tocbot-toc-expand");
+				tocbot.init({
+					tocSelector: '.tocbot-list',
+					contentSelector: '.post-content',
+					headingSelector: 'h1, h2, h3, h4, h5',
+					collapseDepth: 1,
+					orderedList: false,
+					scrollSmooth: true,
+				});
+				b.setAttribute("onclick", "expand_toc()");
+				b.innerHTML = "全部展开"
+			}
+
+			function go_top() {
+				window.scrollTo(0, 0);
+			}
+
+			function go_bottom() {
+				window.scrollTo(0, document.body.scrollHeight);
+			}
+
+		</script>
+		<!-- ============================ 目录end =========================== -->
+        <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
+    
+    <a class="pull-left" href="/2020/08/19/mysql%E5%AE%9E%E6%88%9845%E8%AE%B2/29%E5%A6%82%E4%BD%95%E5%88%A4%E6%96%AD%E4%B8%80%E4%B8%AA%E6%95%B0%E6%8D%AE%E5%BA%93%E6%98%AF%E4%B8%8D%E6%98%AF%E5%87%BA%E9%97%AE%E9%A2%98%E4%BA%86/" style="float: left;">
+        ← 29 | 如何判断一个数据库是不是出问题了？
+    </a>
+    
+    
+    <a class="pull-right" href="/2020/08/19/mysql%E5%AE%9E%E6%88%9845%E8%AE%B2/27%E4%B8%BB%E5%BA%93%E5%87%BA%E9%97%AE%E9%A2%98%E4%BA%86%EF%BC%8C%E4%BB%8E%E5%BA%93%E6%80%8E%E4%B9%88%E5%8A%9E/">
+        27 | 主库出问题了，从库怎么办？ →
+    </a>
+    
+</nav>
+
+        <div class="post-content col-sm-24"><script type="text/javascript">
+  /**
+   * 搜狐畅言
+   */
+
+  /*
+  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
+
+  window.onload = function () {
+    (function () {
+      var appid = 'cytXXXX';
+      var conf = 'prod_xxxxxxxxxxxxxxxxx';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      var loadJs = function (d, a, id) {
+        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+        var b = document.createElement("script");
+        b.setAttribute("type", "text/javascript");
+        b.setAttribute("charset", "UTF-8");
+        b.setAttribute("src", d);
+        if (id) {
+          b.setAttribute("id", id);
+        }
+        if (typeof a === "function") {
+          if (window.attachEvent) {
+            b.onreadystatechange = function () {
+              var e = b.readyState;
+              if (e === "loaded" || e === "complete") {
+                b.onreadystatechange = null;
+                a()
+              }
+            }
+          } else {
+            b.onload = a
+          }
+        }
+        c.appendChild(b)
+      };
+
+      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
+        window.changyan.api.config({
+          appid: appid,
+          conf: conf
+        })
+      });
+    })();
+  }
+  */
+
+</script>
+</div>
+    </div>
+</section>
+
+
+      <section id="statement">
+    <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
+        <div class="state-row">
+            <p>虽然还没想好写点什么，但是总觉得这里放句话比较和谐。</p>
+        </div>
+    </div>
+</section>
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By mimo. All Rights Reserved.
+                </p>
+                <p>Theme By <a target="_blank" rel="noopener" href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a>&nbsp;</li>
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+<script src="/js/tocbot.min.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+      
+            <style>
+.local-search-popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  background: rgba(255, 255, 255, .9);
+  color: #333;
+  z-index: 9999;
+  border-radius: 5px;
+  overflow: scroll;
+}
+#local-search-input {
+  width: 100%;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #151515;
+  background-color: initial;
+}
+.search-result-list {
+  list-style: none;
+  padding-left: 0;
+}
+.search-result-list > li {
+  margin-top: 15px;
+  border-bottom: 1px solid #ddd;
+  transition: all ease .3s;
+}
+.search-result-list > li:hover {
+  border-bottom: 1px solid gray;
+}
+.search-result-title {
+  font-size: 16px;
+}
+.search-result {
+  line-height: 20px;
+}
+.search-keyword {
+  font-weight: normal;
+  color: #c00;
+}
+
+@media (min-width: 890px) {
+  .popup-btn-close {
+    position: absolute;
+    top: 15px;
+    left: 35px;
+    border: 1px solid #151515;
+    padding: 0px 10px;
+    border-top-left-radius: 8px;
+    cursor: pointer;
+    transition: all ease .3s;
+  }
+  .popup-btn-close:hover {
+    background: #151515;
+    opacity: .9;
+    color: #fff;
+  }
+}
+@media (max-width: 890px) {
+  .popup-btn-close {
+    font-size: 0;
+    position: fixed;
+    right: 20px;
+    bottom: 50px;
+    width: 50px;
+    height: 50px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 1px 1px 5px #888;
+    cursor: pointer;
+  }
+  .popup-btn-close::after {
+    content: '←';
+    color: #151515;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 20px;
+    width: 100%;
+    height: 100%;
+    line-height: 50px;
+    text-align: center;
+  }
+}
+</style>
+
+<div class="popup search-popup local-search-popup">
+  <span class="popup-btn-close">
+    ESC
+  </span>
+  <div class="container">
+    <div class="col-md-8 col-md-offset-2">
+      <div class="local-search-header clearfix">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="local-search-input-wrapper">
+          <input autocomplete="off" placeholder="Search..." type="text" id="local-search-input">
+        </div>
+      </div>
+      <div id="local-search-result"></div>
+    </div>
+  </div>
+</div>
+
+<script src="/js/ziploader.js"></script>
+
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.json";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').fadeOut(300);
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $('.popup').fadeIn(300);
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // get search zip version
+    $.get('/searchVersion.txt?t=' + (+new Date()), function(res) {
+      if (localStorage.getItem('searchVersion') !== res) {
+        localStorage.setItem('searchVersion', res);
+        initSearchJson();
+      }
+    });
+
+    function initSearchJson () {
+      initLoad(['/search.zip'], {
+        loadOptions: {
+          success: function(obj) {
+            localStorage.setItem('searchJson', obj['search.json'])
+          },
+          error: function(e) {
+            return console.log(e)
+          }
+        },
+        returnOptions: {
+          'json': TYPE_TEXT
+        },
+        mimeOptions:{
+          'json':'application/json'
+        }
+      })
+    }
+
+
+    // search function;
+    var searchFunc = function(search_id, content_id) {
+      'use strict';
+
+      isfetched = true;
+      var datas = JSON.parse(localStorage.getItem('searchJson'));
+      console.log(search_id)
+      var input = document.getElementById(search_id);
+      var resultContent = document.getElementById(content_id);
+      var inputEventFunction = function() {
+        var searchText = input.value.trim().toLowerCase();
+        var keywords = searchText.split(/[\s\-]+/);
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        var resultItems = [];
+        if (searchText.length > 0) {
+          // perform local searching
+          datas.forEach(function(data) {
+            var isMatch = false;
+            var hitCount = 0;
+            var searchTextCount = 0;
+            var title = data.title ? data.title.trim() : '';
+            var titleInLowerCase = title.toLowerCase();
+            var content = data.content ? data.content.trim().replace(/<[^>]+>/g,"") : '';
+            var contentInLowerCase = content.toLowerCase();
+            var articleUrl = decodeURIComponent(data.url);
+            var indexOfTitle = [];
+            var indexOfContent = [];
+            // only match articles with not empty titles
+            keywords.forEach(function(keyword) {
+              function getIndexByWord(word, text, caseSensitive) {
+                var wordLen = word.length;
+                if (wordLen === 0) {
+                  return [];
+                }
+                var startPosition = 0, position = [], index = [];
+                if (!caseSensitive) {
+                  text = text.toLowerCase();
+                  word = word.toLowerCase();
+                }
+                while ((position = text.indexOf(word, startPosition)) > -1) {
+                  index.push({position: position, word: word});
+                  startPosition = position + wordLen;
+                }
+                return index;
+              }
+
+              indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+              indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+            });
+            if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+              isMatch = true;
+              hitCount = indexOfTitle.length + indexOfContent.length;
+            }
+
+            // show search results
+
+            if (isMatch) {
+              // sort index by position of keyword
+
+              [indexOfTitle, indexOfContent].forEach(function (index) {
+                index.sort(function (itemLeft, itemRight) {
+                  if (itemRight.position !== itemLeft.position) {
+                    return itemRight.position - itemLeft.position;
+                  } else {
+                    return itemLeft.word.length - itemRight.word.length;
+                  }
+                });
+              });
+
+              // merge hits into slices
+
+              function mergeIntoSlice(text, start, end, index) {
+                var item = index[index.length - 1];
+                var position = item.position;
+                var word = item.word;
+                var hits = [];
+                var searchTextCountInSlice = 0;
+                while (position + word.length <= end && index.length != 0) {
+                  if (word === searchText) {
+                    searchTextCountInSlice++;
+                  }
+                  hits.push({position: position, length: word.length});
+                  var wordEnd = position + word.length;
+
+                  // move to next position of hit
+
+                  index.pop();
+                  while (index.length != 0) {
+                    item = index[index.length - 1];
+                    position = item.position;
+                    word = item.word;
+                    if (wordEnd > position) {
+                      index.pop();
+                    } else {
+                      break;
+                    }
+                  }
+                }
+                searchTextCount += searchTextCountInSlice;
+                return {
+                  hits: hits,
+                  start: start,
+                  end: end,
+                  searchTextCount: searchTextCountInSlice
+                };
+              }
+
+              var slicesOfTitle = [];
+              if (indexOfTitle.length != 0) {
+                slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+              }
+
+              var slicesOfContent = [];
+              while (indexOfContent.length != 0) {
+                var item = indexOfContent[indexOfContent.length - 1];
+                var position = item.position;
+                var word = item.word;
+                // cut out 100 characters
+                var start = position - 20;
+                var end = position + 80;
+                if(start < 0){
+                  start = 0;
+                }
+                if (end < position + word.length) {
+                  end = position + word.length;
+                }
+                if(end > content.length){
+                  end = content.length;
+                }
+                slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+              }
+
+              // sort slices in content by search text's count and hits' count
+
+              slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                  return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                  return sliceRight.hits.length - sliceLeft.hits.length;
+                } else {
+                  return sliceLeft.start - sliceRight.start;
+                }
+              });
+
+              // select top N slices in content
+
+              var upperBound = parseInt('2');
+              if (upperBound >= 0) {
+                slicesOfContent = slicesOfContent.slice(0, upperBound);
+              }
+
+              // highlight title and content
+
+              function highlightKeyword(text, slice) {
+                var result = '';
+                var prevEnd = slice.start;
+                slice.hits.forEach(function (hit) {
+                  result += text.substring(prevEnd, hit.position);
+                  var end = hit.position + hit.length;
+                  result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                  prevEnd = end;
+                });
+                result += text.substring(prevEnd, slice.end);
+                return result;
+              }
+
+              var resultItem = '';
+
+              if (slicesOfTitle.length != 0) {
+                resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+              } else {
+                resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+              }
+
+              slicesOfContent.forEach(function (slice) {
+                resultItem += "<a target='_blank' href='" + articleUrl + "'>" +
+                  "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                  "...</p>" + "</a>";
+              });
+
+              resultItem += "</li>";
+              resultItems.push({
+                item: resultItem,
+                searchTextCount: searchTextCount,
+                hitCount: hitCount,
+                id: resultItems.length
+              });
+            }
+          })
+        };
+        if (keywords.length === 1 && keywords[0] === "") {
+          resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+        } else if (resultItems.length === 0) {
+          resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+        } else {
+          resultItems.sort(function (resultLeft, resultRight) {
+            if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+              return resultRight.searchTextCount - resultLeft.searchTextCount;
+            } else if (resultLeft.hitCount !== resultRight.hitCount) {
+              return resultRight.hitCount - resultLeft.hitCount;
+            } else {
+              return resultRight.id - resultLeft.id;
+            }
+          });
+          var searchResultList = '<ul class=\"search-result-list\">';
+          resultItems.forEach(function (result) {
+            searchResultList += result.item;
+          })
+          searchResultList += "</ul>";
+          resultContent.innerHTML = searchResultList;
+        }
+      }
+
+      if ('auto' === 'auto') {
+        input.addEventListener('input', inputEventFunction);
+      } else {
+        $('.search-icon').click(inputEventFunction);
+        input.addEventListener('keypress', function (event) {
+          if (event.keyCode === 13) {
+            inputEventFunction();
+          }
+        });
+      }
+
+      // remove loading animation
+      $('body').css('overflow', '');
+
+      proceedsearch();
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        $('.sb-close').click();
+        searchFunc('local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+      
+</body>
+</html>

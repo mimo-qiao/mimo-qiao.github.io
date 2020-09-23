@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<!--<![endif]-->
+
+
+<head>
+  <title>33 | 字符串匹配基础（中）：如何实现文本编辑器中的查找功能？ | mimo</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="mimo">
+    <meta name="author" content="mimo">
+    <meta name="description" content="Q" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="mimo" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+    
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+  
+  
+  
+
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!-- 
+<body class="post-template">
+ -->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">主 页</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">归 档</a></li>
+            <!-- Dropdown Menu -->
+			 
+            
+        	<li>
+        		<a class="sb-toggle-submenu">分 类<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/categories/git/" class="animsition-link">git<small>(3)</small></a></li>
+				    
+				    <li><a href="/categories/linux/" class="animsition-link">linux<small>(7)</small></a></li>
+				    
+				    <li><a href="/categories/mysql实战45讲/" class="animsition-link">mysql实战45讲<small>(49)</small></a></li>
+				    
+				    <li><a href="/categories/python/" class="animsition-link">python<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/sonar/" class="animsition-link">sonar<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/tess4j/" class="animsition-link">tess4j<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/基础/" class="animsition-link">基础<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/数据结构与算法之美/" class="animsition-link">数据结构与算法之美<small>(79)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
+			
+			<li>
+        		<a class="sb-toggle-submenu">标 签<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/tags/docker/" class="animsition-link">docker<small>(2)</small></a></li>
+				    
+				    <li><a href="/tags/git/" class="animsition-link">git<small>(3)</small></a></li>
+				    
+				    <li><a href="/tags/gitlab/" class="animsition-link">gitlab<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/jenkins/" class="animsition-link">jenkins<small>(2)</small></a></li>
+				    
+				    <li><a href="/tags/linux/" class="animsition-link">linux<small>(2)</small></a></li>
+				    
+				    <li><a href="/tags/log4j/" class="animsition-link">log4j<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/python/" class="animsition-link">python<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/sonar/" class="animsition-link">sonar<small>(2)</small></a></li>
+				    
+				    <li><a href="/tags/svn/" class="animsition-link">svn<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/synchronized/" class="animsition-link">synchronized<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/tess4j/" class="animsition-link">tess4j<small>(2)</small></a></li>
+				    
+				    <li><a href="/tags/xml/" class="animsition-link">xml<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/日志/" class="animsition-link">日志<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/正则/" class="animsition-link">正则<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/解析/" class="animsition-link">解析<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/识别/" class="animsition-link">识别<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/部署/" class="animsition-link">部署<small>(6)</small></a></li>
+				    
+				    <li><a href="/tags/验证码/" class="animsition-link">验证码<small>(1)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
+            
+            <li>
+                <a class="sb-toggle-submenu">链 接<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a target="_blank" rel="noopener" href="http://go.kieran.top/" class="animsition-link">source</a></li>
+                    
+                    <li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/visugar/p/6821777.html" class="animsition-link">搭建blog-hexo参考</a></li>
+                    
+                    <li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/f4dce0e76886" class="animsition-link">参考2</a></li>
+                    
+                    <li><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/configuration.html" class="animsition-link">官网</a></li>
+                    
+                    <li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/31eb5c754c01" class="animsition-link">nginx部署</a></li>
+                    
+                    <li><a target="_blank" rel="noopener" href="https://segmentfault.com/p/1210000010636536/read" class="animsition-link">hexo原理</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            
+            <li><a href="javascript:;" class="popup-trigger" title="Search"><span class="search-icon"></span>搜 索</a></li>
+            
+            <li><a href="/about.html" class="animsition-link" title="about">关 于</a></li>
+            <!-- <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li> -->
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo.png" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">mimo</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a></li>
+                            
+                            
+                            <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a></li>
+                            
+                            
+                            <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a></li>
+                            
+                            
+                            <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a></li>
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+
+      
+<section id="intro">
+    <div class="post-container">
+        <div class="row col-md-offset-22">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2020-08-07T03:08:53.000Z" itemprop="datePublished">
+          2020-08-07
+      </time>
+    
+</span>
+                <h1>33 | 字符串匹配基础（中）：如何实现文本编辑器中的查找功能？</h1>
+            </div>
+        </div>
+		<div class="post-content">
+      		<p>文本编辑器中的查找替换功能，我想你应该不陌生吧？比如，我们在Word中把一个单词统一替换成另一个，用的就是这个功能。你有没有想过，它是怎么实现的呢？</p>
+<p>当然，你用上一节讲的BF算法和RK算法，也可以实现这个功能，但是在某些极端情况下，BF算法性能会退化的比较严重，而RK算法需要用到哈希算法，而设计一个可以应对各种类型字符的哈希算法并不简单。</p>
+<p>对于工业级的软件开发来说，我们希望算法尽可能的高效，并且在极端情况下，性能也不要退化的太严重。那么，**<span class="orange">对于查找功能是重要功能的软件来说，比如一些文本编辑器，它们的查找功能都是用哪种算法来实现的呢？有没有比BF算法和RK算法更加高效的字符串匹配算法呢？</span>**</p>
+<p>今天，我们就来学习BM（Boyer-Moore）算法。它是一种非常高效的字符串匹配算法，有实验统计，它的性能是著名的<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%85%8B%E5%8A%AA%E6%96%AF-%E8%8E%AB%E9%87%8C%E6%96%AF-%E6%99%AE%E6%8B%89%E7%89%B9%E7%AE%97%E6%B3%95">KMP算法</a>的3到4倍<strong>。</strong>BM算法的原理很复杂，比较难懂，学起来会比较烧脑，我会尽量给你讲清楚，同时也希望你做好打硬仗的准备。好，现在我们正式开始！</p>
+<h1><span id="bm算法的核心思想">BM算法的核心思想</span></h1><p>我们把模式串和主串的匹配过程，看作模式串在主串中不停地往后滑动。当遇到不匹配的字符时，BF算法和RK算法的做法是，模式串往后滑动一位，然后从模式串的第一个字符开始重新匹配。我举个例子解释一下，你可以看我画的这幅图。</p>
+<p><img src="/shuimages/33%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%EF%BC%9A%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%AD%EF%BC%89/4316dd98eac500a01a0fd632bb5e77f9.jpg"></p>
+<p>在这个例子里，主串中的c，在模式串中是不存在的，所以，模式串向后滑动的时候，只要c与模式串有重合，肯定无法匹配。所以，我们可以一次性把模式串往后多滑动几位，把模式串移动到c的后面。</p>
+<p><img src="/shuimages/33%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%EF%BC%9A%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%AD%EF%BC%89/cf362f9e59c01aaf40a34d2f10e1ef15.jpg"></p>
+<p>由现象找规律，你可以思考一下，当遇到不匹配的字符时，有什么固定的规律，可以将模式串往后多滑动几位呢？这样一次性往后滑动好几位，那匹配的效率岂不是就提高了？</p>
+<p>我们今天要讲的BM算法，本质上其实就是在寻找这种规律。借助这种规律，在模式串与主串匹配的过程中，当模式串和主串某个字符不匹配的时候，能够跳过一些肯定不会匹配的情况，将模式串往后多滑动几位。</p>
+<h1><span id="bm算法原理分析">BM算法原理分析</span></h1><p>BM算法包含两部分，分别是<strong>坏字符规则</strong>（bad character rule）和<strong>好后缀规则</strong>（good suffix shift）。我们下面依次来看，这两个规则分别都是怎么工作的。</p>
+<h2><span id="1坏字符规则">1.坏字符规则</span></h2><p>前面两节讲的算法，在匹配的过程中，我们都是按模式串的下标从小到大的顺序，依次与主串中的字符进行匹配的。这种匹配顺序比较符合我们的思维习惯，而BM算法的匹配顺序比较特别，它是按照模式串下标从大到小的顺序，倒着匹配的。我画了一张图，你可以看下。</p>
+<p><img src="/shuimages/33%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%EF%BC%9A%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%AD%EF%BC%89/29521f541dd45e13162013b3364fece1.jpg"><img src="/shuimages/33%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%EF%BC%9A%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%AD%EF%BC%89/540809418354024206d9989cb6cdd89e.jpg"></p>
+<p>我们从模式串的末尾往前倒着匹配，当我们发现某个字符没法匹配的时候。我们把这个没有匹配的字符叫作<strong>坏字符</strong>（主串中的字符）。</p>
+<p><img src="/shuimages/33%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%EF%BC%9A%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%AD%EF%BC%89/220daef736418df84367215647bca5da.jpg"></p>
+<p>我们拿坏字符c在模式串中查找，发现模式串中并不存在这个字符，也就是说，字符c与模式串中的任何字符都不可能匹配。这个时候，我们可以将模式串直接往后滑动三位，将模式串滑动到c后面的位置，再从模式串的末尾字符开始比较。</p>
+<p><img src="/shuimages/33%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%EF%BC%9A%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%AD%EF%BC%89/4e36c4d48d1b6c3b499fb021f03c7f64.jpg"></p>
+<p>这个时候，我们发现，模式串中最后一个字符d，还是无法跟主串中的a匹配，这个时候，还能将模式串往后滑动三位吗？答案是不行的。因为这个时候，坏字符a在模式串中是存在的，模式串中下标是0的位置也是字符a。这种情况下，我们可以将模式串往后滑动两位，让两个a上下对齐，然后再从模式串的末尾字符开始，重新匹配。</p>
+<p><img src="/shuimages/33%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%EF%BC%9A%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%AD%EF%BC%89/a8d229aa217a67051fbb31b8aeb2edca.jpg"></p>
+<p>第一次不匹配的时候，我们滑动了三位，第二次不匹配的时候，我们将模式串后移两位，那具体滑动多少位，到底有没有规律呢？</p>
+<p>当发生不匹配的时候，我们把坏字符对应的模式串中的字符下标记作si。如果坏字符在模式串中存在，我们把这个坏字符在模式串中的下标记作xi。如果不存在，我们把xi记作-1。那模式串往后移动的位数就等于si-xi。（注意，我这里说的下标，都是字符在模式串的下标）。</p>
+<p><img src="/shuimages/33%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%EF%BC%9A%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%AD%EF%BC%89/8f520fb9d9cec0f6ea641d4181eb432e.jpg"></p>
+<p>这里我要特别说明一点，如果坏字符在模式串里多处出现，那我们在计算xi的时候，选择最靠后的那个，因为这样不会让模式串滑动过多，导致本来可能匹配的情况被滑动略过。</p>
+<p>利用坏字符规则，BM算法在最好情况下的时间复杂度非常低，是O(n/m)。比如，主串是aaabaaabaaabaaab，模式串是aaaa。每次比对，模式串都可以直接后移四位，所以，匹配具有类似特点的模式串和主串的时候，BM算法非常高效。</p>
+<p>不过，单纯使用坏字符规则还是不够的。因为根据si-xi计算出来的移动位数，有可能是负数，比如主串是aaaaaaaaaaaaaaaa，模式串是baaa。不但不会向后滑动模式串，还有可能倒退。所以，BM算法还需要用到“好后缀规则”。</p>
+<h2><span id="2好后缀规则">2.好后缀规则</span></h2><p>好后缀规则实际上跟坏字符规则的思路很类似。你看我下面这幅图。当模式串滑动到图中的位置的时候，模式串和主串有2个字符是匹配的，倒数第3个字符发生了不匹配的情况。</p>
+<p><img src="/shuimages/33%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%EF%BC%9A%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%AD%EF%BC%89/d78990dbcb794d1aa2cf4a3c646ae58a.jpg"></p>
+<p>这个时候该如何滑动模式串呢？当然，我们还可以利用坏字符规则来计算模式串的滑动位数，不过，我们也可以使用好后缀处理规则。两种规则到底如何选择，我稍后会讲。抛开这个问题，现在我们来看，好后缀规则是怎么工作的？</p>
+<p>我们把已经匹配的bc叫作好后缀，记作{u}。我们拿它在模式串中查找，如果找到了另一个跟{u}相匹配的子串{u*}，那我们就将模式串滑动到子串{u*}与主串中{u}对齐的位置。</p>
+<p><img src="/shuimages/33%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%EF%BC%9A%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%AD%EF%BC%89/b9785be3e91e34bbc23961f67c234b63.jpg"></p>
+<p>如果在模式串中找不到另一个等于{u}的子串，我们就直接将模式串，滑动到主串中{u}的后面，因为之前的任何一次往后滑动，都没有匹配主串中{u}的情况。</p>
+<p><img src="/shuimages/33%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%EF%BC%9A%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%AD%EF%BC%89/de97c461b9b9dbc42d35768db59908cd.jpg"></p>
+<p>不过，当模式串中不存在等于{u}的子串时，我们直接将模式串滑动到主串{u}的后面。这样做是否有点太过头呢？我们来看下面这个例子。这里面bc是好后缀，尽管在模式串中没有另外一个相匹配的子串{u*}，但是如果我们将模式串移动到好后缀的后面，如图所示，那就会错过模式串和主串可以匹配的情况。</p>
+<p><img src="/shuimages/33%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%EF%BC%9A%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%AD%EF%BC%89/9b3fa3d1cd9c0d0f914a9b1f518ad070.jpg"></p>
+<p>如果好后缀在模式串中不存在可匹配的子串，那在我们一步一步往后滑动模式串的过程中，只要主串中的{u}与模式串有重合，那肯定就无法完全匹配。但是当模式串滑动到前缀与主串中{u}的后缀有部分重合的时候，并且重合的部分相等的时候，就有可能会存在完全匹配的情况。</p>
+<p><img src="/shuimages/33%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%EF%BC%9A%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%AD%EF%BC%89/0544d2997d8bb57c10e13ccac4015e23.jpg"></p>
+<p>所以，针对这种情况，我们不仅要看好后缀在模式串中，是否有另一个匹配的子串，我们还要考察好后缀的后缀子串，是否存在跟模式串的前缀子串匹配的。</p>
+<p>所谓某个字符串s的后缀子串，就是最后一个字符跟s对齐的子串，比如abc的后缀子串就包括c, bc。所谓前缀子串，就是起始字符跟s对齐的子串，比如abc的前缀子串有a，ab。我们从好后缀的后缀子串中，找一个最长的并且能跟模式串的前缀子串匹配的，假设是{v}，然后将模式串滑动到如图所示的位置。</p>
+<p><img src="/shuimages/33%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%EF%BC%9A%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%AD%EF%BC%89/6caa0f61387fd2b3109fe03d803192f9.jpg"></p>
+<p>坏字符和好后缀的基本原理都讲完了，我现在回答一下前面那个问题。当模式串和主串中的某个字符不匹配的时候，如何选择用好后缀规则还是坏字符规则，来计算模式串往后滑动的位数？</p>
+<p>我们可以分别计算好后缀和坏字符往后滑动的位数，然后取两个数中最大的，作为模式串往后滑动的位数。这种处理方法还可以避免我们前面提到的，根据坏字符规则，计算得到的往后滑动的位数，有可能是负数的情况。</p>
+<h1><span id="bm算法代码实现">BM算法代码实现</span></h1><p>学习完了基本原理，我们再来看，如何实现BM算法？</p>
+<p>“坏字符规则”本身不难理解。当遇到坏字符时，要计算往后移动的位数si-xi，其中xi的计算是重点，我们如何求得xi呢？或者说，如何查找坏字符在模式串中出现的位置呢？</p>
+<p>如果我们拿坏字符，在模式串中顺序遍历查找，这样就会比较低效，势必影响这个算法的性能。有没有更加高效的方式呢？我们之前学的散列表，这里可以派上用场了。我们可以将模式串中的每个字符及其下标都存到散列表中。这样就可以快速找到坏字符在模式串的位置下标了。</p>
+<p>关于这个散列表，我们只实现一种最简单的情况，假设字符串的字符集不是很大，每个字符长度是1字节，我们用大小为256的数组，来记录每个字符在模式串中出现的位置。数组的下标对应字符的ASCII码值，数组中存储这个字符在模式串中出现的位置。</p>
+<p><img src="/shuimages/33%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%EF%BC%9A%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%AD%EF%BC%89/bf78f8a0506e069fa318f36c42a95e02.jpg"></p>
+<p>如果将上面的过程翻译成代码，就是下面这个样子。其中，变量b是模式串，m是模式串的长度，bc表示刚刚讲的散列表。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">private static final int SIZE &#x3D; 256; &#x2F;&#x2F; 全局变量或成员变量</span><br><span class="line">private void generateBC(char[] b, int m, int[] bc) &#123;</span><br><span class="line">  for (int i &#x3D; 0; i &lt; SIZE; ++i) &#123;</span><br><span class="line">    bc[i] &#x3D; -1; &#x2F;&#x2F; 初始化bc</span><br><span class="line">  &#125;</span><br><span class="line">  for (int i &#x3D; 0; i &lt; m; ++i) &#123;</span><br><span class="line">    int ascii &#x3D; (int)b[i]; &#x2F;&#x2F; 计算b[i]的ASCII值</span><br><span class="line">    bc[ascii] &#x3D; i;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>掌握了坏字符规则之后，我们先把BM算法代码的大框架写好，先不考虑好后缀规则，仅用坏字符规则，并且不考虑si-xi计算得到的移动位数可能会出现负数的情况。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">public int bm(char[] a, int n, char[] b, int m) &#123;</span><br><span class="line">  int[] bc &#x3D; new int[SIZE]; &#x2F;&#x2F; 记录模式串中每个字符最后出现的位置</span><br><span class="line">  generateBC(b, m, bc); &#x2F;&#x2F; 构建坏字符哈希表</span><br><span class="line">  int i &#x3D; 0; &#x2F;&#x2F; i表示主串与模式串对齐的第一个字符</span><br><span class="line">  while (i &lt;&#x3D; n - m) &#123;</span><br><span class="line">    int j;</span><br><span class="line">    for (j &#x3D; m - 1; j &gt;&#x3D; 0; --j) &#123; &#x2F;&#x2F; 模式串从后往前匹配</span><br><span class="line">      if (a[i+j] !&#x3D; b[j]) break; &#x2F;&#x2F; 坏字符对应模式串中的下标是j</span><br><span class="line">    &#125;</span><br><span class="line">    if (j &lt; 0) &#123;</span><br><span class="line">      return i; &#x2F;&#x2F; 匹配成功，返回主串与模式串第一个匹配的字符的位置</span><br><span class="line">    &#125;</span><br><span class="line">    &#x2F;&#x2F; 这里等同于将模式串往后滑动j-bc[(int)a[i+j]]位</span><br><span class="line">    i &#x3D; i + (j - bc[(int)a[i+j]]); </span><br><span class="line">  &#125;</span><br><span class="line">  return -1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>代码里的注释已经很详细了，我就不再赘述了。不过，为了你方便理解，我画了一张图，将其中的一些关键变量标注在上面了，结合着图，代码应该更好理解。</p>
+<p><img src="/shuimages/33%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%EF%BC%9A%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%AD%EF%BC%89/5380b6ef906a5210f782fccd044b36c6.jpg"></p>
+<p>至此，我们已经实现了包含坏字符规则的框架代码，只剩下往框架代码中填充好后缀规则了。现在，我们就来看看，如何实现好后缀规则。它的实现要比坏字符规则复杂一些。</p>
+<p>在讲实现之前，我们先简单回顾一下，前面讲过好后缀的处理规则中最核心的内容：</p>
+<ul>
+<li>在模式串中，查找跟好后缀匹配的另一个子串；</li>
+</ul>
+<ul>
+<li>在好后缀的后缀子串中，查找最长的、能跟模式串前缀子串匹配的后缀子串；</li>
+</ul>
+<p>在不考虑效率的情况下，这两个操作都可以用很“暴力”的匹配查找方式解决。但是，如果想要BM算法的效率很高，这部分就不能太低效。如何来做呢？</p>
+<p>因为好后缀也是模式串本身的后缀子串，所以，我们可以在模式串和主串正式匹配之前，通过预处理模式串，预先计算好模式串的每个后缀子串，对应的另一个可匹配子串的位置。这个预处理过程比较有技巧，很不好懂，应该是这节最难懂的内容了，你要认真多读几遍。</p>
+<p>我们先来看，<strong>如何表示模式串中不同的后缀子串呢？</strong>因为后缀子串的最后一个字符的位置是固定的，下标为m-1，我们只需要记录长度就可以了。通过长度，我们可以确定一个唯一的后缀子串。</p>
+<p><img src="/shuimages/33%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%EF%BC%9A%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%AD%EF%BC%89/7742f1d02d0940a1ef3760faf4929ec8.jpg"></p>
+<p>现在，我们要<strong>引入最关键的变量suffix数组</strong>。suffix数组的下标k，表示后缀子串的长度，下标对应的数组值存储的是，在模式串中跟好后缀{u}相匹配的子串{u*}的起始下标值。这句话不好理解，我举一个例子。</p>
+<p><img src="/shuimages/33%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%EF%BC%9A%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%AD%EF%BC%89/99a6cfadf2f9a713401ba8feac2484c2.jpg"></p>
+<p>但是，如果模式串中有多个（大于1个）子串跟后缀子串{u}匹配，那suffix数组中该存储哪一个子串的起始位置呢？为了避免模式串往后滑动得过头了，我们肯定要存储模式串中最靠后的那个子串的起始位置，也就是下标最大的那个子串的起始位置。不过，这样处理就足够了吗？</p>
+<p>实际上，仅仅是选最靠后的子串片段来存储是不够的。我们再回忆一下好后缀规则。</p>
+<p>我们不仅要在模式串中，查找跟好后缀匹配的另一个子串，还要在好后缀的后缀子串中，查找最长的能跟模式串前缀子串匹配的后缀子串。</p>
+<p>如果我们只记录刚刚定义的suffix，实际上，只能处理规则的前半部分，也就是，在模式串中，查找跟好后缀匹配的另一个子串。所以，除了suffix数组之外，我们还需要另外一个boolean类型的prefix数组，来记录模式串的后缀子串是否能匹配模式串的前缀子串。</p>
+<p><img src="/shuimages/33%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%EF%BC%9A%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%AD%EF%BC%89/279be7d64e6254dac1a32d2f6d1a2383.jpg"></p>
+<p>现在，我们来看下，<strong>如何来计算并填充这两个数组的值</strong>？这个计算过程非常巧妙。</p>
+<p>我们拿下标从0到i的子串（i可以是0到m-2）与整个模式串，求公共后缀子串。如果公共后缀子串的长度是k，那我们就记录suffix[k]=j（j表示公共后缀子串的起始下标）。如果j等于0，也就是说，公共后缀子串也是模式串的前缀子串，我们就记录prefix[k]=true。</p>
+<p><img src="/shuimages/33%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%EF%BC%9A%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%AD%EF%BC%89/5723be3c77cdbddb64b1f8d6473cea7c.jpg"></p>
+<p>我们把suffix数组和prefix数组的计算过程，用代码实现出来，就是下面这个样子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; b表示模式串，m表示长度，suffix，prefix数组事先申请好了</span><br><span class="line">private void generateGS(char[] b, int m, int[] suffix, boolean[] prefix) &#123;</span><br><span class="line">  for (int i &#x3D; 0; i &lt; m; ++i) &#123; &#x2F;&#x2F; 初始化</span><br><span class="line">    suffix[i] &#x3D; -1;</span><br><span class="line">    prefix[i] &#x3D; false;</span><br><span class="line">  &#125;</span><br><span class="line">  for (int i &#x3D; 0; i &lt; m - 1; ++i) &#123; &#x2F;&#x2F; b[0, i]</span><br><span class="line">    int j &#x3D; i;</span><br><span class="line">    int k &#x3D; 0; &#x2F;&#x2F; 公共后缀子串长度</span><br><span class="line">    while (j &gt;&#x3D; 0 &amp;&amp; b[j] &#x3D;&#x3D; b[m-1-k]) &#123; &#x2F;&#x2F; 与b[0, m-1]求公共后缀子串</span><br><span class="line">      --j;</span><br><span class="line">      ++k;</span><br><span class="line">      suffix[k] &#x3D; j+1; &#x2F;&#x2F;j+1表示公共后缀子串在b[0, i]中的起始下标</span><br><span class="line">    &#125;</span><br><span class="line">    if (j &#x3D;&#x3D; -1) prefix[k] &#x3D; true; &#x2F;&#x2F;如果公共后缀子串也是模式串的前缀子串</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>有了这两个数组之后，我们现在来看，<strong>在模式串跟主串匹配的过程中，遇到不能匹配的字符时，如何根据好后缀规则，计算模式串往后滑动的位数？</strong></p>
+<p>假设好后缀的长度是k。我们先拿好后缀，在suffix数组中查找其匹配的子串。如果suffix[k]不等于-1（-1表示不存在匹配的子串），那我们就将模式串往后移动j-suffix[k]+1位（j表示坏字符对应的模式串中的字符下标）。如果suffix[k]等于-1，表示模式串中不存在另一个跟好后缀匹配的子串片段。我们可以用下面这条规则来处理。</p>
+<p><img src="/shuimages/33%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%EF%BC%9A%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%AD%EF%BC%89/1d046df5cc40bc57d3f92ff7c51afb72.jpg"></p>
+<p>好后缀的后缀子串b[r, m-1]（其中，r取值从j+2到m-1）的长度k=m-r，如果prefix[k]等于true，表示长度为k的后缀子串，有可匹配的前缀子串，这样我们可以把模式串后移r位。</p>
+<p><img src="/shuimages/33%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%EF%BC%9A%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%AD%EF%BC%89/63a357abc9766393a77a9a006a31b10d.jpg"></p>
+<p>如果两条规则都没有找到可以匹配好后缀及其后缀子串的子串，我们就将整个模式串后移m位。</p>
+<p><img src="/shuimages/33%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%EF%BC%9A%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%AD%EF%BC%89/d982db00467964666de18ed5ac647fa1.jpg"></p>
+<p>至此，好后缀规则的代码实现我们也讲完了。我们把好后缀规则加到前面的代码框架里，就可以得到BM算法的完整版代码实现。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; a,b表示主串和模式串；n，m表示主串和模式串的长度。</span><br><span class="line">public int bm(char[] a, int n, char[] b, int m) &#123;</span><br><span class="line">  int[] bc &#x3D; new int[SIZE]; &#x2F;&#x2F; 记录模式串中每个字符最后出现的位置</span><br><span class="line">  generateBC(b, m, bc); &#x2F;&#x2F; 构建坏字符哈希表</span><br><span class="line">  int[] suffix &#x3D; new int[m];</span><br><span class="line">  boolean[] prefix &#x3D; new boolean[m];</span><br><span class="line">  generateGS(b, m, suffix, prefix);</span><br><span class="line">  int i &#x3D; 0; &#x2F;&#x2F; j表示主串与模式串匹配的第一个字符</span><br><span class="line">  while (i &lt;&#x3D; n - m) &#123;</span><br><span class="line">    int j;</span><br><span class="line">    for (j &#x3D; m - 1; j &gt;&#x3D; 0; --j) &#123; &#x2F;&#x2F; 模式串从后往前匹配</span><br><span class="line">      if (a[i+j] !&#x3D; b[j]) break; &#x2F;&#x2F; 坏字符对应模式串中的下标是j</span><br><span class="line">    &#125;</span><br><span class="line">    if (j &lt; 0) &#123;</span><br><span class="line">      return i; &#x2F;&#x2F; 匹配成功，返回主串与模式串第一个匹配的字符的位置</span><br><span class="line">    &#125;</span><br><span class="line">    int x &#x3D; j - bc[(int)a[i+j]];</span><br><span class="line">    int y &#x3D; 0;</span><br><span class="line">    if (j &lt; m-1) &#123; &#x2F;&#x2F; 如果有好后缀的话</span><br><span class="line">      y &#x3D; moveByGS(j, m, suffix, prefix);</span><br><span class="line">    &#125;</span><br><span class="line">    i &#x3D; i + Math.max(x, y);</span><br><span class="line">  &#125;</span><br><span class="line">  return -1;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; j表示坏字符对应的模式串中的字符下标; m表示模式串长度</span><br><span class="line">private int moveByGS(int j, int m, int[] suffix, boolean[] prefix) &#123;</span><br><span class="line">  int k &#x3D; m - 1 - j; &#x2F;&#x2F; 好后缀长度</span><br><span class="line">  if (suffix[k] !&#x3D; -1) return j - suffix[k] +1;</span><br><span class="line">  for (int r &#x3D; j+2; r &lt;&#x3D; m-1; ++r) &#123;</span><br><span class="line">    if (prefix[m-r] &#x3D;&#x3D; true) &#123;</span><br><span class="line">      return r;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  return m;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1><span id="bm算法的性能分析及优化">BM算法的性能分析及优化</span></h1><p>我们先来分析BM算法的内存消耗。整个算法用到了额外的3个数组，其中bc数组的大小跟字符集大小有关，suffix数组和prefix数组的大小跟模式串长度m有关。</p>
+<p>如果我们处理字符集很大的字符串匹配问题，bc数组对内存的消耗就会比较多。因为好后缀和坏字符规则是独立的，如果我们运行的环境对内存要求苛刻，可以只使用好后缀规则，不使用坏字符规则，这样就可以避免bc数组过多的内存消耗。不过，单纯使用好后缀规则的BM算法效率就会下降一些了。</p>
+<p>对于执行效率来说，我们可以先从时间复杂度的角度来分析。</p>
+<p>实际上，我前面讲的BM算法是个初级版本。为了让你能更容易理解，有些复杂的优化我没有讲。基于我目前讲的这个版本，在极端情况下，预处理计算suffix数组、prefix数组的性能会比较差。</p>
+<p>比如模式串是aaaaaaa这种包含很多重复的字符的模式串，预处理的时间复杂度就是O(m^2)。当然，大部分情况下，时间复杂度不会这么差。关于如何优化这种极端情况下的时间复杂度退化，如果感兴趣，你可以自己研究一下。</p>
+<p>实际上，BM算法的时间复杂度分析起来是非常复杂，这篇论文“<a target="_blank" rel="noopener" href="http://dl.acm.org/citation.cfm?id=1382431.1382552">A new proof of the linearity of the Boyer-Moore string searching algorithm</a>”证明了在最坏情况下，BM算法的比较次数上限是5n。这篇论文“<a target="_blank" rel="noopener" href="http://dl.acm.org/citation.cfm?id=127830">Tight bounds on the complexity of the Boyer-Moore string matching algorithm</a>”证明了在最坏情况下，BM算法的比较次数上限是3n。你可以自己阅读看看。</p>
+<h1><span id="解答开篇amp内容小结">解答开篇&amp;内容小结</span></h1><p>今天，我们讲了一种比较复杂的字符串匹配算法，BM算法。尽管复杂、难懂，但匹配的效率却很高，在实际的软件开发中，特别是一些文本编辑器中，应用比较多。如果一遍看不懂的话，你就多看几遍。</p>
+<p>BM算法核心思想是，利用模式串本身的特点，在模式串中某个字符与主串不能匹配的时候，将模式串往后多滑动几位，以此来减少不必要的字符比较，提高匹配的效率。BM算法构建的规则有两类，坏字符规则和好后缀规则。好后缀规则可以独立于坏字符规则使用。因为坏字符规则的实现比较耗内存，为了节省内存，我们可以只用好后缀规则来实现BM算法。</p>
+<h1><span id="课后思考">课后思考</span></h1><p>你熟悉的编程语言中的查找函数，或者工具、软件中的查找功能，都是用了哪种字符串匹配算法呢？</p>
+<p>欢迎留言和我分享，也欢迎点击“<span class="orange">请朋友读</span>”，把今天的内容分享给你的好友，和他一起讨论、学习。</p>
+
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+		
+		<!-- ============================ 目录 =========================== -->
+		<div class="post-toc">
+			<div class="tocbot-list">
+			</div>
+			<div class="tocbot-list-menu">
+				<a class="tocbot-toc-expand" onclick="expand_toc()">全部展开</a>
+				<a onclick="go_top()">回到顶部</a>
+				<a onclick="go_bottom()">回到底部</a>
+			</div>
+		</div>
+		<script>
+			window.onload = function(){
+				$('.post-content').find('img').each(function(){
+					var picWidth = parseInt($(this).width());
+					if(picWidth > 800){
+						var pW = $(this).width();
+						var pH = $(this).height();
+						var BL = pH / pW;
+						var outH = 800 * BL;
+						$(this).width(800);
+						$(this).height(outH);
+					}
+				})
+			};
+			$(document).ready(
+				function (){
+					if ($('.tocbot-list').length > 0) {
+						var headerEl = 'h1,h2,h3,h4,h5',
+							content = '.post-content',
+							idArr = {};
+				 
+						$(content).children(headerEl).each(function () {
+							//去除空格以及多余标点
+							var headerId = $(this).children('span').text().replace(/[\s|\~|`|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\_|\+|\=|\||\|\[|\]|\{|\}|\;|\:|\"|\'|\,|\<|\.|\>|\/|\?|\：|\，|\。]/g, '');
+					 
+							headerId = headerId.toLowerCase();
+							if (idArr[headerId]) {
+								//id已经存在
+								$(this).attr('id', headerId + '-' + idArr[headerId]);
+								idArr[headerId]++;
+							}
+							else {
+								//id未存在
+								idArr[headerId] = 1;
+								$(this).attr('id', headerId);
+							}
+						});
+					}
+				}
+			)
+			
+			$(document).ready(
+				function () {
+					tocbot.init({
+						tocSelector: '.tocbot-list',
+						contentSelector: '.post-content',
+						headingSelector: 'h1, h2, h3, h4, h5',
+						collapseDepth: 1,
+						orderedList: false,
+						scrollSmooth: true,
+					})
+				}
+			)
+
+			function expand_toc() {
+				var b = document.querySelector(".tocbot-toc-expand");
+				tocbot.init({
+					tocSelector: '.tocbot-list',
+					contentSelector: '.post-content',
+					headingSelector: 'h1, h2, h3, h4, h5',
+					collapseDepth: 6,
+					orderedList: false,
+					scrollSmooth: true,
+				});
+				b.setAttribute("onclick", "collapse_toc()");
+				b.innerHTML = "全部折叠"
+			}
+
+			function collapse_toc() {
+				var b = document.querySelector(".tocbot-toc-expand");
+				tocbot.init({
+					tocSelector: '.tocbot-list',
+					contentSelector: '.post-content',
+					headingSelector: 'h1, h2, h3, h4, h5',
+					collapseDepth: 1,
+					orderedList: false,
+					scrollSmooth: true,
+				});
+				b.setAttribute("onclick", "expand_toc()");
+				b.innerHTML = "全部展开"
+			}
+
+			function go_top() {
+				window.scrollTo(0, 0);
+			}
+
+			function go_bottom() {
+				window.scrollTo(0, document.body.scrollHeight);
+			}
+
+		</script>
+		<!-- ============================ 目录end =========================== -->
+        <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
+    
+    <a class="pull-left" href="/2020/08/07/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E4%B9%8B%E7%BE%8E/34%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%EF%BC%9A%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%8B%EF%BC%89/" style="float: left;">
+        ← 34 | 字符串匹配基础（下）：如何借助BM算法轻松理解KMP算法？
+    </a>
+    
+    
+    <a class="pull-right" href="/2020/08/07/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E4%B9%8B%E7%BE%8E/32%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%EF%BC%9A%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%8A%EF%BC%89/">
+        32 | 字符串匹配基础（上）：如何借助哈希算法实现高效字符串匹配？ →
+    </a>
+    
+</nav>
+
+        <div class="post-content col-sm-24"><script type="text/javascript">
+  /**
+   * 搜狐畅言
+   */
+
+  /*
+  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
+
+  window.onload = function () {
+    (function () {
+      var appid = 'cytXXXX';
+      var conf = 'prod_xxxxxxxxxxxxxxxxx';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      var loadJs = function (d, a, id) {
+        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+        var b = document.createElement("script");
+        b.setAttribute("type", "text/javascript");
+        b.setAttribute("charset", "UTF-8");
+        b.setAttribute("src", d);
+        if (id) {
+          b.setAttribute("id", id);
+        }
+        if (typeof a === "function") {
+          if (window.attachEvent) {
+            b.onreadystatechange = function () {
+              var e = b.readyState;
+              if (e === "loaded" || e === "complete") {
+                b.onreadystatechange = null;
+                a()
+              }
+            }
+          } else {
+            b.onload = a
+          }
+        }
+        c.appendChild(b)
+      };
+
+      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
+        window.changyan.api.config({
+          appid: appid,
+          conf: conf
+        })
+      });
+    })();
+  }
+  */
+
+</script>
+</div>
+    </div>
+</section>
+
+
+      <section id="statement">
+    <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
+        <div class="state-row">
+            <p>虽然还没想好写点什么，但是总觉得这里放句话比较和谐。</p>
+        </div>
+    </div>
+</section>
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By mimo. All Rights Reserved.
+                </p>
+                <p>Theme By <a target="_blank" rel="noopener" href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a>&nbsp;</li>
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+<script src="/js/tocbot.min.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+      
+            <style>
+.local-search-popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  background: rgba(255, 255, 255, .9);
+  color: #333;
+  z-index: 9999;
+  border-radius: 5px;
+  overflow: scroll;
+}
+#local-search-input {
+  width: 100%;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #151515;
+  background-color: initial;
+}
+.search-result-list {
+  list-style: none;
+  padding-left: 0;
+}
+.search-result-list > li {
+  margin-top: 15px;
+  border-bottom: 1px solid #ddd;
+  transition: all ease .3s;
+}
+.search-result-list > li:hover {
+  border-bottom: 1px solid gray;
+}
+.search-result-title {
+  font-size: 16px;
+}
+.search-result {
+  line-height: 20px;
+}
+.search-keyword {
+  font-weight: normal;
+  color: #c00;
+}
+
+@media (min-width: 890px) {
+  .popup-btn-close {
+    position: absolute;
+    top: 15px;
+    left: 35px;
+    border: 1px solid #151515;
+    padding: 0px 10px;
+    border-top-left-radius: 8px;
+    cursor: pointer;
+    transition: all ease .3s;
+  }
+  .popup-btn-close:hover {
+    background: #151515;
+    opacity: .9;
+    color: #fff;
+  }
+}
+@media (max-width: 890px) {
+  .popup-btn-close {
+    font-size: 0;
+    position: fixed;
+    right: 20px;
+    bottom: 50px;
+    width: 50px;
+    height: 50px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 1px 1px 5px #888;
+    cursor: pointer;
+  }
+  .popup-btn-close::after {
+    content: '←';
+    color: #151515;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 20px;
+    width: 100%;
+    height: 100%;
+    line-height: 50px;
+    text-align: center;
+  }
+}
+</style>
+
+<div class="popup search-popup local-search-popup">
+  <span class="popup-btn-close">
+    ESC
+  </span>
+  <div class="container">
+    <div class="col-md-8 col-md-offset-2">
+      <div class="local-search-header clearfix">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="local-search-input-wrapper">
+          <input autocomplete="off" placeholder="Search..." type="text" id="local-search-input">
+        </div>
+      </div>
+      <div id="local-search-result"></div>
+    </div>
+  </div>
+</div>
+
+<script src="/js/ziploader.js"></script>
+
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.json";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').fadeOut(300);
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $('.popup').fadeIn(300);
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // get search zip version
+    $.get('/searchVersion.txt?t=' + (+new Date()), function(res) {
+      if (localStorage.getItem('searchVersion') !== res) {
+        localStorage.setItem('searchVersion', res);
+        initSearchJson();
+      }
+    });
+
+    function initSearchJson () {
+      initLoad(['/search.zip'], {
+        loadOptions: {
+          success: function(obj) {
+            localStorage.setItem('searchJson', obj['search.json'])
+          },
+          error: function(e) {
+            return console.log(e)
+          }
+        },
+        returnOptions: {
+          'json': TYPE_TEXT
+        },
+        mimeOptions:{
+          'json':'application/json'
+        }
+      })
+    }
+
+
+    // search function;
+    var searchFunc = function(search_id, content_id) {
+      'use strict';
+
+      isfetched = true;
+      var datas = JSON.parse(localStorage.getItem('searchJson'));
+      console.log(search_id)
+      var input = document.getElementById(search_id);
+      var resultContent = document.getElementById(content_id);
+      var inputEventFunction = function() {
+        var searchText = input.value.trim().toLowerCase();
+        var keywords = searchText.split(/[\s\-]+/);
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        var resultItems = [];
+        if (searchText.length > 0) {
+          // perform local searching
+          datas.forEach(function(data) {
+            var isMatch = false;
+            var hitCount = 0;
+            var searchTextCount = 0;
+            var title = data.title ? data.title.trim() : '';
+            var titleInLowerCase = title.toLowerCase();
+            var content = data.content ? data.content.trim().replace(/<[^>]+>/g,"") : '';
+            var contentInLowerCase = content.toLowerCase();
+            var articleUrl = decodeURIComponent(data.url);
+            var indexOfTitle = [];
+            var indexOfContent = [];
+            // only match articles with not empty titles
+            keywords.forEach(function(keyword) {
+              function getIndexByWord(word, text, caseSensitive) {
+                var wordLen = word.length;
+                if (wordLen === 0) {
+                  return [];
+                }
+                var startPosition = 0, position = [], index = [];
+                if (!caseSensitive) {
+                  text = text.toLowerCase();
+                  word = word.toLowerCase();
+                }
+                while ((position = text.indexOf(word, startPosition)) > -1) {
+                  index.push({position: position, word: word});
+                  startPosition = position + wordLen;
+                }
+                return index;
+              }
+
+              indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+              indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+            });
+            if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+              isMatch = true;
+              hitCount = indexOfTitle.length + indexOfContent.length;
+            }
+
+            // show search results
+
+            if (isMatch) {
+              // sort index by position of keyword
+
+              [indexOfTitle, indexOfContent].forEach(function (index) {
+                index.sort(function (itemLeft, itemRight) {
+                  if (itemRight.position !== itemLeft.position) {
+                    return itemRight.position - itemLeft.position;
+                  } else {
+                    return itemLeft.word.length - itemRight.word.length;
+                  }
+                });
+              });
+
+              // merge hits into slices
+
+              function mergeIntoSlice(text, start, end, index) {
+                var item = index[index.length - 1];
+                var position = item.position;
+                var word = item.word;
+                var hits = [];
+                var searchTextCountInSlice = 0;
+                while (position + word.length <= end && index.length != 0) {
+                  if (word === searchText) {
+                    searchTextCountInSlice++;
+                  }
+                  hits.push({position: position, length: word.length});
+                  var wordEnd = position + word.length;
+
+                  // move to next position of hit
+
+                  index.pop();
+                  while (index.length != 0) {
+                    item = index[index.length - 1];
+                    position = item.position;
+                    word = item.word;
+                    if (wordEnd > position) {
+                      index.pop();
+                    } else {
+                      break;
+                    }
+                  }
+                }
+                searchTextCount += searchTextCountInSlice;
+                return {
+                  hits: hits,
+                  start: start,
+                  end: end,
+                  searchTextCount: searchTextCountInSlice
+                };
+              }
+
+              var slicesOfTitle = [];
+              if (indexOfTitle.length != 0) {
+                slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+              }
+
+              var slicesOfContent = [];
+              while (indexOfContent.length != 0) {
+                var item = indexOfContent[indexOfContent.length - 1];
+                var position = item.position;
+                var word = item.word;
+                // cut out 100 characters
+                var start = position - 20;
+                var end = position + 80;
+                if(start < 0){
+                  start = 0;
+                }
+                if (end < position + word.length) {
+                  end = position + word.length;
+                }
+                if(end > content.length){
+                  end = content.length;
+                }
+                slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+              }
+
+              // sort slices in content by search text's count and hits' count
+
+              slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                  return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                  return sliceRight.hits.length - sliceLeft.hits.length;
+                } else {
+                  return sliceLeft.start - sliceRight.start;
+                }
+              });
+
+              // select top N slices in content
+
+              var upperBound = parseInt('2');
+              if (upperBound >= 0) {
+                slicesOfContent = slicesOfContent.slice(0, upperBound);
+              }
+
+              // highlight title and content
+
+              function highlightKeyword(text, slice) {
+                var result = '';
+                var prevEnd = slice.start;
+                slice.hits.forEach(function (hit) {
+                  result += text.substring(prevEnd, hit.position);
+                  var end = hit.position + hit.length;
+                  result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                  prevEnd = end;
+                });
+                result += text.substring(prevEnd, slice.end);
+                return result;
+              }
+
+              var resultItem = '';
+
+              if (slicesOfTitle.length != 0) {
+                resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+              } else {
+                resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+              }
+
+              slicesOfContent.forEach(function (slice) {
+                resultItem += "<a target='_blank' href='" + articleUrl + "'>" +
+                  "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                  "...</p>" + "</a>";
+              });
+
+              resultItem += "</li>";
+              resultItems.push({
+                item: resultItem,
+                searchTextCount: searchTextCount,
+                hitCount: hitCount,
+                id: resultItems.length
+              });
+            }
+          })
+        };
+        if (keywords.length === 1 && keywords[0] === "") {
+          resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+        } else if (resultItems.length === 0) {
+          resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+        } else {
+          resultItems.sort(function (resultLeft, resultRight) {
+            if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+              return resultRight.searchTextCount - resultLeft.searchTextCount;
+            } else if (resultLeft.hitCount !== resultRight.hitCount) {
+              return resultRight.hitCount - resultLeft.hitCount;
+            } else {
+              return resultRight.id - resultLeft.id;
+            }
+          });
+          var searchResultList = '<ul class=\"search-result-list\">';
+          resultItems.forEach(function (result) {
+            searchResultList += result.item;
+          })
+          searchResultList += "</ul>";
+          resultContent.innerHTML = searchResultList;
+        }
+      }
+
+      if ('auto' === 'auto') {
+        input.addEventListener('input', inputEventFunction);
+      } else {
+        $('.search-icon').click(inputEventFunction);
+        input.addEventListener('keypress', function (event) {
+          if (event.keyCode === 13) {
+            inputEventFunction();
+          }
+        });
+      }
+
+      // remove loading animation
+      $('body').css('overflow', '');
+
+      proceedsearch();
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        $('.sb-close').click();
+        searchFunc('local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+      
+</body>
+</html>

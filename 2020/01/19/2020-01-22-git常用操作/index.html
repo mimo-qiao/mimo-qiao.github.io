@@ -24,8 +24,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content="mimo">
-    <meta name="author" content="John Doe">
-    <meta name="description" content="" />
+    <meta name="author" content="mimo">
+    <meta name="description" content="Q" />
     <meta name="keywords" content="" />
 
     <!-- Favicon, (keep icon in root folder) -->
@@ -85,6 +85,8 @@
 				    
 				    <li><a href="/categories/linux/" class="animsition-link">linux<small>(7)</small></a></li>
 				    
+				    <li><a href="/categories/mysql实战45讲/" class="animsition-link">mysql实战45讲<small>(49)</small></a></li>
+				    
 				    <li><a href="/categories/python/" class="animsition-link">python<small>(1)</small></a></li>
 				    
 				    <li><a href="/categories/sonar/" class="animsition-link">sonar<small>(1)</small></a></li>
@@ -92,6 +94,8 @@
 				    <li><a href="/categories/tess4j/" class="animsition-link">tess4j<small>(1)</small></a></li>
 				    
 				    <li><a href="/categories/基础/" class="animsition-link">基础<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/数据结构与算法之美/" class="animsition-link">数据结构与算法之美<small>(79)</small></a></li>
 				    
 				</ul>
         	</li>
@@ -152,6 +156,10 @@
                     <li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/f4dce0e76886" class="animsition-link">参考2</a></li>
                     
                     <li><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/configuration.html" class="animsition-link">官网</a></li>
+                    
+                    <li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/31eb5c754c01" class="animsition-link">nginx部署</a></li>
+                    
+                    <li><a target="_blank" rel="noopener" href="https://segmentfault.com/p/1210000010636536/read" class="animsition-link">hexo原理</a></li>
                     
                 </ul>
             </li>
@@ -266,81 +274,81 @@
 <p>暂存区域：是一个文件，保存了下次将提交的文件列表信息，一般在 Git 仓库目录中。有时候也被称作“索引”，不过一般说法还是叫暂存区域。</p>
 <hr>
 <h3><span id="tortoisegit">TortoiseGit：</span></h3><h5><span id="1提交代码">1.提交代码</span></h5><p>1.选中想要提交的代码文件或目录，右键单击TortoiseGit–Add</p>
-<img src="/images/1578627070295.png" alt="1578627070295" style="zoom:50%;">
+<img src="/images/1578627070295.png" alt="1578627070295">
 
 <p>2.输入message（必填），点击commit</p>
-<img src="/images/1578629168249.png" alt="1578629168249" style="zoom:50%;">
+<img src="/images/1578629168249.png" alt="1578629168249">
 
 <p>3.提交代码成功</p>
-<img src="/images/1578629241809.png" alt="1578629241809" style="zoom:50%;">
+<img src="/images/1578629241809.png" alt="1578629241809">
 
 <hr>
 <h5><span id="2拉取更新">2.拉取更新</span></h5><p>1.项目空白处点击右键=&gt;TortoiseGit=&gt;Pull…，一般不做其他更改，默认点击OK</p>
 <blockquote>
 <p>注：如果拉取有bug，勾选Launch Rebase After Fetch</p>
 </blockquote>
-<img src="/images/1578634380355.png" alt="1578634380355" style="zoom:50%;">
+<img src="/images/1578634380355.png" alt="1578634380355">
 
 <p>2.拉取成功：</p>
-<img src="/images/1578634510341.png" alt="1578634510341" style="zoom:50%;">
+<img src="/images/1578634510341.png" alt="1578634510341">
 
 <p>3.项目修改后提交代码：</p>
 <p>4.将提交到本地的项目推送到远程：点击右键=&gt;TortoiseGit=&gt;Push…，默认点击OK</p>
-<img src="/images/1578634897777.png" alt="1578634897777" style="zoom:50%;">
+<img src="/images/1578634897777.png" alt="1578634897777">
 
 <p>5.push成功：</p>
-<img src="/images/1578634982059.png" alt="1578634982059" style="zoom:50%;">
+<img src="/images/1578634982059.png" alt="1578634982059">
 
 <hr>
 <h5><span id="3分支的创建及切换">3.分支的创建及切换</span></h5><p>1.创建分支：项目右键 =&gt; TortoiseGit=&gt; Create Branch，点击OK</p>
-<img src="/images/1578627416316.png" alt="1578627416316" style="zoom:50%;">
+<img src="/images/1578627416316.png" alt="1578627416316">
 
 <p>2.切换分支：项目右键=&gt; TortoiseGit=&gt;Switch/Checkout，点击OK</p>
-<img src="/images/1578627662951.png" alt="1578627662951" style="zoom:50%;">
+<img src="/images/1578627662951.png" alt="1578627662951">
 
 <p>3.切换分支成功，提交分支，选择Commit：</p>
-<img src="/images/1578627770588.png" alt="1578627770588" style="zoom:50%;">
+<img src="/images/1578627770588.png" alt="1578627770588">
 
 <p>4.输入message（必填），点击Commit&amp;Push，提交并推送分支：</p>
-<img src="/images/1578631183373.png" alt="1578631183373" style="zoom:50%;">
+<img src="/images/1578631183373.png" alt="1578631183373">
 
 <p>5.推送分支到远端：</p>
-<img src="/images/1578631212188.png" alt="1578631212188" style="zoom:50%;">
+<img src="/images/1578631212188.png" alt="1578631212188">
 
 <p>6.推送成功：</p>
-<img src="/images/1578631233021.png" alt="1578631233021" style="zoom:50%;">
+<img src="/images/1578631233021.png" alt="1578631233021">
 
 <hr>
 <h5><span id="4分支合并">4.分支合并</span></h5><blockquote>
 <p>前提：分支开发的代码先推送到远端，切换本地分支到master主分支</p>
 </blockquote>
 <p>1.项目右键=&gt;TortoiseGit=&gt;Merge，选择要合并到master的分支，勾选合并按钮Squash，点击OK</p>
-<img src="/images/1578633446888.png" alt="1578633446888" style="zoom:50%;">
+<img src="/images/1578633446888.png" alt="1578633446888">
 
 <p>2.合并成功，点击Commit提交：</p>
-<img src="/images/1578633507991.png" alt="1578633507991" style="zoom:50%;">
+<img src="/images/1578633507991.png" alt="1578633507991">
 
 <p>3.点击Commit&amp;Push，提交并推送到远端：</p>
-<img src="/images/1578633582640.png" alt="1578633582640" style="zoom:50%;">
+<img src="/images/1578633582640.png" alt="1578633582640">
 
 <p>4.推送成功：</p>
-<img src="/images/1578633628876.png" alt="1578633628876" style="zoom:50%;">
+<img src="/images/1578633628876.png" alt="1578633628876">
 
 <hr>
 <h5><span id="5删除分支">5.删除分支</span></h5><blockquote>
 <p>注：首先切换到别的分支上，否则会报错</p>
 </blockquote>
 <p>1.项目右键=&gt; TortoiseGit=&gt;Switch/Checkout，点击如图按钮：</p>
-<img src="/images/1578635619363.png" alt="1578635619363" style="zoom:50%;">
+<img src="/images/1578635619363.png" alt="1578635619363">
 
 <p>2.选中想要删除的分支，点击右键，点击Delete branch</p>
-<img src="/images/1578635678767.png" alt="1578635678767" style="zoom:50%;">
+<img src="/images/1578635678767.png" alt="1578635678767">
 
 <p>3.点击是，则删除成功：</p>
-<img src="/images/1578635752136.png" alt="1578635752136" style="zoom:50%;">
+<img src="/images/1578635752136.png" alt="1578635752136">
 
 <p>4.选择remotes远程分支，按照同样的步骤执行操作，可成功删除远程分支：</p>
-<img src="/images/1578636042449.png" alt="1578636042449" style="zoom:50%;">
+<img src="/images/1578636042449.png" alt="1578636042449">
 
 <hr>
 <h3><span id="git-bash">Git bash：</span></h3><p><code>git init</code>:初始化git仓库并出现<code>.git</code>文件夹</p>
@@ -424,6 +432,7 @@
             <div class="clearfix"></div>
             <hr class="nogutter">
         </div>
+		
 		<!-- ============================ 目录 =========================== -->
 		<div class="post-toc">
 			<div class="tocbot-list">
@@ -435,6 +444,19 @@
 			</div>
 		</div>
 		<script>
+			window.onload = function(){
+				$('.post-content').find('img').each(function(){
+					var picWidth = parseInt($(this).width());
+					if(picWidth > 800){
+						var pW = $(this).width();
+						var pH = $(this).height();
+						var BL = pH / pW;
+						var outH = 800 * BL;
+						$(this).width(800);
+						$(this).height(outH);
+					}
+				})
+			};
 			$(document).ready(
 				function (){
 					if ($('.tocbot-list').length > 0) {
@@ -589,7 +611,7 @@
     <div class="container">
             <div class="copy">
                 <p>
-                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By John Doe. All Rights Reserved.
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By mimo. All Rights Reserved.
                 </p>
                 <p>Theme By <a target="_blank" rel="noopener" href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
             </div>

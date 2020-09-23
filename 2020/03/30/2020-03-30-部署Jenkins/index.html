@@ -24,8 +24,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content="mimo">
-    <meta name="author" content="John Doe">
-    <meta name="description" content="" />
+    <meta name="author" content="mimo">
+    <meta name="description" content="Q" />
     <meta name="keywords" content="" />
 
     <!-- Favicon, (keep icon in root folder) -->
@@ -85,6 +85,8 @@
 				    
 				    <li><a href="/categories/linux/" class="animsition-link">linux<small>(7)</small></a></li>
 				    
+				    <li><a href="/categories/mysql实战45讲/" class="animsition-link">mysql实战45讲<small>(49)</small></a></li>
+				    
 				    <li><a href="/categories/python/" class="animsition-link">python<small>(1)</small></a></li>
 				    
 				    <li><a href="/categories/sonar/" class="animsition-link">sonar<small>(1)</small></a></li>
@@ -92,6 +94,8 @@
 				    <li><a href="/categories/tess4j/" class="animsition-link">tess4j<small>(1)</small></a></li>
 				    
 				    <li><a href="/categories/基础/" class="animsition-link">基础<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/数据结构与算法之美/" class="animsition-link">数据结构与算法之美<small>(79)</small></a></li>
 				    
 				</ul>
         	</li>
@@ -152,6 +156,10 @@
                     <li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/f4dce0e76886" class="animsition-link">参考2</a></li>
                     
                     <li><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/configuration.html" class="animsition-link">官网</a></li>
+                    
+                    <li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/31eb5c754c01" class="animsition-link">nginx部署</a></li>
+                    
+                    <li><a target="_blank" rel="noopener" href="https://segmentfault.com/p/1210000010636536/read" class="animsition-link">hexo原理</a></li>
                     
                 </ul>
             </li>
@@ -248,7 +256,7 @@
             </div>
         </div>
 		<div class="post-content">
-      		<h2><span id="环境准备">环境准备</span></h2><h2><span id="linux环境准备">linux环境准备</span></h2><blockquote>
+      		<h1><span id="环境准备">环境准备</span></h1><h2><span id="linux环境准备">linux环境准备</span></h2><blockquote>
 <p>安装最低配置：不少于256M内存，不低于1G磁盘，JDK版本&gt;=8（openjdk也可以）。</p>
 </blockquote>
 <blockquote>
@@ -256,36 +264,36 @@
 </blockquote>
 <hr>
 <p>本地PC正常访问外网，CentOS7桥接本机pc网卡上</p>
-<h5><span id="1添加yum仓库源">1.添加yum仓库源</span></h5><p>若无wget命令，则安装：</p>
+<h3><span id="1添加yum仓库源">1.添加yum仓库源</span></h3><p>若无wget命令，则安装：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># yum install wget -y</span><br><span class="line"></span><br><span class="line"># wget -O &#x2F;etc&#x2F;yum.repos.d&#x2F;jenkins.repo https:&#x2F;&#x2F;pkg.jenkins.io&#x2F;redhat-stable&#x2F;jenkins.repo</span><br></pre></td></tr></table></figure>
 
 <p>安装jenkins key</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm --import https:&#x2F;&#x2F;pkg.jenkins.io&#x2F;redhat-stable&#x2F;jenkins.io.key</span><br></pre></td></tr></table></figure>
 
-<h5><span id="2保证系统java版本80或以上">2.保证系统java版本8.0或以上</span></h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># yum -y install java</span><br><span class="line"></span><br><span class="line"># java -version</span><br></pre></td></tr></table></figure>
+<h3><span id="2保证系统java版本80或以上">2.保证系统java版本8.0或以上</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># yum -y install java</span><br><span class="line"></span><br><span class="line"># java -version</span><br></pre></td></tr></table></figure>
 
-<h5><span id="3关闭系统防火墙">3.关闭系统防火墙</span></h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># systemctl stop firewalld</span><br><span class="line"># systemctl disable firewalld</span><br></pre></td></tr></table></figure>
+<h3><span id="3关闭系统防火墙">3.关闭系统防火墙</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># systemctl stop firewalld</span><br><span class="line"># systemctl disable firewalld</span><br></pre></td></tr></table></figure>
 
-<h5><span id="4关闭selinux并重启系统">4.关闭selinux并重启系统</span></h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># vi &#x2F;etc&#x2F;sysconfig&#x2F;selinux</span><br><span class="line">...</span><br><span class="line">selinux&#x3D;disabled</span><br><span class="line">...</span><br><span class="line"># reboot</span><br></pre></td></tr></table></figure>
+<h3><span id="4关闭selinux并重启系统">4.关闭selinux并重启系统</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># vi &#x2F;etc&#x2F;sysconfig&#x2F;selinux</span><br><span class="line">...</span><br><span class="line">selinux&#x3D;disabled</span><br><span class="line">...</span><br><span class="line"># reboot</span><br></pre></td></tr></table></figure>
 
 <hr>
-<h2><span id="jenkins安装与初始化配置">Jenkins安装与初始化配置</span></h2><h5><span id="1yum源安装jenkins最新版本或下载war包">1.yum源安装jenkins最新版本，或下载war包</span></h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># yum install jenkins</span><br></pre></td></tr></table></figure>
+<h1><span id="jenkins安装与初始化配置">Jenkins安装与初始化配置</span></h1><h3><span id="1yum源安装jenkins最新版本或下载war包">1.yum源安装jenkins最新版本，或下载war包</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># yum install jenkins</span><br></pre></td></tr></table></figure>
 
-<h5><span id="2创建jenkins系统用户">2.创建Jenkins系统用户</span></h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># useradd deploy</span><br></pre></td></tr></table></figure>
+<h3><span id="2创建jenkins系统用户">2.创建Jenkins系统用户</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># useradd deploy</span><br></pre></td></tr></table></figure>
 
-<h5><span id="3更改jenkins启动用户与端口">3.更改Jenkins启动用户与端口</span></h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># vi &#x2F;etc&#x2F;sysconfig&#x2F;jenkins</span><br><span class="line">...</span><br><span class="line">JENKINS_USER&#x3D;DEPLOY</span><br><span class="line">JENKINS_PORT&#x3D;8080</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<h3><span id="3更改jenkins启动用户与端口">3.更改Jenkins启动用户与端口</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># vi &#x2F;etc&#x2F;sysconfig&#x2F;jenkins</span><br><span class="line">...</span><br><span class="line">JENKINS_USER&#x3D;DEPLOY</span><br><span class="line">JENKINS_PORT&#x3D;8080</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
 
 <p>更改jenkins默认的家目录以及log日志目录的数主和数组权限： </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chown -R deploy:deploy &#x2F;var&#x2F;lib&#x2F;jenkins</span><br><span class="line">chown -R deploy:deploy &#x2F;var&#x2F;log&#x2F;jenkins</span><br></pre></td></tr></table></figure>
 
-<h5><span id="4启动jenkins">4.启动Jenkins</span></h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># systemctl start jenkins</span><br></pre></td></tr></table></figure>
+<h3><span id="4启动jenkins">4.启动Jenkins</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># systemctl start jenkins</span><br></pre></td></tr></table></figure>
 
 <p>确认jenkins服务是否正常启动：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lsof -i:8080</span><br></pre></td></tr></table></figure>
 
-<h5><span id="5按如下访问或直接ip8080访问可选">5.按如下访问或直接ip:8080访问（可选）</span></h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">运行找到c:\windows\system32\drivers\etc\hosts，用记事本打开</span><br><span class="line"></span><br><span class="line">加一行</span><br><span class="line"></span><br><span class="line">ip     jenkins.example.com</span><br><span class="line"></span><br><span class="line">直接在浏览器找域名</span><br></pre></td></tr></table></figure>
+<h3><span id="5按如下访问或直接ip8080访问可选">5.按如下访问或直接ip:8080访问（可选）</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">运行找到c:\windows\system32\drivers\etc\hosts，用记事本打开</span><br><span class="line"></span><br><span class="line">加一行</span><br><span class="line"></span><br><span class="line">ip     jenkins.example.com</span><br><span class="line"></span><br><span class="line">直接在浏览器找域名</span><br></pre></td></tr></table></figure>
 
-<h5><span id="6安装插件-创建用户">6.安装插件、创建用户</span></h5><p>插件安装完成后，重启jenkins服务</p>
+<h3><span id="6安装插件-创建用户">6.安装插件、创建用户</span></h3><p>插件安装完成后，重启jenkins服务</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># systemctl restart jenkins</span><br></pre></td></tr></table></figure>
 
 <p>生成秘钥</p>
@@ -294,7 +302,7 @@
 <p>程序主目录：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># ls &#x2F;var&#x2F;lib&#x2F;jenkins&#x2F;</span><br><span class="line"></span><br><span class="line">jobs	浏览器上面创建的任务都会存放在这里</span><br><span class="line">logs	存放jenkins相关的日志</span><br><span class="line">nodes	多节点时用到</span><br><span class="line">plugins	插件所在目录</span><br><span class="line">secrets	密码秘钥所在目录</span><br></pre></td></tr></table></figure>
 
-<h2><span id="windows环境">windows环境</span></h2><p>JDK环境变量</p>
+<h1><span id="windows环境">windows环境</span></h1><p>JDK环境变量</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">JAVA_HOME:C:\Program Files\Java\jdk1.8.0_201</span><br><span class="line"></span><br><span class="line">PATH:%JAVA_HOME%\bin;%PATH%</span><br><span class="line"></span><br><span class="line">CLASSPATH:.;%JAVA_HOME%\lib;%JAVA_HOME%\lib\tools.jar</span><br></pre></td></tr></table></figure>
 
 <p>Tomcat环境变量</p>
@@ -305,6 +313,7 @@
             <div class="clearfix"></div>
             <hr class="nogutter">
         </div>
+		
 		<!-- ============================ 目录 =========================== -->
 		<div class="post-toc">
 			<div class="tocbot-list">
@@ -316,6 +325,19 @@
 			</div>
 		</div>
 		<script>
+			window.onload = function(){
+				$('.post-content').find('img').each(function(){
+					var picWidth = parseInt($(this).width());
+					if(picWidth > 800){
+						var pW = $(this).width();
+						var pH = $(this).height();
+						var BL = pH / pW;
+						var outH = 800 * BL;
+						$(this).width(800);
+						$(this).height(outH);
+					}
+				})
+			};
 			$(document).ready(
 				function (){
 					if ($('.tocbot-list').length > 0) {
@@ -474,7 +496,7 @@
     <div class="container">
             <div class="copy">
                 <p>
-                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By John Doe. All Rights Reserved.
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By mimo. All Rights Reserved.
                 </p>
                 <p>Theme By <a target="_blank" rel="noopener" href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
             </div>

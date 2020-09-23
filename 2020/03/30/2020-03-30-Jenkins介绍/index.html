@@ -24,8 +24,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content="mimo">
-    <meta name="author" content="John Doe">
-    <meta name="description" content="" />
+    <meta name="author" content="mimo">
+    <meta name="description" content="Q" />
     <meta name="keywords" content="" />
 
     <!-- Favicon, (keep icon in root folder) -->
@@ -85,6 +85,8 @@
 				    
 				    <li><a href="/categories/linux/" class="animsition-link">linux<small>(7)</small></a></li>
 				    
+				    <li><a href="/categories/mysql实战45讲/" class="animsition-link">mysql实战45讲<small>(49)</small></a></li>
+				    
 				    <li><a href="/categories/python/" class="animsition-link">python<small>(1)</small></a></li>
 				    
 				    <li><a href="/categories/sonar/" class="animsition-link">sonar<small>(1)</small></a></li>
@@ -92,6 +94,8 @@
 				    <li><a href="/categories/tess4j/" class="animsition-link">tess4j<small>(1)</small></a></li>
 				    
 				    <li><a href="/categories/基础/" class="animsition-link">基础<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/数据结构与算法之美/" class="animsition-link">数据结构与算法之美<small>(79)</small></a></li>
 				    
 				</ul>
         	</li>
@@ -152,6 +156,10 @@
                     <li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/f4dce0e76886" class="animsition-link">参考2</a></li>
                     
                     <li><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/configuration.html" class="animsition-link">官网</a></li>
+                    
+                    <li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/31eb5c754c01" class="animsition-link">nginx部署</a></li>
+                    
+                    <li><a target="_blank" rel="noopener" href="https://segmentfault.com/p/1210000010636536/read" class="animsition-link">hexo原理</a></li>
                     
                 </ul>
             </li>
@@ -255,32 +263,33 @@
 </ul>
 <p>1.持续集成(Continuous integration，简称CI)：频繁的将代码集成到主干。将个人研发部分向软件整体部分交付。</p>
 <ul>
-<li><p><input disabled type="checkbox">  开发人员每一次代码提交，都能自动在jenkins上自动build构建。</p>
+<li><p>开发人员每一次代码提交，都能自动在jenkins上自动build构建。</p>
 </li>
-<li><p><input disabled type="checkbox">  优点：可以快速发现错误，快速迭代。</p>
+<li><p>优点：可以快速发现错误，快速迭代。</p>
 </li>
-<li><p><input disabled type="checkbox">  核心措施：代码集成到主干之前，必须通过自动化测试。只要有一个测试用例失败，就不能集成。</p>
+<li><p>核心措施：代码集成到主干之前，必须通过自动化测试。只要有一个测试用例失败，就不能集成。</p>
 </li>
 </ul>
 <p>2.持续交付(Continuous Delivery，简称CD)：频繁的将软件的新版本交付给质量团队或用户，以供评审。持续交付在持续集成的基础上，将集成后的代码部署到更贴近真实运行环境的「类生产环境」</p>
 <ul>
-<li><input disabled type="checkbox"> 强调：不管怎么更新，软件是随时随地可以交付的</li>
+<li>强调：不管怎么更新，软件是随时随地可以交付的</li>
 </ul>
 <p>3.持续部署(Continuous Deployment)：代码通过评审以后，自动部署到生产环境</p>
 <ul>
-<li><p><input disabled type="checkbox">  前提：能自动化完成测试、构建、部署等步骤</p>
+<li><p>前提：能自动化完成测试、构建、部署等步骤</p>
 </li>
-<li><p><input disabled type="checkbox">  功能：持续的软件版本发布/测试项目；监控外部调用执行的工作</p>
+<li><p>功能：持续的软件版本发布/测试项目；监控外部调用执行的工作</p>
 </li>
-<li><p><input disabled type="checkbox">  开发或测试人员操作：项目所需参数传给jenkins下对应你的项目的job，jenkins自动完成部署。</p>
+<li><p>开发或测试人员操作：项目所需参数传给jenkins下对应你的项目的job，jenkins自动完成部署。</p>
 </li>
-<li><p><input disabled type="checkbox">  运维：监控jenkins的相关指标，保证健康状态下运转，以及项目部署配置中出现的权限、参数配置、工具集成调用等问题</p>
+<li><p>运维：监控jenkins的相关指标，保证健康状态下运转，以及项目部署配置中出现的权限、参数配置、工具集成调用等问题</p>
 </li>
 </ul>
 <hr>
-<h2><span id="jenkins特性">Jenkins特性</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">开源的java语言开发持续集成工具，支持CI，CD；</span><br><span class="line"></span><br><span class="line">易于安装部署配置：可通过yum安装,或下载war包以及通过docker容器等快速实现安装部署，可方便web界面配置管理；</span><br><span class="line"></span><br><span class="line">消息通知及测试报告：集成RSS&#x2F;E-mail通过RSS发布构建结果或当构建完成时通过e-mail通知，生成JUnit&#x2F;TestNG测试报告；</span><br><span class="line"></span><br><span class="line">分布式构建：支持Jenkins能够让多台计算机一起构建&#x2F;测试；</span><br><span class="line"></span><br><span class="line">文件识别:Jenkins能够跟踪哪次构建生成哪些jar，哪次构建使用哪个版本的jar等； </span><br><span class="line"></span><br><span class="line">丰富的插件支持:支持扩展插件，可以开发适合自己团队使用的工具，如git，svn，maven，docker等。</span><br></pre></td></tr></table></figure>
+<h1><span id="jenkins特性">Jenkins特性</span></h1><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">开源的java语言开发持续集成工具，支持CI，CD；</span><br><span class="line"></span><br><span class="line">易于安装部署配置：可通过yum安装,或下载war包以及通过docker容器等快速实现安装部署，可方便web界面配置管理；</span><br><span class="line"></span><br><span class="line">消息通知及测试报告：集成RSS/E-mail通过RSS发布构建结果或当构建完成时通过e-mail通知，生成JUnit/TestNG测试报告；</span><br><span class="line"></span><br><span class="line">分布式构建：支持Jenkins能够让多台计算机一起构建/测试；</span><br><span class="line"></span><br><span class="line">文件识别:Jenkins能够跟踪哪次构建生成哪些jar，哪次构建使用哪个版本的jar等； </span><br><span class="line"></span><br><span class="line">丰富的插件支持:支持扩展插件，可以开发适合自己团队使用的工具，如git，svn，maven，docker等。</span><br></pre></td></tr></table></figure>
 
-<h2><span id="jenkins-job构建">Jenkins Job构建</span></h2><p>代表一个任务或项目</p>
+<hr>
+<h1><span id="jenkins-job构建">Jenkins Job构建</span></h1><p>代表一个任务或项目</p>
 <p>可配置与可执行</p>
 <p>执行后的记录称之为Bulid</p>
 <p>日志监控与记录</p>
@@ -311,6 +320,7 @@
             <div class="clearfix"></div>
             <hr class="nogutter">
         </div>
+		
 		<!-- ============================ 目录 =========================== -->
 		<div class="post-toc">
 			<div class="tocbot-list">
@@ -322,6 +332,19 @@
 			</div>
 		</div>
 		<script>
+			window.onload = function(){
+				$('.post-content').find('img').each(function(){
+					var picWidth = parseInt($(this).width());
+					if(picWidth > 800){
+						var pW = $(this).width();
+						var pH = $(this).height();
+						var BL = pH / pW;
+						var outH = 800 * BL;
+						$(this).width(800);
+						$(this).height(outH);
+					}
+				})
+			};
 			$(document).ready(
 				function (){
 					if ($('.tocbot-list').length > 0) {
@@ -480,7 +503,7 @@
     <div class="container">
             <div class="copy">
                 <p>
-                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By John Doe. All Rights Reserved.
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By mimo. All Rights Reserved.
                 </p>
                 <p>Theme By <a target="_blank" rel="noopener" href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
             </div>

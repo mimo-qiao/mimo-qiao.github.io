@@ -24,8 +24,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content="mimo">
-    <meta name="author" content="John Doe">
-    <meta name="description" content="" />
+    <meta name="author" content="mimo">
+    <meta name="description" content="Q" />
     <meta name="keywords" content="" />
 
     <!-- Favicon, (keep icon in root folder) -->
@@ -85,6 +85,8 @@
 				    
 				    <li><a href="/categories/linux/" class="animsition-link">linux<small>(7)</small></a></li>
 				    
+				    <li><a href="/categories/mysql实战45讲/" class="animsition-link">mysql实战45讲<small>(49)</small></a></li>
+				    
 				    <li><a href="/categories/python/" class="animsition-link">python<small>(1)</small></a></li>
 				    
 				    <li><a href="/categories/sonar/" class="animsition-link">sonar<small>(1)</small></a></li>
@@ -92,6 +94,8 @@
 				    <li><a href="/categories/tess4j/" class="animsition-link">tess4j<small>(1)</small></a></li>
 				    
 				    <li><a href="/categories/基础/" class="animsition-link">基础<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/数据结构与算法之美/" class="animsition-link">数据结构与算法之美<small>(79)</small></a></li>
 				    
 				</ul>
         	</li>
@@ -152,6 +156,10 @@
                     <li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/f4dce0e76886" class="animsition-link">参考2</a></li>
                     
                     <li><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/configuration.html" class="animsition-link">官网</a></li>
+                    
+                    <li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/31eb5c754c01" class="animsition-link">nginx部署</a></li>
+                    
+                    <li><a target="_blank" rel="noopener" href="https://segmentfault.com/p/1210000010636536/read" class="animsition-link">hexo原理</a></li>
                     
                 </ul>
             </li>
@@ -248,7 +256,7 @@
             </div>
         </div>
 		<div class="post-content">
-      		<h3><span id="安装前准备环境">安装前准备环境</span></h3><p>Centos7(Linux2.6/3.x/4/x  64-bit):</p>
+      		<h2><span id="安装前准备环境">安装前准备环境</span></h2><p>Centos7(Linux2.6/3.x/4/x  64-bit):</p>
 <ul>
 <li><p>vm.max_map_count 大于或等于262144</p>
 </li>
@@ -267,31 +275,31 @@
 <p>​      　　　sonarqube - nofile 65536</p>
 <p>​    　　　  sonarqube - nproc 4096</p>
 <hr>
-<h3><span id="安装jdk">安装jdk</span></h3><p>下载链接：<a target="_blank" rel="noopener" href="https://www.oracle.com/java/technologies/javase-jdk8-downloads.html">https://www.oracle.com/java/technologies/javase-jdk8-downloads.html</a></p>
+<h2><span id="安装jdk">安装jdk</span></h2><p>下载链接：<a target="_blank" rel="noopener" href="https://www.oracle.com/java/technologies/javase-jdk8-downloads.html">https://www.oracle.com/java/technologies/javase-jdk8-downloads.html</a></p>
 <p>选择jdk-8u211-linux-x64.rpm下载</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 查看安装的路径</span><br><span class="line">rpm -qpl jdk-8u211-linux-x64.rpm</span><br><span class="line">## 安装</span><br><span class="line">rpm -i jdk-8u211-linux-x64.rpm</span><br></pre></td></tr></table></figure>
 
-<h3><span id="安装mysql">安装MySQL</span></h3><p>MySQL 5.7</p>
+<h2><span id="安装mysql">安装MySQL</span></h2><p>MySQL 5.7</p>
 <p><a target="_blank" rel="noopener" href="https://dev.mysql.com/downloads/repo/yum/">下载链接</a> <a target="_blank" rel="noopener" href="https://dev.mysql.com/doc/refman/5.7/en/linux-installation-yum-repo.html">参考文档</a></p>
 <p>下载mysql80-community-release-el7-3.noarch.rpm</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"># 安装rpm源</span><br><span class="line">sudo rpm -Uvh mysql80-community-release-el7-3.noarch.rpm</span><br><span class="line"></span><br><span class="line"># 编辑，找到Enable to use MySQL 5.7，改为enabled&#x3D;1，其他版本设置成enabled&#x3D;0</span><br><span class="line">vim &#x2F;etc&#x2F;yum.repos.d&#x2F;mysql-community.repo</span><br><span class="line"></span><br><span class="line"># 检查只有MySQL 5.7启动</span><br><span class="line">yum repolist enabled | grep mysql</span><br><span class="line"></span><br><span class="line"># 安装MySQL</span><br><span class="line">sudo yum install mysql-community-server</span><br><span class="line"></span><br><span class="line"># 启动MySQL服务器</span><br><span class="line">sudo service mysqld start</span><br><span class="line"></span><br><span class="line"># MySQL服务器的状态</span><br><span class="line">sudo service mysqld status</span><br><span class="line"></span><br><span class="line"># 查看超级用户的密码</span><br><span class="line">sudo grep &#39;temporary password&#39; &#x2F;var&#x2F;log&#x2F;mysqld.log</span><br><span class="line"></span><br><span class="line"># 登录mysql</span><br><span class="line">mysql -uroot -p</span><br><span class="line"></span><br><span class="line"># 修改密码</span><br><span class="line">ALTER USER &#39;root&#39;@&#39;localhost&#39; IDENTIFIED BY &#39;MyNewPass4!&#39;;</span><br><span class="line"></span><br><span class="line"># 修改密码校验</span><br><span class="line">set global validate_password_policy&#x3D;0;</span><br><span class="line">set global validate_password_length&#x3D;1;</span><br><span class="line"></span><br><span class="line"># 默认mysql的root用户不支持远程访问，开启访问权限</span><br><span class="line">GRANT ALL ON *.* TO root@&#39;%&#39; IDENTIFIED BY &#39;123456&#39; WITH GRANT OPTION;</span><br><span class="line">update user set host&#x3D;&#39;%&#39; where user&#x3D;&#39;root&#39;;</span><br><span class="line">flush privileges;</span><br><span class="line"></span><br><span class="line"># 创建数据库sonarqube</span><br><span class="line">CREATE DATABASE &#96;sonarqube&#96; CHARACTER SET &#39;utf8&#39;;</span><br><span class="line"></span><br><span class="line">新增用户sonarqube并授予sonarqube数据库全部权限</span><br><span class="line">rant all privileges on sonarqube.* to sonarqube@&#39;%&#39; identified by &quot;password&quot;;</span><br><span class="line"></span><br><span class="line">开启3306端口</span><br><span class="line">irewall-cmd --add-port&#x3D;3306&#x2F;tcp</span><br><span class="line"></span><br><span class="line">(a)数据库目录</span><br><span class="line">var&#x2F;lib&#x2F;mysql&#x2F;</span><br><span class="line">(b)配置文件</span><br><span class="line">usr&#x2F;share &#x2F;mysql（mysql.server命令及配置文件）</span><br><span class="line">etc&#x2F;my.cnf</span><br><span class="line">(c)相关命令</span><br><span class="line">&#x2F;usr&#x2F;bin（mysqladmin mysqldump等命令）</span><br><span class="line">(d)启动脚本</span><br><span class="line">&#x2F;etc&#x2F;rc.d&#x2F;init.d&#x2F;（启动脚本文件mysql的目录）</span><br></pre></td></tr></table></figure>
 
 <hr>
-<h3><span id="或连接windows版mysql">或连接windows版mysql</span></h3><p>在配置文件中配置好url、password等信息</p>
+<h2><span id="或连接windows版mysql">或连接windows版mysql</span></h2><p>在配置文件中配置好url、password等信息</p>
 <hr>
-<h3><span id="安装sonarqube">安装SonarQube</span></h3><h5><span id="1下载-sonarqube">1.下载 SonarQube</span></h5><p>当前版本： 7.7 <a target="_blank" rel="noopener" href="https://www.sonarqube.org/downloads/">下载链接</a></p>
-<h5><span id="2解压">2.解压</span></h5><p>得到当前路径: <code>/opt/sonarqube-7.7</code></p>
-<h5><span id="3修改配置文件">3.修改配置文件</span></h5><p>vi  /opt/sonarqube-7.7/conf/sonar.properties</p>
+<h2><span id="安装sonarqube">安装SonarQube</span></h2><h4><span id="1下载-sonarqube">1.下载 SonarQube</span></h4><p>当前版本： 7.7 <a target="_blank" rel="noopener" href="https://www.sonarqube.org/downloads/">下载链接</a></p>
+<h4><span id="2解压">2.解压</span></h4><p>得到当前路径: <code>/opt/sonarqube-7.7</code></p>
+<h4><span id="3修改配置文件">3.修改配置文件</span></h4><p>vi  /opt/sonarqube-7.7/conf/sonar.properties</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 对应的数据库信息</span><br><span class="line">sonar.jdbc.username&#x3D;</span><br><span class="line">sonar.jdbc.password&#x3D;</span><br><span class="line">sonar.jdbc.url&#x3D;</span><br></pre></td></tr></table></figure>
 
-<h5><span id="4新增用户">4.新增用户</span></h5><blockquote>
+<h4><span id="4新增用户">4.新增用户</span></h4><blockquote>
 <p>SonarQube不能以root启动</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 添加用户</span><br><span class="line">adduser sonarqube</span><br><span class="line"># 设置密码</span><br><span class="line">passwd sonarqube</span><br><span class="line"># 授权</span><br><span class="line">chown -R sonarqube:sonarqube &#x2F;opt&#x2F;sonarqube-7.7</span><br></pre></td></tr></table></figure>
 
-<h5><span id="5默认sonarqube启动在9000端口">5.默认SonarQube启动在9000端口</span></h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --add-port&#x3D;9000&#x2F;tcp</span><br><span class="line">systemctl stop firewalld</span><br><span class="line">systemctl disable firewalld</span><br></pre></td></tr></table></figure>
+<h4><span id="5端口">5.端口</span></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#默认SonarQube启动在9000端口</span><br><span class="line">firewall-cmd --add-port&#x3D;9000&#x2F;tcp</span><br><span class="line">systemctl stop firewalld</span><br><span class="line">systemctl disable firewalld</span><br></pre></td></tr></table></figure>
 
-<h5><span id="6以服务启动sonarqube">6.以服务启动SonarQube</span></h5><ul>
+<h4><span id="6以服务启动sonarqube">6.以服务启动SonarQube</span></h4><ul>
 <li>创建文件</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim &#x2F;etc&#x2F;systemd&#x2F;system&#x2F;sonarqube.service</span><br></pre></td></tr></table></figure>
@@ -306,7 +314,7 @@
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">su sonarqube</span><br><span class="line"># 注册服务</span><br><span class="line">sudo systemctl enable sonarqube.service</span><br><span class="line"># 启动服务</span><br><span class="line">sudo systemctl start sonarqube.service</span><br><span class="line"># 重启</span><br><span class="line">sudo systemctl restart sonarqube.service</span><br><span class="line">#查看日志</span><br><span class="line">sudo systemctl status sonarqube.service</span><br></pre></td></tr></table></figure>
 
-<h5><span id="7插入新插件">7.插入新插件</span></h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">su root</span><br></pre></td></tr></table></figure>
+<h4><span id="7插入新插件">7.插入新插件</span></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">su root</span><br></pre></td></tr></table></figure>
 
 <p>将插件放入/opt/sonarqube-7.7/extensions/plugins中</p>
 <p>更改新插件权限</p>
@@ -325,7 +333,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi &#x2F;opt&#x2F;sonarqube-7.7&#x2F;conf&#x2F;sonar.properties</span><br></pre></td></tr></table></figure>
 
 <hr>
-<h3><span id="与maven集成">与Maven集成</span></h3><p><a target="_blank" rel="noopener" href="https://docs.sonarqube.org/latest/analysis/scan/sonarscanner-for-maven/">https://docs.sonarqube.org/latest/analysis/scan/sonarscanner-for-maven/</a></p>
+<h2><span id="与maven集成">与Maven集成</span></h2><p><a target="_blank" rel="noopener" href="https://docs.sonarqube.org/latest/analysis/scan/sonarscanner-for-maven/">https://docs.sonarqube.org/latest/analysis/scan/sonarscanner-for-maven/</a></p>
 <p>%MAVEN_HOME/conf%或~.m2的settings.xml文件编辑：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;settings&gt;</span><br><span class="line">    &lt;pluginGroups&gt;</span><br><span class="line">        &lt;pluginGroup&gt;org.sonarsource.scanner.maven&lt;&#x2F;pluginGroup&gt;</span><br><span class="line">    &lt;&#x2F;pluginGroups&gt;</span><br><span class="line">    &lt;profiles&gt;</span><br><span class="line">        &lt;profile&gt;</span><br><span class="line">            &lt;id&gt;sonar&lt;&#x2F;id&gt;</span><br><span class="line">            &lt;activation&gt;</span><br><span class="line">                &lt;activeByDefault&gt;true&lt;&#x2F;activeByDefault&gt;</span><br><span class="line">            &lt;&#x2F;activation&gt;</span><br><span class="line">            &lt;properties&gt;</span><br><span class="line">                &lt;!-- Optional URL to server. Default value is http:&#x2F;&#x2F;localhost:9000 --&gt;</span><br><span class="line">                &lt;sonar.host.url&gt;</span><br><span class="line">                  http:&#x2F;&#x2F;myserver:9000</span><br><span class="line">                &lt;&#x2F;sonar.host.url&gt;</span><br><span class="line">            &lt;&#x2F;properties&gt;</span><br><span class="line">        &lt;&#x2F;profile&gt;</span><br><span class="line">     &lt;&#x2F;profiles&gt;</span><br><span class="line">&lt;&#x2F;settings&gt;</span><br></pre></td></tr></table></figure>
 
@@ -333,9 +341,9 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">clean verify sonar:sonar</span><br></pre></td></tr></table></figure>
 
 <hr>
-<h3><span id="编写规则">编写规则</span></h3><p><a target="_blank" rel="noopener" href="https://github.com/SonarSource/sonar-java/blob/master/docs/CUSTOM_RULES_101.md#registering-the-rule-in-the-custom-plugin">https://github.com/SonarSource/sonar-java/blob/master/docs/CUSTOM_RULES_101.md#registering-the-rule-in-the-custom-plugin</a></p>
+<h2><span id="编写规则">编写规则</span></h2><p><a target="_blank" rel="noopener" href="https://github.com/SonarSource/sonar-java/blob/master/docs/CUSTOM_RULES_101.md#registering-the-rule-in-the-custom-plugin">https://github.com/SonarSource/sonar-java/blob/master/docs/CUSTOM_RULES_101.md#registering-the-rule-in-the-custom-plugin</a></p>
 <hr>
-<h3><span id="常见问题">常见问题</span></h3><p>1.使用sudo命令时，出现问题：</p>
+<h2><span id="常见问题">常见问题</span></h2><p>1.使用sudo命令时，出现问题：</p>
 <p><img src="/images/1583482617566.png" alt="1583482617566"></p>
 <p>解决：</p>
 <p>vi  /etc/sudoers</p>
@@ -345,6 +353,7 @@
             <div class="clearfix"></div>
             <hr class="nogutter">
         </div>
+		
 		<!-- ============================ 目录 =========================== -->
 		<div class="post-toc">
 			<div class="tocbot-list">
@@ -356,6 +365,19 @@
 			</div>
 		</div>
 		<script>
+			window.onload = function(){
+				$('.post-content').find('img').each(function(){
+					var picWidth = parseInt($(this).width());
+					if(picWidth > 800){
+						var pW = $(this).width();
+						var pH = $(this).height();
+						var BL = pH / pW;
+						var outH = 800 * BL;
+						$(this).width(800);
+						$(this).height(outH);
+					}
+				})
+			};
 			$(document).ready(
 				function (){
 					if ($('.tocbot-list').length > 0) {
@@ -514,7 +536,7 @@
     <div class="container">
             <div class="copy">
                 <p>
-                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By John Doe. All Rights Reserved.
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By mimo. All Rights Reserved.
                 </p>
                 <p>Theme By <a target="_blank" rel="noopener" href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
             </div>
